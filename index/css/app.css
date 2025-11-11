@@ -1,0 +1,126 @@
+#cursor{
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background-color: #0e6a00;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    pointer-events: none;
+    mix-blend-mode: difference;
+ 
+}
+
+#cursor2{
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background-color: #0e6a00;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    pointer-events: none;
+    mix-blend-mode: difference;
+ 
+}
+
+#cursor.mini{
+    transform: scale(1.4);
+    border-style:solid;
+    background-color: #11ff00;
+    border-color: #000000;
+    border-width: 0.01px;
+    mix-blend-mode:difference;
+    /* transition:all .5s ease; */
+}
+
+#cursor2.mini{
+    transform: scale(1.4);
+    border-style:solid;
+    background-color: #11ff00;
+    border-color: #000000;
+    border-width: 0.01px;
+    mix-blend-mode:difference;
+    /* transition:all .5s ease; */
+
+
+}
+
+
+#cursor.maxi{
+    transform: scale(2.5);
+    border-style: solid;
+    border-color: #000000;
+    mix-blend-mode:difference;
+    /* transition: .2s linear; */
+    
+  
+}
+
+
+
+#cursor.eye{
+    background: url(../backgrounds/eye.png) center no-repeat;
+    width: 200px;
+    height: 200px;
+    z-index: 30;
+    mix-blend-mode:unset;
+    
+
+}
+
+#cursor.prices{
+    /* transform: scale(2.5); */
+    background: url(../images/Web\ Design.svg) center no-repeat;
+    width: 100px;
+    height: 300px;
+    /* border-style: solid;
+    border-color: #000000; */
+    mix-blend-mode: unset;
+    cursor: none;
+    
+    
+}
+
+#cursor.fotog{
+    background: url(../images/Fotografía.svg) center no-repeat;
+    width: 100px;
+    height: 300px;
+    mix-blend-mode: unset;
+
+}
+
+#cursor.fotop{
+    background: url(../images/Foto\ Producto.svg) center no-repeat;
+    width: 100px;
+    height: 400px;
+    mix-blend-mode: unset;
+
+}
+
+#cursor.branding{
+    background: url(../images/Branding.svg) center no-repeat;
+    width: 100px;
+    height: 300px;
+    mix-blend-mode: unset;
+
+}
+
+
+/* cursor click */
+
+
+#cursor2.maxi2{
+    transform: scale(2.5);
+    border-style: solid;
+    border-width: 1px;
+    border-color: #000000;
+    mix-blend-mode:lighten;
+    background-color:#8410b8;
+    /* transition: .2s linear; */
+    
+  
+}
+@media (max-width: 768px){ .logo, .logo-mali, .mali-logo, .logo-rotating, .rotate-logo { animation: none !important; transform: none !important; } }

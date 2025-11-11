@@ -1,0 +1,32 @@
+/* ============================================
+   MENÚ HAMBURGUESA MOBILE - NUEVO DESDE CERO
+   ============================================ */
+
+/* Desktop: ocultar hamburguesa */
+.hamburger {
+    display: none;
+}
+
+/* Mobile - DESHABILITADO para usar el nuevo mobile-nav */
+@media (max-width: 1023px) {
+    
+    /* Ocultar cursor custom en mobile */
+    #cursor, #cursor2 {
+        display: none !important;
+    }
+    
+    /* OCULTAR el menú hamburguesa original en mobile */
+    .hamburger {
+        display: none !important;
+    }
+    
+    /* OCULTAR el menú ul original en mobile */
+    .ul {
+        display: none !important;
+    }
+    
+    /* Nav container en mobile - OCULTO */
+    .nav {
+        display: none !important;
+    }
+}

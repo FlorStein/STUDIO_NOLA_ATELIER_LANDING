@@ -1,0 +1,425 @@
+
+
+/* Contacto unificado (final de página) */
+#contacto{ scroll-margin-top: clamp(64px, 8vh, 120px);font-family: monospace; }
+.contacto-final{ position:relative; padding: clamp(24px, 4vw, 64px) 0; }
+.contacto-wrap{ position:relative; width:min(1100px,92vw); margin-inline:auto; }
+.contacto-wrap h2{ font-weight: 900; margin:0 0 .75rem; padding-bottom:.5rem; border-bottom:3px solid #2a203d; }
+.contacto-form{ display:grid; gap:.9rem; background:#fff; border: 2px solid #3a2b52; border-radius: 22px; padding: clamp(14px, 2vw, 22px); }
+.contacto-form .row{ display:grid; gap:.9rem; grid-template-columns:1fr; }
+.contacto-form input, .contacto-form textarea{ width:95%; padding:.85rem .95rem; border-radius:12px; border:1px solid rgba(0,0,0,.14); font:inherit; }
+.contacto-form button{ padding:.8rem 1.15rem; border-radius:12px; border:2px solid #3a2b52; background: linear-gradient(135deg, #b29ad6, #927ab8); color:#120a1d; font-weight:900; cursor:pointer; }
+@media (min-width: 720px){ .contacto-form .row{ grid-template-columns: 1fr 1fr; } }
+
+
+
+/* NAV: "Contacto" visible pero sin navegación */
+.nav-li .is-disabled[aria-disabled="true"],
+nav a.is-disabled[aria-disabled="true"]{
+  pointer-events: none;
+  cursor: default;
+  text-decoration: none;
+  opacity: 0.95; /* leve indicio de estado inactivo, sin romper estética */
+}
+
+/* === Footer === */
+.site-footer{
+  width: 100%;
+  margin-top: clamp(40px, 8vh, 100px);
+  border-top: 1px solid #000;
+  background: rgba(255,255,255,0.72);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  color: #000;
+  
+}
+.site-footer .footer-wrap{
+  max-width: min(1200px, 92vw);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  padding: clamp(20px, 5vw, 48px) 0;
+}
+.site-footer .col h3{
+  font-family: 'SovietProgram', system-ui, sans-serif;
+  text-transform: uppercase;
+  font-weight: 900;
+  letter-spacing: .02em;
+  border-bottom: 3px solid #2a203d;
+  padding-bottom: .4rem;
+  margin: 0 0 .6rem;
+}
+.site-footer .brand .footer-logo{
+  height: clamp(28px, 4vw, 44px);
+  width: auto;
+  display: block;
+  margin-bottom: .6rem;
+  object-fit: contain;
+}
+.site-footer .links ul,
+.site-footer .contact ul{
+  list-style: none;
+  padding: 0; margin: 0;
+  display: grid;
+  gap: 8px;
+  
+}
+.site-footer a{ color: inherit; text-decoration: none; border-bottom: 1px solid transparent; }
+.site-footer a:hover{ border-color: currentColor; }
+.site-footer .addr{ font-style: normal; opacity: .9; margin-top: .4rem; }
+.site-footer .footnote{
+  border-top: 1px solid #000;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 10px; padding: 14px min(4vw, 24px);
+  font-size: clamp(.86rem, .8rem + .2vw, .95rem);
+}
+.site-footer .muted{ opacity: .75; }
+
+@media (min-width: 860px){
+  .site-footer .footer-wrap{
+    grid-template-columns: 1.6fr 1fr 1fr;
+    gap: 28px;
+  }
+}
+
+
+/* === Footer (site-footer) === */
+.footer{
+  margin-top: clamp(28px, 5vw, 64px);
+  padding: clamp(24px, 4vw, 48px) 0 0;
+  border-top: 3px solid #2a203d;
+  background: linear-gradient(180deg, rgba(146,122,184,0.08), rgba(26,19,48,0.06));
+}
+.footer-wrap{
+  width: min(1100px, 92vw);
+  margin-inline: auto;
+  display: grid;
+  gap: 24px;
+  grid-template-columns: 1fr;
+}
+.footer-title{
+  font-family: 'SovietProgram', system-ui, sans-serif;
+  text-transform: uppercase;
+  font-weight: 900;
+  letter-spacing: .02em;
+  margin: 0 0 .4rem;
+  color: #1b1326;
+  border-bottom: 3px solid #2a203d;
+  padding-bottom: .35rem;
+  font-size: clamp(18px, 2vw, 38px);
+}
+.footer-logo{
+  width: clamp(140px, 22vw, 220px);
+  height: auto;
+  display: block;
+  object-fit: contain;
+  margin-bottom: .35rem;
+}
+.footer-tagline{ margin: 0; opacity: .85; font-size: clamp(18px, 2vw, 38px);}
+
+.footer-nav ul, .footer-contact ul{ list-style: none; padding: 0; margin: 0; display: grid; gap: .4rem; }
+.footer-nav a, .footer-contact a{
+  text-decoration: none;
+  color: inherit;
+  border-radius: 10px;
+  padding: 4px 6px;
+  font-size: clamp(18px, 2vw, 28px);
+}
+.footer-nav a:hover, .footer-contact a:hover{ text-decoration: underline; }
+
+.footer-bottom{
+  border-top: 1px solid rgba(0,0,0,.12);
+  margin-top: clamp(16px, 3vw, 24px);
+  padding: 10px 0;
+  text-align: center;
+ font-size: clamp(18px, 2vw, 38px);
+  opacity: .9;
+}
+
+@media (min-width: 860px){
+  .footer-wrap{ grid-template-columns: 1.2fr .8fr .8fr; align-items: start; }
+}
+
+/* ===== NOTA: Estilos del footer ahora en footer-responsive.css ===== */
+
+/* ============================================
+   PARCHES ADICIONALES PARA PRICING RESPONSIVE
+   ============================================ */
+
+/* Asegurar que el contenedor principal sea responsive */
+#pricing {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* Mejorar el comportamiento del acordeón en móviles */
+@media screen and (max-width: 1023px) {
+    /* Sin transiciones - cambios instantáneos */
+    .hero figure {
+        transition: none !important;
+    }
+    
+    /* Mejorar la interacción táctil */
+    .hero figure:active {
+        background-color: rgba(0, 0, 0, 0.02);
+    }
+    
+    /* Asegurar que el contenido no se vea durante la transición */
+    .hero figure:not(.on) {
+        pointer-events: auto;
+    }
+    
+    .hero figure:not(.on) * {
+        pointer-events: none;
+    }
+    
+    .hero figure.on * {
+        pointer-events: auto;
+    }
+    
+    /* Prevenir desbordamiento */
+    #hero1 {
+        min-height: auto;
+        overflow: visible;
+    }
+    
+    .hero {
+        position: relative !important;
+        height: auto !important;
+    }
+    
+    /* Sin animación en las flechas */
+    .hero figure::after {
+        transition: none !important;
+    }
+    
+    /* Asegurar que las tablas sean scrolleables */
+    .tbl-header,
+    .tbl-content {
+        position: relative;
+        width: 100%;
+    }
+}
+
+/* Mejorar el comportamiento de las tablas en todos los móviles */
+@media screen and (max-width: 768px) {
+    .tbl-header table,
+    .tbl-content table {
+        display: block;
+        width: 100%;
+    }
+    
+    /* Asegurar que las imágenes de fondo sean responsive */
+    .hero_img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+    
+    /* Espaciado interno mejorado */
+    figure.on .tbl-header,
+    figure.on .tbl-content {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    /* Smooth scroll para cuando se abre una sección */
+    html {
+        scroll-behavior: smooth;
+    }
+}
+
+/* Optimización para tablets */
+@media screen and (min-width: 769px) and (max-width: 1023px) {
+    #pricing {
+        width: 100vw;
+    }
+    
+    .hero figure {
+        transition: all 0.5s ease;
+    }
+    
+    /* Mejorar visibilidad de títulos en tablets */
+    .hero figure.on .div1 h2 {
+        font-size: 2.2em !important;
+        margin-bottom: 20px;
+    }
+}
+
+/* Asegurar que en desktop las tablas tengan buen espaciado */
+@media screen and (min-width: 1024px) {
+    figure.on .tbl-header,
+    figure.on .tbl-content {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    
+    #pricing {
+        display: block;
+        width: 85vw;
+    }
+    
+    /* Restaurar comportamiento horizontal en desktop */
+    .hero {
+        flex-direction: row !important;
+    }
+    
+    .hero figure {
+        width: 10% !important;
+        height: 100% !important;
+        border-left: 1px solid var(--COLOR-BLACK) !important;
+        border-right: 1px solid var(--COLOR-BLACK) !important;
+    }
+}
+
+/* Fix para evitar overflow horizontal en toda la página */
+body {
+    overflow-x: hidden;
+    max-width: 100vw;
+    position: relative;
+}
+
+/* Mejorar la experiencia táctil en dispositivos móviles */
+@media (hover: none) and (pointer: coarse) {
+    .hero figure {
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+    }
+    
+    /* Hacer las áreas clickeables más grandes */
+    .hero figure {
+        min-height: 50px;
+        touch-action: manipulation;
+    }
+    
+    /* Mejorar feedback visual en touch */
+    .hero figure:active {
+        opacity: 0.9;
+    }
+    
+    /* Hamburger touch friendly */
+    .hamburger {
+        -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
+        min-width: 44px;
+        min-height: 44px;
+    }
+}
+
+/* Optimización adicional para pantallas muy pequeñas */
+@media screen and (max-width: 380px) {
+    figure.on th,
+    td {
+        font-size: 0.6rem !important;
+        padding: 8px 5px !important;
+    }
+    
+    .tbl-c-title {
+        font-size: 0.65rem !important;
+    }
+}
+
+@media (max-width: 768px){ .logo, .logo-mali, .mali-logo, .logo-rotating, .rotate-logo { animation: none !important; transform: none !important; } }
+
+
+
+/* === CONTACTO – estilo coherente con el sitio === */
+:root{
+  --violeta:#927AB8;
+  --violeta-osc:#3a2b52;
+  --beige:#FFF6E7;
+  --glass-bg: rgba(255,255,255,.12);
+  --glass-bd: rgba(255,255,255,.28);
+  --shadow: 0 10px 30px rgba(0,0,0,.18);
+}
+
+.contacto-final{
+  margin-top: clamp(40px, 8vh, 100px);
+}
+
+.contacto-text{
+  margin:.25rem 0 1rem;
+  opacity:.9;
+}
+
+.contacto-form{
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-bd);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  padding: clamp(16px, 3.5vw, 28px);
+}
+
+.contacto-form label span{
+  display:block;
+  font-weight:700;
+  margin: 0 0 .35rem;
+}
+.contacto-form.textarea{ 
+  width: 100%;
+  padding:.8rem 1rem;
+  border-radius:12px;
+  border:1px solid rgba(0,0,0,.18);
+  background:#fff;
+  outline:none;
+}
+
+.contacto-form input,
+.contacto-form select
+{
+  width: 80%;
+  padding:.8rem 1rem;
+  border-radius:12px;
+  border:1px solid rgba(0,0,0,.18);
+  background:#fff;
+  outline:none;
+}
+
+.contacto-form .row{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:1rem;
+}
+
+.form-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.75rem;
+  align-items:center;
+  margin-top:.5rem;
+}
+
+.btn-enviar, .btn-wapp{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:.5rem;
+  padding:.85rem 1.2rem;
+  border-radius:12px;
+  font-weight:900;
+  border: 2px solid #120a1d;
+  text-decoration:none;
+}
+
+.btn-enviar{
+  background: linear-gradient(135deg, #f0ead6, var(--violeta));
+  color:#120a1d;
+}
+
+.btn-wapp{
+  background:#fff;
+  color:#120a1d;
+}
+
+.form-status{
+  margin-top:.5rem;
+  font-weight:700;
+  min-height:1.2em;
+}
+
+@media (min-width: 760px){
+  .contacto-form .row{ grid-template-columns:1fr 1fr; }
+}

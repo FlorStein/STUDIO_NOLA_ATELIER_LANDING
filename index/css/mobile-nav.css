@@ -1,0 +1,132 @@
+
+/* ===== Mobile Nav (independent) ===== */
+.mobile-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; width: 100%; display: none; }
+.mnav-bar {
+  width: 85%; 
+  margin: 0.6rem auto; 
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  border-radius: 999px; 
+  padding: 0.6rem 0.9rem; 
+  transition: background 240ms ease, backdrop-filter 240ms ease, border-color 240ms ease;
+}
+.mnav-logo { 
+  grid-column: 2; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mnav-logo img { height: 76px; width: auto; display: block; }
+
+/* Toggle button */
+.mnav-toggle { 
+  grid-column: 1;
+  justify-self: start;
+  display: inline-grid; 
+  gap: 5px; 
+  border: 0; 
+  background: transparent; 
+  padding: 0.5rem; 
+  border-radius: 10px; 
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.mnav-toggle:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+.mnav-toggle span { 
+  display: block; 
+  width: 22px; 
+  height: 2px; 
+  background: #111; 
+  transition: all 0.3s ease;
+}
+
+/* Animation for toggle button when open */
+.mnav-toggle[aria-expanded="true"] span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.mnav-toggle[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+}
+.mnav-toggle[aria-expanded="true"] span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* States: on hero (violet) vs scrolled (glass) */
+.mobile-nav.is-hero .mnav-bar {
+  background: #927AB8; /* violeta sólido */
+  border: 3px solid rgba(0,0,0,0.2);
+  
+}
+.mobile-nav.is-scrolled .mnav-bar {
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(12px);
+  border: 3px solid rgb(0, 0, 0);
+}
+
+/* Panel overlay (60% height) */
+.mnav-panel[hidden] { display: none; }
+.mnav-panel {
+  /* position: fixed;  */
+  /* left: 50%; */
+  transform: translateX(-50%);
+  /* top: 0;  */
+  z-index: 120;
+  /* display: block; */
+  background: rgba(255, 255, 255, 0.225);
+  backdrop-filter: blur(12px);
+  animation: fadeSlideDown 260ms ease both;
+  border-radius: 50px;
+  border: 3px solid rgb(0, 0, 0);
+  font-family: monospace;
+  min-width: 80%;
+  margin-top: 0.6rem;
+}
+@keyframes fadeSlideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.mnav-drawer { height: 100%; display: flex; align-items: flex-start; justify-content: center; }
+.mnav-list { list-style: none; margin: 1.2rem 0 0; padding: 0; width: 92%; }
+.mnav-link {
+  display: block; 
+  padding: 1rem 0.4rem; 
+  font-size: 1.1rem; 
+  color: #111; 
+  text-decoration: none;
+  /* border-bottom: 1px solid rgba(255,255,255,0.25); */
+  transition: all 0.2s ease;
+}
+.mnav-link:hover {
+  background: rgba(255,255,255,0.2);
+  padding-left: 0.8rem;
+}
+.mnav-link:active {
+  background: rgba(255,255,255,0.3);
+}
+
+/* Mobile-only visibility */
+@media (max-width: 1023px) {
+  .mobile-nav { display: block; }
+  /* Ocultar nav desktop original en mobile sin tocar su CSS */
+  .nav { display: none !important; }
+  /* Ocultar "Since 2022" + líneas en mobile */
+  #since, .sinceLine { display: none !important; }
+  
+  /* Agregar padding al body para que el contenido no quede detrás de la nav fija */
+  body {
+    padding-top: 60px;
+  }
+  
+  /* Asegurar que el header no quede oculto */
+  #header {
+    margin-top: 0;
+  }
+}
+
+/* Ensure panel opens reliably */
+.mnav-panel { pointer-events: auto; z-index: 120; }
+.mnav-panel.is-open { display: block !important; }

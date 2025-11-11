@@ -1,0 +1,28 @@
+@font-face {
+    font-family: 'soviet_programbold';
+    src: url(../fonts/sovietprogram-bold-webfont.woff2) format('woff2'),
+         url(../fonts/sovietprogram-bold-webfont.woff) format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+
+}
+
+#p{
+    font-family: Helvetica, sans-serif;
+    font-weight: 700;
+    color: white;
+    font-size: 3.5rem;
+    display: inline-block;
+    margin-top: -5rem;
+    padding-inline-start: 10px;
+    text-transform: uppercase;
+    
+    /* text-align: end;
+    text-align-last: center; */
+}
+
+#h{
+    margin: 0;
+}
+@media (max-width: 768px){ .logo, .logo-mali, .mali-logo, .logo-rotating, .rotate-logo { animation: none !important; transform: none !important; } }

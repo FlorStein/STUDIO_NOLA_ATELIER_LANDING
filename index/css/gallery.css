@@ -1,0 +1,231 @@
+
+.image{
+  object-fit:contain;
+}
+
+#portfolio{
+  position: sticky;
+  padding-left: 270rem;
+  /* transition: background-color 1000ms linear;
+  animation-duration: 5000s;
+  animation-delay: 0ms;
+  animation-iteration-count: infinite; */
+  cursor: none;
+  background-color: rgba(0, 0, 0, 0.762);
+}
+
+.scroll-animations-example > .scrollsection {
+  padding: 20vh 10vh 10vh 10vmax;
+  min-width: 710vh;
+}
+.scroll-animations-example > .scrollsection > .item {
+  display: inline-block;
+  position: relative;
+  margin: 0 -30vh 0 3vh;
+}
+.scroll-animations-example > .scrollsection > .item::before {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+}
+.scroll-animations-example > .scrollsection > .item.-big {
+  height: 70vh;
+  width: 60vh;
+}
+.scroll-animations-example > .scrollsection > .item.-big.-horizontal {
+  height: 60vh;
+  width: 70vh;
+}
+.scroll-animations-example > .scrollsection > .item.-normal {
+  height: 60vh;
+  width: 45vh;
+  z-index: 1;
+}
+.scroll-animations-example > .scrollsection > .item.-normal.-horizontal {
+  height: 45vh;
+  width: 60vh;
+}
+.scroll-animations-example > .scrollsection > .item.-normal:nth-of-type(3n) {
+  bottom: 5vh;
+}
+.scroll-animations-example > .scrollsection > .item.-normal:nth-of-type(4n) {
+  bottom: -5vh;
+}
+.scroll-animations-example > .scrollsection > .item.-small {
+  height: 50vh;
+  width: 40vh;
+  z-index: 2;
+}
+.scroll-animations-example > .scrollsection > .item.-small.-horizontal {
+  height: 40vh;
+  width: 50vh;
+}
+.scroll-animations-example > .scrollsection > .item.-small:nth-of-type(3n) {
+  bottom: 13vh;
+}
+.scroll-animations-example > .scrollsection > .item.-small:nth-of-type(4n) {
+  bottom: -13vh;
+}
+.scroll-animations-example > .scrollsection > .item > .image {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  filter: grayscale(1);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(0) translateY(0) scale(1);
+  transition: filter .3s ease, opacity 1s ease, transform 1s ease;
+}
+.scroll-animations-example > .scrollsection > .item:nth-of-type(4n) > .image {
+  transform: translateX(-30vh) translateY(-30vh) scale(1);
+  transition-delay: 0;
+}
+.scroll-animations-example > .scrollsection > .item:nth-of-type(4n - 1) > .image {
+  transform: translateX(30vh) translateY(30vh) scale(1);
+  transition-delay: .05s;
+}
+.scroll-animations-example > .scrollsection > .item:nth-of-type(4n - 2) > .image {
+  transform: translateX(-30vh) translateY(30vh) scale(1);
+  transition-delay: .1s;
+}
+.scroll-animations-example > .scrollsection > .item:nth-of-type(4n - 3) > .image {
+  transform: translateX(-30vh) translateY(-30vh) scale(1);
+  transition-delay: .15s;
+}
+.scroll-animations-example > .scrollsection > .item > .image.-active {
+  transform: translateX(0) translateY(0) scale(1);
+  opacity: .8;
+  pointer-events: auto;
+  transition: filter .3s ease, opacity 1s ease, transform 1s ease;
+}
+.scroll-animations-example > .scrollsection > .item > .image.-clicked {
+  transform: translateX(0) translateY(0) scale(1.8);
+  opacity: 1;
+  pointer-events: auto;
+  transition: filter .3s ease, opacity 1s ease, transform 1s ease;
+  filter: grayscale(0);
+  
+}
+.scroll-animations-example > .scrollsection > .item > .image.-active:hover {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  filter: grayscale(0);
+  opacity: 1;
+  transform: scale(1.5);
+}
+
+#title2{
+  font-family:'soviet_programbold';
+  font-weight: 800;
+  font-size: 5rem;
+  color: var(--COLOR-WHITE);
+  padding-inline-start: 0;
+  border-color: #00000078;
+  border-bottom: solid;
+  width: 80%;
+  position: absolute;
+  margin: 0;
+  margin-top: 1rem;
+  transition:  1s ease-in;
+  display: flex; 
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  z-index: 1;
+}
+
+
+.back{
+  z-index: 1;
+  font-size: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+    color: white;
+}
+
+
+.div_back{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.svg{
+  fill: #ffffff;
+  z-index: 1;
+  transform: scale(1.5);}
+
+
+
+
+#cursor2.maxi2{
+  transform: scale(2.5);
+  border-style: solid;
+  border-width: 1px;
+  border-color: #000000;
+  mix-blend-mode:lighten;
+  background-color:#8410b8;
+  /* transition: .2s linear; */
+  
+
+}
+
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 780px)
+ {
+
+  #title2{
+    width: 80vw;
+    font-size: 3rem;
+    position: fixed;
+  }
+  .scroll-animations-example > .scrollsection {
+    padding: 20vh 10vh 10vh 10vmax;
+    display: flex;
+    flex-direction: column;
+    min-width: 100vw !important;
+
+}
+
+
+#portfolio{
+  padding-left: 0;
+
+}}
+@media (max-width: 768px){ .logo, .logo-mali, .mali-logo, .logo-rotating, .rotate-logo { animation: none !important; transform: none !important; } }
+
+/* ==== CLEAN: quitar efectos de Locomotive y habilitar scroll nativo ==== */
+html, body { overflow:auto !important; height:auto !important; }
+#portfolio{ position: static !important; padding-left: 0 !important; height:auto !important; overflow:visible !important; }
+.scroll-animations-example{ display:none !important; }
+
+/* ===== Masonry Pinterest-like con carga infinita (fondo oscuro ya definido) ===== */
+.gallery-grid{ columns:2; column-gap:12px; padding:16px; }
+@media (min-width:640px){ .gallery-grid{ columns:3; column-gap:14px; padding:18px; } }
+@media (min-width:1024px){ .gallery-grid{ columns:5; column-gap:16px; padding:24px; } }
+@media (min-width:1440px){ .gallery-grid{ columns:6; } }
+
+.grid-item{ break-inside:avoid; display:inline-block; width:100%; margin:0 0 12px 0; padding:0; border:0; background:transparent; }
+.grid-item img{ width:100%; height:auto; display:block; border-radius:12px; opacity:0; transform:translateY(6px); transition:opacity .25s ease, transform .25s ease; box-shadow:0 1px 0 rgba(255,255,255,.04), 0 10px 20px rgba(0,0,0,.35); }
+.grid-item img.is-loaded{ opacity:1; transform:none; }
+
+#infiniteSentinel{ height:1px; }
+
+#lightbox[hidden]{ display:none; }
+#lightbox{ position:fixed; inset:0; z-index:9999; background:rgba(0,0,0,.92); display:grid; place-items:center; }
+#lightbox img{ max-width:92vw; max-height:82vh; border-radius:12px; }
+.lb-close,.lb-prev,.lb-next{ position:absolute; border:0; background:transparent; color:#fff; font-size:32px; line-height:1; padding:8px 12px; cursor:pointer; }
+.lb-close{ top:12px; right:16px; }
+.lb-prev { left:12px; top:50%; transform:translateY(-50%); }
+.lb-next { right:12px; top:50%; transform:translateY(-50%); }
+@media (pointer:coarse){ .lb-prev,.lb-next,.lb-close{ font-size:40px; padding:16px; } }

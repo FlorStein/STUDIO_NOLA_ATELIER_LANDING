@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="description" content="diseños por MALI STUDIOS, fotografía, diseño web, branding.">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <script defer src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script defer src="./js/app2.js"></script>
+    
+    <link rel="stylesheet" href="./css/app.css">
+    <link rel="stylesheet" href="./css/gallery.css">
+    <link rel="stylesheet" href="./css/index.css">
+
+    <title>Gallery</title>
+
+<link rel="stylesheet" href="./responsive_patch.css">
+</head>
+<body class="body">
+    <div id="cursor2"></div>
+    <h1 id="title2">GALLERY 
+        <div class="div_back">
+            <a href="../index.html" target="_parent" class="back">
+                back
+                <svg xmlns="http://www.w3.org/2000/svg" class='svg'><path d="M21 11H6.414l5.293-5.293-1.414-1.414L2.586 12l7.707 7.707 1.414-1.414L6.414 13H21z"/></svg>
+            </a> 
+        </div>
+    </h1>
+    <section id="portfolio">
+        <!-- removed-locomotive <div class='scroll-animations-example'-container>
+        <div class='scrollsection'-section>
+            <div class='item -normal'-speed="2">
+                <img class='image' src='./gallery photos/1.webp' loading="lazy" alt=".." class="lazyload">
+            </div>
+            <div class='item -big'-speed="1">
+                <img class='image' src='./gallery photos/2.webp' loading="lazy" alt=".." class="lazyload">
+            </div>
+            <div class='item -small -horizontal'-speed="4">
+                <img class='image' src='./gallery photos/3.webp' loading="lazy" alt=".." class="lazyload">
+            </div>
+            <div class='item -normal'-speed="3">
+                <img class='image' src='./gallery photos/4.webp' loading="lazy" alt=".." class="lazyload">
+            </div>
+            <div class='item -normal -horizontal'-speed="2">
+                <img class='image' src='./gallery photos/5.webp' loading="lazy" alt=".." class="lazyload">
+            </div>
+            <div class='item -big -horizontal'-speed="4">
+                <img class='image' src='./gallery photos/6.webp' loading="lazy" alt=".." class="lazyload">
+            </div>
+            <div class='item -small'-speed="2">
+                <img class='image' src='./gallery photos/7.webp' loading="lazy" alt=".." class="lazyload">
+            </div>
+            <div class='item -normal -horizontal'-speed="1">
+                <img class='image' src='./gallery photos/8.webp' loading="lazy" alt=".." class="lazyload">
+            </div>
+            <div class='item -small -horizontal'-speed="3">
+                <img class='image' src='./gallery photos/9.webp' loading="lazy" alt=".." class="lazyload">
+            </div>
+            <div class='item -big'-speed="1">
+                <img class='image' src='./gallery photos/10.webp' loading="lazy" alt=".." class="lazyload">
+            </div>
+            
+            <div class='item -normal -horizontal'-speed="2">
+                <img class='image' src='./gallery photos/11.webp' loading="lazy" alt=".." class="lazyload">
+            </div>
+            <div class='item -normal -horizontal'-speed="1">
+                <img class='image' src='./gallery photos/12.webp' loading="lazy" alt=".." class="lazyload">
+            </div>
+            <div class='item -small -horizontal'-speed="4">
+                <img class='image' src='./gallery photos/13.webp' loading="lazy" alt=".." class="lazyload">
+            </div>
+            <div class='item -big'-speed="3">
+                <img class='image' src='./gallery photos/14.webp' loading="lazy" alt=".." class="lazyload">
+            </div>
+            <div class='item -normal -horizontal'-speed="2">
+                <img class='image' src='./gallery photos/15.webp' loading="lazy" alt=".." class="lazyload">
+            </div>
+            <div class='item -small -horizontal'-speed="4">
+                <img class='image' src='./gallery photos//16.webp' loading="lazy" alt=".." class="lazyload">
+            </div>
+            <div class='item -big'-speed="2">
+                <img class='image' src='./gallery photos/17.webp' loading="lazy" alt=".." class="lazyload">
+            </div>
+            <div class='item -normal -horizontal'-speed="1">
+                <img class='image' src='./gallery photos/18.webp' loading="lazy" alt=".." class="lazyload">
+            </div>
+            <div class='item -small -horizontal'-speed="3">
+                <img class='image' src='./gallery photos/19.webp' loading="lazy" alt=".." class="lazyload">
+            </div>
+            <div class='item -normal'-speed="1">
+                <img class='image' src='./gallery photos/20.webp' loading="lazy" alt=".." class="lazyload">
+            </div>
+        </div>
+    </div>
+    
+    <!-- Masonry Grid con carga infinita (sin Locomotive) -->
+    <div class="gallery-grid" id="galleryGrid" aria-label="Galería tipo Pinterest"></div>
+    <div id="infiniteSentinel" aria-hidden="true"></div>
+
+    <!-- Lightbox -->
+    <div id="lightbox" aria-hidden="true" hidden>
+      <button class="lb-close" aria-label="Cerrar">×</button>
+      <img id="lbImage" alt="Imagen de la galería">
+      <button class="lb-prev" aria-label="Anterior">‹</button>
+      <button class="lb-next" aria-label="Siguiente">›</button>
+    </div>
+    </section>
+    <script>
+        if ("loading" in HTMLImageElement.prototype) {
+          // Si el navegador soporta lazy-load, tomamos todas las imágenes que tienen la clase
+          // `lazyload`, obtenemos el valor de su atributo `data-src` y lo inyectamos en el `src`.
+          const images = document.querySelectorAll("img.lazyload");
+          images.forEach((img) => {
+            img.src = img.dataset.src;
+          });
+        } else {
+          // Importamos dinámicamente la libreria `lazysizes`
+          let script = document.createElement("script");
+          script.async = true;
+          script.src =
+            "https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.2.0/lazysizes.min.js";
+          document.body.appendChild(script);
+        }
+      </script>
+
+<script src="./responsive_nav.js"></script>
+    <script defer src="./js/mobile-gallery.js"></script>
+</body>
+</html>

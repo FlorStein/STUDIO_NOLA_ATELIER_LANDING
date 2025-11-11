@@ -1,0 +1,971 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="description" content="diseños por STUDIO NOLA ATELIER, fotografía, diseño web, branding.">
+    <title>STUDIO NOLA</title>
+    <link rel="stylesheet" href="./index/css/index.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>  
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./index/css/app.css">
+    <link rel="stylesheet" href="./index/css/text.css">
+    <link rel="stylesheet" href="./index/css/divider2.css">  
+    <link rel="stylesheet" href="./index/css/pricing.css">
+    <link rel="stylesheet" href="./index/css/mediaQ.css">
+    <link rel="stylesheet" href="./index/css/moreInfo.css">
+    <link rel="stylesheet" href="./index/css/hamburger.css">
+    <link rel="stylesheet" href="./index/css/footer-responsive.css">
+    <script defer src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script defer src="./index/js/hamburger.js"></script>
+    <script defer src="./index/js/mobile-nav.js"></script>
+    <script defer src="./index/js/app.js"></script>
+    <script defer src="./index/js/text.js"></script>   
+    <script defer src="./index/js/pricing.js"></script>
+    <script defer src="./index/js/dividerApp.js"></script>
+    <script defer src="./index/js/moreInfo.js"></script>
+    
+    
+
+
+  <link rel="stylesheet" href="./patches.css">
+
+<!-- btn-mas-info adaptive styles -->
+<style>
+/* Button inherits typography and color from its card */
+.btn-mas-info{
+  --btn-accent: var(--accent, currentColor);
+  --btn-contrast: var(--btn-contrast, #111);
+  display:inline-flex;
+  align-items:center;
+  gap:.5rem;
+  margin-top:.85rem;
+  padding:.6rem 1.05rem;
+  border:1.75px solid var(--btn-accent);
+  border-radius:999px;
+  font: inherit;
+  font-weight:700;
+  letter-spacing:.02em;
+  color: var(--btn-accent);
+  background: transparent;
+  text-decoration:none;
+  line-height:1;
+  transition: transform .2s ease, background-color .25s ease, color .25s ease, opacity .2s ease, border-color .25s ease;
+}
+.btn-mas-info:hover{ 
+  transform: translateY(-1.5px);
+  text-decoration: underline;
+  background-color: transparent;
+  color: currentColor;
+  border-color: currentColor;
+}
+.btn-mas-info:active{ 
+  transform: translateY(0);
+  background-color: transparent;
+  color: currentColor;
+}
+.btn-mas-info:focus-visible{
+  outline: 2px solid var(--btn-accent);
+  outline-offset: 2px;
+  border-color: var(--btn-accent);
+}
+/* Optional arrow glyph built with CSS, no icon files */
+.btn-mas-info::after{
+  content: "›";
+  transform: translateY(-.5px);
+  transition: transform .2s ease;
+}
+.btn-mas-info:hover::after{ transform: translate(2px, -0.5px); }
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .btn-mas-info,
+  .btn-mas-info::after{
+    transition: none;
+  }
+}
+</style>
+
+  <link rel="stylesheet" href="./index/css/mobile-nav.css">
+</head>
+
+<body class="body" id="body">
+    <nav id="port" class="00 nav">
+        <img src="./index/images/studio nola nav.svg" alt="logo studio nola" id="logo">
+        
+        <!-- Botón hamburguesa -->
+        <button class="hamburger" id="hamburger" aria-label="Menú">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+        
+        <ul class="ul" id="navMenu">
+            <li class="nav-li">
+                <a href="#header" class="nav-link">Home</a></li>
+            <li class="nav-li"><a href="#title2" class="nav-link">Qué hacemos?</a></li>
+            <!-- <li class="nav-li"><a href="#pricing2">Nosotros</a></li> -->
+            <li class="nav-li"><a href="./index/gallery.html" onclick="nav()" class="nav-link" target="_self">Gallery </a></li>
+            <li class="nav-li"><a href="#mas-info" class="nav-link">Servicios</a></li>
+            <li class="nav-li"><a href="#contacto" class="nav-link">Contacto</a></li>   
+        </ul>
+    </nav>
+<!-- MOBILE-ONLY NAV (added) -->
+<nav id="mobile-nav" class="mobile-nav" aria-label="Primary">
+  <div class="mnav-bar">
+    <button class="mnav-toggle" id="mnavToggle" aria-label="Abrir menú" aria-controls="mnavPanel" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <a class="mnav-logo" href="#header" aria-label="Studio Nola - home">
+      <img src="./index/images/studio nola nav.svg" alt="Studio Nola"/>
+    </a>
+  </div>
+
+  <div class="mnav-panel" id="mnavPanel" hidden>
+    <nav class="mnav-drawer" aria-label="Mobile menu">
+      <ul class="mnav-list">
+        <li><a href="#header" class="mnav-link">Home</a></li>
+        <li><a href="#divisor" class="mnav-link">Qué hacemos?</a></li>
+        <li><a href="./index/gallery.html" class="mnav-link" target="_self">Gallery</a></li>
+        <li><a href="#mas-info" class="mnav-link">Servicios</a></li>
+        <li><a href="#contacto" class="mnav-link">Contacto</a></li>
+      </ul>
+    </nav>
+  </div>
+</nav>
+    <div id="cursor"></div>
+    <div id="header">
+        <div id="hero">
+            <div id="since">
+                <img src="./index/backgrounds/Line 8.svg" alt="line" class="sinceLine">
+                <p id="since-p">Since 2022</p>
+                <img src="./index/backgrounds/Line 8.svg" alt="line" class="sinceLine">
+            </div>
+          <p class="p" id="hero__p">ORIGINAL IN DIGITAL</p>
+        </div>
+        <div>
+            <h1 id="h1"></h1>
+            <p id="p">CREATIVES WHO DESIGN AND BUILD UNIQUE BRANDS, WEBSITES AND DIGITAL SOLUTIONS.</p>
+        </div>
+    </div>    
+        <div id="divisor" class="bgr-1">
+            <div class="vector-divider divider1" id="divisor-link"></div>
+                <h1 id="title2"></h1>
+                <div class="vector-divider divider2" id="divider">  
+                    <div id="div-title2">
+                        <div id="servicios-div">
+                            <div class="accordion-div" onclick="bgr00()">
+                                <div class="hidden-cartel" id="cartel0">VISUAL CONTENT</div>
+                                <div class="services" id="bgr0">
+                                      <div class="info" id="info0">
+                                          <p class="p-info" id="pinfo0">
+                                            Servicio fotográfico profesional adaptado a tu marca. Contenido visual coherente para redes, catálogos y campañas.
+                                          </p>
+      <a href="#mas-info" data-mi="digital">Más info</a>
+
+                                          
+                                          <!-- <div class="div-dblClick">Doble Click
+                                            <svg class="svg-row" xmlns="http://www.w3.org/2000/svg" class='svg'><path d="M21 11H6.414l5.293-5.293-1.414-1.414L2.586 12l7.707 7.707 1.414-1.414L6.414 13H21z"/></svg>  
+                                          </div>   -->
+                                        
+                                      </div>
+                                    <div class="card" id="card0">Visual Content</div>  
+                                </div>
+                            </div>
+                            <div class="accordion-div" onclick="bgr11()">
+                                <div class="hidden-cartel" id="cartel1">CREATIVE DIRECTION</div>
+                                <div class="services" id="bgr1">
+                                    <div class="info" id="info1">
+                                        <p class="p-info" id="pinfo1">
+                                            Dirección de arte y producción integral: concepto, estilismo, equipo y locaciones para material que potencie tu marca.
+                                        </p>
+      <a href="#mas-info" data-mi="branding">Más info</a>
+
+                                        <!-- <div class="div-dblClick">Doble Click
+                                          <svg class="svg-row" xmlns="http://www.w3.org/2000/svg" class='svg'><path d="M21 11H6.414l5.293-5.293-1.414-1.414L2.586 12l7.707 7.707 1.414-1.414L6.414 13H21z"/></svg>  
+                                        </div> -->
+                                    </div>
+                                    <div class="card" id="card1">Creative Direction</div>
+                                </div>
+                            </div>
+                            <div class="accordion-div" onclick="bgr22()">
+                                <div class="hidden-cartel" id="cartel2">BRAND COACHING</div>
+                                <div class="services" id="bgr2">
+                                    <div class="info" id="info2">
+                                        <p class="p-info" id="pinfo2">
+                                            Acompañamiento y formación para que mantengas una comunicación visual profesional y consistente.
+                                        </p>
+      <a href="#mas-info" data-mi="branding">Más info</a>
+
+                                        
+                                        <!-- <div class="div-dblClick">Doble Click
+                                            <svg class="svg-row" xmlns="http://www.w3.org/2000/svg" class='svg'><path d="M21 11H6.414l5.293-5.293-1.414-1.414L2.586 12l7.707 7.707 1.414-1.414L6.414 13H21z"/></svg>  
+                                        </div>    -->
+                                        
+                                      </div>
+                                    <div class="card" id="card2">Brand Coaching</div>
+                                </div>
+                            </div>
+                            <div class="accordion-div" onclick="bgr33()">
+                                <div class="hidden-cartel" id="cartel3">AD CAMPAIGNS</div>
+                                <div class="services" id="bgr3">
+                                    <div class="info" id="info3">
+                                        <p class="p-info" id="pinfo3">
+                                            Campañas creativas orientadas a conversión y posicionamiento en medios digitales y redes.
+                                        </p>
+      <a href="#mas-info" data-mi="digital">Más info</a>
+
+                                        
+                                        <!-- <div class="div-dblClick">Doble Click
+                                          <svg class="svg-row" xmlns="http://www.w3.org/2000/svg" class='svg'><path d="M21 11H6.414l5.293-5.293-1.414-1.414L2.586 12l7.707 7.707 1.414-1.414L6.414 13H21z"/></svg>  
+                                        </div>    -->
+                                        
+                                      </div>
+                                    <div class="card" id="card3">Ad Campaigns</div>
+                                </div>
+                            </div>
+                            <div class="accordion-div" onclick="bgr44()">
+                                <div class="hidden-cartel" id="cartel4">SOCIAL STRATEGY</div>
+                                <div class="services" id="bgr4">
+                                    <div class="info" id="info4">
+                                        <p class="p-info" id="pinfo4">
+                                            Estrategia, calendario y diseño de contenidos para crecer y medir resultados en redes sociales.
+                                        </p>
+      <a href="#mas-info" data-mi="digital">Más info</a>
+
+                                        
+                                        <!-- <div class="div-dblClick">Doble Click
+                                          <svg class="svg-row" xmlns="http://www.w3.org/2000/svg" class='svg'><path d="M21 11H6.414l5.293-5.293-1.414-1.414L2.586 12l7.707 7.707 1.414-1.414L6.414 13H21z"/></svg>  
+                                        </div>    -->
+                                        
+                                    </div>
+                                    <div class="card" id="card4">Social Strategy</div>
+                                </div>
+                            </div>
+                            <div class="accordion-div" onclick="bgr55()">
+                                <div class="hidden-cartel" id="cartel5">IDENTITY DESIGN</div>
+                                    <div class="services" id="bgr5">
+                                    <div class="info" id="info5">
+                                        <p class="p-info" id="pinfo5">
+                                            Diseño y desarrollo de identidad visual: sistema de marca, lineamientos y aplicaciones clave.
+                                        </p>
+      <a href="#mas-info" data-mi="branding">Más info</a>
+
+                                        
+                                        <!-- <div class="div-dblClick">Doble Click
+                                          <svg class="svg-row" xmlns="http://www.w3.org/2000/svg" class='svg'><path d="M21 11H6.414l5.293-5.293-1.414-1.414L2.586 12l7.707 7.707 1.414-1.414L6.414 13H21z"/></svg>  
+                                        </div>   -->
+                                        
+                                      </div>
+                                    <div class="card" id="card5">Identity Design</div>
+                                    
+                                </div>
+                            </div> 
+                            <div class="accordion-div" onclick="bgr66()">
+                                <div class="hidden-cartel" id="cartel6">DIGITAL DESIGN</div>
+                                    <div class="services" id="bgr6">
+                                    <div class="info" id="info6">
+                                        <p class="p-info" id="pinfo6">
+                                            Diseño web y de interfaces centrado en usabilidad, estética y coherencia con tu marca. 
+                                        </p>
+      <a href="#mas-info" data-mi="web">Más info</a>
+
+                                        <!-- <button id="row6"><img src="./index/images/bx-arrow-back.svg" alt="" class="svg-row"></button>
+                                        <div class="div-dblClick">Doble Click
+                                          <svg class="svg-row" xmlns="http://www.w3.org/2000/svg" class='svg'><path d="M21 11H6.414l5.293-5.293-1.414-1.414L2.586 12l7.707 7.707 1.414-1.414L6.414 13H21z"/></svg>  
+                                        </div> -->
+                                         
+                                    </div>
+                                    <div class="card" id="card6">Digital Design</div>
+                                    
+                                </div>
+                            </div>     
+                        </div>
+                    </div>
+                </div>
+        </div>
+    <!--
+  SECCIÓN "MAS INFO" – reemplazo dinámico sin tablas
+  (Insertado en lugar de #pricing)
+-->
+<section id="mas-info" class="section nola-theme">
+  <div class="mi-container">
+    <header class="mi-header">
+        <h2 class="mi-title">SERVICIOS</h2>
+      <p class="mi-sub">Elegí una categoría y mirá qué incluye cada nivel de complejidad.</p>
+
+      <div class="mi-tabs" role="tablist" aria-label="Categorías de servicios">
+        <button class="mi-tab is-active" role="tab" aria-selected="true" aria-controls="tab-web" id="tab-web-btn">Diseño Web</button>
+        <button class="mi-tab" role="tab" aria-selected="false" aria-controls="tab-branding" id="tab-branding-btn">Branding</button>
+        <button class="mi-tab" role="tab" aria-selected="false" aria-controls="tab-digital" id="tab-digital-btn">Marketing Digital</button>
+      </div>
+    </header>
+
+    <div id="tab-web" class="mi-panel is-active" role="tabpanel" aria-labelledby="tab-web-btn" tabindex="0">
+      <div class="mi-grid">
+        <article class="mi-card reveal-up" aria-labelledby="web-simple-title">
+          <div class="mi-card-head">
+            <div class="mi-badge">Simple</div>
+            <h3 id="web-simple-title" class="mi-card-title">Diseño Web Simple</h3>
+            <p class="mi-card-desc">Landing de 1–3 secciones. Ideal para presencia rápida y clara.</p>
+            <div class="mi-price"><span class="mi-currency">USD</span><span class="mi-amount">450</span><span class="mi-note">(desde)</span></div>
+          </div>
+          <ul class="mi-list"><li>Diseño responsive</li><li>Hasta 3 secciones (Hero, Servicios, Contacto)</li><li>Optimización básica SEO (metatags, títulos)</li><li>Integración WhatsApp / Email</li></ul>
+          <details class="mi-accordion"><summary>Ver más detalles</summary><div class="mi-accordion-body"><ul><li>Entrega en 7–10 días</li><li>1 ronda de ajustes incluida</li><li>Hosting/Dominio no incluidos</li></ul></div></details>
+          <div class="mi-cta"><a class="mi-button" href="https://wa.me/541163301998" target="_blank" rel="noopener">Consultar</a></div>
+        </article>
+
+        <article class="mi-card reveal-up is-featured" aria-labelledby="web-inter-title">
+          <div class="mi-card-head">
+            <div class="mi-badge">Recomendado</div>
+            <h3 id="web-inter-title" class="mi-card-title">Diseño Web Intermedio</h3>
+            <p class="mi-card-desc">Site de 4–6 secciones, más componentes y optimizaciones.</p>
+            <div class="mi-price"><span class="mi-currency">USD</span><span class="mi-amount">900</span><span class="mi-note">(desde)</span></div>
+          </div>
+          <ul class="mi-list"><li>Todo lo del plan Simple</li><li>Hasta 6 secciones + Blog básico</li><li>Animaciones suaves y microinteracciones</li><li>Optimización performance (imágenes, lazyload)</li></ul>
+          <details class="mi-accordion"><summary>Ver más detalles</summary><div class="mi-accordion-body"><ul><li>Entrega en 2–3 semanas</li><li>2 rondas de ajustes incluidas</li><li>Integración con Analytics y pixel</li></ul></div></details>
+          <div class="mi-cta"><a class="mi-button" href="https://wa.me/541163301998" target="_blank" rel="noopener">Reservar</a></div>
+        </article>
+
+        <article class="mi-card reveal-up" aria-labelledby="web-adv-title">
+          <div class="mi-card-head">
+            <div class="mi-badge">Avanzado</div>
+            <h3 id="web-adv-title" class="mi-card-title">Diseño Web Avanzado</h3>
+            <p class="mi-card-desc">Sitio con funcionalidades personalizadas y CMS.</p>
+            <div class="mi-price"><span class="mi-currency">USD</span><span class="mi-amount">1800</span><span class="mi-note">(desde)</span></div>
+          </div>
+          <ul class="mi-list"><li>Todo lo del plan Intermedio</li><li>CMS (WordPress/Headless) o panel a medida</li><li>Secciones dinámicas, formularios avanzados</li><li>Integraciones a terceros (APIs, pagos, etc.)</li></ul>
+          <details class="mi-accordion"><summary>Ver más detalles</summary><div class="mi-accordion-body"><ul><li>Entrega desde 4 semanas</li><li>3 rondas de ajustes incluidas</li><li>Soporte y mejoras opcionales</li></ul></div></details>
+          <div class="mi-cta"><a class="mi-button" href="https://wa.me/541163301998" target="_blank" rel="noopener">Agendar llamada</a></div>
+        </article>
+      </div>
+    </div>
+
+    <div id="tab-branding" class="mi-panel" role="tabpanel" aria-labelledby="tab-branding-btn" tabindex="0" hidden>
+      <div class="mi-grid">
+        <article class="mi-card reveal-up" aria-labelledby="br-basic-title">
+          <div class="mi-card-head">
+            <div class="mi-badge">Kit Inicial</div>
+            <h3 id="br-basic-title" class="mi-card-title">Branding Esencial</h3>
+            <p class="mi-card-desc">Logo + paleta + tipografías + guía breve.</p>
+            <div class="mi-price"><span class="mi-currency">USD</span><span class="mi-amount">600</span><span class="mi-note">(desde)</span></div>
+          </div>
+          <ul class="mi-list"><li>2–3 propuestas de logo</li><li>Guía rápida de uso</li><li>Aplicaciones básicas (RRSS, favicon)</li></ul>
+          <details class="mi-accordion"><summary>Ver más detalles</summary><div class="mi-accordion-body"><ul><li>Entrega 2–3 semanas</li><li>2 rondas de ajustes</li></ul></div></details>
+          <div class="mi-cta"><a class="mi-button" href="https://wa.me/541163301998" target="_blank" rel="noopener">Consultar</a></div>
+        </article>
+
+        <article class="mi-card reveal-up is-featured" aria-labelledby="br-pro-title">
+          <div class="mi-card-head">
+            <div class="mi-badge">Pro</div>
+            <h3 id="br-pro-title" class="mi-card-title">Identidad de Marca</h3>
+            <p class="mi-card-desc">Sistema completo: logo, usos, lockups, tono y aplicaciones.</p>
+            <div class="mi-price"><span class="mi-currency">USD</span><span class="mi-amount">1200</span><span class="mi-note">(desde)</span></div>
+          </div>
+          <ul class="mi-list"><li>Manual de marca</li><li>Kit de plantillas (RRSS, presentaciones)</li><li>Mockups y archivos editables</li></ul>
+          <details class="mi-accordion"><summary>Ver más detalles</summary><div class="mi-accordion-body"><ul><li>Entrega 3–4 semanas</li><li>3 rondas de ajustes</li></ul></div></details>
+          <div class="mi-cta"><a class="mi-button" href="https://wa.me/541163301998" target="_blank" rel="noopener">Reservar</a></div>
+        </article>
+
+        <article class="mi-card reveal-up" aria-labelledby="br-adv-title">
+          <div class="mi-card-head">
+            <div class="mi-badge">Avanzado</div>
+            <h3 id="br-adv-title" class="mi-card-title">Rebranding Estratégico</h3>
+            <p class="mi-card-desc">Investigación, auditoría y evolución de marca 360°.</p>
+            <div class="mi-price"><span class="mi-currency">USD</span><span class="mi-amount">2400</span><span class="mi-note">(desde)</span></div>
+          </div>
+          <ul class="mi-list"><li>Research, benchmark y posicionamiento</li><li>Arquitectura de marca</li><li>Implementación multicanal</li></ul>
+          <details class="mi-accordion"><summary>Ver más detalles</summary><div class="mi-accordion-body"><ul><li>Proyecto 6–8 semanas</li><li>Workshops con stakeholders</li></ul></div></details>
+          <div class="mi-cta"><a class="mi-button" href="https://wa.me/541163301998" target="_blank" rel="noopener">Agendar llamada</a></div>
+        </article>
+      </div>
+    </div>
+
+    <div id="tab-digital" class="mi-panel" role="tabpanel" aria-labelledby="tab-digital-btn" tabindex="0" hidden>
+      <div class="mi-grid">
+        <article class="mi-card reveal-up" aria-labelledby="mk-basic-title">
+          <div class="mi-card-head">
+            <div class="mi-badge">Starter</div>
+            <h3 id="mk-basic-title" class="mi-card-title">Gestión de RRSS</h3>
+            <p class="mi-card-desc">Calendario, redacción y diseño de posts mensuales.</p>
+            <div class="mi-price"><span class="mi-currency">USD</span><span class="mi-amount">350</span><span class="mi-note">/mes</span></div>
+          </div>
+          <ul class="mi-list"><li>8–12 piezas/mes</li><li>Copys y hashtags</li><li>Métricas básicas</li></ul>
+          <details class="mi-accordion"><summary>Ver más detalles</summary><div class="mi-accordion-body"><ul><li>Reunión de kick-off</li><li>Tablero compartido</li></ul></div></details>
+          <div class="mi-cta"><a class="mi-button" href="https://wa.me/541163301998" target="_blank" rel="noopener">Consultar</a></div>
+        </article>
+
+        <article class="mi-card reveal-up is-featured" aria-labelledby="mk-ads-title">
+          <div class="mi-card-head">
+            <div class="mi-badge">Performance</div>
+            <h3 id="mk-ads-title" class="mi-card-title">Campañas Ads</h3>
+            <p class="mi-card-desc">Set up, optimización y reportes en Meta/Google.</p>
+            <div class="mi-price"><span class="mi-currency">USD</span><span class="mi-amount">500</span><span class="mi-note">/mes</span></div>
+          </div>
+          <ul class="mi-list"><li>Estrategia de audiencias</li><li>Creatividades A/B</li><li>Reportes de rendimiento</li></ul>
+          <details class="mi-accordion"><summary>Ver más detalles</summary><div class="mi-accordion-body"><ul><li>Optimización semanal</li><li>Reunión mensual</li></ul></div></details>
+          <div class="mi-cta"><a class="mi-button" href="https://wa.me/541163301998" target="_blank" rel="noopener">Reservar</a></div>
+        </article>
+
+        <article class="mi-card reveal-up" aria-labelledby="mk-adv-title">
+          <div class="mi-card-head">
+            <div class="mi-badge">Pro</div>
+            <h3 id="mk-adv-title" class="mi-card-title">Automatizaciones & Email</h3>
+            <p class="mi-card-desc">Flujos, segmentación y analítica de conversiones.</p>
+            <div class="mi-price"><span class="mi-currency">USD</span><span class="mi-amount">800</span><span class="mi-note">/mes</span></div>
+          </div>
+          <ul class="mi-list"><li>Flujos automáticos (onboarding, carritos)</li><li>Integración con CRM</li><li>Dashboards KPI</li></ul>
+          <details class="mi-accordion"><summary>Ver más detalles</summary><div class="mi-accordion-body"><ul><li>Kick-off + roadmap</li><li>Soporte priorizado</li></ul></div></details>
+          <div class="mi-cta"><a class="mi-button" href="https://wa.me/541163301998" target="_blank" rel="noopener">Agendar llamada</a></div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="mi-ladder" class="section nola-theme">
+  <div class="mi-container">
+    <header class="mi-header">
+      <h2 class="mi-title">EvoluciOn del Servicio</h2>
+      <p class="mi-sub">Escalá según tu necesidad: desde un sitio simple hasta un proyecto avanzado con integraciones.</p>
+    </header>
+    <ol class="ladder" aria-label="Escalera de niveles de servicio">
+      <li class="ladder-step"><div class="ladder-pin"></div><div class="ladder-card reveal-up"><h3 class="ladder-title">Nivel 1 · Diseño Web Simple</h3><p class="ladder-desc">Landing 1–3 secciones, SEO básico y contacto.</p><ul class="ladder-list"><li>Diseño responsive</li><li>Hasta 3 secciones</li><li>Integración WhatsApp / Email</li></ul><div class="ladder-meta"><span class="price">USD 450</span><span class="note">· desde</span></div><a class="mi-button" href="https://wa.me/541163301998" target="_blank" rel="noopener">Elegir Nivel 1</a></div></li>
+      <li class="ladder-step"><div class="ladder-pin"></div><div class="ladder-card reveal-up is-featured"><h3 class="ladder-title">Nivel 2 · Intermedio (Recomendado)</h3><p class="ladder-desc">Más secciones, blog básico y animaciones suaves.</p><ul class="ladder-list"><li>Hasta 6 secciones</li><li>Blog básico</li><li>Optimización de performance</li></ul><div class="ladder-meta"><span class="price">USD 900</span><span class="note">· desde</span></div><a class="mi-button" href="https://wa.me/541163301998" target="_blank" rel="noopener">Elegir Nivel 2</a></div></li>
+      <li class="ladder-step"><div class="ladder-pin"></div><div class="ladder-card reveal-up"><h3 class="ladder-title">Nivel 3 · Avanzado</h3><p class="ladder-desc">CMS o panel a medida, integraciones y secciones dinámicas.</p><ul class="ladder-list"><li>CMS (WordPress/Headless)</li><li>Integraciones (APIs, pagos)</li><li>Formularios avanzados</li></ul><div class="ladder-meta"><span class="price">USD 1800</span><span class="note">· desde</span></div><a class="mi-button" href="https://wa.me/541163301998" target="_blank" rel="noopener">Elegir Nivel 3</a></div></li>
+    </ol>
+  </div>
+</section>
+
+<section id="mi-timeline" class="section nola-theme">
+  <div class="mi-container">
+    <header class="mi-header">
+      <h2 class="mi-title">Como trabajamos</h2>
+      <p class="mi-sub">Un proceso claro de punta a punta, con tiempos estimados y entregables por fase.</p>
+    </header>
+    <ol class="timeline" aria-label="Línea temporal del proyecto">
+      <li class="tl-item"><div class="tl-marker"></div><div class="tl-card reveal-up"><header class="tl-head"><h3 class="tl-title">Kick‑off & Descubrimiento</h3><span class="tl-badge">Día 1</span></header><p class="tl-desc">Reunión inicial, objetivos, alcance, relevamiento de contenidos y referencias.</p><ul class="tl-list"><li>Briefing de marca y público</li><li>Mapa del sitio / alcance</li><li>Checklist de assets</li></ul></div></li>
+      <li class="tl-item"><div class="tl-marker"></div><div class="tl-card reveal-up"><header class="tl-head"><h3 class="tl-title">Wireframes & UX</h3><span class="tl-badge">Días 2–5</span></header><p class="tl-desc">Estructura de páginas, jerarquía de información y flujos clave.</p><ul class="tl-list"><li>Wireframes mobile/desktop</li><li>Feedback y ajuste</li></ul></div></li>
+      <li class="tl-item"><div class="tl-marker"></div><div class="tl-card reveal-up is-current"><header class="tl-head"><h3 class="tl-title">UI & Diseño Visual</h3><span class="tl-badge">Días 6–10</span></header><p class="tl-desc">Aplicación de la estética de tu marca: tipografías, paleta, componentes y microinteracciones.</p><ul class="tl-list"><li>Sistema de componentes</li><li>Prototipo navegable</li></ul></div></li>
+      <li class="tl-item"><div class="tl-marker"></div><div class="tl-card reveal-up"><header class="tl-head"><h3 class="tl-title">Desarrollo & Integraciones</h3><span class="tl-badge">Semanas 3–4</span></header><p class="tl-desc">Maquetación responsive, performance, SEO técnico e integraciones necesarias.</p><ul class="tl-list"><li>Optimización de imágenes</li><li>Integración Analytics / Pixel</li><li>Formularios y APIs</li></ul></div></li>
+      <li class="tl-item"><div class="tl-marker"></div><div class="tl-card reveal-up"><header class="tl-head"><h3 class="tl-title">Release & Soporte</h3><span class="tl-badge">Go‑live</span></header><p class="tl-desc">Publicación, monitoreo post‑lanzamiento y mejoras continuas.</p><ul class="tl-list"><li>Checklist de release</li><li>1–3 sprints de mejoras</li></ul></div></li>
+    </ol>
+  </div>
+</section>
+
+<style>
+html{ scroll-behavior:smooth }
+section.section{ scroll-margin-top:84px }
+.reveal-up{ opacity:0; transform:translateY(14px) } .reveal-up.is-visible{ opacity:1; transform:none; transition:opacity .5s ease, transform .5s ease }
+</style>
+
+<script>
+// Subnav activa + reveal + tabs (ligero)
+(function(){
+  const els = document.querySelectorAll('.reveal-up');
+  if('IntersectionObserver' in window){
+    const obs = new IntersectionObserver((es,ob)=>{ es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('is-visible'); ob.unobserve(e.target);} }); }, {threshold:.15, rootMargin:'0px 0px -10% 0px'});
+    els.forEach(el=>obs.observe(el));
+  } else { els.forEach(el=>el.classList.add('is-visible')); }
+
+  const root = document.getElementById('mas-info'); if(!root) return;
+  const tabs = root.querySelectorAll('.mi-tab'); const panels = root.querySelectorAll('.mi-panel');
+  const activate = i => { tabs.forEach((b,idx)=>{ const on = i===idx; b.classList.toggle('is-active',on); b.setAttribute('aria-selected',String(on)); panels[idx].toggleAttribute('hidden',!on); panels[idx].classList.toggle('is-active',on); }); };
+  tabs.forEach((btn,i)=>{ btn.addEventListener('click',()=>activate(i)); btn.addEventListener('keydown',e=>{ if(e.key==='ArrowRight'){ e.preventDefault(); const n=(i+1)%tabs.length; tabs[n].focus(); activate(n);} if(e.key==='ArrowLeft'){ e.preventDefault(); const p=(i-1+tabs.length)%tabs.length; tabs[p].focus(); activate(p);} }); });
+  if(location.hash){ const idx = Array.from(panels).findIndex(p=>('#'+p.id)===location.hash); if(idx>=0) activate(idx); }
+})();
+</script>
+
+    
+ 
+
+    <!-- <section id="section3"> -->
+        <!-- <div>
+            <h1>porfolio</h1>
+        </div>
+    </section>
+    <section id="section4">
+        <div>
+            <h1>Quiénes somos</h1>
+       </div> -->
+      <!--
+-->
+    <!--    -->
+
+
+  <!-- CONTACTO (final y unificado) -->
+<!--
+-->
+
+  <script src="./patches.js"></script>
+
+    <!-- === Site Footer === -->
+    
+    
+
+  
+  <!-- CONTACTO (antes del footer) -->
+  <section id="contacto" class="contacto-final" aria-labelledby="contacto-title">
+    <div class="contacto-wrap">
+      <h2 id="contacto-title" class="mi-title">Hablemos de tu proyecto</h2>
+      <p class="contacto-text mi-sub">Contanos qué necesitás y te respondemos en breve.</p>
+
+      <form id="contacto-form" class="contacto-form" novalidate>
+        <div class="row">
+          <label>
+            <span>Nombre</span>
+            <input type="text" name="nombre" autocomplete="name" required placeholder="Tu nombre" />
+          </label>
+          <label>
+            <span>Email</span>
+            <input type="email" name="email" autocomplete="email" required placeholder="tucorreo@ejemplo.com" />
+          </label>
+        </div>
+
+        <div class="row">
+          <label>
+            <span>Servicio</span>
+            <select name="servicio" required>
+              <option value="" disabled selected>Elegí una opción</option>
+              <option>Branding</option>
+              <option>Web design</option>
+              <option>Brand content</option>
+              <option>Asesoría</option>
+            </select>
+          </label>
+          <label>
+            <span>Presupuesto estimado</span>
+            <select name="presupuesto">
+              <option value="" selected>Prefiero no decir</option>
+              <option>Hasta USD 500</option>
+              <option>USD 500 – 1500</option>
+              <option>USD 1500 – 3000</option>
+              <option>+ USD 3000</option>
+            </select>
+          </label>
+        </div>
+
+        <label>
+          <span>Mensaje</span>
+          <textarea name="mensaje" rows="5" required placeholder="Contanos brevemente tu idea, tiempos y objetivos."></textarea>
+        </label>
+
+        <div class="form-actions">
+          <button type="submit" class="btn-enviar">Enviar</button>
+          <a id="cta-whatsapp" class="btn-wapp" href="#" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+        </div>
+
+        <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+
+<footer id="site-footer" class="footer" role="contentinfo" aria-label="Pie de página">
+    <div class="footer-wrap">
+      <div class="footer-brand">
+        <img src="./assets/logos/studio-nola-nav.svg" alt="Studio Nola" class="footer-logo" />
+        <p class="footer-tagline">Dirección creativa, branding y contenido.</p>
+      </div>
+
+      <nav class="footer-nav" aria-label="Enlaces">
+        <h3 class="footer-title">Navegación</h3>
+        <ul>
+          <li><a href="#body">Inicio</a></li>
+          <li><a href="#mas-info">Servicios</a></li>
+          <li><a href="#mas-info" data-mi="web">Web design</a></li>
+          <li><a href="#tab-branding" data-mi="branding">Branding</a></li>
+          <li><a href="#mas-info" data-mi="web">Precios</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer-contact">
+        <h3 class="footer-title">Contacto</h3>
+        <ul>
+          <li><a href="mailto:studionolaatelier@gmail.com">studionolaatelier@gmail.com</a></li>
+          <li><a href="tel:+541163301998">+54 11 6330 1998</a></li>
+          <li><a href="https://wa.me/541163301998" rel="nofollow noopener" target="_blank">WhatsApp</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© <span id="year-copy"></span> Studio Nola — Todos los derechos reservados.</p>
+    </div>
+    <script>
+      // año dinámico
+      document.addEventListener('DOMContentLoaded', () => {
+        var y = document.getElementById('year-copy');
+        if (y) y.textContent = new Date().getFullYear();
+      });
+    </script>
+  </footer>
+
+
+<script src="./responsive_nav.js"></script>
+
+
+<script>
+(function () {
+  const HEADER_OFFSET = 90;
+  const slug = s => (s||"").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-z0-9]+/g,"-").replace(/(^-|-$)/g,"");
+
+  function scrollToMasInfo(){
+    const el = document.querySelector('#mas-info');
+    if(!el) return;
+    const y = el.getBoundingClientRect().top + window.pageYOffset - HEADER_OFFSET;
+    window.scrollTo({ top: y, behavior: 'smooth' });
+  }
+
+  function activateTab(mi){
+    const root = document.querySelector('#mas-info');
+    if(!root) return;
+    const tabs = root.querySelectorAll('[role="tab"], .mi-tab, button[data-tab]');
+    const panels = root.querySelectorAll('[role="tabpanel"], .mi-tabpanel');
+    let matched = false;
+
+    tabs.forEach(tab => {
+      const byData = slug(tab.getAttribute('data-tab')) === mi;
+      const byCtrl = slug(tab.getAttribute('aria-controls')) === 'tab-' + mi || slug(tab.getAttribute('aria-controls')) === mi;
+      const byText = slug(tab.textContent) === mi;
+      if(byData || byCtrl || byText){
+        tabs.forEach(t => { t.setAttribute('aria-selected','false'); t.classList.remove('is-active'); t.tabIndex = -1; });
+        if(typeof tab.click === 'function') tab.click();
+        tab.setAttribute('aria-selected','true'); tab.classList.add('is-active'); tab.tabIndex = 0;
+        let panel = null;
+        const ac = tab.getAttribute('aria-controls');
+        if(ac) panel = root.querySelector('#' + ac);
+        if(!panel) panel = root.querySelector('[data-panel="'+mi+'"]');
+        if(!panel) panel = Array.from(panels).find(p => slug(p.id) === 'tab-' + mi || slug(p.id) === mi);
+        if(panel){
+          panels.forEach(p => { p.hidden = (p !== panel); p.classList.remove('is-active'); });
+          panel.hidden = false; panel.classList.add('is-active');
+        }
+        matched = true;
+      }
+    });
+    return matched;
+  }
+
+  function handle(mi){
+    activateTab(mi);
+    scrollToMasInfo();
+    try{
+      const url = new URL(window.location);
+      url.hash = '#mas-info'; url.searchParams.set('mi', mi);
+      history.replaceState(null, '', url);
+    }catch(e){}
+  }
+
+  document.addEventListener('click', (e) => {
+    const a = e.target.closest('a[data-mi]');
+    if(!a) return;
+    e.preventDefault();
+    handle(slug(a.getAttribute('data-mi')));
+  });
+
+  window.addEventListener('DOMContentLoaded', () => {
+    try{
+      const url = new URL(window.location);
+      const mi = url.searchParams.get('mi');
+      if((url.hash||'').includes('mas-info') && mi) handle(slug(mi));
+    }catch(e){}
+  });
+})();
+</script>
+
+
+<!-- btn-mas-info adaptive contrast -->
+<script>
+(function(){
+  function getLuminance(rgb){
+    // rgb: "rgb(r, g, b)" or "rgba(r, g, b, a)"
+    const m = rgb.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)/i);
+    if(!m) return 0.5;
+    const [r,g,b] = [parseInt(m[1],10), parseInt(m[2],10), parseInt(m[3],10)].map(v=>{
+      v/=255;
+      return v<=0.03928 ? v/12.92 : Math.pow((v+0.055)/1.055, 2.4);
+    });
+    return 0.2126*r + 0.7152*g + 0.0722*b;
+  }
+
+  function setButtonContrast(){
+    const btns = document.querySelectorAll('.btn-mas-info');
+    btns.forEach(btn => {
+      // Find closest card container to inherit its text color context
+      const card = btn.closest('.service-card, .card-servicio, .servicio, .card, article, .services, .accordion-div') || btn.parentElement;
+      const cs = window.getComputedStyle(card || btn);
+      const color = cs.color;
+      const lum = getLuminance(color);
+      // If the card text is dark, hover fill should be dark -> contrast text white
+      // If the card text is light, hover fill is light -> contrast text #111
+      const contrast = lum < 0.5 ? '#fff' : '#111';
+      btn.style.setProperty('--btn-contrast', contrast);
+      // Allow an accent via CSS var on the card; else leave currentColor logic
+      const accent = cs.getPropertyValue('--accent');
+      if(accent && accent.trim() !== ''){
+        btn.style.setProperty('--btn-accent', accent.trim());
+      }
+    });
+  }
+
+  // Run after layout
+  window.addEventListener('load', setButtonContrast);
+  // Recompute on resize/theme changes
+  window.addEventListener('resize', setButtonContrast);
+})();
+</script>
+
+<script>
+(function(){
+  const form = document.getElementById('contacto-form');
+  if(!form) return;
+  const status = document.getElementById('form-status');
+  const wapp = document.getElementById('cta-whatsapp');
+  const phone = '541163301998';
+
+  wapp.addEventListener('click', function(e){
+    e.preventDefault();
+    const data = Object.fromEntries(new FormData(form).entries());
+    const msg = `Hola, soy ${data.nombre||' '}, quiero consultar por ${data.servicio||'un servicio'}, presupuesto: ${data.presupuesto||'sin especificar'}, mensaje: ${data.mensaje||''}`;
+    const url = `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
+    window.open(url, '_blank', 'noopener');
+  });
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    const data = Object.fromEntries(new FormData(form).entries());
+    if(!data.nombre || !data.email || !data.mensaje || !data.servicio){
+      status.textContent = 'Completá los campos obligatorios.';
+      status.style.color = '#b00020';
+      return;
+    }
+    const subject = `[Contacto] ${data.servicio||'Consulta'} - ${data.nombre||''}`;
+    const body = `Nombre: ${data.nombre||''}%0AEmail: ${data.email||''}%0AServicio: ${data.servicio||''}%0APresupuesto: ${data.presupuesto||'sin especificar'}%0A---%0A${data.mensaje||''}`;
+    const mail = 'mailto:studionolaatelier@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + body;
+    window.location.href = mail;
+    status.textContent = 'Abriendo tu cliente de correo…';
+    status.style.color = '#2a203d';
+  });
+})();
+</script>
+
+<script>
+(function(){
+  const nav = document.querySelector('.mobile-nav') || document.querySelector('nav');
+  const hero = document.getElementById('port') || document.querySelector('[data-hero], header');
+  const panel = document.getElementById('mnavPanel');
+  const toggle = document.getElementById('mnavToggle');
+
+  document.querySelectorAll('nav a[href^="#"]').forEach(a => {
+    a.addEventListener('click', () => {
+      if (panel && panel.classList.contains('is-open')) {
+        panel.classList.remove('is-open');
+        if (toggle) toggle.setAttribute('aria-expanded','false');
+        document.body.classList.remove('no-scroll');
+      }
+    });
+  });
+
+  if (nav && hero && 'IntersectionObserver' in window){
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) nav.classList.add('is-hero');
+        else nav.classList.remove('is-hero');
+      });
+    }, {threshold: .3});
+    obs.observe(hero);
+  }
+
+  function offsetScrollTo(id){
+    const el = document.querySelector(id);
+    if (!el) return;
+    const y = el.getBoundingClientRect().top + window.scrollY - 80;
+    window.scrollTo({ top: y, behavior: 'smooth' });
+  }
+
+  window.addEventListener('load', () => {
+    if (window.location.hash) setTimeout(() => offsetScrollTo(window.location.hash), 0);
+  });
+
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click', (e)=>{
+      const id = a.getAttribute('href');
+      if (!id || id === '#') return;
+      if (!document.querySelector(id)) return;
+      e.preventDefault();
+      offsetScrollTo(id);
+      history.pushState(null, '', id);
+    });
+  });
+})();
+</script>
+
+
+<script>
+(function(){
+  const HEADER_OFFSET = 84; // adjust if nav height changes
+  // Smooth scroll for internal links with hashes
+  document.addEventListener('click', function(e){
+    const a = e.target.closest('a[href^="#"]');
+    if(!a) return;
+    const hash = a.getAttribute('href');
+    if(!hash || hash === '#') return;
+    const target = document.querySelector(hash);
+    if(!target) return;
+    e.preventDefault();
+    const top = target.getBoundingClientRect().top + window.pageYOffset - HEADER_OFFSET;
+    window.scrollTo({ top, behavior: 'smooth' });
+  }, {passive:false});
+
+  // Toggle mobile nav mode: violet on hero, glass when scrolled away
+  const hero = document.getElementById('hero');
+  const mnav = document.querySelector('.mobile-nav');
+  if(hero && mnav){
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting && entry.intersectionRatio > 0.2){
+          mnav.classList.add('is-hero');
+        } else {
+          mnav.classList.remove('is-hero');
+        }
+      });
+    }, {threshold:[0, .2, .6, 1]});
+    io.observe(hero);
+  }
+})();
+</script>
+
+<script>
+// Script específico para arreglar y asegurar que la navegación funcione correctamente
+(function() {
+    function fixAndInitNavigation() {
+        console.log('Arreglando y iniciando navegación...');
+        
+        // Buscar el enlace de contacto de múltiples formas
+        let contactLink = document.querySelector('a[href="#contacto"]') || 
+                         document.querySelector('.nav-link[aria-disabled="true"]') ||
+                         document.querySelector('.nav-li a:contains("Contacto")') ||
+                         Array.from(document.querySelectorAll('.nav-link')).find(link => 
+                             link.textContent.trim().toLowerCase() === 'contacto'
+                         );
+        
+        const contactSection = document.getElementById('contacto');
+        
+        if (contactLink) {
+            console.log('Enlace de contacto encontrado:', contactLink);
+            console.log('Atributos actuales:', {
+                href: contactLink.getAttribute('href'),
+                ariaDisabled: contactLink.getAttribute('aria-disabled'),
+                className: contactLink.className
+            });
+            
+            // ARREGLAR EL ENLACE
+            contactLink.setAttribute('href', '#contacto');
+            contactLink.removeAttribute('aria-disabled');
+            contactLink.classList.remove('is-disabled', 'disabled');
+            contactLink.style.pointerEvents = 'auto';
+            contactLink.style.cursor = 'pointer';
+            contactLink.style.opacity = '1';
+            
+            console.log('Enlace de contacto arreglado');
+            
+            if (contactSection) {
+                // Remover cualquier event listener existente
+                const newContactLink = contactLink.cloneNode(true);
+                contactLink.parentNode.replaceChild(newContactLink, contactLink);
+                
+                // Agregar nuevo event listener
+                newContactLink.addEventListener('click', function(e) {
+                    console.log('¡Clic en contacto funcionando!');
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    const rect = contactSection.getBoundingClientRect();
+                    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                    const targetPosition = rect.top + scrollTop - 100;
+                    
+                    console.log('Scrolling a posición:', targetPosition);
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                });
+                
+                console.log('Event listener agregado correctamente');
+            }
+        }
+        
+        // Arreglar todos los enlaces nav-link problemáticos
+        const allNavLinks = document.querySelectorAll('.nav-link');
+        console.log('Total enlaces nav-link:', allNavLinks.length);
+        
+        allNavLinks.forEach((link, index) => {
+            const text = link.textContent.trim();
+            console.log(`Enlace ${index + 1}: "${text}"`, {
+                href: link.getAttribute('href'),
+                ariaDisabled: link.getAttribute('aria-disabled'),
+                classes: link.className
+            });
+            
+            // Arreglar enlaces deshabilitados
+            if (link.getAttribute('aria-disabled') === 'true' || 
+                link.classList.contains('is-disabled') || 
+                link.classList.contains('disabled')) {
+                
+                // Determinar el href correcto basado en el texto
+                let correctHref = link.getAttribute('href');
+                if (!correctHref) {
+                    switch(text.toLowerCase()) {
+                        case 'contacto':
+                            correctHref = '#contacto';
+                            break;
+                        case 'home':
+                            correctHref = '#header';
+                            break;
+                        case 'servicios':
+                            correctHref = '#title2';
+                            break;
+                        case 'más info':
+                            correctHref = '#mas-info';
+                            break;
+                    }
+                }
+                
+                if (correctHref) {
+                    link.setAttribute('href', correctHref);
+                    link.removeAttribute('aria-disabled');
+                    link.classList.remove('is-disabled', 'disabled');
+                    link.style.pointerEvents = 'auto';
+                    link.style.cursor = 'pointer';
+                    link.style.opacity = '1';
+                    
+                    console.log(`Enlace "${text}" arreglado con href: ${correctHref}`);
+                }
+            }
+        });
+    }
+    
+    // Ejecutar múltiples veces para asegurar que se aplique
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', fixAndInitNavigation);
+    } else {
+        fixAndInitNavigation();
+    }
+    
+    window.addEventListener('load', fixAndInitNavigation);
+    
+    // También después de un pequeño delay para asegurar que otros scripts hayan terminado
+    setTimeout(fixAndInitNavigation, 1000);
+})();
+</script>
+
+</body>
+<!-- <a href="https://www.flaticon.es/iconos-gratis/ojo" title="ojo iconos">Ojo iconos creados por ibrandify - Flaticon</a> -->
+<!-- <a href="https://iconscout.com/3ds/diary" target="_blank">Diary 3D Illustration</a> by <a href="https://iconscout.com/contributors/iconscout">Iconscout Store</a> on <a href="https://iconscout.com">IconScout</a> -->
+</html>
