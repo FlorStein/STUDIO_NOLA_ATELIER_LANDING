@@ -478,6 +478,22 @@
 html{ scroll-behavior:smooth }
 section.section{ scroll-margin-top:84px }
 .reveal-up{ opacity:0; transform:translateY(14px) } .reveal-up.is-visible{ opacity:1; transform:none; transition:opacity .5s ease, transform .5s ease }
+
+/* Estilos para botones de tabs - matching mi-button style */
+.mi-tab {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.mi-tab:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.mi-tab:active {
+  transform: translateY(0);
+}
 </style>
 
 <script>
@@ -631,7 +647,6 @@ section.section{ scroll-margin-top:84px }
 
 
 <script src="./responsive_nav.js"></script>
-
 
 <script>
 (function () {
@@ -1070,6 +1085,49 @@ section.section{ scroll-margin-top:84px }
     // También después de un pequeño delay para asegurar que otros scripts hayan terminado
     setTimeout(fixAndInitNavigation, 1000);
 })();
+</script>
+
+<script>
+// Cursor tamaño intermedio en hover para tabs y botones - ejecutar cuando todo esté listo
+window.addEventListener('load', function() {
+  if(typeof jQuery !== 'undefined') {
+    console.log('Inicializando efectos de cursor...');
+    
+    // Tabs de servicios - tamaño mini (intermedio)
+    $('.mi-tab').on({
+      'mouseover': function() {
+        $('#cursor').addClass('mini');
+      },
+      'mouseout': function() {
+        $('#cursor').removeClass('mini');
+      }
+    });
+
+    // Botones mi-button - tamaño mini (intermedio)
+    $('.mi-button').on({
+      'mouseover': function() {
+        $('#cursor').addClass('mini');
+      },
+      'mouseout': function() {
+        $('#cursor').removeClass('mini');
+      }
+    });
+    
+    // Botones de formulario - tamaño mini (intermedio)
+    $('.btn-enviar, .btn-wapp').on({
+      'mouseover': function() {
+        $('#cursor').addClass('mini');
+      },
+      'mouseout': function() {
+        $('#cursor').removeClass('mini');
+      }
+    });
+    
+    console.log('Efectos de cursor aplicados a:', $('.mi-tab').length, 'tabs y', $('.mi-button').length, 'botones');
+  } else {
+    console.error('jQuery no está cargado');
+  }
+});
 </script>
 
 </body>
