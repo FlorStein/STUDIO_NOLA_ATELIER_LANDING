@@ -98,6 +98,41 @@
     transition: none;
   }
 }
+
+/* Language Toggle Button */
+.lang-toggle {
+  background: transparent;
+  border: 1.5px solid currentColor;
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: inherit;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+}
+
+.lang-toggle:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.lang-toggle.mobile {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.lang-current {
+  font-weight: 900;
+}
+
+.lang-alt {
+  opacity: 0.6;
+}
 </style>
 
   <link rel="stylesheet" href="./index/css/mobile-nav.css">
@@ -116,12 +151,17 @@
         
         <ul class="ul" id="navMenu">
             <li class="nav-li">
-                <a href="#header" class="nav-link">Home</a></li>
-            <li class="nav-li"><a href="#title2" class="nav-link">Qué hacemos?</a></li>
+                <a href="#header" class="nav-link" data-i18n="nav.home">Home</a></li>
+            <li class="nav-li"><a href="#title2" class="nav-link" data-i18n="nav.about">Qué hacemos?</a></li>
             <!-- <li class="nav-li"><a href="#pricing2">Nosotros</a></li> -->
             <li class="nav-li"><a href="./index/gallery.html" onclick="nav()" class="nav-link" target="_self">Gallery </a></li>
-            <li class="nav-li"><a href="#mas-info" class="nav-link">Servicios</a></li>
-            <li class="nav-li"><a href="#contacto" class="nav-link">Contacto</a></li>   
+            <li class="nav-li"><a href="#mas-info" class="nav-link" data-i18n="nav.services">Servicios</a></li>
+            <li class="nav-li"><a href="#contacto" class="nav-link" data-i18n="nav.contact">Contacto</a></li>
+            <li class="nav-li">
+                <button id="langToggle" class="lang-toggle" aria-label="Cambiar idioma">
+                    <span class="lang-current">ES</span>
+                </button>
+            </li>   
         </ul>
     </nav>
 <!-- MOBILE-ONLY NAV (added) -->
@@ -138,11 +178,16 @@
   <div class="mnav-panel" id="mnavPanel" hidden>
     <nav class="mnav-drawer" aria-label="Mobile menu">
       <ul class="mnav-list">
-        <li><a href="#header" class="mnav-link">Home</a></li>
-        <li><a href="#divisor" class="mnav-link">Qué hacemos?</a></li>
+        <li><a href="#header" class="mnav-link" data-i18n="nav.home">Home</a></li>
+        <li><a href="#divisor" class="mnav-link" data-i18n="nav.about">Qué hacemos?</a></li>
         <li><a href="./index/gallery.html" class="mnav-link" target="_self">Gallery</a></li>
-        <li><a href="#mas-info" class="mnav-link">Servicios</a></li>
-        <li><a href="#contacto" class="mnav-link">Contacto</a></li>
+        <li><a href="#mas-info" class="mnav-link" data-i18n="nav.services">Servicios</a></li>
+        <li><a href="#contacto" class="mnav-link" data-i18n="nav.contact">Contacto</a></li>
+        <li>
+          <button id="langToggleMobile" class="lang-toggle mobile" aria-label="Cambiar idioma">
+            <span class="lang-current">ES</span> / <span class="lang-alt">EN</span>
+          </button>
+        </li>
       </ul>
     </nav>
   </div>
@@ -173,10 +218,10 @@
                                 <div class="services" id="bgr0">
                                       <button class="close-btn" onclick="event.stopPropagation(); bgr00();" aria-label="Cerrar">×</button>
                                       <div class="info" id="info0">
-                                          <p class="p-info" id="pinfo0">
+                                          <p class="p-info" id="pinfo0" data-i18n="service.visual.desc">
                                             Servicio fotográfico profesional adaptado a tu marca. Contenido visual coherente para redes, catálogos y campañas.
                                           </p>
-      <a href="#mas-info" data-mi="digital" class="btn-mas-info-service">Más info</a>
+      <a href="#mas-info" data-mi="digital" class="btn-mas-info-service" data-i18n="service.button.moreinfo">Más info</a>
 
                                           
                                           <!-- <div class="div-dblClick">Doble Click
@@ -192,10 +237,10 @@
                                 <div class="services" id="bgr1">
                                     <button class="close-btn" onclick="event.stopPropagation(); bgr11();" aria-label="Cerrar">×</button>
                                     <div class="info" id="info1">
-                                        <p class="p-info" id="pinfo1">
+                                        <p class="p-info" id="pinfo1" data-i18n="service.creative.desc">
                                             Dirección de arte y producción integral: concepto, estilismo, equipo y locaciones para material que potencie tu marca.
                                         </p>
-      <a href="#mas-info" data-mi="branding" class="btn-mas-info-service">Más info</a>
+      <a href="#mas-info" data-mi="branding" class="btn-mas-info-service" data-i18n="service.button.moreinfo">Más info</a>
 
                                         <!-- <div class="div-dblClick">Doble Click
                                           <svg class="svg-row" xmlns="http://www.w3.org/2000/svg" class='svg'><path d="M21 11H6.414l5.293-5.293-1.414-1.414L2.586 12l7.707 7.707 1.414-1.414L6.414 13H21z"/></svg>  
@@ -209,10 +254,10 @@
                                 <div class="services" id="bgr2">
                                     <button class="close-btn" onclick="event.stopPropagation(); bgr22();" aria-label="Cerrar">×</button>
                                     <div class="info" id="info2">
-                                        <p class="p-info" id="pinfo2">
+                                        <p class="p-info" id="pinfo2" data-i18n="service.coaching.desc">
                                             Acompañamiento y formación para que mantengas una comunicación visual profesional y consistente.
                                         </p>
-      <a href="#mas-info" data-mi="branding" class="btn-mas-info-service">Más info</a>
+      <a href="#mas-info" data-mi="branding" class="btn-mas-info-service" data-i18n="service.button.moreinfo">Más info</a>
 
                                         
                                         <!-- <div class="div-dblClick">Doble Click
@@ -228,10 +273,10 @@
                                 <div class="services" id="bgr3">
                                     <button class="close-btn" onclick="event.stopPropagation(); bgr33();" aria-label="Cerrar">×</button>
                                     <div class="info" id="info3">
-                                        <p class="p-info" id="pinfo3">
+                                        <p class="p-info" id="pinfo3" data-i18n="service.campaigns.desc">
                                             Campañas creativas orientadas a conversión y posicionamiento en medios digitales y redes.
                                         </p>
-      <a href="#mas-info" data-mi="digital" class="btn-mas-info-service">Más info</a>
+      <a href="#mas-info" data-mi="digital" class="btn-mas-info-service" data-i18n="service.button.moreinfo">Más info</a>
 
                                         
                                         <!-- <div class="div-dblClick">Doble Click
@@ -247,10 +292,10 @@
                                 <div class="services" id="bgr4">
                                     <button class="close-btn" onclick="event.stopPropagation(); bgr44();" aria-label="Cerrar">×</button>
                                     <div class="info" id="info4">
-                                        <p class="p-info" id="pinfo4">
+                                        <p class="p-info" id="pinfo4" data-i18n="service.social.desc">
                                             Estrategia, calendario y diseño de contenidos para crecer y medir resultados en redes sociales.
                                         </p>
-      <a href="#mas-info" data-mi="digital" class="btn-mas-info-service">Más info</a>
+      <a href="#mas-info" data-mi="digital" class="btn-mas-info-service" data-i18n="service.button.moreinfo">Más info</a>
 
                                         
                                         <!-- <div class="div-dblClick">Doble Click
@@ -266,10 +311,10 @@
                                     <div class="services" id="bgr5">
                                     <button class="close-btn" onclick="event.stopPropagation(); bgr55();" aria-label="Cerrar">×</button>
                                     <div class="info" id="info5">
-                                        <p class="p-info" id="pinfo5">
+                                        <p class="p-info" id="pinfo5" data-i18n="service.identity.desc">
                                             Diseño y desarrollo de identidad visual: sistema de marca, lineamientos y aplicaciones clave.
                                         </p>
-      <a href="#mas-info" data-mi="branding" class="btn-mas-info-service">Más info</a>
+      <a href="#mas-info" data-mi="branding" class="btn-mas-info-service" data-i18n="service.button.moreinfo">Más info</a>
 
                                         
                                         <!-- <div class="div-dblClick">Doble Click
@@ -286,10 +331,10 @@
                                     <div class="services" id="bgr6">
                                     <button class="close-btn" onclick="event.stopPropagation(); bgr66();" aria-label="Cerrar">×</button>
                                     <div class="info" id="info6">
-                                        <p class="p-info" id="pinfo6">
+                                        <p class="p-info" id="pinfo6" data-i18n="service.digital.desc">
                                             Diseño web y de interfaces centrado en usabilidad, estética y coherencia con tu marca. 
                                         </p>
-      <a href="#mas-info" data-mi="web" class="btn-mas-info-service">Más info</a>
+      <a href="#mas-info" data-mi="web" class="btn-mas-info-service" data-i18n="service.button.moreinfo">Más info</a>
 
                                         <!-- <button id="row6"><img src="./index/images/bx-arrow-back.svg" alt="" class="svg-row"></button>
                                         <div class="div-dblClick">Doble Click
@@ -312,13 +357,13 @@
 <section id="mas-info" class="section nola-theme">
   <div class="mi-container">
     <header class="mi-header">
-        <h2 class="mi-title">SERVICIOS</h2>
-      <p class="mi-sub">Elegí una categoría y mirá qué incluye cada nivel de complejidad.</p>
+        <h2 class="mi-title" data-i18n="services.title">SERVICIOS</h2>
+      <p class="mi-sub" data-i18n="services.subtitle">Elegí una categoría y mirá qué incluye cada nivel de complejidad.</p>
 
       <div class="mi-tabs" role="tablist" aria-label="Categorías de servicios">
-        <button class="mi-tab is-active" role="tab" aria-selected="true" aria-controls="tab-web" id="tab-web-btn">Diseño Web</button>
-        <button class="mi-tab" role="tab" aria-selected="false" aria-controls="tab-branding" id="tab-branding-btn">Branding</button>
-        <button class="mi-tab" role="tab" aria-selected="false" aria-controls="tab-digital" id="tab-digital-btn">Marketing Digital</button>
+        <button class="mi-tab is-active" role="tab" aria-selected="true" aria-controls="tab-web" id="tab-web-btn" data-i18n="services.tab.web">Diseño Web</button>
+        <button class="mi-tab" role="tab" aria-selected="false" aria-controls="tab-branding" id="tab-branding-btn" data-i18n="services.tab.branding">Branding</button>
+        <button class="mi-tab" role="tab" aria-selected="false" aria-controls="tab-digital" id="tab-digital-btn" data-i18n="services.tab.digital">Marketing Digital</button>
       </div>
     </header>
 
@@ -326,38 +371,38 @@
       <div class="mi-grid">
         <article class="mi-card reveal-up" aria-labelledby="web-simple-title">
           <div class="mi-card-head">
-            <div class="mi-badge">Simple</div>
-            <h3 id="web-simple-title" class="mi-card-title">Diseño Web Simple</h3>
-            <p class="mi-card-desc">Landing de 1–3 secciones. Ideal para presencia rápida y clara.</p>
-            <div class="mi-price"><span class="mi-currency">USD</span><span class="mi-amount">280</span><span class="mi-note">(desde)</span></div>
+            <div class="mi-badge" data-i18n="web.simple.badge">Simple</div>
+            <h3 id="web-simple-title" class="mi-card-title" data-i18n="web.simple.title">Diseño Web Simple</h3>
+            <p class="mi-card-desc" data-i18n="web.simple.desc">Landing de 1–3 secciones. Ideal para presencia rápida y clara.</p>
+            <div class="mi-price"><span class="mi-currency">USD</span><span class="mi-amount">280</span><span class="mi-note" data-i18n="common.from">(desde)</span></div>
           </div>
-          <ul class="mi-list"><li>Diseño responsive</li><li>Hasta 3 secciones (Hero, Servicios, Contacto)</li><li>Optimización básica SEO (metatags, títulos)</li><li>Integración WhatsApp / Email</li></ul>
-          <details class="mi-accordion"><summary>Ver más detalles</summary><div class="mi-accordion-body"><ul><li>Entrega en 7–10 días</li><li>1 ronda de ajustes incluida</li><li>Hosting/Dominio no incluidos</li></ul></div></details>
-          <div class="mi-cta"><a class="mi-button" href="https://wa.me/541163301998" target="_blank" rel="noopener">Consultar</a></div>
+          <ul class="mi-list"><li data-i18n="web.simple.list1">Diseño responsive</li><li data-i18n="web.simple.list2">Hasta 3 secciones (Hero, Servicios, Contacto)</li><li data-i18n="web.simple.list3">Optimización básica SEO (metatags, títulos)</li><li data-i18n="web.simple.list4">Integración WhatsApp / Email</li></ul>
+          <details class="mi-accordion"><summary data-i18n="web.simple.details">Ver más detalles</summary><div class="mi-accordion-body"><ul><li data-i18n="web.simple.detail1">Entrega en 7–10 días</li><li data-i18n="web.simple.detail2">1 ronda de ajustes incluida</li><li data-i18n="web.simple.detail3">Hosting/Dominio no incluidos</li></ul></div></details>
+          <div class="mi-cta"><a class="mi-button" href="https://wa.me/541163301998" target="_blank" rel="noopener" data-i18n="web.simple.button">Consultar</a></div>
         </article>
 
         <article class="mi-card reveal-up is-featured" aria-labelledby="web-inter-title">
           <div class="mi-card-head">
-            <div class="mi-badge">Recomendado</div>
-            <h3 id="web-inter-title" class="mi-card-title">Diseño Web Intermedio</h3>
-            <p class="mi-card-desc">Site de 4–6 secciones, más componentes y optimizaciones.</p>
-            <div class="mi-price"><span class="mi-currency">USD</span><span class="mi-amount">480</span><span class="mi-note">(desde)</span></div>
+            <div class="mi-badge" data-i18n="web.inter.badge">Recomendado</div>
+            <h3 id="web-inter-title" class="mi-card-title" data-i18n="web.inter.title">Diseño Web Intermedio</h3>
+            <p class="mi-card-desc" data-i18n="web.inter.desc">Site de 4–6 secciones, más componentes y optimizaciones.</p>
+            <div class="mi-price"><span class="mi-currency">USD</span><span class="mi-amount">480</span><span class="mi-note" data-i18n="common.from">(desde)</span></div>
           </div>
-          <ul class="mi-list"><li>Todo lo del plan Simple</li><li>Hasta 6 secciones + Blog básico</li><li>Animaciones suaves y microinteracciones</li><li>Optimización performance (imágenes, lazyload)</li></ul>
-          <details class="mi-accordion"><summary>Ver más detalles</summary><div class="mi-accordion-body"><ul><li>Entrega en 2–3 semanas</li><li>2 rondas de ajustes incluidas</li><li>Integración con Analytics y pixel</li></ul></div></details>
-          <div class="mi-cta"><a class="mi-button" href="https://wa.me/541163301998" target="_blank" rel="noopener">Reservar</a></div>
+          <ul class="mi-list"><li data-i18n="web.inter.list1">Todo lo del plan Simple</li><li data-i18n="web.inter.list2">Hasta 6 secciones + Blog básico</li><li data-i18n="web.inter.list3">Animaciones suaves y microinteracciones</li><li data-i18n="web.inter.list4">Optimización performance (imágenes, lazyload)</li></ul>
+          <details class="mi-accordion"><summary data-i18n="web.inter.details">Ver más detalles</summary><div class="mi-accordion-body"><ul><li data-i18n="web.inter.detail1">Entrega en 2–3 semanas</li><li data-i18n="web.inter.detail2">2 rondas de ajustes incluidas</li><li data-i18n="web.inter.detail3">Integración con Analytics y pixel</li></ul></div></details>
+          <div class="mi-cta"><a class="mi-button" href="https://wa.me/541163301998" target="_blank" rel="noopener" data-i18n="web.inter.button">Reservar</a></div>
         </article>
 
         <article class="mi-card reveal-up" aria-labelledby="web-adv-title">
           <div class="mi-card-head">
-            <div class="mi-badge">Avanzado</div>
-            <h3 id="web-adv-title" class="mi-card-title">Diseño Web Avanzado</h3>
-            <p class="mi-card-desc">Sitio con funcionalidades personalizadas y CMS.</p>
-            <div class="mi-price"><span class="mi-currency">USD</span><span class="mi-amount">1250</span><span class="mi-note">(desde)</span></div>
+            <div class="mi-badge" data-i18n="web.adv.badge">Avanzado</div>
+            <h3 id="web-adv-title" class="mi-card-title" data-i18n="web.adv.title">Diseño Web Avanzado</h3>
+            <p class="mi-card-desc" data-i18n="web.adv.desc">Sitio con funcionalidades personalizadas y CMS.</p>
+            <div class="mi-price"><span class="mi-currency">USD</span><span class="mi-amount">1250</span><span class="mi-note" data-i18n="common.from">(desde)</span></div>
           </div>
-          <ul class="mi-list"><li>Todo lo del plan Intermedio</li><li>CMS (WordPress/Headless) o panel a medida</li><li>Secciones dinámicas, formularios avanzados</li><li>Integraciones a terceros (APIs, pagos, etc.)</li></ul>
-          <details class="mi-accordion"><summary>Ver más detalles</summary><div class="mi-accordion-body"><ul><li>Entrega desde 4 semanas</li><li>3 rondas de ajustes incluidas</li><li>Soporte y mejoras opcionales</li></ul></div></details>
-          <div class="mi-cta"><a class="mi-button" href="https://wa.me/541163301998" target="_blank" rel="noopener">Agendar llamada</a></div>
+          <ul class="mi-list"><li data-i18n="web.adv.list1">Todo lo del plan Intermedio</li><li data-i18n="web.adv.list2">CMS (WordPress/Headless) o panel a medida</li><li data-i18n="web.adv.list3">Secciones dinámicas, formularios avanzados</li><li data-i18n="web.adv.list4">Integraciones a terceros (APIs, pagos, etc.)</li></ul>
+          <details class="mi-accordion"><summary data-i18n="web.adv.details">Ver más detalles</summary><div class="mi-accordion-body"><ul><li data-i18n="web.adv.detail1">Entrega desde 4 semanas</li><li data-i18n="web.adv.detail2">3 rondas de ajustes incluidas</li><li data-i18n="web.adv.detail3">Soporte y mejoras opcionales</li></ul></div></details>
+          <div class="mi-cta"><a class="mi-button" href="https://wa.me/541163301998" target="_blank" rel="noopener" data-i18n="web.adv.button">Agendar llamada</a></div>
         </article>
       </div>
     </div>
@@ -366,38 +411,38 @@
       <div class="mi-grid">
         <article class="mi-card reveal-up" aria-labelledby="br-basic-title">
           <div class="mi-card-head">
-            <div class="mi-badge">Kit Inicial</div>
-            <h3 id="br-basic-title" class="mi-card-title">Branding Esencial</h3>
-            <p class="mi-card-desc">Logo + paleta + tipografías + guía breve.</p>
-            <div class="mi-price"><span class="mi-currency">USD</span><span class="mi-amount">600</span><span class="mi-note">(desde)</span></div>
+            <div class="mi-badge" data-i18n="brand.basic.badge">Kit Inicial</div>
+            <h3 id="br-basic-title" class="mi-card-title" data-i18n="brand.basic.title">Branding Esencial</h3>
+            <p class="mi-card-desc" data-i18n="brand.basic.desc">Logo + paleta + tipografías + guía breve.</p>
+            <div class="mi-price"><span class="mi-currency">USD</span><span class="mi-amount">600</span><span class="mi-note" data-i18n="common.from">(desde)</span></div>
           </div>
-          <ul class="mi-list"><li>2–3 propuestas de logo</li><li>Guía rápida de uso</li><li>Aplicaciones básicas (RRSS, favicon)</li></ul>
-          <details class="mi-accordion"><summary>Ver más detalles</summary><div class="mi-accordion-body"><ul><li>Entrega 2–3 semanas</li><li>2 rondas de ajustes</li></ul></div></details>
-          <div class="mi-cta"><a class="mi-button" href="https://wa.me/541163301998" target="_blank" rel="noopener">Consultar</a></div>
+          <ul class="mi-list"><li data-i18n="brand.basic.list1">2–3 propuestas de logo</li><li data-i18n="brand.basic.list2">Guía rápida de uso</li><li data-i18n="brand.basic.list3">Aplicaciones básicas (RRSS, favicon)</li></ul>
+          <details class="mi-accordion"><summary data-i18n="brand.basic.details">Ver más detalles</summary><div class="mi-accordion-body"><ul><li data-i18n="brand.basic.detail1">Entrega 2–3 semanas</li><li data-i18n="brand.basic.detail2">2 rondas de ajustes</li></ul></div></details>
+          <div class="mi-cta"><a class="mi-button" href="https://wa.me/541163301998" target="_blank" rel="noopener" data-i18n="brand.basic.button">Consultar</a></div>
         </article>
 
         <article class="mi-card reveal-up is-featured" aria-labelledby="br-pro-title">
           <div class="mi-card-head">
-            <div class="mi-badge">Pro</div>
-            <h3 id="br-pro-title" class="mi-card-title">Identidad de Marca</h3>
-            <p class="mi-card-desc">Sistema completo: logo, usos, lockups, tono y aplicaciones.</p>
-            <div class="mi-price"><span class="mi-currency">USD</span><span class="mi-amount">1200</span><span class="mi-note">(desde)</span></div>
+            <div class="mi-badge" data-i18n="brand.pro.badge">Pro</div>
+            <h3 id="br-pro-title" class="mi-card-title" data-i18n="brand.pro.title">Identidad de Marca</h3>
+            <p class="mi-card-desc" data-i18n="brand.pro.desc">Sistema completo: logo, usos, lockups, tono y aplicaciones.</p>
+            <div class="mi-price"><span class="mi-currency">USD</span><span class="mi-amount">1200</span><span class="mi-note" data-i18n="common.from">(desde)</span></div>
           </div>
-          <ul class="mi-list"><li>Manual de marca</li><li>Kit de plantillas (RRSS, presentaciones)</li><li>Mockups y archivos editables</li></ul>
-          <details class="mi-accordion"><summary>Ver más detalles</summary><div class="mi-accordion-body"><ul><li>Entrega 3–4 semanas</li><li>3 rondas de ajustes</li></ul></div></details>
-          <div class="mi-cta"><a class="mi-button" href="https://wa.me/541163301998" target="_blank" rel="noopener">Reservar</a></div>
+          <ul class="mi-list"><li data-i18n="brand.pro.list1">Manual de marca</li><li data-i18n="brand.pro.list2">Kit de plantillas (RRSS, presentaciones)</li><li data-i18n="brand.pro.list3">Mockups y archivos editables</li></ul>
+          <details class="mi-accordion"><summary data-i18n="brand.pro.details">Ver más detalles</summary><div class="mi-accordion-body"><ul><li data-i18n="brand.pro.detail1">Entrega 3–4 semanas</li><li data-i18n="brand.pro.detail2">3 rondas de ajustes</li></ul></div></details>
+          <div class="mi-cta"><a class="mi-button" href="https://wa.me/541163301998" target="_blank" rel="noopener" data-i18n="brand.pro.button">Reservar</a></div>
         </article>
 
         <article class="mi-card reveal-up" aria-labelledby="br-adv-title">
           <div class="mi-card-head">
-            <div class="mi-badge">Avanzado</div>
-            <h3 id="br-adv-title" class="mi-card-title">Rebranding Estratégico</h3>
-            <p class="mi-card-desc">Investigación, auditoría y evolución de marca 360°.</p>
-            <div class="mi-price"><span class="mi-currency">USD</span><span class="mi-amount">2400</span><span class="mi-note">(desde)</span></div>
+            <div class="mi-badge" data-i18n="brand.adv.badge">Avanzado</div>
+            <h3 id="br-adv-title" class="mi-card-title" data-i18n="brand.adv.title">Rebranding Estratégico</h3>
+            <p class="mi-card-desc" data-i18n="brand.adv.desc">Investigación, auditoría y evolución de marca 360°.</p>
+            <div class="mi-price"><span class="mi-currency">USD</span><span class="mi-amount">2400</span><span class="mi-note" data-i18n="common.from">(desde)</span></div>
           </div>
-          <ul class="mi-list"><li>Research, benchmark y posicionamiento</li><li>Arquitectura de marca</li><li>Implementación multicanal</li></ul>
-          <details class="mi-accordion"><summary>Ver más detalles</summary><div class="mi-accordion-body"><ul><li>Proyecto 6–8 semanas</li><li>Workshops con stakeholders</li></ul></div></details>
-          <div class="mi-cta"><a class="mi-button" href="https://wa.me/541163301998" target="_blank" rel="noopener">Agendar llamada</a></div>
+          <ul class="mi-list"><li data-i18n="brand.adv.list1">Research, benchmark y posicionamiento</li><li data-i18n="brand.adv.list2">Arquitectura de marca</li><li data-i18n="brand.adv.list3">Implementación multicanal</li></ul>
+          <details class="mi-accordion"><summary data-i18n="brand.adv.details">Ver más detalles</summary><div class="mi-accordion-body"><ul><li data-i18n="brand.adv.detail1">Proyecto 6–8 semanas</li><li data-i18n="brand.adv.detail2">Workshops con stakeholders</li></ul></div></details>
+          <div class="mi-cta"><a class="mi-button" href="https://wa.me/541163301998" target="_blank" rel="noopener" data-i18n="brand.adv.button">Agendar llamada</a></div>
         </article>
       </div>
     </div>
@@ -406,38 +451,38 @@
       <div class="mi-grid">
         <article class="mi-card reveal-up" aria-labelledby="mk-basic-title">
           <div class="mi-card-head">
-            <div class="mi-badge">Starter</div>
-            <h3 id="mk-basic-title" class="mi-card-title">Gestión de RRSS</h3>
-            <p class="mi-card-desc">Calendario, redacción y diseño de posts mensuales.</p>
+            <div class="mi-badge" data-i18n="digital.basic.badge">Starter</div>
+            <h3 id="mk-basic-title" class="mi-card-title" data-i18n="digital.basic.title">Gestión de RRSS</h3>
+            <p class="mi-card-desc" data-i18n="digital.basic.desc">Calendario, redacción y diseño de posts mensuales.</p>
             <div class="mi-price"><span class="mi-currency">USD</span><span class="mi-amount">350</span><span class="mi-note">/mes</span></div>
           </div>
-          <ul class="mi-list"><li>8–12 piezas/mes</li><li>Copys y hashtags</li><li>Métricas básicas</li></ul>
-          <details class="mi-accordion"><summary>Ver más detalles</summary><div class="mi-accordion-body"><ul><li>Reunión de kick-off</li><li>Tablero compartido</li></ul></div></details>
-          <div class="mi-cta"><a class="mi-button" href="https://wa.me/541163301998" target="_blank" rel="noopener">Consultar</a></div>
+          <ul class="mi-list"><li data-i18n="digital.basic.list1">8–12 piezas/mes</li><li data-i18n="digital.basic.list2">Copys y hashtags</li><li data-i18n="digital.basic.list3">Métricas básicas</li></ul>
+          <details class="mi-accordion"><summary data-i18n="digital.basic.details">Ver más detalles</summary><div class="mi-accordion-body"><ul><li data-i18n="digital.basic.detail1">Reunión de kick-off</li><li data-i18n="digital.basic.detail2">Tablero compartido</li></ul></div></details>
+          <div class="mi-cta"><a class="mi-button" href="https://wa.me/541163301998" target="_blank" rel="noopener" data-i18n="digital.basic.button">Consultar</a></div>
         </article>
 
         <article class="mi-card reveal-up is-featured" aria-labelledby="mk-ads-title">
           <div class="mi-card-head">
-            <div class="mi-badge">Performance</div>
-            <h3 id="mk-ads-title" class="mi-card-title">Campañas Ads</h3>
-            <p class="mi-card-desc">Set up, optimización y reportes en Meta/Google.</p>
+            <div class="mi-badge" data-i18n="digital.ads.badge">Performance</div>
+            <h3 id="mk-ads-title" class="mi-card-title" data-i18n="digital.ads.title">Campañas Ads</h3>
+            <p class="mi-card-desc" data-i18n="digital.ads.desc">Set up, optimización y reportes en Meta/Google.</p>
             <div class="mi-price"><span class="mi-currency">USD</span><span class="mi-amount">500</span><span class="mi-note">/mes</span></div>
           </div>
-          <ul class="mi-list"><li>Estrategia de audiencias</li><li>Creatividades A/B</li><li>Reportes de rendimiento</li></ul>
-          <details class="mi-accordion"><summary>Ver más detalles</summary><div class="mi-accordion-body"><ul><li>Optimización semanal</li><li>Reunión mensual</li></ul></div></details>
-          <div class="mi-cta"><a class="mi-button" href="https://wa.me/541163301998" target="_blank" rel="noopener">Reservar</a></div>
+          <ul class="mi-list"><li data-i18n="digital.ads.list1">Estrategia de audiencias</li><li data-i18n="digital.ads.list2">Creatividades A/B</li><li data-i18n="digital.ads.list3">Reportes de rendimiento</li></ul>
+          <details class="mi-accordion"><summary data-i18n="digital.ads.details">Ver más detalles</summary><div class="mi-accordion-body"><ul><li data-i18n="digital.ads.detail1">Optimización semanal</li><li data-i18n="digital.ads.detail2">Reunión mensual</li></ul></div></details>
+          <div class="mi-cta"><a class="mi-button" href="https://wa.me/541163301998" target="_blank" rel="noopener" data-i18n="digital.ads.button">Reservar</a></div>
         </article>
 
         <article class="mi-card reveal-up" aria-labelledby="mk-adv-title">
           <div class="mi-card-head">
-            <div class="mi-badge">Pro</div>
-            <h3 id="mk-adv-title" class="mi-card-title">Automatizaciones & Email</h3>
-            <p class="mi-card-desc">Flujos, segmentación y analítica de conversiones.</p>
+            <div class="mi-badge" data-i18n="digital.pro.badge">Pro</div>
+            <h3 id="mk-adv-title" class="mi-card-title" data-i18n="digital.pro.title">Automatizaciones & Email</h3>
+            <p class="mi-card-desc" data-i18n="digital.pro.desc">Flujos, segmentación y analítica de conversiones.</p>
             <div class="mi-price"><span class="mi-currency">USD</span><span class="mi-amount">800</span><span class="mi-note">/mes</span></div>
           </div>
-          <ul class="mi-list"><li>Flujos automáticos (onboarding, carritos)</li><li>Integración con CRM</li><li>Dashboards KPI</li></ul>
-          <details class="mi-accordion"><summary>Ver más detalles</summary><div class="mi-accordion-body"><ul><li>Kick-off + roadmap</li><li>Soporte priorizado</li></ul></div></details>
-          <div class="mi-cta"><a class="mi-button" href="https://wa.me/541163301998" target="_blank" rel="noopener">Agendar llamada</a></div>
+          <ul class="mi-list"><li data-i18n="digital.pro.list1">Flujos automáticos (onboarding, carritos)</li><li data-i18n="digital.pro.list2">Integración con CRM</li><li data-i18n="digital.pro.list3">Dashboards KPI</li></ul>
+          <details class="mi-accordion"><summary data-i18n="digital.pro.details">Ver más detalles</summary><div class="mi-accordion-body"><ul><li data-i18n="digital.pro.detail1">Kick-off + roadmap</li><li data-i18n="digital.pro.detail2">Soporte priorizado</li></ul></div></details>
+          <div class="mi-cta"><a class="mi-button" href="https://wa.me/541163301998" target="_blank" rel="noopener" data-i18n="digital.pro.button">Agendar llamada</a></div>
         </article>
       </div>
     </div>
@@ -447,13 +492,13 @@
 <section id="mi-ladder" class="section nola-theme">
   <div class="mi-container">
     <header class="mi-header">
-      <h2 class="mi-title">EvoluciOn del Servicio</h2>
-      <p class="mi-sub">Escalá según tu necesidad: desde un sitio simple hasta un proyecto avanzado con integraciones.</p>
+      <h2 class="mi-title" data-i18n="ladder.title">EvoluciOn del Servicio</h2>
+      <p class="mi-sub" data-i18n="ladder.subtitle">Escalá según tu necesidad: desde un sitio simple hasta un proyecto avanzado con integraciones.</p>
     </header>
     <ol class="ladder" aria-label="Escalera de niveles de servicio">
-      <li class="ladder-step"><div class="ladder-pin"></div><div class="ladder-card reveal-up"><h3 class="ladder-title">Nivel 1 · Diseño Web Simple</h3><p class="ladder-desc">Landing 1–3 secciones, SEO básico y contacto.</p><ul class="ladder-list"><li>Diseño responsive</li><li>Hasta 3 secciones</li><li>Integración WhatsApp / Email</li></ul><div class="ladder-meta"><span class="price">USD 280</span><span class="note">· desde</span></div><a class="mi-button" href="https://wa.me/541163301998" target="_blank" rel="noopener">Elegir Nivel 1</a></div></li>
-      <li class="ladder-step"><div class="ladder-pin"></div><div class="ladder-card reveal-up is-featured"><h3 class="ladder-title">Nivel 2 · Intermedio (Recomendado)</h3><p class="ladder-desc">Más secciones, blog básico y animaciones suaves.</p><ul class="ladder-list"><li>Hasta 6 secciones</li><li>Blog básico</li><li>Optimización de performance</li></ul><div class="ladder-meta"><span class="price">USD 480</span><span class="note">· desde</span></div><a class="mi-button" href="https://wa.me/541163301998" target="_blank" rel="noopener">Elegir Nivel 2</a></div></li>
-      <li class="ladder-step"><div class="ladder-pin"></div><div class="ladder-card reveal-up"><h3 class="ladder-title">Nivel 3 · Avanzado</h3><p class="ladder-desc">CMS o panel a medida, integraciones y secciones dinámicas.</p><ul class="ladder-list"><li>CMS (WordPress/Headless)</li><li>Integraciones (APIs, pagos)</li><li>Formularios avanzados</li></ul><div class="ladder-meta"><span class="price">USD 1250</span><span class="note">· desde</span></div><a class="mi-button" href="https://wa.me/541163301998" target="_blank" rel="noopener">Elegir Nivel 3</a></div></li>
+      <li class="ladder-step"><div class="ladder-pin"></div><div class="ladder-card reveal-up"><h3 class="ladder-title" data-i18n="ladder.level1.title">Nivel 1 · Diseño Web Simple</h3><p class="ladder-desc" data-i18n="ladder.level1.desc">Landing 1–3 secciones, SEO básico y contacto.</p><ul class="ladder-list"><li data-i18n="ladder.level1.list1">Diseño responsive</li><li data-i18n="ladder.level1.list2">Hasta 3 secciones</li><li data-i18n="ladder.level1.list3">Integración WhatsApp / Email</li></ul><div class="ladder-meta"><span class="price">USD 280</span><span class="note" data-i18n="common.from">(desde)</span></div><a class="mi-button" href="https://wa.me/541163301998" target="_blank" rel="noopener" data-i18n="ladder.level1.button">Elegir Nivel 1</a></div></li>
+      <li class="ladder-step"><div class="ladder-pin"></div><div class="ladder-card reveal-up is-featured"><h3 class="ladder-title" data-i18n="ladder.level2.title">Nivel 2 · Intermedio (Recomendado)</h3><p class="ladder-desc" data-i18n="ladder.level2.desc">Más secciones, blog básico y animaciones suaves.</p><ul class="ladder-list"><li data-i18n="ladder.level2.list1">Hasta 6 secciones</li><li data-i18n="ladder.level2.list2">Blog básico</li><li data-i18n="ladder.level2.list3">Optimización de performance</li></ul><div class="ladder-meta"><span class="price">USD 480</span><span class="note" data-i18n="common.from">(desde)</span></div><a class="mi-button" href="https://wa.me/541163301998" target="_blank" rel="noopener" data-i18n="ladder.level2.button">Elegir Nivel 2</a></div></li>
+      <li class="ladder-step"><div class="ladder-pin"></div><div class="ladder-card reveal-up"><h3 class="ladder-title" data-i18n="ladder.level3.title">Nivel 3 · Avanzado</h3><p class="ladder-desc" data-i18n="ladder.level3.desc">CMS o panel a medida, integraciones y secciones dinámicas.</p><ul class="ladder-list"><li data-i18n="ladder.level3.list1">CMS (WordPress/Headless)</li><li data-i18n="ladder.level3.list2">Integraciones (APIs, pagos)</li><li data-i18n="ladder.level3.list3">Formularios avanzados</li></ul><div class="ladder-meta"><span class="price">USD 1250</span><span class="note" data-i18n="common.from">(desde)</span></div><a class="mi-button" href="https://wa.me/541163301998" target="_blank" rel="noopener" data-i18n="ladder.level3.button">Elegir Nivel 3</a></div></li>
     </ol>
   </div>
 </section>
@@ -461,15 +506,15 @@
 <section id="mi-timeline" class="section nola-theme">
   <div class="mi-container">
     <header class="mi-header">
-      <h2 class="mi-title">Como trabajamos</h2>
-      <p class="mi-sub">Un proceso claro de punta a punta, con tiempos estimados y entregables por fase.</p>
+      <h2 class="mi-title" data-i18n="timeline.title">Como trabajamos</h2>
+      <p class="mi-sub" data-i18n="timeline.subtitle">Un proceso claro de punta a punta, con tiempos estimados y entregables por fase.</p>
     </header>
     <ol class="timeline" aria-label="Línea temporal del proyecto">
-      <li class="tl-item"><div class="tl-marker"></div><div class="tl-card reveal-up"><header class="tl-head"><h3 class="tl-title">Kick‑off & Descubrimiento</h3><span class="tl-badge">Día 1</span></header><p class="tl-desc">Reunión inicial, objetivos, alcance, relevamiento de contenidos y referencias.</p><ul class="tl-list"><li>Briefing de marca y público</li><li>Mapa del sitio / alcance</li><li>Checklist de assets</li></ul></div></li>
-      <li class="tl-item"><div class="tl-marker"></div><div class="tl-card reveal-up"><header class="tl-head"><h3 class="tl-title">Wireframes & UX</h3><span class="tl-badge">Días 2–5</span></header><p class="tl-desc">Estructura de páginas, jerarquía de información y flujos clave.</p><ul class="tl-list"><li>Wireframes mobile/desktop</li><li>Feedback y ajuste</li></ul></div></li>
-      <li class="tl-item"><div class="tl-marker"></div><div class="tl-card reveal-up is-current"><header class="tl-head"><h3 class="tl-title">UI & Diseño Visual</h3><span class="tl-badge">Días 6–10</span></header><p class="tl-desc">Aplicación de la estética de tu marca: tipografías, paleta, componentes y microinteracciones.</p><ul class="tl-list"><li>Sistema de componentes</li><li>Prototipo navegable</li></ul></div></li>
-      <li class="tl-item"><div class="tl-marker"></div><div class="tl-card reveal-up"><header class="tl-head"><h3 class="tl-title">Desarrollo & Integraciones</h3><span class="tl-badge">Semanas 3–4</span></header><p class="tl-desc">Maquetación responsive, performance, SEO técnico e integraciones necesarias.</p><ul class="tl-list"><li>Optimización de imágenes</li><li>Integración Analytics / Pixel</li><li>Formularios y APIs</li></ul></div></li>
-      <li class="tl-item"><div class="tl-marker"></div><div class="tl-card reveal-up"><header class="tl-head"><h3 class="tl-title">Release & Soporte</h3><span class="tl-badge">Go‑live</span></header><p class="tl-desc">Publicación, monitoreo post‑lanzamiento y mejoras continuas.</p><ul class="tl-list"><li>Checklist de release</li><li>1–3 sprints de mejoras</li></ul></div></li>
+      <li class="tl-item"><div class="tl-marker"></div><div class="tl-card reveal-up"><header class="tl-head"><h3 class="tl-title" data-i18n="timeline.phase1.title">Kick‑off & Descubrimiento</h3><span class="tl-badge" data-i18n="timeline.phase1.badge">Día 1</span></header><p class="tl-desc" data-i18n="timeline.phase1.desc">Reunión inicial, objetivos, alcance, relevamiento de contenidos y referencias.</p><ul class="tl-list"><li data-i18n="timeline.phase1.list1">Briefing de marca y público</li><li data-i18n="timeline.phase1.list2">Mapa del sitio / alcance</li><li data-i18n="timeline.phase1.list3">Checklist de assets</li></ul></div></li>
+      <li class="tl-item"><div class="tl-marker"></div><div class="tl-card reveal-up"><header class="tl-head"><h3 class="tl-title" data-i18n="timeline.phase2.title">Wireframes & UX</h3><span class="tl-badge" data-i18n="timeline.phase2.badge">Días 2–5</span></header><p class="tl-desc" data-i18n="timeline.phase2.desc">Estructura de páginas, jerarquía de información y flujos clave.</p><ul class="tl-list"><li data-i18n="timeline.phase2.list1">Wireframes mobile/desktop</li><li data-i18n="timeline.phase2.list2">Feedback y ajuste</li></ul></div></li>
+      <li class="tl-item"><div class="tl-marker"></div><div class="tl-card reveal-up is-current"><header class="tl-head"><h3 class="tl-title" data-i18n="timeline.phase3.title">UI & Diseño Visual</h3><span class="tl-badge" data-i18n="timeline.phase3.badge">Días 6–10</span></header><p class="tl-desc" data-i18n="timeline.phase3.desc">Aplicación de la estética de tu marca: tipografías, paleta, componentes y microinteracciones.</p><ul class="tl-list"><li data-i18n="timeline.phase3.list1">Sistema de componentes</li><li data-i18n="timeline.phase3.list2">Prototipo navegable</li></ul></div></li>
+      <li class="tl-item"><div class="tl-marker"></div><div class="tl-card reveal-up"><header class="tl-head"><h3 class="tl-title" data-i18n="timeline.phase4.title">Desarrollo & Integraciones</h3><span class="tl-badge" data-i18n="timeline.phase4.badge">Semanas 3–4</span></header><p class="tl-desc" data-i18n="timeline.phase4.desc">Maquetación responsive, performance, SEO técnico e integraciones necesarias.</p><ul class="tl-list"><li data-i18n="timeline.phase4.list1">Optimización de imágenes</li><li data-i18n="timeline.phase4.list2">Integración Analytics / Pixel</li><li data-i18n="timeline.phase4.list3">Formularios y APIs</li></ul></div></li>
+      <li class="tl-item"><div class="tl-marker"></div><div class="tl-card reveal-up"><header class="tl-head"><h3 class="tl-title" data-i18n="timeline.phase5.title">Release & Soporte</h3><span class="tl-badge" data-i18n="timeline.phase5.badge">Go‑live</span></header><p class="tl-desc" data-i18n="timeline.phase5.desc">Publicación, monitoreo post‑lanzamiento y mejoras continuas.</p><ul class="tl-list"><li data-i18n="timeline.phase5.list1">Checklist de release</li><li data-i18n="timeline.phase5.list2">1–3 sprints de mejoras</li></ul></div></li>
     </ol>
   </div>
 </section>
@@ -544,8 +589,8 @@ section.section{ scroll-margin-top:84px }
   <!-- CONTACTO (antes del footer) -->
   <section id="contacto" class="contacto-final" aria-labelledby="contacto-title">
     <div class="contacto-wrap">
-      <h2 id="contacto-title" class="mi-title">Hablemos de tu proyecto</h2>
-      <p class="contacto-text mi-sub">Contanos qué necesitás y te respondemos en breve.</p>
+      <h2 id="contacto-title" class="mi-title" data-i18n="contact.title">Hablemos de tu proyecto</h2>
+      <p class="contacto-text mi-sub" data-i18n="contact.subtitle">Contanos qué necesitás y te respondemos en breve.</p>
 
       <form id="contacto-form" class="contacto-form" method="POST">
         <!-- Web3Forms Configuration - Obtén tu clave en https://web3forms.com -->
@@ -557,46 +602,46 @@ section.section{ scroll-margin-top:84px }
         
         <div class="row">
           <label>
-            <span>Nombre</span>
-            <input type="text" name="nombre" autocomplete="name" required placeholder="Tu nombre" />
+            <span data-i18n="contact.form.name">Nombre</span>
+            <input type="text" name="nombre" autocomplete="name" required placeholder="Tu nombre" data-i18n-placeholder="contact.placeholder.name" />
           </label>
           <label>
-            <span>Email</span>
-            <input type="email" name="email" autocomplete="email" required placeholder="tucorreo@ejemplo.com" />
+            <span data-i18n="contact.form.email">Email</span>
+            <input type="email" name="email" autocomplete="email" required placeholder="tucorreo@ejemplo.com" data-i18n-placeholder="contact.placeholder.email" />
           </label>
         </div>
 
         <div class="row">
           <label>
-            <span>Servicio</span>
+            <span data-i18n="contact.form.service">Servicio</span>
             <select name="servicio" required>
-              <option value="" disabled selected>Elegí una opción</option>
-              <option>Branding</option>
-              <option>Web design</option>
-              <option>Brand content</option>
-              <option>Asesoría</option>
+              <option value="" disabled selected data-i18n="contact.form.service.placeholder">Elegí una opción</option>
+              <option data-i18n="contact.form.service.option1">Branding</option>
+              <option data-i18n="contact.form.service.option2">Web design</option>
+              <option data-i18n="contact.form.service.option3">Brand content</option>
+              <option data-i18n="contact.form.service.option4">Asesoría</option>
             </select>
           </label>
           <label>
-            <span>Presupuesto estimado</span>
+            <span data-i18n="contact.form.budget">Presupuesto estimado</span>
             <select name="presupuesto">
-              <option value="" selected>Prefiero no decir</option>
-              <option>Hasta USD 500</option>
-              <option>USD 500 – 1500</option>
-              <option>USD 1500 – 3000</option>
-              <option>+ USD 3000</option>
+              <option value="" selected data-i18n="contact.form.budget.option1">Prefiero no decir</option>
+              <option data-i18n="contact.form.budget.option2">Hasta USD 500</option>
+              <option data-i18n="contact.form.budget.option3">USD 500 – 1500</option>
+              <option data-i18n="contact.form.budget.option4">USD 1500 – 3000</option>
+              <option data-i18n="contact.form.budget.option5">+ USD 3000</option>
             </select>
           </label>
         </div>
 
         <label>
-          <span>Mensaje</span>
-          <textarea name="mensaje" rows="5" required placeholder="Contanos brevemente tu idea, tiempos y objetivos."></textarea>
+          <span data-i18n="contact.form.message">Mensaje</span>
+          <textarea name="mensaje" rows="5" required placeholder="Contanos brevemente tu idea, tiempos y objetivos." data-i18n-placeholder="contact.placeholder.message"></textarea>
         </label>
 
         <div class="form-actions">
-          <button type="submit" class="btn-enviar">Enviar</button>
-          <a id="cta-whatsapp" class="btn-wapp" href="#" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+          <button type="submit" class="btn-enviar" data-i18n="contact.button.send">Enviar</button>
+          <a id="cta-whatsapp" class="btn-wapp" href="#" target="_blank" rel="noopener" data-i18n="contact.button.whatsapp">Escribir por WhatsApp</a>
         </div>
 
         <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
@@ -609,14 +654,14 @@ section.section{ scroll-margin-top:84px }
     <div class="footer-wrap">
       <div class="footer-brand">
         <img src="./assets/logos/studio-nola-nav.svg" alt="Studio Nola" class="footer-logo" />
-        <p class="footer-tagline">Dirección creativa, branding y contenido.</p>
+        <p class="footer-tagline" data-i18n="footer.tagline">Dirección creativa, branding y contenido.</p>
       </div>
 
       <nav class="footer-nav" aria-label="Enlaces">
-        <h3 class="footer-title">Navegación</h3>
+        <h3 class="footer-title" data-i18n="footer.navigation">Navegación</h3>
         <ul>
-          <li><a href="#body">Inicio</a></li>
-          <li><a href="#mas-info">Servicios</a></li>
+          <li><a href="#body" data-i18n="footer.home">Inicio</a></li>
+          <li><a href="#mas-info" data-i18n="footer.services">Servicios</a></li>
           <li><a href="#mas-info" data-mi="web">Web design</a></li>
           <li><a href="#mas-info" data-mi="branding">Branding</a></li>
           <li><a href="#mas-info" data-mi="digital">Marketing Digital</a></li>
@@ -624,7 +669,7 @@ section.section{ scroll-margin-top:84px }
       </nav>
 
       <div class="footer-contact">
-        <h3 class="footer-title">Contacto</h3>
+        <h3 class="footer-title" data-i18n="footer.contact">Contacto</h3>
         <ul>
           <li><a href="mailto:studionolaatelier@gmail.com">studionolaatelier@gmail.com</a></li>
           <li><a href="tel:+541163301998">+54 11 6330 1998</a></li>
@@ -634,7 +679,7 @@ section.section{ scroll-margin-top:84px }
     </div>
 
     <div class="footer-bottom">
-      <p>© <span id="year-copy"></span> Studio Nola — Todos los derechos reservados.</p>
+      <p>© <span id="year-copy"></span> Studio Nola — <span data-i18n="footer.rights">Todos los derechos reservados.</span></p>
     </div>
     <script>
       // año dinámico
@@ -1128,6 +1173,503 @@ window.addEventListener('load', function() {
     console.error('jQuery no está cargado');
   }
 });
+</script>
+
+<script>
+// Sistema de traducción ES/EN
+(function() {
+  const translations = {
+    es: {
+      'nav.home': 'Home',
+      'nav.about': 'Qué hacemos?',
+      'nav.services': 'Servicios',
+      'nav.contact': 'Contacto',
+      'services.title': 'SERVICIOS',
+      'services.subtitle': 'Elegí una categoría y mirá qué incluye cada nivel de complejidad.',
+      'services.tab.web': 'Diseño Web',
+      'services.tab.branding': 'Branding',
+      'services.tab.digital': 'Marketing Digital',
+      'contact.title': 'Hablemos de tu proyecto',
+      'contact.subtitle': 'Contanos qué necesitás y te respondemos en breve.',
+      'contact.form.name': 'Nombre',
+      'contact.form.email': 'Email',
+      'contact.form.service': 'Servicio',
+      'contact.form.budget': 'Presupuesto estimado',
+      'contact.form.message': 'Mensaje',
+      'contact.placeholder.name': 'Tu nombre',
+      'contact.placeholder.email': 'tucorreo@ejemplo.com',
+      'contact.placeholder.message': 'Contanos brevemente tu idea, tiempos y objetivos.',
+      'contact.button.send': 'Enviar',
+      'contact.button.whatsapp': 'Escribir por WhatsApp',
+      'footer.navigation': 'Navegación',
+      'footer.home': 'Inicio',
+      'footer.services': 'Servicios',
+      'footer.contact': 'Contacto',
+      'footer.tagline': 'Dirección creativa, branding y contenido.',
+      // Web Design Cards
+      'web.simple.badge': 'Simple',
+      'web.simple.title': 'Diseño Web Simple',
+      'web.simple.desc': 'Landing de 1–3 secciones. Ideal para presencia rápida y clara.',
+      'web.simple.button': 'Consultar',
+      'web.inter.badge': 'Recomendado',
+      'web.inter.title': 'Diseño Web Intermedio',
+      'web.inter.desc': 'Site de 4–6 secciones, más componentes y optimizaciones.',
+      'web.inter.button': 'Reservar',
+      'web.adv.badge': 'Avanzado',
+      'web.adv.title': 'Diseño Web Avanzado',
+      'web.adv.desc': 'Sitio con funcionalidades personalizadas y CMS.',
+      'web.adv.button': 'Agendar llamada',
+      // Branding Cards
+      'brand.basic.badge': 'Kit Inicial',
+      'brand.basic.title': 'Branding Esencial',
+      'brand.basic.desc': 'Logo + paleta + tipografías + guía breve.',
+      'brand.basic.button': 'Consultar',
+      'brand.pro.badge': 'Pro',
+      'brand.pro.title': 'Identidad de Marca',
+      'brand.pro.desc': 'Sistema completo: logo, usos, lockups, tono y aplicaciones.',
+      'brand.pro.button': 'Reservar',
+      'brand.adv.badge': 'Avanzado',
+      'brand.adv.title': 'Rebranding Estratégico',
+      'brand.adv.desc': 'Investigación, auditoría y evolución de marca 360°.',
+      'brand.adv.button': 'Agendar llamada',
+      // Digital Marketing Cards
+      'digital.basic.badge': 'Starter',
+      'digital.basic.title': 'Gestión de RRSS',
+      'digital.basic.desc': 'Calendario, redacción y diseño de posts mensuales.',
+      'digital.basic.button': 'Consultar',
+      'digital.ads.badge': 'Performance',
+      'digital.ads.title': 'Campañas Ads',
+      'digital.ads.desc': 'Set up, optimización y reportes en Meta/Google.',
+      'digital.ads.button': 'Reservar',
+      'digital.pro.badge': 'Pro',
+      'digital.pro.title': 'Automatizaciones & Email',
+      'digital.pro.desc': 'Flujos, segmentación y analítica de conversiones.',
+      'digital.pro.button': 'Agendar llamada',
+      // Ladder Section
+      'ladder.title': 'EvoluciOn del Servicio',
+      'ladder.subtitle': 'Escalá según tu necesidad: desde un sitio simple hasta un proyecto avanzado con integraciones.',
+      'ladder.level1.title': 'Nivel 1 · Diseño Web Simple',
+      'ladder.level1.desc': 'Landing 1–3 secciones, SEO básico y contacto.',
+      'ladder.level1.button': 'Elegir Nivel 1',
+      'ladder.level2.title': 'Nivel 2 · Intermedio (Recomendado)',
+      'ladder.level2.desc': 'Más secciones, blog básico y animaciones suaves.',
+      'ladder.level2.button': 'Elegir Nivel 2',
+      'ladder.level3.title': 'Nivel 3 · Avanzado',
+      'ladder.level3.desc': 'CMS o panel a medida, integraciones y secciones dinámicas.',
+      'ladder.level3.button': 'Elegir Nivel 3',
+      // Timeline Section
+      'timeline.title': 'Como trabajamos',
+      'timeline.subtitle': 'Un proceso claro de punta a punta, con tiempos estimados y entregables por fase.',
+      // Web Design Lists
+      'web.simple.list1': 'Diseño responsive',
+      'web.simple.list2': 'Hasta 3 secciones (Hero, Servicios, Contacto)',
+      'web.simple.list3': 'Optimización básica SEO (metatags, títulos)',
+      'web.simple.list4': 'Integración WhatsApp / Email',
+      'web.simple.details': 'Ver más detalles',
+      'web.simple.detail1': 'Entrega en 7–10 días',
+      'web.simple.detail2': '1 ronda de ajustes incluida',
+      'web.simple.detail3': 'Hosting/Dominio no incluidos',
+      'web.inter.list1': 'Todo lo del plan Simple',
+      'web.inter.list2': 'Hasta 6 secciones + Blog básico',
+      'web.inter.list3': 'Animaciones suaves y microinteracciones',
+      'web.inter.list4': 'Optimización performance (imágenes, lazyload)',
+      'web.inter.details': 'Ver más detalles',
+      'web.inter.detail1': 'Entrega en 2–3 semanas',
+      'web.inter.detail2': '2 rondas de ajustes incluidas',
+      'web.inter.detail3': 'Integración con Analytics y pixel',
+      'web.adv.list1': 'Todo lo del plan Intermedio',
+      'web.adv.list2': 'CMS (WordPress/Headless) o panel a medida',
+      'web.adv.list3': 'Secciones dinámicas, formularios avanzados',
+      'web.adv.list4': 'Integraciones a terceros (APIs, pagos, etc.)',
+      'web.adv.details': 'Ver más detalles',
+      'web.adv.detail1': 'Entrega desde 4 semanas',
+      'web.adv.detail2': '3 rondas de ajustes incluidas',
+      'web.adv.detail3': 'Soporte y mejoras opcionales',
+      // Branding Lists
+      'brand.basic.list1': '2–3 propuestas de logo',
+      'brand.basic.list2': 'Guía rápida de uso',
+      'brand.basic.list3': 'Aplicaciones básicas (RRSS, favicon)',
+      'brand.basic.details': 'Ver más detalles',
+      'brand.basic.detail1': 'Entrega 2–3 semanas',
+      'brand.basic.detail2': '2 rondas de ajustes',
+      'brand.pro.list1': 'Manual de marca',
+      'brand.pro.list2': 'Kit de plantillas (RRSS, presentaciones)',
+      'brand.pro.list3': 'Mockups y archivos editables',
+      'brand.pro.details': 'Ver más detalles',
+      'brand.pro.detail1': 'Entrega 3–4 semanas',
+      'brand.pro.detail2': '3 rondas de ajustes',
+      'brand.adv.list1': 'Research, benchmark y posicionamiento',
+      'brand.adv.list2': 'Arquitectura de marca',
+      'brand.adv.list3': 'Implementación multicanal',
+      'brand.adv.details': 'Ver más detalles',
+      'brand.adv.detail1': 'Proyecto 6–8 semanas',
+      'brand.adv.detail2': 'Workshops con stakeholders',
+      // Digital Marketing Lists
+      'digital.basic.list1': '8–12 piezas/mes',
+      'digital.basic.list2': 'Copys y hashtags',
+      'digital.basic.list3': 'Métricas básicas',
+      'digital.basic.details': 'Ver más detalles',
+      'digital.basic.detail1': 'Reunión de kick-off',
+      'digital.basic.detail2': 'Tablero compartido',
+      'digital.ads.list1': 'Estrategia de audiencias',
+      'digital.ads.list2': 'Creatividades A/B',
+      'digital.ads.list3': 'Reportes de rendimiento',
+      'digital.ads.details': 'Ver más detalles',
+      'digital.ads.detail1': 'Optimización semanal',
+      'digital.ads.detail2': 'Reunión mensual',
+      'digital.pro.list1': 'Flujos automáticos (onboarding, carritos)',
+      'digital.pro.list2': 'Integración con CRM',
+      'digital.pro.list3': 'Dashboards KPI',
+      'digital.pro.details': 'Ver más detalles',
+      'digital.pro.detail1': 'Kick-off + roadmap',
+      'digital.pro.detail2': 'Soporte priorizado',
+      // Ladder Lists
+      'ladder.level1.list1': 'Diseño responsive',
+      'ladder.level1.list2': 'Hasta 3 secciones',
+      'ladder.level1.list3': 'Integración WhatsApp / Email',
+      'ladder.level2.list1': 'Hasta 6 secciones',
+      'ladder.level2.list2': 'Blog básico',
+      'ladder.level2.list3': 'Optimización de performance',
+      'ladder.level3.list1': 'CMS (WordPress/Headless)',
+      'ladder.level3.list2': 'Integraciones (APIs, pagos)',
+      'ladder.level3.list3': 'Formularios avanzados',
+      // Timeline Phase 1
+      'timeline.phase1.title': 'Kick‑off & Descubrimiento',
+      'timeline.phase1.badge': 'Día 1',
+      'timeline.phase1.desc': 'Reunión inicial, objetivos, alcance, relevamiento de contenidos y referencias.',
+      'timeline.phase1.list1': 'Briefing de marca y público',
+      'timeline.phase1.list2': 'Mapa del sitio / alcance',
+      'timeline.phase1.list3': 'Checklist de assets',
+      // Timeline Phase 2
+      'timeline.phase2.title': 'Wireframes & UX',
+      'timeline.phase2.badge': 'Días 2–5',
+      'timeline.phase2.desc': 'Estructura de páginas, jerarquía de información y flujos clave.',
+      'timeline.phase2.list1': 'Wireframes mobile/desktop',
+      'timeline.phase2.list2': 'Feedback y ajuste',
+      // Timeline Phase 3
+      'timeline.phase3.title': 'UI & Diseño Visual',
+      'timeline.phase3.badge': 'Días 6–10',
+      'timeline.phase3.desc': 'Aplicación de la estética de tu marca: tipografías, paleta, componentes y microinteracciones.',
+      'timeline.phase3.list1': 'Sistema de componentes',
+      'timeline.phase3.list2': 'Prototipo navegable',
+      // Timeline Phase 4
+      'timeline.phase4.title': 'Desarrollo & Integraciones',
+      'timeline.phase4.badge': 'Semanas 3–4',
+      'timeline.phase4.desc': 'Maquetación responsive, performance, SEO técnico e integraciones necesarias.',
+      'timeline.phase4.list1': 'Optimización de imágenes',
+      'timeline.phase4.list2': 'Integración Analytics / Pixel',
+      'timeline.phase4.list3': 'Formularios y APIs',
+      // Timeline Phase 5
+      'timeline.phase5.title': 'Release & Soporte',
+      'timeline.phase5.badge': 'Go‑live',
+      'timeline.phase5.desc': 'Publicación, monitoreo post‑lanzamiento y mejoras continuas.',
+      'timeline.phase5.list1': 'Checklist de release',
+      'timeline.phase5.list2': '1–3 sprints de mejoras',
+      // Footer
+      'footer.rights': 'Todos los derechos reservados.',
+      // Common words - usado en precios
+      'common.from': '(desde)',
+      // Service p-info descriptions
+      'service.visual.desc': 'Servicio fotográfico profesional adaptado a tu marca. Contenido visual coherente para redes, catálogos y campañas.',
+      'service.creative.desc': 'Dirección de arte y producción integral: concepto, estilismo, equipo y locaciones para material que potencie tu marca.',
+      'service.coaching.desc': 'Acompañamiento y formación para que mantengas una comunicación visual profesional y consistente.',
+      'service.campaigns.desc': 'Campañas creativas orientadas a conversión y posicionamiento en medios digitales y redes.',
+      'service.social.desc': 'Estrategia, calendario y diseño de contenidos para crecer y medir resultados en redes sociales.',
+      'service.identity.desc': 'Diseño y desarrollo de identidad visual: sistema de marca, lineamientos y aplicaciones clave.',
+      'service.digital.desc': 'Diseño web y de interfaces centrado en usabilidad, estética y coherencia con tu marca.',
+      'service.button.moreinfo': 'Más info',
+      // Contact form select options
+      'contact.form.service.placeholder': 'Elegí una opción',
+      'contact.form.service.option1': 'Branding',
+      'contact.form.service.option2': 'Web design',
+      'contact.form.service.option3': 'Brand content',
+      'contact.form.service.option4': 'Asesoría',
+      'contact.form.budget.option1': 'Prefiero no decir',
+      'contact.form.budget.option2': 'Hasta USD 500',
+      'contact.form.budget.option3': 'USD 500 – 1500',
+      'contact.form.budget.option4': 'USD 1500 – 3000',
+      'contact.form.budget.option5': '+ USD 3000'
+    },
+    en: {
+      'nav.home': 'Home',
+      'nav.about': 'What we do?',
+      'nav.services': 'Services',
+      'nav.contact': 'Contact',
+      'services.title': 'SERVICES',
+      'services.subtitle': 'Choose a category and see what each complexity level includes.',
+      'services.tab.web': 'Web Design',
+      'services.tab.branding': 'Branding',
+      'services.tab.digital': 'Digital Marketing',
+      'contact.title': "Let's talk about your project",
+      'contact.subtitle': 'Tell us what you need and we will respond shortly.',
+      'contact.form.name': 'Name',
+      'contact.form.email': 'Email',
+      'contact.form.service': 'Service',
+      'contact.form.budget': 'Estimated budget',
+      'contact.form.message': 'Message',
+      'contact.placeholder.name': 'Your name',
+      'contact.placeholder.email': 'youremail@example.com',
+      'contact.placeholder.message': 'Tell us briefly about your idea, timeline and goals.',
+      'contact.button.send': 'Send',
+      'contact.button.whatsapp': 'Write on WhatsApp',
+      'footer.navigation': 'Navigation',
+      'footer.home': 'Home',
+      'footer.services': 'Services',
+      'footer.contact': 'Contact',
+      'footer.tagline': 'Creative direction, branding and content.',
+      // Web Design Cards
+      'web.simple.badge': 'Simple',
+      'web.simple.title': 'Simple Web Design',
+      'web.simple.desc': '1–3 section landing. Ideal for quick and clear presence.',
+      'web.simple.button': 'Inquire',
+      'web.inter.badge': 'Recommended',
+      'web.inter.title': 'Intermediate Web Design',
+      'web.inter.desc': '4–6 section site, more components and optimizations.',
+      'web.inter.button': 'Book',
+      'web.adv.badge': 'Advanced',
+      'web.adv.title': 'Advanced Web Design',
+      'web.adv.desc': 'Website with custom features and CMS.',
+      'web.adv.button': 'Schedule call',
+      // Branding Cards
+      'brand.basic.badge': 'Starter Kit',
+      'brand.basic.title': 'Essential Branding',
+      'brand.basic.desc': 'Logo + palette + typography + brief guide.',
+      'brand.basic.button': 'Inquire',
+      'brand.pro.badge': 'Pro',
+      'brand.pro.title': 'Brand Identity',
+      'brand.pro.desc': 'Complete system: logo, usage, lockups, tone and applications.',
+      'brand.pro.button': 'Book',
+      'brand.adv.badge': 'Advanced',
+      'brand.adv.title': 'Strategic Rebranding',
+      'brand.adv.desc': 'Research, audit and 360° brand evolution.',
+      'brand.adv.button': 'Schedule call',
+      // Digital Marketing Cards
+      'digital.basic.badge': 'Starter',
+      'digital.basic.title': 'Social Media Management',
+      'digital.basic.desc': 'Calendar, writing and monthly post design.',
+      'digital.basic.button': 'Inquire',
+      'digital.ads.badge': 'Performance',
+      'digital.ads.title': 'Ad Campaigns',
+      'digital.ads.desc': 'Setup, optimization and reporting on Meta/Google.',
+      'digital.ads.button': 'Book',
+      'digital.pro.badge': 'Pro',
+      'digital.pro.title': 'Automation & Email',
+      'digital.pro.desc': 'Flows, segmentation and conversion analytics.',
+      'digital.pro.button': 'Schedule call',
+      // Ladder Section
+      'ladder.title': 'Service Evolution',
+      'ladder.subtitle': 'Scale according to your needs: from a simple site to an advanced project with integrations.',
+      'ladder.level1.title': 'Level 1 · Simple Web Design',
+      'ladder.level1.desc': '1–3 section landing, basic SEO and contact.',
+      'ladder.level1.button': 'Choose Level 1',
+      'ladder.level2.title': 'Level 2 · Intermediate (Recommended)',
+      'ladder.level2.desc': 'More sections, basic blog and smooth animations.',
+      'ladder.level2.button': 'Choose Level 2',
+      'ladder.level3.title': 'Level 3 · Advanced',
+      'ladder.level3.desc': 'Custom CMS or panel, integrations and dynamic sections.',
+      'ladder.level3.button': 'Choose Level 3',
+      // Timeline Section
+      'timeline.title': 'How we work',
+      'timeline.subtitle': 'A clear end-to-end process, with estimated times and deliverables per phase.',
+      // Web Design Lists
+      'web.simple.list1': 'Responsive design',
+      'web.simple.list2': 'Up to 3 sections (Hero, Services, Contact)',
+      'web.simple.list3': 'Basic SEO optimization (metatags, titles)',
+      'web.simple.list4': 'WhatsApp / Email integration',
+      'web.simple.details': 'See more details',
+      'web.simple.detail1': 'Delivery in 7–10 days',
+      'web.simple.detail2': '1 round of adjustments included',
+      'web.simple.detail3': 'Hosting/Domain not included',
+      'web.inter.list1': 'Everything from Simple plan',
+      'web.inter.list2': 'Up to 6 sections + Basic blog',
+      'web.inter.list3': 'Smooth animations and micro-interactions',
+      'web.inter.list4': 'Performance optimization (images, lazyload)',
+      'web.inter.details': 'See more details',
+      'web.inter.detail1': 'Delivery in 2–3 weeks',
+      'web.inter.detail2': '2 rounds of adjustments included',
+      'web.inter.detail3': 'Analytics and pixel integration',
+      'web.adv.list1': 'Everything from Intermediate plan',
+      'web.adv.list2': 'CMS (WordPress/Headless) or custom panel',
+      'web.adv.list3': 'Dynamic sections, advanced forms',
+      'web.adv.list4': 'Third-party integrations (APIs, payments, etc.)',
+      'web.adv.details': 'See more details',
+      'web.adv.detail1': 'Delivery from 4 weeks',
+      'web.adv.detail2': '3 rounds of adjustments included',
+      'web.adv.detail3': 'Optional support and improvements',
+      // Branding Lists
+      'brand.basic.list1': '2–3 logo proposals',
+      'brand.basic.list2': 'Quick usage guide',
+      'brand.basic.list3': 'Basic applications (Social media, favicon)',
+      'brand.basic.details': 'See more details',
+      'brand.basic.detail1': 'Delivery 2–3 weeks',
+      'brand.basic.detail2': '2 rounds of adjustments',
+      'brand.pro.list1': 'Brand manual',
+      'brand.pro.list2': 'Template kit (Social media, presentations)',
+      'brand.pro.list3': 'Mockups and editable files',
+      'brand.pro.details': 'See more details',
+      'brand.pro.detail1': 'Delivery 3–4 weeks',
+      'brand.pro.detail2': '3 rounds of adjustments',
+      'brand.adv.list1': 'Research, benchmark and positioning',
+      'brand.adv.list2': 'Brand architecture',
+      'brand.adv.list3': 'Multi-channel implementation',
+      'brand.adv.details': 'See more details',
+      'brand.adv.detail1': 'Project 6–8 weeks',
+      'brand.adv.detail2': 'Workshops with stakeholders',
+      // Digital Marketing Lists
+      'digital.basic.list1': '8–12 pieces/month',
+      'digital.basic.list2': 'Copy and hashtags',
+      'digital.basic.list3': 'Basic metrics',
+      'digital.basic.details': 'See more details',
+      'digital.basic.detail1': 'Kick-off meeting',
+      'digital.basic.detail2': 'Shared board',
+      'digital.ads.list1': 'Audience strategy',
+      'digital.ads.list2': 'A/B creatives',
+      'digital.ads.list3': 'Performance reports',
+      'digital.ads.details': 'See more details',
+      'digital.ads.detail1': 'Weekly optimization',
+      'digital.ads.detail2': 'Monthly meeting',
+      'digital.pro.list1': 'Automated flows (onboarding, carts)',
+      'digital.pro.list2': 'CRM integration',
+      'digital.pro.list3': 'KPI dashboards',
+      'digital.pro.details': 'See more details',
+      'digital.pro.detail1': 'Kick-off + roadmap',
+      'digital.pro.detail2': 'Priority support',
+      // Ladder Lists
+      'ladder.level1.list1': 'Responsive design',
+      'ladder.level1.list2': 'Up to 3 sections',
+      'ladder.level1.list3': 'WhatsApp / Email integration',
+      'ladder.level2.list1': 'Up to 6 sections',
+      'ladder.level2.list2': 'Basic blog',
+      'ladder.level2.list3': 'Performance optimization',
+      'ladder.level3.list1': 'CMS (WordPress/Headless)',
+      'ladder.level3.list2': 'Integrations (APIs, payments)',
+      'ladder.level3.list3': 'Advanced forms',
+      // Timeline Phase 1
+      'timeline.phase1.title': 'Kick‑off & Discovery',
+      'timeline.phase1.badge': 'Day 1',
+      'timeline.phase1.desc': 'Initial meeting, goals, scope, content gathering and references.',
+      'timeline.phase1.list1': 'Brand and audience briefing',
+      'timeline.phase1.list2': 'Sitemap / scope',
+      'timeline.phase1.list3': 'Assets checklist',
+      // Timeline Phase 2
+      'timeline.phase2.title': 'Wireframes & UX',
+      'timeline.phase2.badge': 'Days 2–5',
+      'timeline.phase2.desc': 'Page structure, information hierarchy and key flows.',
+      'timeline.phase2.list1': 'Mobile/desktop wireframes',
+      'timeline.phase2.list2': 'Feedback and adjustment',
+      // Timeline Phase 3
+      'timeline.phase3.title': 'UI & Visual Design',
+      'timeline.phase3.badge': 'Days 6–10',
+      'timeline.phase3.desc': 'Applying your brand aesthetics: typography, palette, components and micro-interactions.',
+      'timeline.phase3.list1': 'Component system',
+      'timeline.phase3.list2': 'Navigable prototype',
+      // Timeline Phase 4
+      'timeline.phase4.title': 'Development & Integrations',
+      'timeline.phase4.badge': 'Weeks 3–4',
+      'timeline.phase4.desc': 'Responsive coding, performance, technical SEO and necessary integrations.',
+      'timeline.phase4.list1': 'Image optimization',
+      'timeline.phase4.list2': 'Analytics / Pixel integration',
+      'timeline.phase4.list3': 'Forms and APIs',
+      // Timeline Phase 5
+      'timeline.phase5.title': 'Release & Support',
+      'timeline.phase5.badge': 'Go‑live',
+      'timeline.phase5.desc': 'Launch, post-release monitoring and continuous improvements.',
+      'timeline.phase5.list1': 'Release checklist',
+      'timeline.phase5.list2': '1–3 improvement sprints',
+      // Footer
+      'footer.rights': 'All rights reserved.',
+      // Common words - used in pricing
+      'common.from': '(from)',
+      // Service p-info descriptions
+      'service.visual.desc': 'Professional photography service adapted to your brand. Consistent visual content for social media, catalogs and campaigns.',
+      'service.creative.desc': 'Art direction and comprehensive production: concept, styling, team and locations for material that enhances your brand.',
+      'service.coaching.desc': 'Support and training so you can maintain professional and consistent visual communication.',
+      'service.campaigns.desc': 'Creative campaigns focused on conversion and positioning in digital media and networks.',
+      'service.social.desc': 'Strategy, calendar and content design to grow and measure results on social networks.',
+      'service.identity.desc': 'Visual identity design and development: brand system, guidelines and key applications.',
+      'service.digital.desc': 'Web and interface design focused on usability, aesthetics and consistency with your brand.',
+      'service.button.moreinfo': 'More info',
+      // Contact form select options
+      'contact.form.service.placeholder': 'Choose an option',
+      'contact.form.service.option1': 'Branding',
+      'contact.form.service.option2': 'Web design',
+      'contact.form.service.option3': 'Brand content',
+      'contact.form.service.option4': 'Consulting',
+      'contact.form.budget.option1': 'Prefer not to say',
+      'contact.form.budget.option2': 'Up to USD 500',
+      'contact.form.budget.option3': 'USD 500 – 1500',
+      'contact.form.budget.option4': 'USD 1500 – 3000',
+      'contact.form.budget.option5': '+ USD 3000'
+    }
+  };
+
+  let currentLang = localStorage.getItem('language') || 'es';
+
+  function translatePage(lang) {
+    currentLang = lang;
+    localStorage.setItem('language', lang);
+    
+    // Traducir elementos con data-i18n
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      if (translations[lang] && translations[lang][key]) {
+        element.textContent = translations[lang][key];
+      }
+    });
+
+    // Traducir placeholders con data-i18n-placeholder
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
+      const key = element.getAttribute('data-i18n-placeholder');
+      if (translations[lang] && translations[lang][key]) {
+        element.placeholder = translations[lang][key];
+      }
+    });
+
+    // Actualizar atributo lang del HTML
+    document.documentElement.lang = lang;
+
+    // Actualizar botones de idioma
+    updateLanguageButtons(lang);
+  }
+
+  function updateLanguageButtons(lang) {
+    const displayLang = lang.toUpperCase();
+    document.querySelectorAll('.lang-current').forEach(el => {
+      el.textContent = displayLang;
+    });
+    
+    // Para el botón móvil que muestra ambos idiomas
+    const altLang = lang === 'es' ? 'EN' : 'ES';
+    document.querySelectorAll('.lang-alt').forEach(el => {
+      el.textContent = altLang;
+    });
+  }
+
+  function toggleLanguage() {
+    const newLang = currentLang === 'es' ? 'en' : 'es';
+    translatePage(newLang);
+  }
+
+  // Inicializar
+  document.addEventListener('DOMContentLoaded', function() {
+    // Aplicar idioma guardado
+    translatePage(currentLang);
+
+    // Event listeners para botones de idioma
+    const langToggle = document.getElementById('langToggle');
+    const langToggleMobile = document.getElementById('langToggleMobile');
+
+    if (langToggle) {
+      langToggle.addEventListener('click', toggleLanguage);
+    }
+
+    if (langToggleMobile) {
+      langToggleMobile.addEventListener('click', toggleLanguage);
+    }
+
+    console.log('Sistema de traducción inicializado. Idioma actual:', currentLang);
+  });
+})();
 </script>
 
 </body>
