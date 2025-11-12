@@ -131,7 +131,7 @@
         renderBatch(nextBatch());
       }
     });
-  }, { rootMargin: '800px 0px' });
+  }, { rootMargin: '200px 0px' });
   io.observe(sentinel);
 
   // Lightbox
