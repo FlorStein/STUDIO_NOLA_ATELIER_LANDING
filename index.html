@@ -36,7 +36,6 @@
     <script defer src="./index/js/mobile-nav.js"></script>
     <script defer src="./index/js/app.js"></script>
     <script defer src="./index/js/text.js"></script>   
-    <script defer src="./index/js/pricing.js"></script>
     <script defer src="./index/js/dividerApp.js"></script>
     <script defer src="./index/js/moreInfo.js"></script>
     
@@ -603,8 +602,8 @@ section.section{ scroll-margin-top:84px }
           <li><a href="#body">Inicio</a></li>
           <li><a href="#mas-info">Servicios</a></li>
           <li><a href="#mas-info" data-mi="web">Web design</a></li>
-          <li><a href="#tab-branding" data-mi="branding">Branding</a></li>
-          <li><a href="#mas-info" data-mi="web">Precios</a></li>
+          <li><a href="#mas-info" data-mi="branding">Branding</a></li>
+          <li><a href="#mas-info" data-mi="digital">Marketing Digital</a></li>
         </ul>
       </nav>
 
@@ -648,37 +647,47 @@ section.section{ scroll-margin-top:84px }
 
   function activateTab(mi){
     const root = document.querySelector('#mas-info');
-    if(!root) return;
-    const tabs = root.querySelectorAll('[role="tab"], .mi-tab, button[data-tab]');
-    const panels = root.querySelectorAll('[role="tabpanel"], .mi-tabpanel');
-    let matched = false;
-
-    tabs.forEach(tab => {
-      const byData = slug(tab.getAttribute('data-tab')) === mi;
-      const byCtrl = slug(tab.getAttribute('aria-controls')) === 'tab-' + mi || slug(tab.getAttribute('aria-controls')) === mi;
-      const byText = slug(tab.textContent) === mi;
-      if(byData || byCtrl || byText){
-        tabs.forEach(t => { t.setAttribute('aria-selected','false'); t.classList.remove('is-active'); t.tabIndex = -1; });
-        if(typeof tab.click === 'function') tab.click();
-        tab.setAttribute('aria-selected','true'); tab.classList.add('is-active'); tab.tabIndex = 0;
-        let panel = null;
-        const ac = tab.getAttribute('aria-controls');
-        if(ac) panel = root.querySelector('#' + ac);
-        if(!panel) panel = root.querySelector('[data-panel="'+mi+'"]');
-        if(!panel) panel = Array.from(panels).find(p => slug(p.id) === 'tab-' + mi || slug(p.id) === mi);
-        if(panel){
-          panels.forEach(p => { p.hidden = (p !== panel); p.classList.remove('is-active'); });
-          panel.hidden = false; panel.classList.add('is-active');
+    if(!root) return false;
+    
+    // Buscar el botón específico por ID o aria-controls
+    let targetBtn = null;
+    
+    if(mi === 'branding'){
+      targetBtn = document.getElementById('tab-branding-btn');
+    } else if(mi === 'web' || mi === 'web-design' || mi === 'diseno-web'){
+      targetBtn = document.getElementById('tab-web-btn');
+    } else if(mi === 'digital' || mi === 'marketing-digital'){
+      targetBtn = document.getElementById('tab-digital-btn');
+    }
+    
+    // Si no lo encontramos por ID, buscar por aria-controls
+    if(!targetBtn){
+      const tabs = root.querySelectorAll('[role="tab"], .mi-tab');
+      tabs.forEach(tab => {
+        const ctrl = tab.getAttribute('aria-controls');
+        if(ctrl && (slug(ctrl) === 'tab-' + mi || slug(ctrl) === mi)){
+          targetBtn = tab;
         }
-        matched = true;
-      }
-    });
-    return matched;
+      });
+    }
+    
+    // Si encontramos el botón, hacer click
+    if(targetBtn && typeof targetBtn.click === 'function'){
+      console.log('Activando tab:', mi, targetBtn);
+      targetBtn.click();
+      return true;
+    }
+    
+    console.log('No se encontró tab para:', mi);
+    return false;
   }
 
   function handle(mi){
-    activateTab(mi);
     scrollToMasInfo();
+    // Esperar a que termine el scroll y el DOM esté listo
+    setTimeout(() => {
+      activateTab(mi);
+    }, 400);
     try{
       const url = new URL(window.location);
       url.hash = '#mas-info'; url.searchParams.set('mi', mi);
@@ -690,15 +699,24 @@ section.section{ scroll-margin-top:84px }
     const a = e.target.closest('a[data-mi]');
     if(!a) return;
     e.preventDefault();
-    handle(slug(a.getAttribute('data-mi')));
+    e.stopPropagation();
+    const mi = slug(a.getAttribute('data-mi'));
+    console.log('Click en enlace data-mi:', mi);
+    handle(mi);
   });
 
-  window.addEventListener('DOMContentLoaded', () => {
+  // Ejecutar después de que todos los scripts defer se carguen
+  window.addEventListener('load', () => {
     try{
       const url = new URL(window.location);
       const mi = url.searchParams.get('mi');
-      if((url.hash||'').includes('mas-info') && mi) handle(slug(mi));
-    }catch(e){}
+      if((url.hash||'').includes('mas-info') && mi){
+        console.log('Cargando con parámetro mi:', mi);
+        handle(slug(mi));
+      }
+    }catch(e){
+      console.error('Error al procesar mi:', e);
+    }
   });
 })();
 </script>
