@@ -423,3 +423,72 @@ body {
 @media (min-width: 760px){
   .contacto-form .row{ grid-template-columns:1fr 1fr; }
 }
+
+/* === Botón de cerrar servicios === */
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: rgb(255 255 255 / 9%);
+  color: #2a203d;
+  font-size: 32px;
+  line-height: 1;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease, transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  font-weight: 300;
+  padding: 0;
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0) rotate(-90deg);
+}
+
+.services.active .close-btn {
+  opacity: 1;
+  pointer-events: auto;
+  transform: scale(1) rotate(0deg);
+  animation: bounceIn 0.5s ease-out;
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0) rotate(-90deg);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1) rotate(5deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+.close-btn:hover {
+  background: #2a203d;
+  color: #fff;
+  transform: rotate(90deg) scale(1.1);
+  box-shadow: 0 4px 12px rgba(42, 32, 61, 0.3);
+}
+
+.close-btn:active {
+  transform: rotate(90deg) scale(0.95);
+}
+
+@media (max-width: 768px) {
+  .close-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 28px;
+    top: 10px;
+    right: 10px;
+  }
+}
