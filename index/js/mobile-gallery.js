@@ -2,8 +2,6 @@
 (function(){
 
   var SOURCES = [
-    "./gallery photos/1.webp",
-    "./gallery photos/2.webp",
     "./gallery photos/3.webp",
     "./gallery photos/4.webp",
     "./gallery photos/5.webp",
