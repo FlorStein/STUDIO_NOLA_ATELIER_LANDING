@@ -158,27 +158,25 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // ========================================
-    // ANIMACIÓN DE SCROLL PARA CARDS
+    // REVEAL ON SCROLL - ESTILO SERVICIOS
     // ========================================
     
     if ('IntersectionObserver' in window) {
-        const cardObserver = new IntersectionObserver((entries) => {
+        const revealObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
+                    entry.target.classList.add('is-visible');
+                    revealObserver.unobserve(entry.target); // Solo animar una vez
                 }
             });
         }, {
             threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
+            rootMargin: '0px 0px -80px 0px'
         });
         
-        blogCards.forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(30px)';
-            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            cardObserver.observe(card);
+        // Observar todos los elementos con clase reveal-up
+        document.querySelectorAll('.reveal-up').forEach(element => {
+            revealObserver.observe(element);
         });
     }
     
