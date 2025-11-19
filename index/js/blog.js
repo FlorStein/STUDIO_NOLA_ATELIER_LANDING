@@ -87,30 +87,36 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // ========================================
-    // CURSOR PERSONALIZADO (si existe en app.js)
+    // CURSOR PERSONALIZADO (mismo comportamiento que index)
     // ========================================
     
-    const cursor = document.getElementById('cursor2');
+    // Movimiento del cursor
+    document.addEventListener('mousemove', function(e) {
+        const cursor = document.getElementById('cursor2');
+        if (cursor) {
+            cursor.style.left = (e.clientX - 40) + 'px';
+            cursor.style.top = (e.clientY - 40) + 'px';
+        }
+    });
     
-    if (cursor) {
-        document.addEventListener('mousemove', function(e) {
-            cursor.style.left = e.clientX + 'px';
-            cursor.style.top = e.clientY + 'px';
+    // Efecto mini en botones, links y cards
+    const miniElements = document.querySelectorAll('.back-link, .cta-button, .blog-card-link, .category-btn, .blog-card');
+    
+    miniElements.forEach(element => {
+        element.addEventListener('mouseenter', function() {
+            const cursor = document.getElementById('cursor2');
+            if (cursor) {
+                cursor.classList.add('mini');
+            }
         });
         
-        // Efecto hover en links y botones
-        const interactiveElements = document.querySelectorAll('a, button, .blog-card');
-        
-        interactiveElements.forEach(element => {
-            element.addEventListener('mouseenter', () => {
-                cursor.classList.add('cursor-hover');
-            });
-            
-            element.addEventListener('mouseleave', () => {
-                cursor.classList.remove('cursor-hover');
-            });
+        element.addEventListener('mouseleave', function() {
+            const cursor = document.getElementById('cursor2');
+            if (cursor) {
+                cursor.classList.remove('mini');
+            }
         });
-    }
+    });
     
     // ========================================
     // LAZY LOADING DE IMÁGENES (backup)

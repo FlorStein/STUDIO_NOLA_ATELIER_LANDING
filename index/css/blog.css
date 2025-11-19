@@ -19,6 +19,12 @@
     background-color: var(--blog-bg);
     color: var(--blog-text);
     min-height: 100vh;
+    cursor: none; /* Ocultar cursor del sistema */
+}
+
+/* Cursor personalizado */
+#cursor2 {
+    pointer-events: none;
 }
 
 /* ========================================
