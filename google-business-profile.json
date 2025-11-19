@@ -1,0 +1,188 @@
+{
+  "name": "Studio Nola Atelier",
+  "storeCode": "studio-nola-atelier",
+  "websiteUrl": "https://studionolaatelier.com",
+  "regularHours": {
+    "periods": [
+      {
+        "openDay": "MONDAY",
+        "openTime": "09:00",
+        "closeDay": "MONDAY",
+        "closeTime": "18:00"
+      },
+      {
+        "openDay": "TUESDAY",
+        "openTime": "09:00",
+        "closeDay": "TUESDAY",
+        "closeTime": "18:00"
+      },
+      {
+        "openDay": "WEDNESDAY",
+        "openTime": "09:00",
+        "closeDay": "WEDNESDAY",
+        "closeTime": "18:00"
+      },
+      {
+        "openDay": "THURSDAY",
+        "openTime": "09:00",
+        "closeDay": "THURSDAY",
+        "closeTime": "18:00"
+      },
+      {
+        "openDay": "FRIDAY",
+        "openTime": "09:00",
+        "closeDay": "FRIDAY",
+        "closeTime": "18:00"
+      }
+    ]
+  },
+  "categories": {
+    "primaryCategory": {
+      "displayName": "Diseñador gráfico",
+      "categoryId": "gcid:graphic_designer"
+    },
+    "additionalCategories": [
+      {
+        "displayName": "Agencia de diseño web",
+        "categoryId": "gcid:web_design_company"
+      },
+      {
+        "displayName": "Servicio de marketing",
+        "categoryId": "gcid:marketing_agency"
+      },
+      {
+        "displayName": "Diseñador de sitios web",
+        "categoryId": "gcid:website_designer"
+      },
+      {
+        "displayName": "Servicio de diseño de marca",
+        "categoryId": "gcid:branding_service"
+      }
+    ]
+  },
+  "profile": {
+    "description": "Studio Nola Atelier es una agencia de branding y diseño web profesional en Argentina. Ofrecemos diseño web profesional, desarrollo de páginas web, diseño de marca, marketing digital para emprendedores, community manager y fotografía profesional. Trabajamos con emprendedores y empresas en toda Argentina y Latinoamérica, transformando ideas en experiencias visuales impactantes. Especialistas en branding Argentina, diseño web profesional y estrategia digital."
+  },
+  "serviceArea": {
+    "businessType": "SERVICE_AREA_BUSINESS",
+    "places": {
+      "placeInfos": [
+        {
+          "name": "Argentina"
+        }
+      ]
+    }
+  },
+  "attributes": [
+    "accepts_new_customers",
+    "online_appointments",
+    "remote_services",
+    "language_spoken_spanish",
+    "language_spoken_english"
+  ],
+  "services": [
+    {
+      "displayName": "Diseño Web Profesional",
+      "description": "Desarrollo de páginas web responsive y optimizadas. Desde landing pages hasta sitios complejos con CMS.",
+      "price": {
+        "currencyCode": "USD",
+        "units": "500",
+        "nanos": 0
+      }
+    },
+    {
+      "displayName": "Agencia de Branding",
+      "description": "Diseño de marca completo: logo, identidad visual, manual de marca y aplicaciones.",
+      "price": {
+        "currencyCode": "USD",
+        "units": "500",
+        "nanos": 0
+      }
+    },
+    {
+      "displayName": "Marketing Digital para Emprendedores",
+      "description": "Community manager, gestión de redes sociales, campañas publicitarias y estrategia digital.",
+      "price": {
+        "currencyCode": "USD",
+        "units": "300",
+        "nanos": 0
+      }
+    },
+    {
+      "displayName": "Fotografía Profesional",
+      "description": "Contenido visual profesional para tu marca: productos, eventos, branding.",
+      "price": {
+        "currencyCode": "USD",
+        "units": "200",
+        "nanos": 0
+      }
+    },
+    {
+      "displayName": "Community Manager Argentina",
+      "description": "Gestión completa de redes sociales: calendario de contenidos, diseño, redacción y analítica.",
+      "price": {
+        "currencyCode": "USD",
+        "units": "300",
+        "nanos": 0
+      }
+    }
+  ],
+  "frequentlyAskedQuestions": [
+    {
+      "question": "¿Qué servicios de diseño web ofrecen?",
+      "answer": "Ofrecemos diseño web profesional desde landing pages simples hasta sitios web complejos con CMS personalizado. Todos nuestros proyectos incluyen diseño responsive, optimización SEO básica, integración de analytics y soporte post-lanzamiento."
+    },
+    {
+      "question": "¿Cuánto cuesta un proyecto de branding?",
+      "answer": "Nuestros proyectos de diseño de marca comienzan desde USD 500 para branding esencial (logo + paleta + guía básica) hasta proyectos completos de identidad de marca. El precio final depende del alcance. Contáctanos para una cotización personalizada según tus necesidades."
+    },
+    {
+      "question": "¿Trabajan con emprendedores y pequeñas empresas?",
+      "answer": "Sí, somos especialistas en marketing digital para emprendedores y PyMEs en Argentina. Entendemos las necesidades y presupuestos de negocios en crecimiento y ofrecemos soluciones escalables."
+    },
+    {
+      "question": "¿Ofrecen servicios de community manager?",
+      "answer": "Sí, ofrecemos gestión completa de redes sociales como community manager en Argentina. Incluye estrategia de contenidos, calendario mensual, diseño de posts, redacción de copys, respuesta a comentarios y reportes de métricas."
+    },
+    {
+      "question": "¿Cuál es el tiempo de entrega de un proyecto web?",
+      "answer": "Los tiempos varían según complejidad: diseño web simple (7-10 días), intermedio (2-3 semanas), avanzado (desde 4 semanas). Te daremos un timeline específico en la primera reunión según tu proyecto."
+    },
+    {
+      "question": "¿Trabajan solo en Argentina o también con clientes internacionales?",
+      "answer": "Trabajamos principalmente en Argentina pero también atendemos clientes en toda Latinoamérica. Todos nuestros servicios son remotos, lo que nos permite trabajar con empresas de cualquier ubicación."
+    },
+    {
+      "question": "¿Qué incluye el servicio de desarrollo de páginas web?",
+      "answer": "Nuestro desarrollo de páginas web incluye: diseño UX/UI, maquetación responsive, optimización de velocidad, SEO técnico básico, integración de formularios, conexión con analytics, y capacitación para que puedas gestionar tu contenido."
+    }
+  ],
+  "posts": {
+    "suggestedPosts": [
+      {
+        "topicType": "STANDARD",
+        "summary": "🎨 5 errores de branding que debes evitar\n\n1. No definir tu público objetivo\n2. Copiar a la competencia\n3. Elegir colores sin estrategia\n4. Inconsistencia visual\n5. No tener manual de marca\n\n¿Necesitas ayuda con tu branding? 👉 Contáctanos",
+        "callToAction": {
+          "actionType": "LEARN_MORE",
+          "url": "https://studionolaatelier.com"
+        }
+      },
+      {
+        "topicType": "OFFER",
+        "summary": "✨ PROMO: Diseño Web Profesional\n\nEste mes tenemos disponibilidad para 3 proyectos de diseño web.\n\n✓ Diseño responsive\n✓ Optimización SEO\n✓ Entrega en 2 semanas\n✓ Soporte incluido\n\nConsulta precios especiales 👇",
+        "callToAction": {
+          "actionType": "CALL",
+          "url": "https://studionolaatelier.com"
+        }
+      },
+      {
+        "topicType": "STANDARD",
+        "summary": "💡 ¿Por qué tu emprendimiento necesita un sitio web profesional?\n\n→ Credibilidad 24/7\n→ Alcance ilimitado\n→ Ventas automatizadas\n→ Diferenciación\n\nEn Studio Nola creamos sitios web que convierten. Hablemos de tu proyecto.",
+        "callToAction": {
+          "actionType": "LEARN_MORE",
+          "url": "https://studionolaatelier.com/#mas-info"
+        }
+      }
+    ]
+  }
+}
