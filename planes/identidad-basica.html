@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Plan Identidad Básica - Diseño de logotipo y branding básico para emprendedores. Desde $120.000 ARS.">
+    <title>Identidad Básica - Studio Nola Atelier</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --color-violet: #7c3aed;
+            --color-green: #21d63f;
+            --color-orange: #ff6b35;
+            --color-black: #000000;
+            --color-white: #ffffff;
+            --color-gray: #bcbcc6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(20, 10, 40, 1) 50%, rgba(0, 0, 0, 1) 100%);
+            color: var(--color-white);
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 1.5rem 5%;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 1000;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-link {
+            color: var(--color-gray);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: var(--color-violet);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 120px 5% 80px;
+        }
+
+        .plan-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background: var(--color-violet);
+            color: var(--color-white);
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            border-radius: 20px;
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
+        }
+
+        .plan-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(48px, 8vw, 72px);
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--color-violet), var(--color-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .plan-subtitle {
+            font-size: clamp(18px, 2vw, 22px);
+            color: var(--color-gray);
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .price-box {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(124, 58, 237, 0.3);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .price {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(56px, 8vw, 84px);
+            color: var(--color-violet);
+            line-height: 1;
+        }
+
+        .price span {
+            font-size: clamp(28px, 4vw, 42px);
+            color: var(--color-gray);
+        }
+
+        .price-note {
+            color: var(--color-gray);
+            font-size: 16px;
+            margin-top: 0.5rem;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        .section {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2.5rem;
+        }
+
+        .section-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(28px, 4vw, 36px);
+            text-transform: uppercase;
+            color: var(--color-violet);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .section-title::before {
+            content: '';
+            width: 4px;
+            height: 30px;
+            background: var(--color-violet);
+            border-radius: 2px;
+        }
+
+        .features-list {
+            list-style: none;
+        }
+
+        .features-list li {
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .features-list li:last-child {
+            border-bottom: none;
+        }
+
+        .features-list li::before {
+            content: '✓';
+            color: var(--color-green);
+            font-weight: bold;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .feature-name {
+            font-weight: 600;
+            color: var(--color-white);
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+
+        .feature-desc {
+            color: var(--color-gray);
+            font-size: 14px;
+        }
+
+        .process-timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .process-timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, var(--color-violet), var(--color-green));
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-bottom: 2rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.375rem;
+            top: 0.5rem;
+            width: 12px;
+            height: 12px;
+            background: var(--color-violet);
+            border-radius: 50%;
+            border: 3px solid rgba(0, 0, 0, 0.9);
+        }
+
+        .timeline-title {
+            font-weight: 700;
+            color: var(--color-white);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-desc {
+            color: var(--color-gray);
+            font-size: 15px;
+        }
+
+        .timeline-duration {
+            display: inline-block;
+            margin-top: 0.5rem;
+            padding: 0.25rem 0.75rem;
+            background: rgba(124, 58, 237, 0.2);
+            color: var(--color-violet);
+            font-size: 12px;
+            font-weight: 600;
+            border-radius: 12px;
+        }
+
+        .full-width-section {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .deliverables-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .deliverable-card {
+            background: rgba(124, 58, 237, 0.1);
+            border: 1px solid rgba(124, 58, 237, 0.2);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .deliverable-icon {
+            font-size: 32px;
+            margin-bottom: 0.75rem;
+        }
+
+        .deliverable-title {
+            font-weight: 700;
+            color: var(--color-white);
+            margin-bottom: 0.5rem;
+        }
+
+        .deliverable-desc {
+            color: var(--color-gray);
+            font-size: 14px;
+        }
+
+        .cta-section {
+            text-align: center;
+            padding: 3rem;
+            background: rgba(124, 58, 237, 0.1);
+            border: 2px solid var(--color-violet);
+            border-radius: 20px;
+            margin-top: 4rem;
+        }
+
+        .cta-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(32px, 5vw, 42px);
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            color: var(--color-white);
+        }
+
+        .cta-text {
+            color: var(--color-gray);
+            font-size: 18px;
+            margin-bottom: 2rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1.25rem 2.5rem;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 20px;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            letter-spacing: 1px;
+        }
+
+        .btn-primary {
+            background: var(--color-violet);
+            color: var(--color-white);
+            border: 2px solid var(--color-violet);
+        }
+
+        .btn-primary:hover {
+            background: transparent;
+            color: var(--color-violet);
+            transform: scale(1.05);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--color-white);
+            border: 2px solid var(--color-white);
+        }
+
+        .btn-secondary:hover {
+            background: var(--color-white);
+            color: var(--color-black);
+        }
+
+        @media (max-width: 768px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 2rem;
+            }
+
+            .cta-section {
+                padding: 2rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <a href="../tienda.html" class="back-link">← Volver a Planes</a>
+            <a href="../index.html" class="back-link">Inicio</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="plan-header">
+            <span class="badge">Branding</span>
+            <h1 class="plan-title">Identidad Básica</h1>
+            <p class="plan-subtitle">El punto de partida perfecto para emprendedores que quieren profesionalizar su marca sin complicaciones</p>
+        </div>
+
+        <div class="price-box">
+            <div class="price">$120.000 <span>ARS</span></div>
+            <p class="price-note">Pago único • Entrega en 10-14 días hábiles</p>
+        </div>
+
+        <div class="content-grid">
+            <div class="section">
+                <h2 class="section-title">¿Qué incluye?</h2>
+                <ul class="features-list">
+                    <li>
+                        <div>
+                            <span class="feature-name">Diseño de Logotipo Principal</span>
+                            <span class="feature-desc">3 propuestas conceptuales diferentes para que elijas la que mejor represente tu marca</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <span class="feature-name">Variantes del Logo</span>
+                            <span class="feature-desc">Versión horizontal, vertical, isotipo y versión en blanco/negro para máxima versatilidad</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <span class="feature-name">Paleta de Colores</span>
+                            <span class="feature-desc">Colores primarios y secundarios con códigos RGB, CMYK y HEX para uso digital e impreso</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <span class="feature-name">Tipografías Seleccionadas</span>
+                            <span class="feature-desc">Fuentes para títulos y textos con guía de uso y pesos recomendados</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <span class="feature-name">Manual de Marca Básico</span>
+                            <span class="feature-desc">PDF de 15 páginas con aplicaciones correctas e incorrectas del logo</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <span class="feature-name">Archivos Finales</span>
+                            <span class="feature-desc">Formatos PNG (transparente), JPG, SVG (vectorial) y AI (editable)</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <span class="feature-name">2 Rondas de Revisiones</span>
+                            <span class="feature-desc">Ajustes y modificaciones para asegurar que quedes 100% conforme</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Proceso de Trabajo</h2>
+                <div class="process-timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-title">1. Briefing Inicial</div>
+                        <div class="timeline-desc">Reunión donde conocemos tu negocio, valores, competencia y objetivos. Analizamos referencias visuales que te gustan.</div>
+                        <span class="timeline-duration">1-2 días</span>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-title">2. Conceptualización</div>
+                        <div class="timeline-desc">Investigación de mercado y creación de bocetos. Desarrollamos las ideas que mejor se alinean con tu marca.</div>
+                        <span class="timeline-duration">3-4 días</span>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-title">3. Presentación de Propuestas</div>
+                        <div class="timeline-desc">Te mostramos 3 opciones de logo completamente desarrolladas con su justificación conceptual.</div>
+                        <span class="timeline-duration">1 día</span>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-title">4. Revisiones y Ajustes</div>
+                        <div class="timeline-desc">Incorporamos tus comentarios y perfeccionamos el diseño elegido hasta que sea perfecto.</div>
+                        <span class="timeline-duration">2-3 días</span>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-title">5. Entrega Final</div>
+                        <div class="timeline-desc">Preparación de todos los archivos, manual de marca y envío organizado en carpetas por formato.</div>
+                        <span class="timeline-duration">1 día</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="full-width-section">
+            <h2 class="section-title">Archivos que Recibirás</h2>
+            <div class="deliverables-grid">
+                <div class="deliverable-card">
+                    <div class="deliverable-icon">📄</div>
+                    <div class="deliverable-title">Archivos PNG</div>
+                    <div class="deliverable-desc">Alta resolución con fondo transparente para web y redes sociales</div>
+                </div>
+                <div class="deliverable-card">
+                    <div class="deliverable-icon">🖼️</div>
+                    <div class="deliverable-title">Archivos JPG</div>
+                    <div class="deliverable-desc">Para documentos, email y uso general</div>
+                </div>
+                <div class="deliverable-card">
+                    <div class="deliverable-icon">📐</div>
+                    <div class="deliverable-title">Archivos SVG</div>
+                    <div class="deliverable-desc">Vectorial escalable sin pérdida de calidad, ideal para web</div>
+                </div>
+                <div class="deliverable-card">
+                    <div class="deliverable-icon">✏️</div>
+                    <div class="deliverable-title">Archivo AI/EPS</div>
+                    <div class="deliverable-desc">Archivo fuente editable para imprenta y futuras modificaciones</div>
+                </div>
+                <div class="deliverable-card">
+                    <div class="deliverable-icon">📘</div>
+                    <div class="deliverable-title">Manual de Marca</div>
+                    <div class="deliverable-desc">PDF con guía de uso, colores, tipografías y aplicaciones</div>
+                </div>
+                <div class="deliverable-card">
+                    <div class="deliverable-icon">🎨</div>
+                    <div class="deliverable-title">Paleta Digital</div>
+                    <div class="deliverable-desc">Documento con todos los códigos de color en diferentes formatos</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="full-width-section">
+            <h2 class="section-title">Ideal Para</h2>
+            <div class="content-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
+                <div style="padding: 1.5rem; background: rgba(124, 58, 237, 0.05); border-radius: 12px;">
+                    <div style="font-size: 32px; margin-bottom: 0.75rem;">🚀</div>
+                    <div style="font-weight: 700; margin-bottom: 0.5rem;">Emprendedores</div>
+                    <div style="color: var(--color-gray); font-size: 14px;">Que recién comienzan y necesitan una identidad profesional sin inversión excesiva</div>
+                </div>
+                <div style="padding: 1.5rem; background: rgba(124, 58, 237, 0.05); border-radius: 12px;">
+                    <div style="font-size: 32px; margin-bottom: 0.75rem;">💼</div>
+                    <div style="font-weight: 700; margin-bottom: 0.5rem;">Freelancers</div>
+                    <div style="color: var(--color-gray); font-size: 14px;">Profesionales que quieren diferenciarse y proyectar confianza</div>
+                </div>
+                <div style="padding: 1.5rem; background: rgba(124, 58, 237, 0.05); border-radius: 12px;">
+                    <div style="font-size: 32px; margin-bottom: 0.75rem;">🏪</div>
+                    <div style="font-weight: 700; margin-bottom: 0.5rem;">Pequeños Negocios</div>
+                    <div style="color: var(--color-gray); font-size: 14px;">Comercios locales que buscan actualizar su imagen de marca</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h2 class="cta-title">¿Listo para profesionalizar tu marca?</h2>
+            <p class="cta-text">Hablemos de tu proyecto y empecemos a construir tu identidad visual</p>
+            <div class="cta-buttons">
+                <a href="https://wa.me/5491166882508?text=Hola!%20Me%20interesa%20el%20plan%20Identidad%20Básica%20($120.000)" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Quiero este Plan</a>
+                <a href="../tienda.html" class="btn btn-secondary">Ver Otros Planes</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

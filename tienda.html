@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="description" content="Planes y servicios de Studio Nola Atelier - Diseño web, branding, marketing digital y contenido visual. Elige el plan perfecto para tu negocio.">
+    <meta name="keywords" content="planes diseño web, precios branding, servicios diseño, planes marketing digital, paquetes diseño web Argentina">
+    <meta name="author" content="Studio Nola Atelier">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#000000">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Planes y Servicios - Studio Nola Atelier">
+    <meta property="og:description" content="Descubre nuestros planes de diseño web, branding y marketing digital. Soluciones profesionales para emprendedores y empresas.">
+    <meta property="og:url" content="https://studionolaatelier.com/tienda.html">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_ES">
+    
+    <link rel="canonical" href="https://studionolaatelier.com/tienda.html">
+    
+    <title>Planes y Servicios - Studio Nola Atelier</title>
+    
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --color-violet: #7c3aed;
+            --color-green: #21d63f;
+            --color-orange: #ff6b35;
+            --color-black: #000000;
+            --color-white: #ffffff;
+            --color-gray: #bcbcc6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(20, 10, 40, 1) 50%, rgba(0, 0, 0, 1) 100%);
+            color: var(--color-white);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 1.5rem 5%;
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 1000;
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(24px, 3vw, 32px);
+            color: var(--color-white);
+            text-decoration: none;
+            letter-spacing: 2px;
+        }
+
+        .nav-link {
+            color: var(--color-gray);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--color-violet);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            padding: 120px 5% 60px;
+            text-align: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .hero-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(48px, 8vw, 96px);
+            line-height: 1;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--color-violet), var(--color-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(18px, 2vw, 24px);
+            color: var(--color-gray);
+            margin-bottom: 3rem;
+            font-weight: 300;
+        }
+
+        /* Plans Grid */
+        .plans-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 5% 80px;
+        }
+
+        .plans-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .plan-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 2.5rem;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .plan-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--color-violet), var(--color-green));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .plan-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--color-violet);
+            box-shadow: 0 20px 60px rgba(124, 58, 237, 0.3);
+        }
+
+        .plan-card:hover::before {
+            opacity: 1;
+        }
+
+        .plan-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: var(--color-violet);
+            color: var(--color-white);
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            border-radius: 20px;
+            margin-bottom: 1.5rem;
+            letter-spacing: 1px;
+        }
+
+        .plan-badge.popular {
+            background: var(--color-orange);
+        }
+
+        .plan-name {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(32px, 4vw, 42px);
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            color: var(--color-white);
+        }
+
+        .plan-description {
+            color: var(--color-gray);
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .plan-price {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(48px, 6vw, 64px);
+            color: var(--color-violet);
+            margin-bottom: 0.5rem;
+        }
+
+        .plan-price span {
+            font-size: clamp(24px, 3vw, 32px);
+            color: var(--color-gray);
+        }
+
+        .plan-period {
+            color: var(--color-gray);
+            font-size: 14px;
+            margin-bottom: 2rem;
+        }
+
+        .plan-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .plan-features li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            font-size: 15px;
+            line-height: 1.5;
+        }
+
+        .plan-features li::before {
+            content: '✓';
+            color: var(--color-green);
+            font-weight: bold;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+
+        .plan-process {
+            background: rgba(124, 58, 237, 0.1);
+            border: 1px solid rgba(124, 58, 237, 0.2);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .process-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 20px;
+            text-transform: uppercase;
+            color: var(--color-violet);
+            margin-bottom: 1rem;
+        }
+
+        .process-steps {
+            list-style: none;
+        }
+
+        .process-steps li {
+            padding: 0.5rem 0;
+            color: var(--color-gray);
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .process-steps li::before {
+            content: '→';
+            color: var(--color-violet);
+            font-weight: bold;
+        }
+
+        .plan-cta {
+            display: block;
+            width: 100%;
+            padding: 1.25rem 2rem;
+            background: var(--color-violet);
+            color: var(--color-white);
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 20px;
+            text-transform: uppercase;
+            text-decoration: none;
+            text-align: center;
+            border-radius: 12px;
+            border: 2px solid var(--color-violet);
+            transition: all 0.3s ease;
+            letter-spacing: 1px;
+        }
+
+        .plan-cta:hover {
+            background: transparent;
+            color: var(--color-violet);
+            transform: scale(1.05);
+        }
+
+        /* Custom Plans Section */
+        .custom-section {
+            max-width: 900px;
+            margin: 4rem auto;
+            padding: 3rem;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            text-align: center;
+        }
+
+        .custom-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(36px, 5vw, 48px);
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            color: var(--color-white);
+        }
+
+        .custom-description {
+            color: var(--color-gray);
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .custom-cta {
+            display: inline-block;
+            padding: 1.25rem 3rem;
+            background: var(--color-green);
+            color: var(--color-black);
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 22px;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 12px;
+            border: 2px solid var(--color-green);
+            transition: all 0.3s ease;
+            letter-spacing: 1px;
+        }
+
+        .custom-cta:hover {
+            background: transparent;
+            color: var(--color-green);
+            transform: scale(1.05);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            max-width: 900px;
+            margin: 4rem auto 0;
+            padding: 0 5% 80px;
+        }
+
+        .faq-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(36px, 5vw, 48px);
+            text-transform: uppercase;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--color-white);
+        }
+
+        .faq-item {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .faq-question {
+            font-weight: 700;
+            font-size: 18px;
+            margin-bottom: 0.75rem;
+            color: var(--color-white);
+        }
+
+        .faq-answer {
+            color: var(--color-gray);
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 2rem 5%;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--color-gray);
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .plans-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .header {
+                padding: 1rem 5%;
+            }
+
+            .hero-section {
+                padding: 100px 5% 40px;
+            }
+
+            .plan-card {
+                padding: 2rem;
+            }
+
+            .custom-section {
+                padding: 2rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .plan-card {
+            animation: fadeInUp 0.6s ease forwards;
+            opacity: 0;
+        }
+
+        .plan-card:nth-child(1) { animation-delay: 0.1s; }
+        .plan-card:nth-child(2) { animation-delay: 0.2s; }
+        .plan-card:nth-child(3) { animation-delay: 0.3s; }
+        .plan-card:nth-child(4) { animation-delay: 0.4s; }
+        .plan-card:nth-child(5) { animation-delay: 0.5s; }
+        .plan-card:nth-child(6) { animation-delay: 0.6s; }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <a href="index.html" class="logo">Studio Nola Atelier</a>
+            <a href="index.html" class="nav-link">← Volver al inicio</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <h1 class="hero-title">Planes y Servicios</h1>
+        <p class="hero-subtitle">Soluciones profesionales diseñadas para emprendedores y empresas que buscan destacar</p>
+    </section>
+
+    <!-- Plans Container -->
+    <div class="plans-container">
+        <div class="plans-grid">
+            
+            <!-- Plan 1: Identidad de Marca Básica -->
+            <article class="plan-card">
+                <span class="plan-badge">Branding</span>
+                <h2 class="plan-name">Identidad Básica</h2>
+                <p class="plan-description">Perfecta para emprendedores que recién comienzan y necesitan una identidad visual profesional.</p>
+                
+                <div class="plan-price">$120.000 <span>ARS</span></div>
+                <p class="plan-period">Pago único</p>
+                
+                <ul class="plan-features">
+                    <li>Diseño de logotipo principal</li>
+                    <li>Variantes del logo</li>
+                    <li>Paleta de colores</li>
+                    <li>Tipografías y guía de uso</li>
+                    <li>Manual de marca básico</li>
+                </ul>
+
+                <a href="planes/identidad-basica.html" class="plan-cta">Ver detalles del plan</a>
+            </article>
+
+            <!-- Plan 2: Branding Completo -->
+            <article class="plan-card">
+                <span class="plan-badge popular">Más elegido</span>
+                <h2 class="plan-name">Branding Completo</h2>
+                <p class="plan-description">Para marcas que quieren una identidad sólida y coherente en todos sus puntos de contacto.</p>
+                
+                <div class="plan-price">$250.000 <span>ARS</span></div>
+                <p class="plan-period">Pago único</p>
+                
+                <ul class="plan-features">
+                    <li>Todo lo de Identidad Básica</li>
+                    <li>Naming y estrategia de marca</li>
+                    <li>Manual de marca completo</li>
+                    <li>Papelería corporativa</li>
+                    <li>Plantillas para redes sociales</li>
+                </ul>
+
+                <a href="planes/branding-completo.html" class="plan-cta">Ver detalles del plan</a>
+            </article>
+
+            <!-- Plan 3: Sitio Web One Page -->
+            <article class="plan-card">
+                <span class="plan-badge">Diseño Web</span>
+                <h2 class="plan-name">Web One Page</h2>
+                <p class="plan-description">Landing page profesional optimizada para conversión. Ideal para lanzamientos y servicios específicos.</p>
+                
+                <div class="plan-price">$180.000 <span>ARS</span></div>
+                <p class="plan-period">Pago único</p>
+                
+                <ul class="plan-features">
+                    <li>Diseño responsive completo</li>
+                    <li>Hasta 6 secciones personalizadas</li>
+                    <li>Formulario de contacto</li>
+                    <li>Optimización SEO básica</li>
+                    <li>Hosting y dominio 1 año</li>
+                </ul>
+
+                <a href="planes/web-one-page.html" class="plan-cta">Ver detalles del plan</a>
+            </article>
+
+            <!-- Plan 4: Sitio Web Multipágina -->
+            <article class="plan-card">
+                <span class="plan-badge popular">Diseño Web</span>
+                <h2 class="plan-name">Web Multipágina</h2>
+                <p class="plan-description">Sitio web completo con múltiples páginas. Perfecto para empresas y negocios consolidados.</p>
+                
+                <div class="plan-price">$350.000 <span>ARS</span></div>
+                <p class="plan-period">Pago único</p>
+                
+                <ul class="plan-features">
+                    <li>Hasta 10 páginas personalizadas</li>
+                    <li>Blog integrado con CMS</li>
+                    <li>Sistema de búsqueda interna</li>
+                    <li>Optimización SEO avanzada</li>
+                    <li>Panel de administración</li>
+                </ul>
+
+                <a href="planes/web-multipagina.html" class="plan-cta">Ver detalles del plan</a>
+            </article>
+
+            <!-- Plan 5: Marketing Digital -->
+            <article class="plan-card">
+                <span class="plan-badge">Marketing</span>
+                <h2 class="plan-name">Marketing Digital</h2>
+                <p class="plan-description">Gestión completa de redes sociales y estrategia de contenido. Haz crecer tu presencia online.</p>
+                
+                <div class="plan-price">$80.000 <span>ARS</span></div>
+                <p class="plan-period">Por mes</p>
+                
+                <ul class="plan-features">
+                    <li>12 publicaciones mensuales</li>
+                    <li>Diseño de piezas gráficas</li>
+                    <li>Copywriting optimizado</li>
+                    <li>Stories diarios</li>
+                    <li>Análisis y reporte mensual</li>
+                </ul>
+
+                <a href="planes/marketing-digital.html" class="plan-cta">Ver detalles del plan</a>
+            </article>
+
+            <!-- Plan 6: Paquete Todo Incluido -->
+            <article class="plan-card">
+                <span class="plan-badge popular">Premium</span>
+                <h2 class="plan-name">Presencia Total</h2>
+                <p class="plan-description">La solución completa: branding + web + marketing. Construye tu marca desde cero con todo incluido.</p>
+                
+                <div class="plan-price">$550.000 <span>ARS</span></div>
+                <p class="plan-period">Único + $80k/mes marketing</p>
+                
+                <ul class="plan-features">
+                    <li>✨ Branding Completo incluido</li>
+                    <li>✨ Web Multipágina incluida</li>
+                    <li>✨ 3 meses de Marketing incluidos</li>
+                    <li>Sesión de fotografía profesional</li>
+                    <li>Video promocional para redes</li>
+                </ul>
+
+                <a href="planes/presencia-total.html" class="plan-cta">Ver detalles del plan</a>
+            </article>
+
+        </div>
+
+        <!-- Custom Plans Section -->
+        <section class="custom-section">
+            <h2 class="custom-title">¿Necesitas algo diferente?</h2>
+            <p class="custom-description">
+                Cada proyecto es único. Si ninguno de estos planes se ajusta exactamente a lo que buscas, 
+                podemos crear una propuesta personalizada adaptada a tus necesidades específicas y presupuesto.
+            </p>
+            <a href="https://wa.me/5491166882508?text=Hola!%20Necesito%20una%20cotización%20personalizada" target="_blank" rel="noopener noreferrer" class="custom-cta">
+                Solicitar Cotización Personalizada
+            </a>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <h2 class="faq-title">Preguntas Frecuentes</h2>
+            
+            <div class="faq-item">
+                <h3 class="faq-question">¿Cómo son los métodos de pago?</h3>
+                <p class="faq-answer">Aceptamos transferencia bancaria, MercadoPago y efectivo. Para proyectos grandes ofrecemos planes de pago: 50% al inicio, 50% a la entrega final.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3 class="faq-question">¿Cuánto tiempo toma cada proyecto?</h3>
+                <p class="faq-answer">Los tiempos varían según el plan elegido. Branding básico: 2 semanas. Web one page: 3 semanas. Proyectos completos: 8-12 semanas. Los plazos detallados están en cada plan.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3 class="faq-question">¿Qué pasa si necesito más revisiones?</h3>
+                <p class="faq-answer">Cada plan incluye un número específico de revisiones. Si necesitas más, tienen un costo adicional de $15.000-$25.000 por ronda, dependiendo de la complejidad.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3 class="faq-question">¿Ofrecen mantenimiento web después del lanzamiento?</h3>
+                <p class="faq-answer">Sí, ofrecemos planes de mantenimiento desde $30.000/mes que incluyen actualizaciones de contenido, backups, seguridad y soporte técnico.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3 class="faq-question">¿Los precios incluyen impuestos?</h3>
+                <p class="faq-answer">Los precios mostrados son finales para monotributistas y consumidores finales. Para empresas se aplican los impuestos correspondientes según facturación.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3 class="faq-question">¿Puedo combinar servicios de diferentes planes?</h3>
+                <p class="faq-answer">¡Por supuesto! Podemos armar un paquete personalizado combinando servicios de diferentes planes según tus necesidades. Contáctanos para una cotización a medida.</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Studio Nola Atelier. Todos los derechos reservados.</p>
+        <p style="margin-top: 0.5rem; font-size: 12px;">Diseño web, branding y marketing digital en Argentina</p>
+    </footer>
+
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Track clicks on CTA buttons
+        document.querySelectorAll('.plan-cta, .custom-cta').forEach(button => {
+            button.addEventListener('click', function() {
+                const planName = this.closest('.plan-card')?.querySelector('.plan-name')?.textContent || 'Cotización Personalizada';
+                console.log(`Plan seleccionado: ${planName}`);
+            });
+        });
+    </script>
+</body>
+</html>
