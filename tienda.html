@@ -93,6 +93,54 @@
             color: var(--color-violet);
         }
 
+        .currency-selector {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--color-white);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            outline: none;
+        }
+
+        .currency-selector:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: var(--color-violet);
+        }
+
+        .currency-selector option {
+            background: #1a1a2e;
+            color: var(--color-white);
+        }
+
+        .rates-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(33, 214, 63, 0.1);
+            border: 1px solid rgba(33, 214, 63, 0.3);
+            color: var(--color-green);
+            padding: 0.35rem 0.75rem;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .rates-badge-icon {
+            font-size: 10px;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
         /* Hero Section */
         .hero-section {
             padding: 120px 5% 60px;
@@ -298,6 +346,90 @@
             transform: scale(1.05);
         }
 
+        .plan-cta-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+
+        .plan-cta-paypal {
+            background: #0070ba;
+            border-color: #0070ba;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            padding: 1rem 2rem;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        .plan-cta-paypal:hover {
+            background: #005a92;
+            border-color: #005a92;
+            color: var(--color-white);
+            transform: scale(1.05);
+        }
+
+        .plan-cta-whatsapp {
+            background: #25d366;
+            border-color: #25d366;
+            font-size: 16px;
+        }
+
+        .plan-cta-whatsapp:hover {
+            background: #1da851;
+            border-color: #1da851;
+            color: var(--color-white);
+        }
+
+        .payment-divider {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 0.5rem 0;
+            color: var(--color-gray);
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .payment-divider::before,
+        .payment-divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .payment-badges {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 11px;
+            color: var(--color-gray);
+            flex-wrap: wrap;
+        }
+
+        .payment-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            font-weight: 600;
+        }
+
+        .paypal-logo {
+            height: 18px;
+            width: auto;
+            vertical-align: middle;
+        }
+
         /* Custom Plans Section */
         .custom-section {
             max-width: 900px;
@@ -446,7 +578,18 @@
     <header class="header">
         <div class="header-content">
             <a href="index.html" class="logo">Studio Nola Atelier</a>
-            <a href="index.html" class="nav-link">← Volver al inicio</a>
+            <div style="display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap;">
+                <div style="display: flex; gap: 0.75rem; align-items: center;">
+                    <select class="currency-selector" aria-label="Seleccionar moneda">
+                        <!-- Opciones cargadas por JS -->
+                    </select>
+                    <span class="rates-badge" id="rates-status" style="display: none;">
+                        <span class="rates-badge-icon">🟢</span>
+                        <span>Tasas actualizadas</span>
+                    </span>
+                </div>
+                <a href="index.html" class="nav-link">← Volver al inicio</a>
+            </div>
         </div>
     </header>
 
@@ -458,126 +601,202 @@
 
     <!-- Plans Container -->
     <div class="plans-container">
+        
+        <!-- Sección Diseño Web -->
+        <h2 style="font-family: 'Bebas Neue', sans-serif; font-size: clamp(32px, 5vw, 48px); text-align: center; margin-bottom: 2rem; color: #00d4ff;">Diseño Web</h2>
+        
         <div class="plans-grid">
             
-            <!-- Plan 1: Identidad de Marca Básica -->
+            <!-- Web 1: Simple -->
             <article class="plan-card">
-                <span class="plan-badge">Branding</span>
-                <h2 class="plan-name">Identidad Básica</h2>
-                <p class="plan-description">Perfecta para emprendedores que recién comienzan y necesitan una identidad visual profesional.</p>
+                <span class="plan-badge">Simple</span>
+                <h2 class="plan-name">Diseño Web Simple</h2>
+                <p class="plan-description">Landing de 1–3 secciones. Ideal para presencia rápida y clara.</p>
                 
-                <div class="plan-price">$120.000 <span>ARS</span></div>
-                <p class="plan-period">Pago único</p>
+                <div class="plan-price"><span data-plan="web-simple">USD 280</span></div>
+                <p class="plan-period">Pago único • 7-10 días</p>
                 
                 <ul class="plan-features">
-                    <li>Diseño de logotipo principal</li>
-                    <li>Variantes del logo</li>
-                    <li>Paleta de colores</li>
-                    <li>Tipografías y guía de uso</li>
-                    <li>Manual de marca básico</li>
+                    <li>Diseño responsive</li>
+                    <li>Hasta 3 secciones (Hero, Servicios, Contacto)</li>
+                    <li>Optimización básica SEO</li>
+                    <li>Integración WhatsApp / Email</li>
+                    <li>1 ronda de ajustes incluida</li>
                 </ul>
 
-                <a href="planes/identidad-basica.html" class="plan-cta">Ver detalles del plan</a>
+                <a href="planes/web-simple.html" class="plan-cta">Ver detalles del plan</a>
             </article>
 
-            <!-- Plan 2: Branding Completo -->
+            <!-- Web 2: Intermedio -->
             <article class="plan-card">
-                <span class="plan-badge popular">Más elegido</span>
-                <h2 class="plan-name">Branding Completo</h2>
-                <p class="plan-description">Para marcas que quieren una identidad sólida y coherente en todos sus puntos de contacto.</p>
+                <span class="plan-badge popular">Recomendado</span>
+                <h2 class="plan-name">Diseño Web Intermedio</h2>
+                <p class="plan-description">Site de 4–6 secciones, más componentes y optimizaciones.</p>
                 
-                <div class="plan-price">$250.000 <span>ARS</span></div>
-                <p class="plan-period">Pago único</p>
+                <div class="plan-price"><span data-plan="web-intermedio">USD 480</span></div>
+                <p class="plan-period">Pago único • 2-3 semanas</p>
                 
                 <ul class="plan-features">
-                    <li>Todo lo de Identidad Básica</li>
-                    <li>Naming y estrategia de marca</li>
+                    <li>Todo lo del plan Simple</li>
+                    <li>Hasta 6 secciones + Blog básico</li>
+                    <li>Animaciones suaves y microinteracciones</li>
+                    <li>Optimización performance (imágenes, lazyload)</li>
+                    <li>2 rondas de ajustes incluidas</li>
+                </ul>
+
+                <a href="planes/web-intermedio.html" class="plan-cta">Ver detalles del plan</a>
+            </article>
+
+            <!-- Web 3: Avanzado -->
+            <article class="plan-card">
+                <span class="plan-badge">Avanzado</span>
+                <h2 class="plan-name">Diseño Web Avanzado</h2>
+                <p class="plan-description">Sitio con funcionalidades personalizadas y CMS.</p>
+                
+                <div class="plan-price"><span data-plan="web-avanzado">USD 1,250</span></div>
+                <p class="plan-period">Pago único • Desde 4 semanas</p>
+                
+                <ul class="plan-features">
+                    <li>Todo lo del plan Intermedio</li>
+                    <li>CMS (WordPress/Headless) o panel a medida</li>
+                    <li>Secciones dinámicas, formularios avanzados</li>
+                    <li>Integraciones a terceros (APIs, pagos, etc.)</li>
+                    <li>3 rondas de ajustes incluidas</li>
+                </ul>
+
+                <a href="planes/web-avanzado.html" class="plan-cta">Ver detalles del plan</a>
+            </article>
+        </div>
+
+        <!-- Sección Branding -->
+        <h2 style="font-family: 'Bebas Neue', sans-serif; font-size: clamp(32px, 5vw, 48px); text-align: center; margin: 4rem 0 2rem; color: #7c3aed;">Branding</h2>
+        
+        <div class="plans-grid">
+            
+            <!-- Branding 1: Esencial -->
+            <article class="plan-card">
+                <span class="plan-badge">Kit Inicial</span>
+                <h2 class="plan-name">Branding Esencial</h2>
+                <p class="plan-description">Logo + paleta + tipografías + guía breve.</p>
+                
+                <div class="plan-price"><span data-plan="branding-esencial">USD 600</span></div>
+                <p class="plan-period">Pago único • 2-3 semanas</p>
+                
+                <ul class="plan-features">
+                    <li>2–3 propuestas de logo</li>
+                    <li>Guía rápida de uso</li>
+                    <li>Aplicaciones básicas (RRSS, favicon)</li>
+                    <li>Archivos en todos los formatos</li>
+                    <li>2 rondas de ajustes</li>
+                </ul>
+
+                <a href="planes/branding-esencial.html" class="plan-cta">Ver detalles del plan</a>
+            </article>
+
+            <!-- Branding 2: Identidad de Marca -->
+            <article class="plan-card">
+                <span class="plan-badge popular">Pro</span>
+                <h2 class="plan-name">Identidad de Marca</h2>
+                <p class="plan-description">Sistema completo: logo, usos, lockups, tono y aplicaciones.</p>
+                
+                <div class="plan-price"><span data-plan="identidad-marca">USD 1,200</span></div>
+                <p class="plan-period">Pago único • 3-4 semanas</p>
+                
+                <ul class="plan-features">
                     <li>Manual de marca completo</li>
-                    <li>Papelería corporativa</li>
-                    <li>Plantillas para redes sociales</li>
+                    <li>Kit de plantillas (RRSS, presentaciones)</li>
+                    <li>Mockups y archivos editables</li>
+                    <li>Sistema de iconos y elementos gráficos</li>
+                    <li>3 rondas de ajustes</li>
                 </ul>
 
-                <a href="planes/branding-completo.html" class="plan-cta">Ver detalles del plan</a>
+                <a href="planes/identidad-marca.html" class="plan-cta">Ver detalles del plan</a>
             </article>
 
-            <!-- Plan 3: Sitio Web One Page -->
+            <!-- Branding 3: Rebranding -->
             <article class="plan-card">
-                <span class="plan-badge">Diseño Web</span>
-                <h2 class="plan-name">Web One Page</h2>
-                <p class="plan-description">Landing page profesional optimizada para conversión. Ideal para lanzamientos y servicios específicos.</p>
+                <span class="plan-badge">Avanzado</span>
+                <h2 class="plan-name">Rebranding Estratégico</h2>
+                <p class="plan-description">Investigación, auditoría y evolución de marca 360°.</p>
                 
-                <div class="plan-price">$180.000 <span>ARS</span></div>
-                <p class="plan-period">Pago único</p>
+                <div class="plan-price"><span data-plan="rebranding">USD 2,400</span></div>
+                <p class="plan-period">Pago único • 6-8 semanas</p>
                 
                 <ul class="plan-features">
-                    <li>Diseño responsive completo</li>
-                    <li>Hasta 6 secciones personalizadas</li>
-                    <li>Formulario de contacto</li>
-                    <li>Optimización SEO básica</li>
-                    <li>Hosting y dominio 1 año</li>
+                    <li>Research, benchmark y posicionamiento</li>
+                    <li>Arquitectura de marca</li>
+                    <li>Implementación multicanal</li>
+                    <li>Workshops con stakeholders</li>
+                    <li>Seguimiento post-lanzamiento</li>
                 </ul>
 
-                <a href="planes/web-one-page.html" class="plan-cta">Ver detalles del plan</a>
+                <a href="planes/rebranding.html" class="plan-cta">Ver detalles del plan</a>
             </article>
+        </div>
 
-            <!-- Plan 4: Sitio Web Multipágina -->
+        <!-- Sección Marketing Digital -->
+        <h2 style="font-family: 'Bebas Neue', sans-serif; font-size: clamp(32px, 5vw, 48px); text-align: center; margin: 4rem 0 2rem; color: #10b981;">Marketing Digital</h2>
+        
+        <div class="plans-grid">
+            
+            <!-- Marketing 1: Gestión RRSS -->
             <article class="plan-card">
-                <span class="plan-badge popular">Diseño Web</span>
-                <h2 class="plan-name">Web Multipágina</h2>
-                <p class="plan-description">Sitio web completo con múltiples páginas. Perfecto para empresas y negocios consolidados.</p>
+                <span class="plan-badge">Starter</span>
+                <h2 class="plan-name">Gestión de RRSS</h2>
+                <p class="plan-description">Calendario, redacción y diseño de posts mensuales.</p>
                 
-                <div class="plan-price">$350.000 <span>ARS</span></div>
-                <p class="plan-period">Pago único</p>
-                
-                <ul class="plan-features">
-                    <li>Hasta 10 páginas personalizadas</li>
-                    <li>Blog integrado con CMS</li>
-                    <li>Sistema de búsqueda interna</li>
-                    <li>Optimización SEO avanzada</li>
-                    <li>Panel de administración</li>
-                </ul>
-
-                <a href="planes/web-multipagina.html" class="plan-cta">Ver detalles del plan</a>
-            </article>
-
-            <!-- Plan 5: Marketing Digital -->
-            <article class="plan-card">
-                <span class="plan-badge">Marketing</span>
-                <h2 class="plan-name">Marketing Digital</h2>
-                <p class="plan-description">Gestión completa de redes sociales y estrategia de contenido. Haz crecer tu presencia online.</p>
-                
-                <div class="plan-price">$80.000 <span>ARS</span></div>
+                <div class="plan-price"><span data-plan="gestion-rrss">USD 350</span></div>
                 <p class="plan-period">Por mes</p>
                 
                 <ul class="plan-features">
-                    <li>12 publicaciones mensuales</li>
-                    <li>Diseño de piezas gráficas</li>
-                    <li>Copywriting optimizado</li>
-                    <li>Stories diarios</li>
-                    <li>Análisis y reporte mensual</li>
+                    <li>8–12 piezas/mes</li>
+                    <li>Copys y hashtags</li>
+                    <li>Métricas básicas</li>
+                    <li>Reunión de kick-off</li>
+                    <li>Tablero compartido</li>
                 </ul>
 
-                <a href="planes/marketing-digital.html" class="plan-cta">Ver detalles del plan</a>
+                <a href="planes/gestion-rrss.html" class="plan-cta">Ver detalles del plan</a>
             </article>
 
-            <!-- Plan 6: Paquete Todo Incluido -->
+            <!-- Marketing 2: Campañas Ads -->
             <article class="plan-card">
-                <span class="plan-badge popular">Premium</span>
-                <h2 class="plan-name">Presencia Total</h2>
-                <p class="plan-description">La solución completa: branding + web + marketing. Construye tu marca desde cero con todo incluido.</p>
+                <span class="plan-badge popular">Performance</span>
+                <h2 class="plan-name">Campañas Ads</h2>
+                <p class="plan-description">Set up, optimización y reportes en Meta/Google.</p>
                 
-                <div class="plan-price">$550.000 <span>ARS</span></div>
-                <p class="plan-period">Único + $80k/mes marketing</p>
+                <div class="plan-price"><span data-plan="campanas-ads">USD 500</span></div>
+                <p class="plan-period">Por mes</p>
                 
                 <ul class="plan-features">
-                    <li>✨ Branding Completo incluido</li>
-                    <li>✨ Web Multipágina incluida</li>
-                    <li>✨ 3 meses de Marketing incluidos</li>
-                    <li>Sesión de fotografía profesional</li>
-                    <li>Video promocional para redes</li>
+                    <li>Configuración de campañas</li>
+                    <li>Segmentación de audiencias</li>
+                    <li>Optimización continua</li>
+                    <li>Reportes semanales</li>
+                    <li>Meta Ads + Google Ads</li>
                 </ul>
 
-                <a href="planes/presencia-total.html" class="plan-cta">Ver detalles del plan</a>
+                <a href="planes/campanas-ads.html" class="plan-cta">Ver detalles del plan</a>
+            </article>
+
+            <!-- Marketing 3: Estrategia Completa -->
+            <article class="plan-card">
+                <span class="plan-badge">Completo</span>
+                <h2 class="plan-name">Estrategia Digital Completa</h2>
+                <p class="plan-description">RRSS + Ads + contenido + análisis integral.</p>
+                
+                <div class="plan-price"><span data-plan="estrategia-completa">USD 800</span></div>
+                <p class="plan-period">Por mes</p>
+                
+                <ul class="plan-features">
+                    <li>Todo lo de Gestión RRSS + Ads</li>
+                    <li>Estrategia de contenido</li>
+                    <li>Email marketing</li>
+                    <li>Análisis de competencia</li>
+                    <li>Reuniones estratégicas quincenales</li>
+                </ul>
+
+                <a href="planes/estrategia-completa.html" class="plan-cta">Ver detalles del plan</a>
             </article>
 
         </div>
@@ -654,6 +873,27 @@
                 const planName = this.closest('.plan-card')?.querySelector('.plan-name')?.textContent || 'Cotización Personalizada';
                 console.log(`Plan seleccionado: ${planName}`);
             });
+        });
+    </script>
+    
+    <!-- Currency Converter -->
+    <script src="./js/currency-converter.js"></script>
+    
+    <!-- PayPal Integration -->
+    <script src="./js/paypal-integration.js"></script>
+    
+    <script>
+        // Mostrar badge de tasas actualizadas
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const lastUpdate = CurrencyConverter.getLastUpdate();
+                const badge = document.getElementById('rates-status');
+                
+                if (badge && lastUpdate.hoursAgo !== undefined) {
+                    badge.style.display = 'inline-flex';
+                    badge.title = lastUpdate.message;
+                }
+            }, 1000);
         });
     </script>
 </body>

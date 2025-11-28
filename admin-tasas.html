@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Panel de Tasas de Cambio - Studio Nola</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-violet: #7c3aed;
+            --color-green: #21d63f;
+            --color-orange: #ff6b35;
+            --color-white: #ffffff;
+            --color-gray: #bcbcc6;
+            --color-dark: #1a1a2e;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(20, 10, 40, 1) 50%, rgba(0, 0, 0, 1) 100%);
+            color: var(--color-white);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(36px, 6vw, 64px);
+            background: linear-gradient(135deg, var(--color-violet), var(--color-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            color: var(--color-gray);
+            font-size: 14px;
+        }
+
+        .warning {
+            background: rgba(255, 107, 53, 0.1);
+            border: 1px solid var(--color-orange);
+            border-radius: 12px;
+            padding: 1rem 1.5rem;
+            margin-bottom: 2rem;
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .warning-icon {
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+
+        .warning-text {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .card-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--color-white);
+        }
+
+        .rates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .rate-item {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            padding: 1rem;
+        }
+
+        .rate-label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: var(--color-gray);
+            margin-bottom: 0.5rem;
+        }
+
+        .rate-flag {
+            font-size: 20px;
+        }
+
+        .rate-input {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            padding: 0.75rem;
+            color: var(--color-white);
+            font-size: 18px;
+            font-weight: 700;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .rate-input:focus {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: var(--color-violet);
+        }
+
+        .rate-input:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .rate-helper {
+            font-size: 11px;
+            color: var(--color-gray);
+            margin-top: 0.25rem;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            border: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: var(--color-violet);
+            color: var(--color-white);
+        }
+
+        .btn-primary:hover {
+            background: #6d28d9;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--color-white);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .btn-success {
+            background: var(--color-green);
+            color: var(--color-dark);
+        }
+
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .info-box {
+            background: rgba(124, 58, 237, 0.1);
+            border: 1px solid rgba(124, 58, 237, 0.3);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .info-title {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--color-violet);
+        }
+
+        .info-text {
+            font-size: 13px;
+            color: var(--color-gray);
+            line-height: 1.6;
+        }
+
+        .status {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--color-green);
+            color: var(--color-dark);
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 700;
+            box-shadow: 0 4px 20px rgba(33, 214, 63, 0.3);
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .status.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .preview-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        .preview-table th,
+        .preview-table td {
+            text-align: left;
+            padding: 0.75rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .preview-table th {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--color-gray);
+            text-transform: uppercase;
+        }
+
+        .preview-table td {
+            font-size: 14px;
+        }
+
+        .preview-amount {
+            font-weight: 700;
+            color: var(--color-green);
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+
+            .rates-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .button-group {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="title">Panel de Tasas</h1>
+            <p class="subtitle">Actualiza las tasas de cambio para la tienda</p>
+        </div>
+
+        <div class="warning">
+            <span class="warning-icon">⚠️</span>
+            <div>
+                <div class="warning-text">
+                    <strong>Página de administración</strong><br>
+                    Los cambios que hagas aquí solo afectan tu navegador (localStorage). Para hacer cambios permanentes, edita el archivo <code>js/currency-converter.js</code>.
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2 class="card-title">💱 Tasas de Cambio</h2>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 1rem;">
+                <p style="color: var(--color-gray); font-size: 14px;">
+                    1 USD equivale a:
+                </p>
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                    <span id="last-update" style="color: var(--color-gray); font-size: 12px;">🔄 Cargando...</span>
+                    <button class="btn btn-secondary" onclick="refreshFromAPI()" style="padding: 0.5rem 1rem; font-size: 12px;">
+                        🌐 Actualizar desde API
+                    </button>
+                </div>
+            </div>
+
+            <div class="rates-grid">
+                <div class="rate-item">
+                    <div class="rate-label">
+                        <span class="rate-flag">🇺🇸</span>
+                        USD
+                    </div>
+                    <input type="number" class="rate-input" value="1" disabled>
+                    <div class="rate-helper">Moneda base</div>
+                </div>
+
+                <div class="rate-item">
+                    <div class="rate-label">
+                        <span class="rate-flag">🇦🇷</span>
+                        ARS
+                    </div>
+                    <input type="number" id="rate-ars" class="rate-input" value="1000" step="10">
+                    <div class="rate-helper">Peso argentino</div>
+                </div>
+
+                <div class="rate-item">
+                    <div class="rate-label">
+                        <span class="rate-flag">🇲🇽</span>
+                        MXN
+                    </div>
+                    <input type="number" id="rate-mxn" class="rate-input" value="17" step="0.1">
+                    <div class="rate-helper">Peso mexicano</div>
+                </div>
+
+                <div class="rate-item">
+                    <div class="rate-label">
+                        <span class="rate-flag">🇨🇱</span>
+                        CLP
+                    </div>
+                    <input type="number" id="rate-clp" class="rate-input" value="950" step="10">
+                    <div class="rate-helper">Peso chileno</div>
+                </div>
+
+                <div class="rate-item">
+                    <div class="rate-label">
+                        <span class="rate-flag">🇨🇴</span>
+                        COP
+                    </div>
+                    <input type="number" id="rate-cop" class="rate-input" value="4300" step="50">
+                    <div class="rate-helper">Peso colombiano</div>
+                </div>
+
+                <div class="rate-item">
+                    <div class="rate-label">
+                        <span class="rate-flag">🇪🇺</span>
+                        EUR
+                    </div>
+                    <input type="number" id="rate-eur" class="rate-input" value="0.92" step="0.01">
+                    <div class="rate-helper">Euro</div>
+                </div>
+
+                <div class="rate-item">
+                    <div class="rate-label">
+                        <span class="rate-flag">🇧🇷</span>
+                        BRL
+                    </div>
+                    <input type="number" id="rate-brl" class="rate-input" value="5.0" step="0.1">
+                    <div class="rate-helper">Real brasileño</div>
+                </div>
+            </div>
+
+            <div class="button-group">
+                <button class="btn btn-primary" onclick="updateRates()">
+                    💾 Guardar Tasas
+                </button>
+                <button class="btn btn-secondary" onclick="loadCurrentRates()">
+                    🔄 Cargar Actuales
+                </button>
+                <button class="btn btn-secondary" onclick="resetRates()">
+                    ↩️ Restaurar por Defecto
+                </button>
+            </div>
+
+            <div class="info-box">
+                <div class="info-title">ℹ️ Sistema de Actualización Automática</div>
+                <div class="info-text">
+                    <strong>🌐 Actualización desde API (Automático):</strong><br>
+                    • Las tasas se obtienen automáticamente de exchangerate-api.com<br>
+                    • Se actualizan cada 24 horas automáticamente<br>
+                    • Puedes forzar actualización con el botón "Actualizar desde API"<br><br>
+                    
+                    <strong>✏️ Actualización Manual (Opcional):</strong><br>
+                    1. Ingresa el nuevo valor de cada moneda con respecto al USD<br>
+                    2. Haz clic en "Guardar Tasas" (sobrescribe valores de API)<br>
+                    3. Las tasas manuales se guardan en localStorage<br><br>
+                    
+                    <strong>⚙️ Desactivar API:</strong> Edita <code>API_CONFIG.enabled = false</code> en <code>js/currency-converter.js</code>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2 class="card-title">👁️ Vista Previa de Precios</h2>
+            <p style="color: var(--color-gray); margin-bottom: 1rem; font-size: 14px;">
+                Así se verán los precios con las tasas actuales:
+            </p>
+
+            <table class="preview-table">
+                <thead>
+                    <tr>
+                        <th>Plan</th>
+                        <th>USD</th>
+                        <th>ARS</th>
+                        <th>MXN</th>
+                        <th>EUR</th>
+                    </tr>
+                </thead>
+                <tbody id="preview-body">
+                    <!-- Llenado por JS -->
+                </tbody>
+            </table>
+        </div>
+
+        <div class="card">
+            <h2 class="card-title">🔗 Enlaces Útiles</h2>
+            <div class="button-group">
+                <a href="tienda.html" class="btn btn-secondary" target="_blank">
+                    🏪 Ver Tienda
+                </a>
+                <a href="CURRENCY_CONVERTER_README.md" class="btn btn-secondary" target="_blank">
+                    📖 Documentación
+                </a>
+                <button class="btn btn-secondary" onclick="window.location.reload()">
+                    🔄 Recargar Página
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="status" id="status">
+        ✓ Tasas actualizadas correctamente
+    </div>
+
+    <script src="./js/currency-converter.js"></script>
+    <script>
+        // Cargar tasas actuales al iniciar
+        window.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                loadCurrentRates();
+                updatePreview();
+                updateLastUpdateInfo();
+            }, 500); // Esperar a que el conversor cargue las tasas desde API
+        });
+
+        // Cargar tasas actuales del conversor
+        function loadCurrentRates() {
+            const rates = CurrencyConverter.getExchangeRates();
+            
+            document.getElementById('rate-ars').value = rates.ARS.rate;
+            document.getElementById('rate-mxn').value = rates.MXN.rate;
+            document.getElementById('rate-clp').value = rates.CLP.rate;
+            document.getElementById('rate-cop').value = rates.COP.rate;
+            document.getElementById('rate-eur').value = rates.EUR.rate;
+            document.getElementById('rate-brl').value = rates.BRL.rate;
+            
+            updatePreview();
+        }
+
+        // Actualizar tasas en el conversor
+        function updateRates() {
+            const newRates = {
+                'ARS': parseFloat(document.getElementById('rate-ars').value),
+                'MXN': parseFloat(document.getElementById('rate-mxn').value),
+                'CLP': parseFloat(document.getElementById('rate-clp').value),
+                'COP': parseFloat(document.getElementById('rate-cop').value),
+                'EUR': parseFloat(document.getElementById('rate-eur').value),
+                'BRL': parseFloat(document.getElementById('rate-brl').value)
+            };
+
+            // Actualizar cada tasa
+            Object.keys(newRates).forEach(currency => {
+                CurrencyConverter.updateRate(currency, newRates[currency]);
+            });
+
+            // Mostrar confirmación
+            showStatus('✓ Tasas actualizadas correctamente');
+            
+            // Actualizar preview
+            updatePreview();
+        }
+
+        // Restaurar tasas por defecto
+        function resetRates() {
+            if (confirm('¿Restaurar las tasas a los valores por defecto?')) {
+                document.getElementById('rate-ars').value = 1000;
+                document.getElementById('rate-mxn').value = 17;
+                document.getElementById('rate-clp').value = 950;
+                document.getElementById('rate-cop').value = 4300;
+                document.getElementById('rate-eur').value = 0.92;
+                document.getElementById('rate-brl').value = 5.0;
+                
+                updateRates();
+                showStatus('↩️ Tasas restauradas por defecto');
+            }
+        }
+
+        // Actualizar vista previa
+        function updatePreview() {
+            const plans = CurrencyConverter.getBasePrices();
+            const previewBody = document.getElementById('preview-body');
+            
+            previewBody.innerHTML = '';
+            
+            const planNames = {
+                'web-simple': 'Web Simple',
+                'web-intermedio': 'Web Intermedio',
+                'web-avanzado': 'Web Avanzado',
+                'branding-esencial': 'Branding Esencial',
+                'identidad-marca': 'Identidad de Marca',
+                'rebranding': 'Rebranding Estratégico',
+                'gestion-rrss': 'Gestión RRSS',
+                'campanas-ads': 'Campañas Ads',
+                'estrategia-completa': 'Estrategia Completa'
+            };
+
+            Object.keys(plans).forEach(planId => {
+                const row = document.createElement('tr');
+                const usdPrice = plans[planId];
+                
+                row.innerHTML = `
+                    <td>${planNames[planId]}</td>
+                    <td class="preview-amount">USD ${usdPrice}</td>
+                    <td class="preview-amount">${CurrencyConverter.getPrice(planId, 'ARS')}</td>
+                    <td class="preview-amount">${CurrencyConverter.getPrice(planId, 'MXN')}</td>
+                    <td class="preview-amount">${CurrencyConverter.getPrice(planId, 'EUR')}</td>
+                `;
+                
+                previewBody.appendChild(row);
+            });
+        }
+
+        // Mostrar mensaje de estado
+        function showStatus(message) {
+            const status = document.getElementById('status');
+            status.textContent = message;
+            status.classList.add('show');
+            
+            setTimeout(() => {
+                status.classList.remove('show');
+            }, 3000);
+        }
+
+        // Actualizar preview en tiempo real cuando cambian los inputs
+        document.querySelectorAll('.rate-input').forEach(input => {
+            input.addEventListener('input', () => {
+                // Actualizar preview sin guardar
+                updateRates();
+            });
+        });
+
+        // Actualizar información de última actualización
+        function updateLastUpdateInfo() {
+            const lastUpdate = CurrencyConverter.getLastUpdate();
+            const element = document.getElementById('last-update');
+            
+            if (lastUpdate.hoursAgo !== undefined) {
+                const color = lastUpdate.hoursAgo < 24 ? 'var(--color-green)' : 'var(--color-orange)';
+                element.innerHTML = `🕐 <span style="color: ${color}">${lastUpdate.message}</span>`;
+            } else {
+                element.innerHTML = '⚠️ <span style="color: var(--color-orange)">Tasas manuales (no actualizadas desde API)</span>';
+            }
+        }
+
+        // Refrescar tasas desde API
+        async function refreshFromAPI() {
+            const button = event.target;
+            const originalText = button.textContent;
+            
+            button.textContent = '⏳ Actualizando...';
+            button.disabled = true;
+            
+            try {
+                const success = await CurrencyConverter.refreshRates();
+                
+                if (success) {
+                    loadCurrentRates();
+                    updatePreview();
+                    updateLastUpdateInfo();
+                    showStatus('✓ Tasas actualizadas desde API');
+                } else {
+                    showStatus('⚠️ Error al actualizar tasas');
+                }
+            } catch (error) {
+                showStatus('❌ Error: ' + error.message);
+            } finally {
+                button.textContent = originalText;
+                button.disabled = false;
+            }
+        }
+    </script>
+</body>
+</html>

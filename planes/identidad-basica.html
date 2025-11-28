@@ -66,6 +66,29 @@
             color: var(--color-violet);
         }
 
+        .currency-selector {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--color-white);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            outline: none;
+        }
+
+        .currency-selector:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: var(--color-violet);
+        }
+
+        .currency-selector option {
+            background: #1a1a2e;
+            color: var(--color-white);
+        }
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -394,7 +417,10 @@
     <header class="header">
         <div class="header-content">
             <a href="../tienda.html" class="back-link">← Volver a Planes</a>
-            <a href="../index.html" class="back-link">Inicio</a>
+            <div style="display: flex; gap: 1.5rem; align-items: center;">
+                <select class="currency-selector" aria-label="Seleccionar moneda"></select>
+                <a href="../index.html" class="back-link">Inicio</a>
+            </div>
         </div>
     </header>
 
@@ -406,7 +432,7 @@
         </div>
 
         <div class="price-box">
-            <div class="price">$120.000 <span>ARS</span></div>
+            <div class="price"><span data-plan="identidad-basica">USD 500</span></div>
             <p class="price-note">Pago único • Entrega en 10-14 días hábiles</p>
         </div>
 
@@ -552,10 +578,13 @@
             <h2 class="cta-title">¿Listo para profesionalizar tu marca?</h2>
             <p class="cta-text">Hablemos de tu proyecto y empecemos a construir tu identidad visual</p>
             <div class="cta-buttons">
-                <a href="https://wa.me/5491166882508?text=Hola!%20Me%20interesa%20el%20plan%20Identidad%20Básica%20($120.000)" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Quiero este Plan</a>
+                <a href="https://wa.me/5491166882508?text=Hola!%20Me%20interesa%20el%20plan%20Identidad%20Básica%20(USD%20500)" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Quiero este Plan</a>
                 <a href="../tienda.html" class="btn btn-secondary">Ver Otros Planes</a>
             </div>
         </div>
     </div>
+    
+    <!-- Currency Converter -->
+    <script src="../js/currency-converter.js"></script>
 </body>
 </html>
