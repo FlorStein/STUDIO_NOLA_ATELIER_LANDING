@@ -46,6 +46,64 @@ const CurrencyConverter = (function() {
   // Estado actual
   let currentCurrency = 'USD';
   let isLoadingRates = false;
+
+  /**
+   * Redondeo inteligente según el monto y la moneda
+   * Redondea a números "bonitos" manteniendo la precisión comercial
+   */
+  function smartRound(amount, currency) {
+    // USD, EUR - Redondeo a múltiplos según rango
+    if (currency === 'USD' || currency === 'EUR') {
+      if (amount < 100) return Math.round(amount / 5) * 5;           // $50, $55, $60
+      if (amount < 500) return Math.round(amount / 10) * 10;         // $280, $290, $300
+      if (amount < 1000) return Math.round(amount / 25) * 25;        // $450, $475, $500
+      if (amount < 5000) return Math.round(amount / 50) * 50;        // $1200, $1250, $1300
+      return Math.round(amount / 100) * 100;                         // $2400, $2500, $2600
+    }
+
+    // ARS - Redondeo más agresivo por inflación
+    if (currency === 'ARS') {
+      if (amount < 10000) return Math.round(amount / 100) * 100;     // $9,900, $10,000
+      if (amount < 50000) return Math.round(amount / 500) * 500;     // $49,500, $50,000
+      if (amount < 100000) return Math.round(amount / 1000) * 1000;  // $99,000, $100,000
+      if (amount < 500000) return Math.round(amount / 5000) * 5000;  // $495,000, $500,000
+      return Math.round(amount / 10000) * 10000;                     // $2,490,000, $2,500,000
+    }
+
+    // MXN - Redondeo moderado
+    if (currency === 'MXN') {
+      if (amount < 1000) return Math.round(amount / 10) * 10;        // $4,780, $4,790
+      if (amount < 5000) return Math.round(amount / 50) * 50;        // $4,750, $4,800
+      if (amount < 10000) return Math.round(amount / 100) * 100;     // $8,100, $8,200
+      return Math.round(amount / 500) * 500;                         // $21,000, $21,500
+    }
+
+    // CLP - Redondeo grande (sin decimales, montos altos)
+    if (currency === 'CLP') {
+      if (amount < 10000) return Math.round(amount / 100) * 100;     // $9,900, $10,000
+      if (amount < 100000) return Math.round(amount / 1000) * 1000;  // $99,000, $100,000
+      if (amount < 500000) return Math.round(amount / 5000) * 5000;  // $495,000, $500,000
+      return Math.round(amount / 10000) * 10000;                     // $1,190,000, $1,200,000
+    }
+
+    // COP - Redondeo muy agresivo (montos muy altos)
+    if (currency === 'COP') {
+      if (amount < 100000) return Math.round(amount / 1000) * 1000;  // $99,000, $100,000
+      if (amount < 500000) return Math.round(amount / 5000) * 5000;  // $495,000, $500,000
+      if (amount < 1000000) return Math.round(amount / 10000) * 10000; // $990,000, $1,000,000
+      return Math.round(amount / 50000) * 50000;                     // $2,050,000, $2,100,000
+    }
+
+    // BRL - Similar a MXN
+    if (currency === 'BRL') {
+      if (amount < 1000) return Math.round(amount / 10) * 10;        // R$1,390, R$1,400
+      if (amount < 5000) return Math.round(amount / 50) * 50;        // R$2,400, R$2,450
+      return Math.round(amount / 100) * 100;                         // R$6,200, R$6,300
+    }
+
+    // Fallback: redondeo estándar
+    return Math.round(amount);
+  }
   
   // Obtener tasas desde API
   async function fetchExchangeRates() {
@@ -129,7 +187,10 @@ const CurrencyConverter = (function() {
     }
     
     const rate = EXCHANGE_RATES[targetCurrency].rate;
-    return Math.round(usdAmount * rate);
+    const rawAmount = usdAmount * rate;
+    
+    // Aplicar redondeo inteligente
+    return smartRound(rawAmount, targetCurrency);
   }
 
   // Formatear precio con símbolo de moneda
