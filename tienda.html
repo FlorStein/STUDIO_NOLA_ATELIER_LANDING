@@ -26,9 +26,18 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet">
     
     <style>
+        @font-face {
+            font-family: 'soviet_programbold';
+            src: url('index/fonts/sovietprogram-bold-webfont.woff2') format('woff2'),
+                 url('index/fonts/sovietprogram-bold-webfont.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
         :root {
             --color-violet: #7c3aed;
             --color-green: #21d63f;
@@ -36,6 +45,7 @@
             --color-black: #000000;
             --color-white: #ffffff;
             --color-gray: #bcbcc6;
+            --font-sovietic: 'soviet_programbold', sans-serif;
         }
 
         * {
@@ -46,7 +56,8 @@
 
         body {
             font-family: 'Montserrat', sans-serif;
-            background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(20, 10, 40, 1) 50%, rgba(0, 0, 0, 1) 100%);
+            background: url('index/backgrounds/backgroundblue3.svg') center fixed no-repeat;
+            background-size: cover;
             color: var(--color-white);
             min-height: 100vh;
             overflow-x: hidden;
@@ -74,11 +85,12 @@
         }
 
         .logo {
-            font-family: 'Bebas Neue', sans-serif;
+            font-family: var(--font-sovietic);
             font-size: clamp(24px, 3vw, 32px);
             color: var(--color-white);
             text-decoration: none;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
         .nav-link {
@@ -150,7 +162,7 @@
         }
 
         .hero-title {
-            font-family: 'Bebas Neue', sans-serif;
+            font-family: var(--font-sovietic);
             font-size: clamp(48px, 8vw, 96px);
             line-height: 1;
             text-transform: uppercase;
@@ -159,9 +171,11 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            letter-spacing: 1px;
         }
 
         .hero-subtitle {
+            font-family: monospace;
             font-size: clamp(18px, 2vw, 24px);
             color: var(--color-gray);
             margin-bottom: 3rem;
@@ -233,14 +247,16 @@
         }
 
         .plan-name {
-            font-family: 'Bebas Neue', sans-serif;
+            font-family: var(--font-sovietic);
             font-size: clamp(32px, 4vw, 42px);
             text-transform: uppercase;
             margin-bottom: 1rem;
             color: var(--color-white);
+            letter-spacing: 1px;
         }
 
         .plan-description {
+            font-family: monospace;
             color: var(--color-gray);
             font-size: 16px;
             line-height: 1.6;
@@ -248,10 +264,11 @@
         }
 
         .plan-price {
-            font-family: 'Bebas Neue', sans-serif;
+            font-family: var(--font-sovietic);
             font-size: clamp(48px, 6vw, 64px);
             color: var(--color-violet);
             margin-bottom: 0.5rem;
+            letter-spacing: 1px;
         }
 
         .plan-price span {
@@ -297,7 +314,7 @@
         }
 
         .process-title {
-            font-family: 'Bebas Neue', sans-serif;
+            font-family: var(--font-sovietic);
             font-size: 20px;
             text-transform: uppercase;
             color: var(--color-violet);
@@ -329,7 +346,7 @@
             padding: 1.25rem 2rem;
             background: var(--color-violet);
             color: var(--color-white);
-            font-family: 'Bebas Neue', sans-serif;
+            font-family: var(--font-sovietic);
             font-size: 20px;
             text-transform: uppercase;
             text-decoration: none;
@@ -443,14 +460,16 @@
         }
 
         .custom-title {
-            font-family: 'Bebas Neue', sans-serif;
+            font-family: var(--font-sovietic);
             font-size: clamp(36px, 5vw, 48px);
             text-transform: uppercase;
             margin-bottom: 1rem;
             color: var(--color-white);
+            letter-spacing: 1px;
         }
 
         .custom-description {
+            font-family: monospace;
             color: var(--color-gray);
             font-size: 18px;
             line-height: 1.6;
@@ -462,7 +481,7 @@
             padding: 1.25rem 3rem;
             background: var(--color-green);
             color: var(--color-black);
-            font-family: 'Bebas Neue', sans-serif;
+            font-family: var(--font-sovietic);
             font-size: 22px;
             text-transform: uppercase;
             text-decoration: none;
@@ -486,12 +505,13 @@
         }
 
         .faq-title {
-            font-family: 'Bebas Neue', sans-serif;
+            font-family: var(--font-sovietic);
             font-size: clamp(36px, 5vw, 48px);
             text-transform: uppercase;
             text-align: center;
             margin-bottom: 2rem;
             color: var(--color-white);
+            letter-spacing: 1px;
         }
 
         .faq-item {
@@ -603,7 +623,7 @@
     <div class="plans-container">
         
         <!-- Sección Diseño Web -->
-        <h2 style="font-family: 'Bebas Neue', sans-serif; font-size: clamp(32px, 5vw, 48px); text-align: center; margin-bottom: 2rem; color: #00d4ff;">Diseño Web</h2>
+        <h2 style="font-family: var(--font-sovietic); font-size: clamp(32px, 5vw, 48px); text-align: center; margin-bottom: 2rem; color: #00d4ff; text-transform: uppercase; letter-spacing: 1px;">Diseño Web</h2>
         
         <div class="plans-grid">
             
@@ -669,7 +689,7 @@
         </div>
 
         <!-- Sección Branding -->
-        <h2 style="font-family: 'Bebas Neue', sans-serif; font-size: clamp(32px, 5vw, 48px); text-align: center; margin: 4rem 0 2rem; color: #7c3aed;">Branding</h2>
+        <h2 style="font-family: var(--font-sovietic); font-size: clamp(32px, 5vw, 48px); text-align: center; margin: 4rem 0 2rem; color: #7c3aed; text-transform: uppercase; letter-spacing: 1px;">Branding</h2>
         
         <div class="plans-grid">
             
@@ -735,7 +755,7 @@
         </div>
 
         <!-- Sección Marketing Digital -->
-        <h2 style="font-family: 'Bebas Neue', sans-serif; font-size: clamp(32px, 5vw, 48px); text-align: center; margin: 4rem 0 2rem; color: #10b981;">Marketing Digital</h2>
+        <h2 style="font-family: var(--font-sovietic); font-size: clamp(32px, 5vw, 48px); text-align: center; margin: 4rem 0 2rem; color: #10b981; text-transform: uppercase; letter-spacing: 1px;">Marketing Digital</h2>
         
         <div class="plans-grid">
             
