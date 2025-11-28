@@ -3,15 +3,8 @@
    Tipografía consistente con el sitio principal
    ============================================== */
 
-/* Importar fuente Soviet Program Bold */
-@font-face {
-    font-family: 'soviet_programbold';
-    src: url('../index/fonts/sovietprogram-bold-webfont.woff2') format('woff2'),
-         url('../index/fonts/sovietprogram-bold-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
+/* Importar Bebas Neue desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 :root {
     --color-violet: #7c3aed;
@@ -24,7 +17,7 @@
     --color-white: #fff;
     --color-gray: #bcbcc6;
     --color-dark: #0a0a1e;
-    --font-sovietic: 'soviet_programbold', sans-serif;
+    --font-title: 'Bebas Neue', sans-serif;
 }
 
 /* ==============================================
@@ -46,12 +39,12 @@ body {
     font-weight: 400;
 }
 
-/* Títulos principales con Soviet Program Bold */
+/* Títulos principales con Bebas Neue */
 h1, h2, h3, .plan-title, .section-title, .cta-title, .btn, .badge {
-    font-family: var(--font-sovietic);
-    font-weight: bold;
+    font-family: var(--font-title);
+    font-weight: 300;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
 }
 
 /* Texto normal con Montserrat */
@@ -60,39 +53,67 @@ p, span, li, a, .plan-subtitle, .feature-desc, .timeline-desc, .ideal-desc {
 }
 
 /* ==============================================
-   HEADER
+   HEADER - Estilo del index
    ============================================== */
 .header {
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    padding: 1.5rem 5%;
-    background: rgba(0, 0, 0, 0.95);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 1rem 2.5rem;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(30px);
+    border: 2px solid rgba(0, 0, 0, 0.47);
+    border-radius: 50px;
     z-index: 1000;
+    max-width: 80vw;
+    min-width: 70vw;
+    transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+.header:hover {
+    background: rgba(0, 0, 0, 0.95);
 }
 
 .header-content {
-    max-width: 1200px;
-    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 2rem;
+}
+
+.logo {
+    font-family: var(--font-title);
+    font-size: clamp(20px, 2.5vw, 28px);
+    color: var(--color-white);
+    text-decoration: none;
+    letter-spacing: 0.465em;
+    text-transform: uppercase;
+    font-weight: 300;
+    white-space: nowrap;
+}
+
+.nav-items {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
 }
 
 .back-link {
-    color: var(--color-gray);
+    color: var(--color-white);
     text-decoration: none;
     font-size: 14px;
     font-weight: 600;
-    transition: color 0.3s;
-    font-family: 'Montserrat', sans-serif;
+    font-family: monospace;
+    padding: 0.75rem 1rem;
+    transition: all 0.3s ease;
+    white-space: nowrap;
 }
 
 .back-link:hover {
     color: var(--color-violet);
+    transform: translateY(-2px);
 }
 
 .currency-selector {
@@ -162,7 +183,8 @@ p, span, li, a, .plan-subtitle, .feature-desc, .timeline-desc, .ideal-desc {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     line-height: 1.1;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
+    font-weight: 300;
 }
 
 .plan-subtitle {
@@ -191,10 +213,11 @@ p, span, li, a, .plan-subtitle, .feature-desc, .timeline-desc, .ideal-desc {
 }
 
 .price {
-    font-family: var(--font-sovietic);
+    font-family: var(--font-title);
     font-size: clamp(56px, 8vw, 84px);
     line-height: 1;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
+    font-weight: 300;
 }
 
 .price-web { color: var(--color-web); }
@@ -204,7 +227,8 @@ p, span, li, a, .plan-subtitle, .feature-desc, .timeline-desc, .ideal-desc {
 .price span {
     font-size: clamp(28px, 4vw, 42px);
     color: var(--color-gray);
-    font-family: var(--font-sovietic);
+    font-family: var(--font-title);
+    font-weight: 300;
 }
 
 .price-note {
@@ -248,11 +272,12 @@ p, span, li, a, .plan-subtitle, .feature-desc, .timeline-desc, .ideal-desc {
 }
 
 .highlight-title {
-    font-family: var(--font-sovietic);
+    font-family: var(--font-title);
     font-size: 24px;
     text-transform: uppercase;
     margin-bottom: 0.5rem;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
+    font-weight: 300;
 }
 
 .banner-web .highlight-title { color: var(--color-web); }
@@ -292,7 +317,8 @@ p, span, li, a, .plan-subtitle, .feature-desc, .timeline-desc, .ideal-desc {
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
+    font-weight: 300;
 }
 
 .section-title::before {
@@ -499,7 +525,8 @@ p, span, li, a, .plan-subtitle, .feature-desc, .timeline-desc, .ideal-desc {
     font-size: clamp(32px, 5vw, 42px);
     text-transform: uppercase;
     margin-bottom: 1rem;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
+    font-weight: 300;
 }
 
 .cta-text {
@@ -527,13 +554,14 @@ p, span, li, a, .plan-subtitle, .feature-desc, .timeline-desc, .ideal-desc {
     justify-content: center;
     gap: 0.5rem;
     padding: 1.25rem 2.5rem;
-    font-family: var(--font-sovietic);
+    font-family: var(--font-title);
     font-size: 20px;
     text-transform: uppercase;
     text-decoration: none;
     border-radius: 12px;
     transition: all 0.3s;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
+    font-weight: 300;
     border: 2px solid;
     cursor: pointer;
 }
@@ -614,11 +642,33 @@ p, span, li, a, .plan-subtitle, .feature-desc, .timeline-desc, .ideal-desc {
    ============================================== */
 @media (max-width: 768px) {
     .header {
-        padding: 1rem 4%;
+        top: 10px;
+        padding: 1rem 1.5rem;
+        min-width: 90vw;
+        max-width: 90vw;
+        border-radius: 30px;
+    }
+
+    .header-content {
+        gap: 1rem;
+    }
+
+    .logo {
+        font-size: 16px;
+        letter-spacing: 0.465em;
+    }
+
+    .nav-items {
+        gap: 0.75rem;
+    }
+
+    .back-link {
+        font-size: 12px;
+        padding: 0.5rem;
     }
 
     .container {
-        padding: 100px 4% 60px;
+        padding: 120px 4% 60px;
     }
 
     .content-grid {
