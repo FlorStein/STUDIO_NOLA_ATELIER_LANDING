@@ -11,117 +11,121 @@
 <body>
     <header class="header">
         <div class="header-content">
-            <a href="../tienda.html" class="back-link">← Volver a Tienda</a>
+            <a href="../tienda.html" class="back-link" data-i18n="nav.backToStore">← Volver a Tienda</a>
             <div style="display: flex; gap: 1.5rem; align-items: center;">
                 <select class="currency-selector" aria-label="Seleccionar moneda"></select>
-                <a href="../index.html" class="back-link">Inicio</a>
+                <button class="lang-toggle" id="langToggle">
+                    <span class="globe-icon">🌐</span>
+                    <span class="lang-text" id="langText">ES</span>
+                </button>
+                <a href="../index.html" class="back-link" data-i18n="nav.home">Inicio</a>
             </div>
         </div>
     </header>
 
     <div class="container">
         <div class="plan-header">
-            <span class="badge badge-web">Diseño Web</span>
-            <h1 class="plan-title">Diseño Web Intermedio</h1>
-            <p class="plan-subtitle">Sitio web multi-página con panel de administración. Ideal para pequeñas empresas y negocios en crecimiento.</p>
+            <span class="badge badge-web" data-i18n="badge.webDesign">Diseño Web</span>
+            <h1 class="plan-title" data-i18n="plan.webIntermedio.title">Diseño Web Intermedio</h1>
+            <p class="plan-subtitle" data-i18n="plan.webIntermedio.subtitle">Sitio web multi-página con panel de administración. Ideal para pequeñas empresas y negocios en crecimiento.</p>
         </div>
 
         <div class="price-box">
             <div class="price price-web" data-plan="web-intermedio">$480 <span>USD</span></div>
-            <p class="price-note">Pago único • Entrega en 20-25 días hábiles</p>
+            <p class="price-note" data-i18n="pricing.paymentNote">Pago único • Entrega en 20-25 días hábiles</p>
         </div>
 
         <div class="highlight-banner banner-web">
             <div class="highlight-icon">💼</div>
             <div>
-                <div class="highlight-title">Sitio web profesional con múltiples páginas</div>
-                <div class="highlight-desc">Sistema completo con capacidad de administrar tu contenido sin conocimientos técnicos</div>
+                <div class="highlight-title" data-i18n="plan.webIntermedio.highlightTitle">Sitio web profesional con múltiples páginas</div>
+                <div class="highlight-desc" data-i18n="plan.webIntermedio.highlightDesc">Sistema completo con capacidad de administrar tu contenido sin conocimientos técnicos</div>
             </div>
         </div>
 
         <div class="content-grid">
             <div class="section">
-                <h2 class="section-title">¿Qué incluye?</h2>
+                <h2 class="section-title" data-i18n="sections.whatsIncluded">¿Qué incluye?</h2>
                 <ul class="features-list">
-                    <li><div><span class="feature-name">Todo del Plan Simple +</span><span class="feature-desc">Diseño responsive, SEO, Analytics, SSL</span></div></li>
-                    <li><div><span class="feature-name">Hasta 8 Páginas</span><span class="feature-desc">Home, Servicios, Nosotros, Portfolio, Blog, FAQ, Contacto, etc.</span></div></li>
-                    <li><div><span class="feature-name">Panel de Administración</span><span class="feature-desc">CMS simple para editar textos, imágenes y contenido</span></div></li>
-                    <li><div><span class="feature-name">Blog Funcional</span><span class="feature-desc">Sistema para publicar noticias, artículos o novedades</span></div></li>
-                    <li><div><span class="feature-name">Galería Avanzada</span><span class="feature-desc">Portfolio con categorías y lightbox</span></div></li>
-                    <li><div><span class="feature-name">Múltiples Formularios</span><span class="feature-desc">Contacto, cotización, suscripción, etc.</span></div></li>
-                    <li><div><span class="feature-name">SEO Avanzado</span><span class="feature-desc">Optimización on-page completa por página</span></div></li>
-                    <li><div><span class="feature-name">Animaciones Premium</span><span class="feature-desc">Efectos visuales modernos y profesionales</span></div></li>
-                    <li><div><span class="feature-name">2 Rondas de Revisiones</span><span class="feature-desc">Ajustes ilimitados en 2 instancias</span></div></li>
-                    <li><div><span class="feature-name">Capacitación 1h</span><span class="feature-desc">Tutorial en vivo para usar el panel admin</span></div></li>
+                    <li><div><span class="feature-name" data-i18n="plan.webIntermedio.feature1">Todo del Plan Simple +</span><span class="feature-desc" data-i18n="plan.webIntermedio.feature1Desc">Diseño responsive, SEO, Analytics, SSL</span></div></li>
+                    <li><div><span class="feature-name" data-i18n="plan.webIntermedio.feature2">Hasta 8 Páginas</span><span class="feature-desc" data-i18n="plan.webIntermedio.feature2Desc">Home, Servicios, Nosotros, Portfolio, Blog, FAQ, Contacto, etc.</span></div></li>
+                    <li><div><span class="feature-name" data-i18n="plan.webIntermedio.feature3">Panel de Administración</span><span class="feature-desc" data-i18n="plan.webIntermedio.feature3Desc">CMS simple para editar textos, imágenes y contenido</span></div></li>
+                    <li><div><span class="feature-name" data-i18n="plan.webIntermedio.feature4">Blog Funcional</span><span class="feature-desc" data-i18n="plan.webIntermedio.feature4Desc">Sistema para publicar noticias, artículos o novedades</span></div></li>
+                    <li><div><span class="feature-name" data-i18n="plan.webIntermedio.feature5">Galería Avanzada</span><span class="feature-desc" data-i18n="plan.webIntermedio.feature5Desc">Portfolio con categorías y lightbox</span></div></li>
+                    <li><div><span class="feature-name" data-i18n="plan.webIntermedio.feature6">Múltiples Formularios</span><span class="feature-desc" data-i18n="plan.webIntermedio.feature6Desc">Contacto, cotización, suscripción, etc.</span></div></li>
+                    <li><div><span class="feature-name" data-i18n="plan.webIntermedio.feature7">SEO Avanzado</span><span class="feature-desc" data-i18n="plan.webIntermedio.feature7Desc">Optimización on-page completa por página</span></div></li>
+                    <li><div><span class="feature-name" data-i18n="plan.webIntermedio.feature8">Animaciones Premium</span><span class="feature-desc" data-i18n="plan.webIntermedio.feature8Desc">Efectos visuales modernos y profesionales</span></div></li>
+                    <li><div><span class="feature-name" data-i18n="plan.webIntermedio.feature9">2 Rondas de Revisiones</span><span class="feature-desc" data-i18n="plan.webIntermedio.feature9Desc">Ajustes ilimitados en 2 instancias</span></div></li>
+                    <li><div><span class="feature-name" data-i18n="plan.webIntermedio.feature10">Capacitación 1h</span><span class="feature-desc" data-i18n="plan.webIntermedio.feature10Desc">Tutorial en vivo para usar el panel admin</span></div></li>
                 </ul>
             </div>
 
             <div class="section">
-                <h2 class="section-title">Proceso de Trabajo</h2>
+                <h2 class="section-title" data-i18n="sections.workProcess">Proceso de Trabajo</h2>
                 <div class="process-timeline">
                     <div class="timeline-item">
-                        <div class="timeline-title">1. Estrategia y Planificación</div>
-                        <div class="timeline-desc">Arquitectura de información y sitemap</div>
-                        <span class="timeline-duration timeline-web">2-3 días</span>
+                        <div class="timeline-title" data-i18n="plan.webIntermedio.process1">1. Estrategia y Planificación</div>
+                        <div class="timeline-desc" data-i18n="plan.webIntermedio.process1Desc">Arquitectura de información y sitemap</div>
+                        <span class="timeline-duration timeline-web" data-i18n="plan.webIntermedio.process1Duration">2-3 días</span>
                     </div>
                     <div class="timeline-item">
-                        <div class="timeline-title">2. Diseño UI/UX Completo</div>
-                        <div class="timeline-desc">Mockups de todas las páginas en Figma</div>
-                        <span class="timeline-duration timeline-web">5-7 días</span>
+                        <div class="timeline-title" data-i18n="plan.webIntermedio.process2">2. Diseño UI/UX Completo</div>
+                        <div class="timeline-desc" data-i18n="plan.webIntermedio.process2Desc">Mockups de todas las páginas en Figma</div>
+                        <span class="timeline-duration timeline-web" data-i18n="plan.webIntermedio.process2Duration">5-7 días</span>
                     </div>
                     <div class="timeline-item">
-                        <div class="timeline-title">3. Desarrollo Front-End</div>
-                        <div class="timeline-desc">Programación responsive de todas las páginas</div>
-                        <span class="timeline-duration timeline-web">7-9 días</span>
+                        <div class="timeline-title" data-i18n="plan.webIntermedio.process3">3. Desarrollo Front-End</div>
+                        <div class="timeline-desc" data-i18n="plan.webIntermedio.process3Desc">Programación responsive de todas las páginas</div>
+                        <span class="timeline-duration timeline-web" data-i18n="plan.webIntermedio.process3Duration">7-9 días</span>
                     </div>
                     <div class="timeline-item">
-                        <div class="timeline-title">4. Panel Admin & CMS</div>
-                        <div class="timeline-desc">Sistema de gestión de contenidos</div>
-                        <span class="timeline-duration timeline-web">3-4 días</span>
+                        <div class="timeline-title" data-i18n="plan.webIntermedio.process4">4. Panel Admin & CMS</div>
+                        <div class="timeline-desc" data-i18n="plan.webIntermedio.process4Desc">Sistema de gestión de contenidos</div>
+                        <span class="timeline-duration timeline-web" data-i18n="plan.webIntermedio.process4Duration">3-4 días</span>
                     </div>
                     <div class="timeline-item">
-                        <div class="timeline-title">5. Testing & Capacitación</div>
-                        <div class="timeline-desc">Pruebas y tutorial de uso</div>
-                        <span class="timeline-duration timeline-web">3-4 días</span>
+                        <div class="timeline-title" data-i18n="plan.webIntermedio.process5">5. Testing & Capacitación</div>
+                        <div class="timeline-desc" data-i18n="plan.webIntermedio.process5Desc">Pruebas y tutorial de uso</div>
+                        <span class="timeline-duration timeline-web" data-i18n="plan.webIntermedio.process5Duration">3-4 días</span>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="full-width-section">
-            <h2 class="section-title">Ideal Para</h2>
+            <h2 class="section-title" data-i18n="sections.idealFor">Ideal Para</h2>
             <div class="ideal-grid">
                 <div class="ideal-card">
                     <div class="ideal-icon">🏢</div>
-                    <div class="ideal-title">Pequeñas Empresas</div>
-                    <div class="ideal-desc">Negocios establecidos que necesitan presencia completa</div>
+                    <div class="ideal-title" data-i18n="plan.webIntermedio.idealFor1">Pequeñas Empresas</div>
+                    <div class="ideal-desc" data-i18n="plan.webIntermedio.idealFor1Desc">Negocios establecidos que necesitan presencia completa</div>
                 </div>
                 <div class="ideal-card">
                     <div class="ideal-icon">📚</div>
-                    <div class="ideal-title">Con Blog/Noticias</div>
-                    <div class="ideal-desc">Organizaciones que publican contenido regularmente</div>
+                    <div class="ideal-title" data-i18n="plan.webIntermedio.idealFor2">Con Blog/Noticias</div>
+                    <div class="ideal-desc" data-i18n="plan.webIntermedio.idealFor2Desc">Organizaciones que publican contenido regularmente</div>
                 </div>
                 <div class="ideal-card">
                     <div class="ideal-icon">🎯</div>
-                    <div class="ideal-title">Múltiples Servicios</div>
-                    <div class="ideal-desc">Negocios con varias líneas de productos/servicios</div>
+                    <div class="ideal-title" data-i18n="plan.webIntermedio.idealFor3">Múltiples Servicios</div>
+                    <div class="ideal-desc" data-i18n="plan.webIntermedio.idealFor3Desc">Negocios con varias líneas de productos/servicios</div>
                 </div>
             </div>
         </div>
 
         <div class="cta-section cta-web">
-            <h2 class="cta-title">¿Listo para escalar tu presencia digital?</h2>
-            <p class="cta-text">Sitio web completo con panel de administración</p>
+            <h2 class="cta-title" data-i18n="plan.webIntermedio.ctaTitle">¿Listo para escalar tu presencia digital?</h2>
+            <p class="cta-text" data-i18n="plan.webIntermedio.ctaText">Sitio web completo con panel de administración</p>
             <div class="cta-buttons">
                 <button class="btn btn-primary btn-web" onclick="payWithPayPal('web-intermedio', 480)">
                     <svg class="paypal-logo-btn" viewBox="0 0 100 32" fill="currentColor"><path d="M12 4.917h5.167c2.917 0 5.333 2.083 5.333 5s-2.416 5-5.333 5H12V4.917zm22.917 0h5.166c2.917 0 5.334 2.083 5.334 5s-2.417 5-5.334 5h-5.166V4.917zM12 19.917h5.167c2.917 0 5.333 2.083 5.333 5s-2.416 5-5.333 5H12v-10z"/></svg>
-                    Pagar con PayPal
+                    <span data-i18n="cta.payWithPayPal">Pagar con PayPal</span>
                 </button>
-                <a href="https://wa.me/541163301998?text=Hola!%20Me%20interesa%20el%20Diseño%20Web%20Intermedio%20(USD%20480)" target="_blank" class="btn btn-secondary">💬 Consultar por WhatsApp</a>
+                <a href="https://wa.me/541163301998?text=Hola!%20Me%20interesa%20el%20Diseño%20Web%20Intermedio%20(USD%20480)" target="_blank" class="btn btn-secondary"><span data-i18n="cta.consultWhatsApp">💬 Consultar por WhatsApp</span></a>
             </div>
             <div class="payment-badges-cta">
-                <span class="payment-badge">🔒 Pago 100% seguro</span>
-                <span class="payment-badge">✓ Protección al comprador</span>
+                <span class="payment-badge" data-i18n="cta.securePayment">🔒 Pago 100% seguro</span>
+                <span class="payment-badge" data-i18n="cta.buyerProtection">✓ Protección al comprador</span>
             </div>
         </div>
     </div>
@@ -129,5 +133,153 @@
     <link rel="stylesheet" href="plan-styles.css">
     <script src="../js/currency-converter.js"></script>
     <script src="../js/paypal-integration.js"></script>
+    <script>
+        // Sistema de traducción
+        const translations = {
+            es: {
+                'nav.backToStore': '← Volver a Tienda',
+                'nav.home': 'Inicio',
+                'badge.webDesign': 'Diseño Web',
+                'plan.webIntermedio.title': 'Diseño Web Intermedio',
+                'plan.webIntermedio.subtitle': 'Sitio web multi-página con panel de administración. Ideal para pequeñas empresas y negocios en crecimiento.',
+                'pricing.paymentNote': 'Pago único • Entrega en 20-25 días hábiles',
+                'plan.webIntermedio.highlightTitle': 'Sitio web profesional con múltiples páginas',
+                'plan.webIntermedio.highlightDesc': 'Sistema completo con capacidad de administrar tu contenido sin conocimientos técnicos',
+                'sections.whatsIncluded': '¿Qué incluye?',
+                'plan.webIntermedio.feature1': 'Todo del Plan Simple +',
+                'plan.webIntermedio.feature1Desc': 'Diseño responsive, SEO, Analytics, SSL',
+                'plan.webIntermedio.feature2': 'Hasta 8 Páginas',
+                'plan.webIntermedio.feature2Desc': 'Home, Servicios, Nosotros, Portfolio, Blog, FAQ, Contacto, etc.',
+                'plan.webIntermedio.feature3': 'Panel de Administración',
+                'plan.webIntermedio.feature3Desc': 'CMS simple para editar textos, imágenes y contenido',
+                'plan.webIntermedio.feature4': 'Blog Funcional',
+                'plan.webIntermedio.feature4Desc': 'Sistema para publicar noticias, artículos o novedades',
+                'plan.webIntermedio.feature5': 'Galería Avanzada',
+                'plan.webIntermedio.feature5Desc': 'Portfolio con categorías y lightbox',
+                'plan.webIntermedio.feature6': 'Múltiples Formularios',
+                'plan.webIntermedio.feature6Desc': 'Contacto, cotización, suscripción, etc.',
+                'plan.webIntermedio.feature7': 'SEO Avanzado',
+                'plan.webIntermedio.feature7Desc': 'Optimización on-page completa por página',
+                'plan.webIntermedio.feature8': 'Animaciones Premium',
+                'plan.webIntermedio.feature8Desc': 'Efectos visuales modernos y profesionales',
+                'plan.webIntermedio.feature9': '2 Rondas de Revisiones',
+                'plan.webIntermedio.feature9Desc': 'Ajustes ilimitados en 2 instancias',
+                'plan.webIntermedio.feature10': 'Capacitación 1h',
+                'plan.webIntermedio.feature10Desc': 'Tutorial en vivo para usar el panel admin',
+                'sections.workProcess': 'Proceso de Trabajo',
+                'plan.webIntermedio.process1': '1. Estrategia y Planificación',
+                'plan.webIntermedio.process1Desc': 'Arquitectura de información y sitemap',
+                'plan.webIntermedio.process1Duration': '2-3 días',
+                'plan.webIntermedio.process2': '2. Diseño UI/UX Completo',
+                'plan.webIntermedio.process2Desc': 'Mockups de todas las páginas en Figma',
+                'plan.webIntermedio.process2Duration': '5-7 días',
+                'plan.webIntermedio.process3': '3. Desarrollo Front-End',
+                'plan.webIntermedio.process3Desc': 'Programación responsive de todas las páginas',
+                'plan.webIntermedio.process3Duration': '7-9 días',
+                'plan.webIntermedio.process4': '4. Panel Admin & CMS',
+                'plan.webIntermedio.process4Desc': 'Sistema de gestión de contenidos',
+                'plan.webIntermedio.process4Duration': '3-4 días',
+                'plan.webIntermedio.process5': '5. Testing & Capacitación',
+                'plan.webIntermedio.process5Desc': 'Pruebas y tutorial de uso',
+                'plan.webIntermedio.process5Duration': '3-4 días',
+                'sections.idealFor': 'Ideal Para',
+                'plan.webIntermedio.idealFor1': 'Pequeñas Empresas',
+                'plan.webIntermedio.idealFor1Desc': 'Negocios establecidos que necesitan presencia completa',
+                'plan.webIntermedio.idealFor2': 'Con Blog/Noticias',
+                'plan.webIntermedio.idealFor2Desc': 'Organizaciones que publican contenido regularmente',
+                'plan.webIntermedio.idealFor3': 'Múltiples Servicios',
+                'plan.webIntermedio.idealFor3Desc': 'Negocios con varias líneas de productos/servicios',
+                'plan.webIntermedio.ctaTitle': '¿Listo para escalar tu presencia digital?',
+                'plan.webIntermedio.ctaText': 'Sitio web completo con panel de administración',
+                'cta.payWithPayPal': 'Pagar con PayPal',
+                'cta.consultWhatsApp': '💬 Consultar por WhatsApp',
+                'cta.securePayment': '🔒 Pago 100% seguro',
+                'cta.buyerProtection': '✓ Protección al comprador'
+            },
+            en: {
+                'nav.backToStore': '← Back to Store',
+                'nav.home': 'Home',
+                'badge.webDesign': 'Web Design',
+                'plan.webIntermedio.title': 'Intermediate Web Design',
+                'plan.webIntermedio.subtitle': 'Multi-page website with admin panel. Ideal for small businesses and growing companies.',
+                'pricing.paymentNote': 'One-time payment • Delivery in 20-25 business days',
+                'plan.webIntermedio.highlightTitle': 'Professional multi-page website',
+                'plan.webIntermedio.highlightDesc': 'Complete system with ability to manage your content without technical knowledge',
+                'sections.whatsIncluded': 'What\'s Included?',
+                'plan.webIntermedio.feature1': 'Everything from Simple Plan +',
+                'plan.webIntermedio.feature1Desc': 'Responsive design, SEO, Analytics, SSL',
+                'plan.webIntermedio.feature2': 'Up to 8 Pages',
+                'plan.webIntermedio.feature2Desc': 'Home, Services, About Us, Portfolio, Blog, FAQ, Contact, etc.',
+                'plan.webIntermedio.feature3': 'Admin Panel',
+                'plan.webIntermedio.feature3Desc': 'Simple CMS to edit text, images and content',
+                'plan.webIntermedio.feature4': 'Functional Blog',
+                'plan.webIntermedio.feature4Desc': 'System to publish news, articles or updates',
+                'plan.webIntermedio.feature5': 'Advanced Gallery',
+                'plan.webIntermedio.feature5Desc': 'Portfolio with categories and lightbox',
+                'plan.webIntermedio.feature6': 'Multiple Forms',
+                'plan.webIntermedio.feature6Desc': 'Contact, quote, subscription, etc.',
+                'plan.webIntermedio.feature7': 'Advanced SEO',
+                'plan.webIntermedio.feature7Desc': 'Complete on-page optimization per page',
+                'plan.webIntermedio.feature8': 'Premium Animations',
+                'plan.webIntermedio.feature8Desc': 'Modern and professional visual effects',
+                'plan.webIntermedio.feature9': '2 Revision Rounds',
+                'plan.webIntermedio.feature9Desc': 'Unlimited adjustments in 2 instances',
+                'plan.webIntermedio.feature10': '1h Training',
+                'plan.webIntermedio.feature10Desc': 'Live tutorial to use the admin panel',
+                'sections.workProcess': 'Work Process',
+                'plan.webIntermedio.process1': '1. Strategy & Planning',
+                'plan.webIntermedio.process1Desc': 'Information architecture and sitemap',
+                'plan.webIntermedio.process1Duration': '2-3 days',
+                'plan.webIntermedio.process2': '2. Complete UI/UX Design',
+                'plan.webIntermedio.process2Desc': 'Mockups of all pages in Figma',
+                'plan.webIntermedio.process2Duration': '5-7 days',
+                'plan.webIntermedio.process3': '3. Front-End Development',
+                'plan.webIntermedio.process3Desc': 'Responsive programming of all pages',
+                'plan.webIntermedio.process3Duration': '7-9 days',
+                'plan.webIntermedio.process4': '4. Admin Panel & CMS',
+                'plan.webIntermedio.process4Desc': 'Content management system',
+                'plan.webIntermedio.process4Duration': '3-4 days',
+                'plan.webIntermedio.process5': '5. Testing & Training',
+                'plan.webIntermedio.process5Desc': 'Testing and usage tutorial',
+                'plan.webIntermedio.process5Duration': '3-4 days',
+                'sections.idealFor': 'Ideal For',
+                'plan.webIntermedio.idealFor1': 'Small Businesses',
+                'plan.webIntermedio.idealFor1Desc': 'Established businesses that need complete presence',
+                'plan.webIntermedio.idealFor2': 'With Blog/News',
+                'plan.webIntermedio.idealFor2Desc': 'Organizations that publish content regularly',
+                'plan.webIntermedio.idealFor3': 'Multiple Services',
+                'plan.webIntermedio.idealFor3Desc': 'Businesses with various product/service lines',
+                'plan.webIntermedio.ctaTitle': 'Ready to scale your digital presence?',
+                'plan.webIntermedio.ctaText': 'Complete website with admin panel',
+                'cta.payWithPayPal': 'Pay with PayPal',
+                'cta.consultWhatsApp': '💬 Consult via WhatsApp',
+                'cta.securePayment': '🔒 100% secure payment',
+                'cta.buyerProtection': '✓ Buyer protection'
+            }
+        };
+
+        let currentLang = localStorage.getItem('language') || 'es';
+
+        function translatePage() {
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[currentLang][key]) {
+                    element.textContent = translations[currentLang][key];
+                }
+            });
+            document.getElementById('langText').textContent = currentLang.toUpperCase();
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('langToggle').addEventListener('click', () => {
+                const langs = ['es', 'en', 'pt'];
+                const currentIndex = langs.indexOf(currentLang);
+                currentLang = langs[(currentIndex + 1) % langs.length];
+                localStorage.setItem('language', currentLang);
+                translatePage();
+            });
+            translatePage();
+        });
+    </script>
 </body>
 </html>

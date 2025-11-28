@@ -11,110 +11,114 @@
 <body>
     <header class="header">
         <div class="header-content">
-            <a href="../tienda.html" class="back-link">← Volver a Tienda</a>
+            <a href="../tienda.html" class="back-link" data-i18n="nav.backToStore">← Volver a Tienda</a>
             <div style="display: flex; gap: 1.5rem; align-items: center;">
                 <select class="currency-selector" aria-label="Seleccionar moneda"></select>
-                <a href="../index.html" class="back-link">Inicio</a>
+                <button class="lang-toggle" id="langToggle">
+                    <span class="globe-icon">🌐</span>
+                    <span class="lang-text" id="langText">ES</span>
+                </button>
+                <a href="../index.html" class="back-link" data-i18n="nav.home">Inicio</a>
             </div>
         </div>
     </header>
 
     <div class="container">
         <div class="plan-header">
-            <span class="badge badge-web">Diseño Web</span>
-            <h1 class="plan-title">Diseño Web Simple</h1>
-            <p class="plan-subtitle">Landing page profesional optimizada para conversión. Ideal para emprendedores y profesionales que necesitan presencia digital.</p>
+            <span class="badge badge-web" data-i18n="badge.webDesign">Diseño Web</span>
+            <h1 class="plan-title" data-i18n="plan.webSimple.title">Diseño Web Simple</h1>
+            <p class="plan-subtitle" data-i18n="plan.webSimple.subtitle">Landing page profesional optimizada para conversión. Ideal para emprendedores y profesionales que necesitan presencia digital.</p>
         </div>
 
         <div class="price-box">
             <div class="price price-web" data-plan="web-simple">$280 <span>USD</span></div>
-            <p class="price-note">Pago único • Entrega en 10-15 días hábiles</p>
+            <p class="price-note" data-i18n="pricing.paymentNote">Pago único • Entrega en 10-15 días hábiles</p>
         </div>
 
         <div class="highlight-banner banner-web">
             <div class="highlight-icon">🚀</div>
             <div>
-                <div class="highlight-title">Lanza tu presencia digital rápidamente</div>
-                <div class="highlight-desc">Sitio web profesional con todo lo necesario para captar clientes online</div>
+                <div class="highlight-title" data-i18n="plan.webSimple.highlightTitle">Lanza tu presencia digital rápidamente</div>
+                <div class="highlight-desc" data-i18n="plan.webSimple.highlightDesc">Sitio web profesional con todo lo necesario para captar clientes online</div>
             </div>
         </div>
 
         <div class="content-grid">
             <div class="section">
-                <h2 class="section-title">¿Qué incluye?</h2>
+                <h2 class="section-title" data-i18n="sections.whatsIncluded">¿Qué incluye?</h2>
                 <ul class="features-list">
-                    <li><div><span class="feature-name">Diseño Responsive</span><span class="feature-desc">Perfecta visualización en móviles, tablets y desktop</span></div></li>
-                    <li><div><span class="feature-name">Hasta 5 Secciones</span><span class="feature-desc">Home, Servicios, Sobre ti, Portfolio/Galería, Contacto</span></div></li>
-                    <li><div><span class="feature-name">Formulario de Contacto</span><span class="feature-desc">Recibe consultas directamente en tu email</span></div></li>
-                    <li><div><span class="feature-name">Integración WhatsApp</span><span class="feature-desc">Botón flotante para contacto directo</span></div></li>
-                    <li><div><span class="feature-name">SEO Básico</span><span class="feature-desc">Meta tags y optimización para buscadores</span></div></li>
-                    <li><div><span class="feature-name">Google Analytics</span><span class="feature-desc">Seguimiento de visitas y métricas</span></div></li>
-                    <li><div><span class="feature-name">Certificado SSL</span><span class="feature-desc">Conexión segura (https://)</span></div></li>
-                    <li><div><span class="feature-name">1 Ronda de Revisiones</span><span class="feature-desc">Ajustes hasta tu aprobación</span></div></li>
+                    <li><div><span class="feature-name" data-i18n="features.responsiveDesign">Diseño Responsive</span><span class="feature-desc" data-i18n="features.responsiveDesignDesc">Perfecta visualización en móviles, tablets y desktop</span></div></li>
+                    <li><div><span class="feature-name" data-i18n="features.upTo5Sections">Hasta 5 Secciones</span><span class="feature-desc" data-i18n="features.upTo5SectionsDesc">Home, Servicios, Sobre ti, Portfolio/Galería, Contacto</span></div></li>
+                    <li><div><span class="feature-name" data-i18n="features.contactForm">Formulario de Contacto</span><span class="feature-desc" data-i18n="features.contactFormDesc">Recibe consultas directamente en tu email</span></div></li>
+                    <li><div><span class="feature-name" data-i18n="features.whatsappIntegration">Integración WhatsApp</span><span class="feature-desc" data-i18n="features.whatsappIntegrationDesc">Botón flotante para contacto directo</span></div></li>
+                    <li><div><span class="feature-name" data-i18n="features.basicSEO">SEO Básico</span><span class="feature-desc" data-i18n="features.basicSEODesc">Meta tags y optimización para buscadores</span></div></li>
+                    <li><div><span class="feature-name" data-i18n="features.googleAnalytics">Google Analytics</span><span class="feature-desc" data-i18n="features.googleAnalyticsDesc">Seguimiento de visitas y métricas</span></div></li>
+                    <li><div><span class="feature-name" data-i18n="features.sslCertificate">Certificado SSL</span><span class="feature-desc" data-i18n="features.sslCertificateDesc">Conexión segura (https://)</span></div></li>
+                    <li><div><span class="feature-name" data-i18n="features.oneRevision">1 Ronda de Revisiones</span><span class="feature-desc" data-i18n="features.oneRevisionDesc">Ajustes hasta tu aprobación</span></div></li>
                 </ul>
             </div>
 
             <div class="section">
-                <h2 class="section-title">Proceso de Trabajo</h2>
+                <h2 class="section-title" data-i18n="sections.workProcess">Proceso de Trabajo</h2>
                 <div class="process-timeline">
                     <div class="timeline-item">
-                        <div class="timeline-title">1. Briefing</div>
-                        <div class="timeline-desc">Definimos objetivos, contenido y estilo visual</div>
-                        <span class="timeline-duration timeline-web">1 día</span>
+                        <div class="timeline-title" data-i18n="process.step1">1. Briefing</div>
+                        <div class="timeline-desc" data-i18n="process.step1Desc">Definimos objetivos, contenido y estilo visual</div>
+                        <span class="timeline-duration timeline-web" data-i18n="process.step1Duration">1 día</span>
                     </div>
                     <div class="timeline-item">
-                        <div class="timeline-title">2. Diseño en Figma</div>
-                        <div class="timeline-desc">Mockup visual para tu aprobación</div>
-                        <span class="timeline-duration timeline-web">3-4 días</span>
+                        <div class="timeline-title" data-i18n="process.step2">2. Diseño en Figma</div>
+                        <div class="timeline-desc" data-i18n="process.step2Desc">Mockup visual para tu aprobación</div>
+                        <span class="timeline-duration timeline-web" data-i18n="process.step2Duration">3-4 días</span>
                     </div>
                     <div class="timeline-item">
-                        <div class="timeline-title">3. Desarrollo</div>
-                        <div class="timeline-desc">Programación HTML/CSS/JS responsive</div>
-                        <span class="timeline-duration timeline-web">4-6 días</span>
+                        <div class="timeline-title" data-i18n="process.step3">3. Desarrollo</div>
+                        <div class="timeline-desc" data-i18n="process.step3Desc">Programación HTML/CSS/JS responsive</div>
+                        <span class="timeline-duration timeline-web" data-i18n="process.step3Duration">4-6 días</span>
                     </div>
                     <div class="timeline-item">
-                        <div class="timeline-title">4. Testing y Launch</div>
-                        <div class="timeline-desc">Pruebas y publicación online</div>
-                        <span class="timeline-duration timeline-web">2-3 días</span>
+                        <div class="timeline-title" data-i18n="process.step4">4. Testing y Launch</div>
+                        <div class="timeline-desc" data-i18n="process.step4Desc">Pruebas y publicación online</div>
+                        <span class="timeline-duration timeline-web" data-i18n="process.step4Duration">2-3 días</span>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="full-width-section">
-            <h2 class="section-title">Ideal Para</h2>
+            <h2 class="section-title" data-i18n="sections.idealFor">Ideal Para</h2>
             <div class="ideal-grid">
                 <div class="ideal-card">
                     <div class="ideal-icon">🎨</div>
-                    <div class="ideal-title">Profesionales</div>
-                    <div class="ideal-desc">Fotógrafos, diseñadores, coaches que necesitan portfolio</div>
+                    <div class="ideal-title" data-i18n="idealFor.professionals">Profesionales</div>
+                    <div class="ideal-desc" data-i18n="idealFor.professionalsDesc">Fotógrafos, diseñadores, coaches que necesitan portfolio</div>
                 </div>
                 <div class="ideal-card">
                     <div class="ideal-icon">💼</div>
-                    <div class="ideal-title">Emprendedores</div>
-                    <div class="ideal-desc">Nuevos negocios que buscan presencia digital</div>
+                    <div class="ideal-title" data-i18n="idealFor.entrepreneurs">Emprendedores</div>
+                    <div class="ideal-desc" data-i18n="idealFor.entrepreneursDesc">Nuevos negocios que buscan presencia digital</div>
                 </div>
                 <div class="ideal-card">
                     <div class="ideal-icon">🚀</div>
-                    <div class="ideal-title">Lanzamientos</div>
-                    <div class="ideal-desc">Productos, eventos o servicios específicos</div>
+                    <div class="ideal-title" data-i18n="idealFor.launches">Lanzamientos</div>
+                    <div class="ideal-desc" data-i18n="idealFor.launchesDesc">Productos, eventos o servicios específicos</div>
                 </div>
             </div>
         </div>
 
         <div class="cta-section cta-web">
-            <h2 class="cta-title">¿Listo para tener tu sitio web?</h2>
-            <p class="cta-text">Lanza tu presencia digital en menos de 3 semanas</p>
+            <h2 class="cta-title" data-i18n="cta.webSimple.title">¿Listo para tener tu sitio web?</h2>
+            <p class="cta-text" data-i18n="cta.webSimple.text">Lanza tu presencia digital en menos de 3 semanas</p>
             <div class="cta-buttons">
                 <button class="btn btn-primary btn-web" onclick="payWithPayPal('web-simple', 280)">
                     <svg class="paypal-logo-btn" viewBox="0 0 100 32" fill="currentColor"><path d="M12 4.917h5.167c2.917 0 5.333 2.083 5.333 5s-2.416 5-5.333 5H12V4.917zm22.917 0h5.166c2.917 0 5.334 2.083 5.334 5s-2.417 5-5.334 5h-5.166V4.917zM12 19.917h5.167c2.917 0 5.333 2.083 5.333 5s-2.416 5-5.333 5H12v-10z"/></svg>
-                    Pagar con PayPal
+                    <span data-i18n="cta.payWithPayPal">Pagar con PayPal</span>
                 </button>
-                <a href="https://wa.me/541163301998?text=Hola!%20Me%20interesa%20el%20Diseño%20Web%20Simple%20(USD%20280)" target="_blank" class="btn btn-secondary">💬 Consultar por WhatsApp</a>
+                <a href="https://wa.me/541163301998?text=Hola!%20Me%20interesa%20el%20Diseño%20Web%20Simple%20(USD%20280)" target="_blank" class="btn btn-secondary"><span data-i18n="cta.consultWhatsApp">💬 Consultar por WhatsApp</span></a>
             </div>
             <div class="payment-badges-cta">
-                <span class="payment-badge">🔒 Pago 100% seguro</span>
-                <span class="payment-badge">✓ Protección al comprador</span>
+                <span class="payment-badge" data-i18n="cta.securePayment">🔒 Pago 100% seguro</span>
+                <span class="payment-badge" data-i18n="cta.buyerProtection">✓ Protección al comprador</span>
             </div>
         </div>
     </div>
@@ -122,5 +126,139 @@
     <link rel="stylesheet" href="plan-styles.css">
     <script src="../js/currency-converter.js"></script>
     <script src="../js/paypal-integration.js"></script>
+    <script>
+        // Sistema de traducción
+        const translations = {
+            es: {
+                'nav.backToStore': '← Volver a Tienda',
+                'nav.home': 'Inicio',
+                'badge.webDesign': 'Diseño Web',
+                'plan.webSimple.title': 'Diseño Web Simple',
+                'plan.webSimple.subtitle': 'Landing page profesional optimizada para conversión. Ideal para emprendedores y profesionales que necesitan presencia digital.',
+                'pricing.paymentNote': 'Pago único • Entrega en 10-15 días hábiles',
+                'plan.webSimple.highlightTitle': 'Lanza tu presencia digital rápidamente',
+                'plan.webSimple.highlightDesc': 'Sitio web profesional con todo lo necesario para captar clientes online',
+                'sections.whatsIncluded': '¿Qué incluye?',
+                'features.responsiveDesign': 'Diseño Responsive',
+                'features.responsiveDesignDesc': 'Perfecta visualización en móviles, tablets y desktop',
+                'features.upTo5Sections': 'Hasta 5 Secciones',
+                'features.upTo5SectionsDesc': 'Home, Servicios, Sobre ti, Portfolio/Galería, Contacto',
+                'features.contactForm': 'Formulario de Contacto',
+                'features.contactFormDesc': 'Recibe consultas directamente en tu email',
+                'features.whatsappIntegration': 'Integración WhatsApp',
+                'features.whatsappIntegrationDesc': 'Botón flotante para contacto directo',
+                'features.basicSEO': 'SEO Básico',
+                'features.basicSEODesc': 'Meta tags y optimización para buscadores',
+                'features.googleAnalytics': 'Google Analytics',
+                'features.googleAnalyticsDesc': 'Seguimiento de visitas y métricas',
+                'features.sslCertificate': 'Certificado SSL',
+                'features.sslCertificateDesc': 'Conexión segura (https://)',
+                'features.oneRevision': '1 Ronda de Revisiones',
+                'features.oneRevisionDesc': 'Ajustes hasta tu aprobación',
+                'sections.workProcess': 'Proceso de Trabajo',
+                'process.step1': '1. Briefing',
+                'process.step1Desc': 'Definimos objetivos, contenido y estilo visual',
+                'process.step1Duration': '1 día',
+                'process.step2': '2. Diseño en Figma',
+                'process.step2Desc': 'Mockup visual para tu aprobación',
+                'process.step2Duration': '3-4 días',
+                'process.step3': '3. Desarrollo',
+                'process.step3Desc': 'Programación HTML/CSS/JS responsive',
+                'process.step3Duration': '4-6 días',
+                'process.step4': '4. Testing y Launch',
+                'process.step4Desc': 'Pruebas y publicación online',
+                'process.step4Duration': '2-3 días',
+                'sections.idealFor': 'Ideal Para',
+                'idealFor.professionals': 'Profesionales',
+                'idealFor.professionalsDesc': 'Fotógrafos, diseñadores, coaches que necesitan portfolio',
+                'idealFor.entrepreneurs': 'Emprendedores',
+                'idealFor.entrepreneursDesc': 'Nuevos negocios que buscan presencia digital',
+                'idealFor.launches': 'Lanzamientos',
+                'idealFor.launchesDesc': 'Productos, eventos o servicios específicos',
+                'cta.webSimple.title': '¿Listo para tener tu sitio web?',
+                'cta.webSimple.text': 'Lanza tu presencia digital en menos de 3 semanas',
+                'cta.payWithPayPal': 'Pagar con PayPal',
+                'cta.consultWhatsApp': '💬 Consultar por WhatsApp',
+                'cta.securePayment': '🔒 Pago 100% seguro',
+                'cta.buyerProtection': '✓ Protección al comprador'
+            },
+            en: {
+                'nav.backToStore': '← Back to Store',
+                'nav.home': 'Home',
+                'badge.webDesign': 'Web Design',
+                'plan.webSimple.title': 'Simple Web Design',
+                'plan.webSimple.subtitle': 'Professional landing page optimized for conversion. Ideal for entrepreneurs and professionals who need digital presence.',
+                'pricing.paymentNote': 'One-time payment • Delivery in 10-15 business days',
+                'plan.webSimple.highlightTitle': 'Launch your digital presence quickly',
+                'plan.webSimple.highlightDesc': 'Professional website with everything needed to capture online clients',
+                'sections.whatsIncluded': 'What\'s Included?',
+                'features.responsiveDesign': 'Responsive Design',
+                'features.responsiveDesignDesc': 'Perfect display on mobile, tablets and desktop',
+                'features.upTo5Sections': 'Up to 5 Sections',
+                'features.upTo5SectionsDesc': 'Home, Services, About, Portfolio/Gallery, Contact',
+                'features.contactForm': 'Contact Form',
+                'features.contactFormDesc': 'Receive inquiries directly to your email',
+                'features.whatsappIntegration': 'WhatsApp Integration',
+                'features.whatsappIntegrationDesc': 'Floating button for direct contact',
+                'features.basicSEO': 'Basic SEO',
+                'features.basicSEODesc': 'Meta tags and search engine optimization',
+                'features.googleAnalytics': 'Google Analytics',
+                'features.googleAnalyticsDesc': 'Visit tracking and metrics',
+                'features.sslCertificate': 'SSL Certificate',
+                'features.sslCertificateDesc': 'Secure connection (https://)',
+                'features.oneRevision': '1 Revision Round',
+                'features.oneRevisionDesc': 'Adjustments until your approval',
+                'sections.workProcess': 'Work Process',
+                'process.step1': '1. Briefing',
+                'process.step1Desc': 'We define objectives, content and visual style',
+                'process.step1Duration': '1 day',
+                'process.step2': '2. Figma Design',
+                'process.step2Desc': 'Visual mockup for your approval',
+                'process.step2Duration': '3-4 days',
+                'process.step3': '3. Development',
+                'process.step3Desc': 'Responsive HTML/CSS/JS programming',
+                'process.step3Duration': '4-6 days',
+                'process.step4': '4. Testing & Launch',
+                'process.step4Desc': 'Testing and online publication',
+                'process.step4Duration': '2-3 days',
+                'sections.idealFor': 'Ideal For',
+                'idealFor.professionals': 'Professionals',
+                'idealFor.professionalsDesc': 'Photographers, designers, coaches who need portfolio',
+                'idealFor.entrepreneurs': 'Entrepreneurs',
+                'idealFor.entrepreneursDesc': 'New businesses seeking digital presence',
+                'idealFor.launches': 'Launches',
+                'idealFor.launchesDesc': 'Specific products, events or services',
+                'cta.webSimple.title': 'Ready to have your website?',
+                'cta.webSimple.text': 'Launch your digital presence in less than 3 weeks',
+                'cta.payWithPayPal': 'Pay with PayPal',
+                'cta.consultWhatsApp': '💬 Consult via WhatsApp',
+                'cta.securePayment': '🔒 100% secure payment',
+                'cta.buyerProtection': '✓ Buyer protection'
+            }
+        };
+
+        let currentLang = localStorage.getItem('language') || 'es';
+
+        function translatePage() {
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[currentLang][key]) {
+                    element.textContent = translations[currentLang][key];
+                }
+            });
+            document.getElementById('langText').textContent = currentLang.toUpperCase();
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('langToggle').addEventListener('click', () => {
+                const langs = ['es', 'en', 'pt'];
+                const currentIndex = langs.indexOf(currentLang);
+                currentLang = langs[(currentIndex + 1) % langs.length];
+                localStorage.setItem('language', currentLang);
+                translatePage();
+            });
+            translatePage();
+        });
+    </script>
 </body>
 </html>

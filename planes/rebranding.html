@@ -11,123 +11,127 @@
 <body>
     <header class="header">
         <div class="header-content">
-            <a href="../tienda.html" class="back-link">← Volver a Tienda</a>
+            <a href="../tienda.html" class="back-link" data-i18n="nav.backToStore">← Volver a Tienda</a>
             <div style="display: flex; gap: 1.5rem; align-items: center;">
                 <select class="currency-selector" aria-label="Seleccionar moneda"></select>
-                <a href="../index.html" class="back-link">Inicio</a>
+                <button class="lang-toggle" id="langToggle">
+                    <span class="globe-icon">🌐</span>
+                    <span class="lang-text" id="langText">ES</span>
+                </button>
+                <a href="../index.html" class="back-link" data-i18n="nav.home">Inicio</a>
             </div>
         </div>
     </header>
 
     <div class="container">
         <div class="plan-header">
-            <span class="badge badge-branding">Branding</span>
-            <h1 class="plan-title">Rebranding Estratégico</h1>
-            <p class="plan-subtitle">Renovación completa de marca con plan de lanzamiento. Transforma tu identidad visual y reposiciónate en el mercado.</p>
+            <span class="badge badge-branding" data-i18n="badge.branding">Branding</span>
+            <h1 class="plan-title" data-i18n="plan.rebranding.title">Rebranding Estratégico</h1>
+            <p class="plan-subtitle" data-i18n="plan.rebranding.subtitle">Renovación completa de marca con plan de lanzamiento. Transforma tu identidad visual y reposiciónate en el mercado.</p>
         </div>
 
         <div class="price-box">
             <div class="price price-branding" data-plan="rebranding">$2,400 <span>USD</span></div>
-            <p class="price-note">Pago único • Entrega en 40-50 días hábiles</p>
+            <p class="price-note" data-i18n="pricing.rebranding.paymentNote">Pago único • Entrega en 40-50 días hábiles</p>
         </div>
 
         <div class="highlight-banner banner-branding">
             <div class="highlight-icon">🔄</div>
             <div>
-                <div class="highlight-title">Transformación completa de tu marca</div>
-                <div class="highlight-desc">Estrategia, rediseño total, migración de plataformas y plan de comunicación del cambio</div>
+                <div class="highlight-title" data-i18n="plan.rebranding.highlightTitle">Transformación completa de tu marca</div>
+                <div class="highlight-desc" data-i18n="plan.rebranding.highlightDesc">Estrategia, rediseño total, migración de plataformas y plan de comunicación del cambio</div>
             </div>
         </div>
 
         <div class="content-grid">
             <div class="section">
-                <h2 class="section-title">¿Qué incluye?</h2>
+                <h2 class="section-title" data-i18n="sections.whatsIncluded">¿Qué incluye?</h2>
                 <ul class="features-list">
-                    <li><div><span class="feature-name">Todo del Plan Identidad +</span><span class="feature-desc">Identidad completa, aplicaciones y brandbook</span></div></li>
-                    <li><div><span class="feature-name">Auditoría de Marca Actual</span><span class="feature-desc">Análisis profundo de percepción y posicionamiento</span></div></li>
-                    <li><div><span class="feature-name">Estrategia de Rebranding</span><span class="feature-desc">Plan de transición y comunicación del cambio</span></div></li>
-                    <li><div><span class="feature-name">Naming (opcional)</span><span class="feature-desc">Exploración de nuevo nombre si es necesario</span></div></li>
-                    <li><div><span class="feature-name">Brand Story</span><span class="feature-desc">Narrativa de marca, misión, visión, valores</span></div></li>
-                    <li><div><span class="feature-name">Redesign Web</span><span class="feature-desc">Actualización visual de tu sitio web</span></div></li>
-                    <li><div><span class="feature-name">Migración Digital</span><span class="feature-desc">Actualización de redes sociales y plataformas</span></div></li>
-                    <li><div><span class="feature-name">Kit de Lanzamiento</span><span class="feature-desc">Anuncios, posts, comunicados, videos teaser</span></div></li>
-                    <li><div><span class="feature-name">Guía de Transición</span><span class="feature-desc">Timeline y plan de acción paso a paso</span></div></li>
-                    <li><div><span class="feature-name">Capacitación Interna</span><span class="feature-desc">Workshop para tu equipo sobre la nueva identidad</span></div></li>
-                    <li><div><span class="feature-name">Soporte 6 meses</span><span class="feature-desc">Acompañamiento post-lanzamiento incluido</span></div></li>
+                    <li><div><span class="feature-name" data-i18n="features.rebranding.allIdentityPlus">Todo del Plan Identidad +</span><span class="feature-desc" data-i18n="features.rebranding.allIdentityPlusDesc">Identidad completa, aplicaciones y brandbook</span></div></li>
+                    <li><div><span class="feature-name" data-i18n="features.rebranding.brandAudit">Auditoría de Marca Actual</span><span class="feature-desc" data-i18n="features.rebranding.brandAuditDesc">Análisis profundo de percepción y posicionamiento</span></div></li>
+                    <li><div><span class="feature-name" data-i18n="features.rebranding.rebrandingStrategy">Estrategia de Rebranding</span><span class="feature-desc" data-i18n="features.rebranding.rebrandingStrategyDesc">Plan de transición y comunicación del cambio</span></div></li>
+                    <li><div><span class="feature-name" data-i18n="features.rebranding.naming">Naming (opcional)</span><span class="feature-desc" data-i18n="features.rebranding.namingDesc">Exploración de nuevo nombre si es necesario</span></div></li>
+                    <li><div><span class="feature-name" data-i18n="features.rebranding.brandStory">Brand Story</span><span class="feature-desc" data-i18n="features.rebranding.brandStoryDesc">Narrativa de marca, misión, visión, valores</span></div></li>
+                    <li><div><span class="feature-name" data-i18n="features.rebranding.webRedesign">Redesign Web</span><span class="feature-desc" data-i18n="features.rebranding.webRedesignDesc">Actualización visual de tu sitio web</span></div></li>
+                    <li><div><span class="feature-name" data-i18n="features.rebranding.digitalMigration">Migración Digital</span><span class="feature-desc" data-i18n="features.rebranding.digitalMigrationDesc">Actualización de redes sociales y plataformas</span></div></li>
+                    <li><div><span class="feature-name" data-i18n="features.rebranding.launchKit">Kit de Lanzamiento</span><span class="feature-desc" data-i18n="features.rebranding.launchKitDesc">Anuncios, posts, comunicados, videos teaser</span></div></li>
+                    <li><div><span class="feature-name" data-i18n="features.rebranding.transitionGuide">Guía de Transición</span><span class="feature-desc" data-i18n="features.rebranding.transitionGuideDesc">Timeline y plan de acción paso a paso</span></div></li>
+                    <li><div><span class="feature-name" data-i18n="features.rebranding.internalTraining">Capacitación Interna</span><span class="feature-desc" data-i18n="features.rebranding.internalTrainingDesc">Workshop para tu equipo sobre la nueva identidad</span></div></li>
+                    <li><div><span class="feature-name" data-i18n="features.rebranding.support6Months">Soporte 6 meses</span><span class="feature-desc" data-i18n="features.rebranding.support6MonthsDesc">Acompañamiento post-lanzamiento incluido</span></div></li>
                 </ul>
             </div>
 
             <div class="section">
-                <h2 class="section-title">Proceso de Trabajo</h2>
+                <h2 class="section-title" data-i18n="sections.workProcess">Proceso de Trabajo</h2>
                 <div class="process-timeline">
                     <div class="timeline-item">
-                        <div class="timeline-title">1. Auditoría & Diagnóstico</div>
-                        <div class="timeline-desc">Análisis de marca actual y mercado</div>
-                        <span class="timeline-duration timeline-branding">5-7 días</span>
+                        <div class="timeline-title" data-i18n="process.rebranding.step1">1. Auditoría & Diagnóstico</div>
+                        <div class="timeline-desc" data-i18n="process.rebranding.step1Desc">Análisis de marca actual y mercado</div>
+                        <span class="timeline-duration timeline-branding" data-i18n="process.rebranding.step1Duration">5-7 días</span>
                     </div>
                     <div class="timeline-item">
-                        <div class="timeline-title">2. Estrategia de Rebranding</div>
-                        <div class="timeline-desc">Plan de transición y posicionamiento nuevo</div>
-                        <span class="timeline-duration timeline-branding">5-6 días</span>
+                        <div class="timeline-title" data-i18n="process.rebranding.step2">2. Estrategia de Rebranding</div>
+                        <div class="timeline-desc" data-i18n="process.rebranding.step2Desc">Plan de transición y posicionamiento nuevo</div>
+                        <span class="timeline-duration timeline-branding" data-i18n="process.rebranding.step2Duration">5-6 días</span>
                     </div>
                     <div class="timeline-item">
-                        <div class="timeline-title">3. Nueva Identidad Visual</div>
-                        <div class="timeline-desc">Diseño completo del nuevo sistema de marca</div>
-                        <span class="timeline-duration timeline-branding">10-14 días</span>
+                        <div class="timeline-title" data-i18n="process.rebranding.step3">3. Nueva Identidad Visual</div>
+                        <div class="timeline-desc" data-i18n="process.rebranding.step3Desc">Diseño completo del nuevo sistema de marca</div>
+                        <span class="timeline-duration timeline-branding" data-i18n="process.rebranding.step3Duration">10-14 días</span>
                     </div>
                     <div class="timeline-item">
-                        <div class="timeline-title">4. Aplicaciones Totales</div>
-                        <div class="timeline-desc">Implementación en todos los touchpoints</div>
-                        <span class="timeline-duration timeline-branding">8-10 días</span>
+                        <div class="timeline-title" data-i18n="process.rebranding.step4">4. Aplicaciones Totales</div>
+                        <div class="timeline-desc" data-i18n="process.rebranding.step4Desc">Implementación en todos los touchpoints</div>
+                        <span class="timeline-duration timeline-branding" data-i18n="process.rebranding.step4Duration">8-10 días</span>
                     </div>
                     <div class="timeline-item">
-                        <div class="timeline-title">5. Plan de Lanzamiento</div>
-                        <div class="timeline-desc">Estrategia de comunicación del cambio</div>
-                        <span class="timeline-duration timeline-branding">4-6 días</span>
+                        <div class="timeline-title" data-i18n="process.rebranding.step5">5. Plan de Lanzamiento</div>
+                        <div class="timeline-desc" data-i18n="process.rebranding.step5Desc">Estrategia de comunicación del cambio</div>
+                        <span class="timeline-duration timeline-branding" data-i18n="process.rebranding.step5Duration">4-6 días</span>
                     </div>
                     <div class="timeline-item">
-                        <div class="timeline-title">6. Migración & Launch</div>
-                        <div class="timeline-desc">Implementación coordinada en todas las plataformas</div>
-                        <span class="timeline-duration timeline-branding">5-7 días</span>
+                        <div class="timeline-title" data-i18n="process.rebranding.step6">6. Migración & Launch</div>
+                        <div class="timeline-desc" data-i18n="process.rebranding.step6Desc">Implementación coordinada en todas las plataformas</div>
+                        <span class="timeline-duration timeline-branding" data-i18n="process.rebranding.step6Duration">5-7 días</span>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="full-width-section">
-            <h2 class="section-title">Ideal Para</h2>
+            <h2 class="section-title" data-i18n="sections.idealFor">Ideal Para</h2>
             <div class="ideal-grid">
                 <div class="ideal-card card-branding">
                     <div class="ideal-icon">🔄</div>
-                    <div class="ideal-title">Marcas Desactualizadas</div>
-                    <div class="ideal-desc">Empresas con identidad obsoleta o inconsistente</div>
+                    <div class="ideal-title" data-i18n="idealFor.rebranding.outdatedBrands">Marcas Desactualizadas</div>
+                    <div class="ideal-desc" data-i18n="idealFor.rebranding.outdatedBrandsDesc">Empresas con identidad obsoleta o inconsistente</div>
                 </div>
                 <div class="ideal-card card-branding">
                     <div class="ideal-icon">🎯</div>
-                    <div class="ideal-title">Reposicionamiento</div>
-                    <div class="ideal-desc">Cambio de mercado objetivo o propuesta de valor</div>
+                    <div class="ideal-title" data-i18n="idealFor.rebranding.repositioning">Reposicionamiento</div>
+                    <div class="ideal-desc" data-i18n="idealFor.rebranding.repositioningDesc">Cambio de mercado objetivo o propuesta de valor</div>
                 </div>
                 <div class="ideal-card card-branding">
                     <div class="ideal-icon">🚀</div>
-                    <div class="ideal-title">Fusiones o Expansiones</div>
-                    <div class="ideal-desc">Unión de marcas o entrada a nuevos mercados</div>
+                    <div class="ideal-title" data-i18n="idealFor.rebranding.mergers">Fusiones o Expansiones</div>
+                    <div class="ideal-desc" data-i18n="idealFor.rebranding.mergersDesc">Unión de marcas o entrada a nuevos mercados</div>
                 </div>
             </div>
         </div>
 
         <div class="cta-section cta-branding">
-            <h2 class="cta-title">¿Listo para transformar tu marca?</h2>
-            <p class="cta-text">Rebranding completo con estrategia y plan de lanzamiento</p>
+            <h2 class="cta-title" data-i18n="cta.rebranding.title">¿Listo para transformar tu marca?</h2>
+            <p class="cta-text" data-i18n="cta.rebranding.text">Rebranding completo con estrategia y plan de lanzamiento</p>
             <div class="cta-buttons">
                 <button class="btn btn-primary btn-branding" onclick="payWithPayPal('rebranding', 2400)">
                     <svg class="paypal-logo-btn" viewBox="0 0 100 32" fill="currentColor"><path d="M12 4.917h5.167c2.917 0 5.333 2.083 5.333 5s-2.416 5-5.333 5H12V4.917zm22.917 0h5.166c2.917 0 5.334 2.083 5.334 5s-2.417 5-5.334 5h-5.166V4.917zM12 19.917h5.167c2.917 0 5.333 2.083 5.333 5s-2.416 5-5.333 5H12v-10z"/></svg>
-                    Pagar con PayPal
+                    <span data-i18n="cta.payWithPayPal">Pagar con PayPal</span>
                 </button>
-                <a href="https://wa.me/541163301998?text=Hola!%20Me%20interesa%20el%20Rebranding%20Estratégico%20(USD%202,400)" target="_blank" class="btn btn-secondary">💬 Consultar por WhatsApp</a>
+                <a href="https://wa.me/541163301998?text=Hola!%20Me%20interesa%20el%20Rebranding%20Estratégico%20(USD%202,400)" target="_blank" class="btn btn-secondary"><span data-i18n="cta.consultWhatsApp">💬 Consultar por WhatsApp</span></a>
             </div>
             <div class="payment-badges-cta">
-                <span class="payment-badge">🔒 Pago 100% seguro</span>
-                <span class="payment-badge">✓ Protección al comprador</span>
+                <span class="payment-badge" data-i18n="cta.securePayment">🔒 Pago 100% seguro</span>
+                <span class="payment-badge" data-i18n="cta.buyerProtection">✓ Protección al comprador</span>
             </div>
         </div>
     </div>
@@ -135,5 +139,163 @@
     <link rel="stylesheet" href="plan-styles.css">
     <script src="../js/currency-converter.js"></script>
     <script src="../js/paypal-integration.js"></script>
+    <script>
+        // Sistema de traducción
+        const translations = {
+            es: {
+                'nav.backToStore': '← Volver a Tienda',
+                'nav.home': 'Inicio',
+                'badge.branding': 'Branding',
+                'plan.rebranding.title': 'Rebranding Estratégico',
+                'plan.rebranding.subtitle': 'Renovación completa de marca con plan de lanzamiento. Transforma tu identidad visual y reposiciónate en el mercado.',
+                'pricing.rebranding.paymentNote': 'Pago único • Entrega en 40-50 días hábiles',
+                'plan.rebranding.highlightTitle': 'Transformación completa de tu marca',
+                'plan.rebranding.highlightDesc': 'Estrategia, rediseño total, migración de plataformas y plan de comunicación del cambio',
+                'sections.whatsIncluded': '¿Qué incluye?',
+                'features.rebranding.allIdentityPlus': 'Todo del Plan Identidad +',
+                'features.rebranding.allIdentityPlusDesc': 'Identidad completa, aplicaciones y brandbook',
+                'features.rebranding.brandAudit': 'Auditoría de Marca Actual',
+                'features.rebranding.brandAuditDesc': 'Análisis profundo de percepción y posicionamiento',
+                'features.rebranding.rebrandingStrategy': 'Estrategia de Rebranding',
+                'features.rebranding.rebrandingStrategyDesc': 'Plan de transición y comunicación del cambio',
+                'features.rebranding.naming': 'Naming (opcional)',
+                'features.rebranding.namingDesc': 'Exploración de nuevo nombre si es necesario',
+                'features.rebranding.brandStory': 'Brand Story',
+                'features.rebranding.brandStoryDesc': 'Narrativa de marca, misión, visión, valores',
+                'features.rebranding.webRedesign': 'Redesign Web',
+                'features.rebranding.webRedesignDesc': 'Actualización visual de tu sitio web',
+                'features.rebranding.digitalMigration': 'Migración Digital',
+                'features.rebranding.digitalMigrationDesc': 'Actualización de redes sociales y plataformas',
+                'features.rebranding.launchKit': 'Kit de Lanzamiento',
+                'features.rebranding.launchKitDesc': 'Anuncios, posts, comunicados, videos teaser',
+                'features.rebranding.transitionGuide': 'Guía de Transición',
+                'features.rebranding.transitionGuideDesc': 'Timeline y plan de acción paso a paso',
+                'features.rebranding.internalTraining': 'Capacitación Interna',
+                'features.rebranding.internalTrainingDesc': 'Workshop para tu equipo sobre la nueva identidad',
+                'features.rebranding.support6Months': 'Soporte 6 meses',
+                'features.rebranding.support6MonthsDesc': 'Acompañamiento post-lanzamiento incluido',
+                'sections.workProcess': 'Proceso de Trabajo',
+                'process.rebranding.step1': '1. Auditoría & Diagnóstico',
+                'process.rebranding.step1Desc': 'Análisis de marca actual y mercado',
+                'process.rebranding.step1Duration': '5-7 días',
+                'process.rebranding.step2': '2. Estrategia de Rebranding',
+                'process.rebranding.step2Desc': 'Plan de transición y posicionamiento nuevo',
+                'process.rebranding.step2Duration': '5-6 días',
+                'process.rebranding.step3': '3. Nueva Identidad Visual',
+                'process.rebranding.step3Desc': 'Diseño completo del nuevo sistema de marca',
+                'process.rebranding.step3Duration': '10-14 días',
+                'process.rebranding.step4': '4. Aplicaciones Totales',
+                'process.rebranding.step4Desc': 'Implementación en todos los touchpoints',
+                'process.rebranding.step4Duration': '8-10 días',
+                'process.rebranding.step5': '5. Plan de Lanzamiento',
+                'process.rebranding.step5Desc': 'Estrategia de comunicación del cambio',
+                'process.rebranding.step5Duration': '4-6 días',
+                'process.rebranding.step6': '6. Migración & Launch',
+                'process.rebranding.step6Desc': 'Implementación coordinada en todas las plataformas',
+                'process.rebranding.step6Duration': '5-7 días',
+                'sections.idealFor': 'Ideal Para',
+                'idealFor.rebranding.outdatedBrands': 'Marcas Desactualizadas',
+                'idealFor.rebranding.outdatedBrandsDesc': 'Empresas con identidad obsoleta o inconsistente',
+                'idealFor.rebranding.repositioning': 'Reposicionamiento',
+                'idealFor.rebranding.repositioningDesc': 'Cambio de mercado objetivo o propuesta de valor',
+                'idealFor.rebranding.mergers': 'Fusiones o Expansiones',
+                'idealFor.rebranding.mergersDesc': 'Unión de marcas o entrada a nuevos mercados',
+                'cta.rebranding.title': '¿Listo para transformar tu marca?',
+                'cta.rebranding.text': 'Rebranding completo con estrategia y plan de lanzamiento',
+                'cta.payWithPayPal': 'Pagar con PayPal',
+                'cta.consultWhatsApp': '💬 Consultar por WhatsApp',
+                'cta.securePayment': '🔒 Pago 100% seguro',
+                'cta.buyerProtection': '✓ Protección al comprador'
+            },
+            en: {
+                'nav.backToStore': '← Back to Store',
+                'nav.home': 'Home',
+                'badge.branding': 'Branding',
+                'plan.rebranding.title': 'Strategic Rebranding',
+                'plan.rebranding.subtitle': 'Complete brand renewal with launch plan. Transform your visual identity and reposition yourself in the market.',
+                'pricing.rebranding.paymentNote': 'One-time payment • Delivery in 40-50 business days',
+                'plan.rebranding.highlightTitle': 'Complete transformation of your brand',
+                'plan.rebranding.highlightDesc': 'Strategy, total redesign, platform migration and change communication plan',
+                'sections.whatsIncluded': 'What\'s Included?',
+                'features.rebranding.allIdentityPlus': 'Everything from Identity + Plan',
+                'features.rebranding.allIdentityPlusDesc': 'Complete identity, applications and brandbook',
+                'features.rebranding.brandAudit': 'Current Brand Audit',
+                'features.rebranding.brandAuditDesc': 'Deep analysis of perception and positioning',
+                'features.rebranding.rebrandingStrategy': 'Rebranding Strategy',
+                'features.rebranding.rebrandingStrategyDesc': 'Transition plan and change communication',
+                'features.rebranding.naming': 'Naming (optional)',
+                'features.rebranding.namingDesc': 'New name exploration if necessary',
+                'features.rebranding.brandStory': 'Brand Story',
+                'features.rebranding.brandStoryDesc': 'Brand narrative, mission, vision, values',
+                'features.rebranding.webRedesign': 'Web Redesign',
+                'features.rebranding.webRedesignDesc': 'Visual update of your website',
+                'features.rebranding.digitalMigration': 'Digital Migration',
+                'features.rebranding.digitalMigrationDesc': 'Social media and platforms update',
+                'features.rebranding.launchKit': 'Launch Kit',
+                'features.rebranding.launchKitDesc': 'Ads, posts, press releases, teaser videos',
+                'features.rebranding.transitionGuide': 'Transition Guide',
+                'features.rebranding.transitionGuideDesc': 'Timeline and step-by-step action plan',
+                'features.rebranding.internalTraining': 'Internal Training',
+                'features.rebranding.internalTrainingDesc': 'Workshop for your team about the new identity',
+                'features.rebranding.support6Months': '6 Months Support',
+                'features.rebranding.support6MonthsDesc': 'Post-launch support included',
+                'sections.workProcess': 'Work Process',
+                'process.rebranding.step1': '1. Audit & Diagnosis',
+                'process.rebranding.step1Desc': 'Current brand and market analysis',
+                'process.rebranding.step1Duration': '5-7 days',
+                'process.rebranding.step2': '2. Rebranding Strategy',
+                'process.rebranding.step2Desc': 'Transition plan and new positioning',
+                'process.rebranding.step2Duration': '5-6 days',
+                'process.rebranding.step3': '3. New Visual Identity',
+                'process.rebranding.step3Desc': 'Complete design of new brand system',
+                'process.rebranding.step3Duration': '10-14 days',
+                'process.rebranding.step4': '4. Total Applications',
+                'process.rebranding.step4Desc': 'Implementation across all touchpoints',
+                'process.rebranding.step4Duration': '8-10 days',
+                'process.rebranding.step5': '5. Launch Plan',
+                'process.rebranding.step5Desc': 'Change communication strategy',
+                'process.rebranding.step5Duration': '4-6 days',
+                'process.rebranding.step6': '6. Migration & Launch',
+                'process.rebranding.step6Desc': 'Coordinated implementation across all platforms',
+                'process.rebranding.step6Duration': '5-7 days',
+                'sections.idealFor': 'Ideal For',
+                'idealFor.rebranding.outdatedBrands': 'Outdated Brands',
+                'idealFor.rebranding.outdatedBrandsDesc': 'Companies with obsolete or inconsistent identity',
+                'idealFor.rebranding.repositioning': 'Repositioning',
+                'idealFor.rebranding.repositioningDesc': 'Target market change or value proposition',
+                'idealFor.rebranding.mergers': 'Mergers or Expansions',
+                'idealFor.rebranding.mergersDesc': 'Brand mergers or entry into new markets',
+                'cta.rebranding.title': 'Ready to transform your brand?',
+                'cta.rebranding.text': 'Complete rebranding with strategy and launch plan',
+                'cta.payWithPayPal': 'Pay with PayPal',
+                'cta.consultWhatsApp': '💬 Consult via WhatsApp',
+                'cta.securePayment': '🔒 100% secure payment',
+                'cta.buyerProtection': '✓ Buyer protection'
+            }
+        };
+
+        let currentLang = localStorage.getItem('language') || 'es';
+
+        function translatePage() {
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[currentLang][key]) {
+                    element.textContent = translations[currentLang][key];
+                }
+            });
+            document.getElementById('langText').textContent = currentLang.toUpperCase();
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('langToggle').addEventListener('click', () => {
+                const langs = ['es', 'en', 'pt'];
+                const currentIndex = langs.indexOf(currentLang);
+                currentLang = langs[(currentIndex + 1) % langs.length];
+                localStorage.setItem('language', currentLang);
+                translatePage();
+            });
+            translatePage();
+        });
+    </script>
 </body>
 </html>

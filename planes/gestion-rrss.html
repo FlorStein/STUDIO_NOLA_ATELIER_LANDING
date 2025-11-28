@@ -11,115 +11,119 @@
 <body>
     <header class="header">
         <div class="header-content">
-            <a href="../tienda.html" class="back-link">← Volver a Tienda</a>
+            <a href="../tienda.html" class="back-link" data-i18n="nav.backToStore">← Volver a Tienda</a>
             <div style="display: flex; gap: 1.5rem; align-items: center;">
                 <select class="currency-selector" aria-label="Seleccionar moneda"></select>
-                <a href="../index.html" class="back-link">Inicio</a>
+                <button class="lang-toggle" id="langToggle">
+                    <span class="globe-icon">🌐</span>
+                    <span class="lang-text" id="langText">ES</span>
+                </button>
+                <a href="../index.html" class="back-link" data-i18n="nav.home">Inicio</a>
             </div>
         </div>
     </header>
 
     <div class="container">
         <div class="plan-header">
-            <span class="badge badge-marketing">Marketing Digital</span>
-            <h1 class="plan-title">Gestión de RRSS</h1>
-            <p class="plan-subtitle">Community management profesional para Instagram y Facebook. Contenido estratégico mensual.</p>
+            <span class="badge badge-marketing" data-i18n="badge.marketing">Marketing Digital</span>
+            <h1 class="plan-title" data-i18n="plan.gestionRRSS.title">Gestión de RRSS</h1>
+            <p class="plan-subtitle" data-i18n="plan.gestionRRSS.subtitle">Community management profesional para Instagram y Facebook. Contenido estratégico mensual.</p>
         </div>
 
         <div class="price-box">
             <div class="price price-marketing" data-plan="gestion-rrss">$350 <span>USD/mes</span></div>
-            <p class="price-note">Suscripción mensual • Contratación mínima 3 meses</p>
+            <p class="price-note" data-i18n="pricing.subscriptionNote">Suscripción mensual • Contratación mínima 3 meses</p>
         </div>
 
         <div class="highlight-banner banner-marketing">
             <div class="highlight-icon">📱</div>
             <div>
-                <div class="highlight-title">Presencia activa y estratégica en redes</div>
-                <div class="highlight-desc">Contenido profesional que conecta con tu audiencia y genera engagement</div>
+                <div class="highlight-title" data-i18n="plan.gestionRRSS.highlightTitle">Presencia activa y estratégica en redes</div>
+                <div class="highlight-desc" data-i18n="plan.gestionRRSS.highlightDesc">Contenido profesional que conecta con tu audiencia y genera engagement</div>
             </div>
         </div>
 
         <div class="content-grid">
             <div class="section">
-                <h2 class="section-title">¿Qué incluye?</h2>
+                <h2 class="section-title" data-i18n="sections.whatsIncluded">¿Qué incluye?</h2>
                 <ul class="features-list">
-                    <li><div><span class="feature-name">12 Posteos Mensuales</span><span class="feature-desc">3 posts por semana en Instagram y Facebook</span></div></li>
-                    <li><div><span class="feature-name">4 Stories Semanales</span><span class="feature-desc">Contenido efímero para mantener presencia diaria</span></div></li>
-                    <li><div><span class="feature-name">Diseño Gráfico</span><span class="feature-desc">Piezas visuales profesionales alineadas a tu marca</span></div></li>
-                    <li><div><span class="feature-name">Copywriting</span><span class="feature-desc">Textos persuasivos con CTAs y hashtags estratégicos</span></div></li>
-                    <li><div><span class="feature-name">Calendario de Contenidos</span><span class="feature-desc">Planificación mensual para tu aprobación</span></div></li>
-                    <li><div><span class="feature-name">Community Management</span><span class="feature-desc">Respuesta a comentarios y mensajes directos</span></div></li>
-                    <li><div><span class="feature-name">Hashtag Research</span><span class="feature-desc">Investigación de hashtags relevantes para tu nicho</span></div></li>
-                    <li><div><span class="feature-name">Reporte Mensual</span><span class="feature-desc">Métricas de alcance, engagement y crecimiento</span></div></li>
+                    <li><div><span class="feature-name" data-i18n="features.monthlyPosts">12 Posteos Mensuales</span><span class="feature-desc" data-i18n="features.monthlyPostsDesc">3 posts por semana en Instagram y Facebook</span></div></li>
+                    <li><div><span class="feature-name" data-i18n="features.weeklyStories">4 Stories Semanales</span><span class="feature-desc" data-i18n="features.weeklyStoriesDesc">Contenido efímero para mantener presencia diaria</span></div></li>
+                    <li><div><span class="feature-name" data-i18n="features.graphicDesign">Diseño Gráfico</span><span class="feature-desc" data-i18n="features.graphicDesignDesc">Piezas visuales profesionales alineadas a tu marca</span></div></li>
+                    <li><div><span class="feature-name" data-i18n="features.copywriting">Copywriting</span><span class="feature-desc" data-i18n="features.copywritingDesc">Textos persuasivos con CTAs y hashtags estratégicos</span></div></li>
+                    <li><div><span class="feature-name" data-i18n="features.contentCalendar">Calendario de Contenidos</span><span class="feature-desc" data-i18n="features.contentCalendarDesc">Planificación mensual para tu aprobación</span></div></li>
+                    <li><div><span class="feature-name" data-i18n="features.communityManagement">Community Management</span><span class="feature-desc" data-i18n="features.communityManagementDesc">Respuesta a comentarios y mensajes directos</span></div></li>
+                    <li><div><span class="feature-name" data-i18n="features.hashtagResearch">Hashtag Research</span><span class="feature-desc" data-i18n="features.hashtagResearchDesc">Investigación de hashtags relevantes para tu nicho</span></div></li>
+                    <li><div><span class="feature-name" data-i18n="features.monthlyReport">Reporte Mensual</span><span class="feature-desc" data-i18n="features.monthlyReportDesc">Métricas de alcance, engagement y crecimiento</span></div></li>
                 </ul>
             </div>
 
             <div class="section">
-                <h2 class="section-title">Proceso Mensual</h2>
+                <h2 class="section-title" data-i18n="sections.monthlyProcess">Proceso Mensual</h2>
                 <div class="process-timeline">
                     <div class="timeline-item">
-                        <div class="timeline-title">Semana 1</div>
-                        <div class="timeline-desc">Planificación: calendario de contenidos para tu aprobación</div>
-                        <span class="timeline-duration timeline-marketing">2-3 días</span>
+                        <div class="timeline-title" data-i18n="process.week1">Semana 1</div>
+                        <div class="timeline-desc" data-i18n="process.week1Desc">Planificación: calendario de contenidos para tu aprobación</div>
+                        <span class="timeline-duration timeline-marketing" data-i18n="process.week1Duration">2-3 días</span>
                     </div>
                     <div class="timeline-item">
-                        <div class="timeline-title">Semana 2-5</div>
-                        <div class="timeline-desc">Producción: diseño de posts, copywriting y programación</div>
-                        <span class="timeline-duration timeline-marketing">continuo</span>
+                        <div class="timeline-title" data-i18n="process.week2to5">Semana 2-5</div>
+                        <div class="timeline-desc" data-i18n="process.week2to5Desc">Producción: diseño de posts, copywriting y programación</div>
+                        <span class="timeline-duration timeline-marketing" data-i18n="process.week2to5Duration">continuo</span>
                     </div>
                     <div class="timeline-item">
-                        <div class="timeline-title">Diario</div>
-                        <div class="timeline-desc">Publicación: posts programados y stories diarias</div>
-                        <span class="timeline-duration timeline-marketing">automático</span>
+                        <div class="timeline-title" data-i18n="process.daily1">Diario</div>
+                        <div class="timeline-desc" data-i18n="process.daily1Desc">Publicación: posts programados y stories diarias</div>
+                        <span class="timeline-duration timeline-marketing" data-i18n="process.daily1Duration">automático</span>
                     </div>
                     <div class="timeline-item">
-                        <div class="timeline-title">Diario</div>
-                        <div class="timeline-desc">Community: respuesta a comentarios y DMs</div>
-                        <span class="timeline-duration timeline-marketing">L-V</span>
+                        <div class="timeline-title" data-i18n="process.daily2">Diario</div>
+                        <div class="timeline-desc" data-i18n="process.daily2Desc">Community: respuesta a comentarios y DMs</div>
+                        <span class="timeline-duration timeline-marketing" data-i18n="process.daily2Duration">L-V</span>
                     </div>
                     <div class="timeline-item">
-                        <div class="timeline-title">Fin de Mes</div>
-                        <div class="timeline-desc">Reporte: análisis de métricas y próximos pasos</div>
-                        <span class="timeline-duration timeline-marketing">1 día</span>
+                        <div class="timeline-title" data-i18n="process.endOfMonth">Fin de Mes</div>
+                        <div class="timeline-desc" data-i18n="process.endOfMonthDesc">Reporte: análisis de métricas y próximos pasos</div>
+                        <span class="timeline-duration timeline-marketing" data-i18n="process.endOfMonthDuration">1 día</span>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="full-width-section">
-            <h2 class="section-title">Ideal Para</h2>
+            <h2 class="section-title" data-i18n="sections.idealFor">Ideal Para</h2>
             <div class="ideal-grid">
                 <div class="ideal-card card-marketing">
                     <div class="ideal-icon">🛍️</div>
-                    <div class="ideal-title">Negocios Locales</div>
-                    <div class="ideal-desc">Comercios que necesitan presencia constante en RRSS</div>
+                    <div class="ideal-title" data-i18n="idealFor.localBusiness">Negocios Locales</div>
+                    <div class="ideal-desc" data-i18n="idealFor.localBusinessDesc">Comercios que necesitan presencia constante en RRSS</div>
                 </div>
                 <div class="ideal-card card-marketing">
                     <div class="ideal-icon">💼</div>
-                    <div class="ideal-title">Profesionales</div>
-                    <div class="ideal-desc">Consultores, coaches que buscan posicionamiento</div>
+                    <div class="ideal-title" data-i18n="idealFor.professionals">Profesionales</div>
+                    <div class="ideal-desc" data-i18n="idealFor.professionalsDesc">Consultores, coaches que buscan posicionamiento</div>
                 </div>
                 <div class="ideal-card card-marketing">
                     <div class="ideal-icon">🚀</div>
-                    <div class="ideal-title">Emprendimientos</div>
-                    <div class="ideal-desc">Marcas nuevas construyendo comunidad</div>
+                    <div class="ideal-title" data-i18n="idealFor.startups">Emprendimientos</div>
+                    <div class="ideal-desc" data-i18n="idealFor.startupsDesc">Marcas nuevas construyendo comunidad</div>
                 </div>
             </div>
         </div>
 
         <div class="cta-section cta-marketing">
-            <h2 class="cta-title">¿Listo para activar tus redes sociales?</h2>
-            <p class="cta-text">Gestión profesional mensual de Instagram y Facebook</p>
+            <h2 class="cta-title" data-i18n="cta.gestionRRSS.title">¿Listo para activar tus redes sociales?</h2>
+            <p class="cta-text" data-i18n="cta.gestionRRSS.text">Gestión profesional mensual de Instagram y Facebook</p>
             <div class="cta-buttons">
                 <button class="btn btn-primary btn-marketing" onclick="payWithPayPal('gestion-rrss', 350, true)">
                     <svg class="paypal-logo-btn" viewBox="0 0 100 32" fill="currentColor"><path d="M12 4.917h5.167c2.917 0 5.333 2.083 5.333 5s-2.416 5-5.333 5H12V4.917zm22.917 0h5.166c2.917 0 5.334 2.083 5.334 5s-2.417 5-5.334 5h-5.166V4.917zM12 19.917h5.167c2.917 0 5.333 2.083 5.333 5s-2.416 5-5.333 5H12v-10z"/></svg>
-                    Contratar Servicio
+                    <span data-i18n="cta.hireService">Contratar Servicio</span>
                 </button>
-                <a href="https://wa.me/541163301998?text=Hola!%20Me%20interesa%20la%20Gestión%20de%20RRSS%20(USD%20350/mes)" target="_blank" class="btn btn-secondary">💬 Consultar por WhatsApp</a>
+                <a href="https://wa.me/541163301998?text=Hola!%20Me%20interesa%20la%20Gestión%20de%20RRSS%20(USD%20350/mes)" target="_blank" class="btn btn-secondary"><span data-i18n="cta.consultWhatsApp">💬 Consultar por WhatsApp</span></a>
             </div>
             <div class="payment-badges-cta">
-                <span class="payment-badge">📅 Suscripción mensual</span>
-                <span class="payment-badge">✓ Cancela cuando quieras</span>
+                <span class="payment-badge" data-i18n="cta.monthlySubscription">📅 Suscripción mensual</span>
+                <span class="payment-badge" data-i18n="cta.cancelAnytime">✓ Cancela cuando quieras</span>
             </div>
         </div>
     </div>
@@ -127,5 +131,145 @@
     <link rel="stylesheet" href="plan-styles.css">
     <script src="../js/currency-converter.js"></script>
     <script src="../js/paypal-integration.js"></script>
+    <script>
+        // Sistema de traducción
+        const translations = {
+            es: {
+                'nav.backToStore': '← Volver a Tienda',
+                'nav.home': 'Inicio',
+                'badge.marketing': 'Marketing Digital',
+                'plan.gestionRRSS.title': 'Gestión de RRSS',
+                'plan.gestionRRSS.subtitle': 'Community management profesional para Instagram y Facebook. Contenido estratégico mensual.',
+                'pricing.subscriptionNote': 'Suscripción mensual • Contratación mínima 3 meses',
+                'plan.gestionRRSS.highlightTitle': 'Presencia activa y estratégica en redes',
+                'plan.gestionRRSS.highlightDesc': 'Contenido profesional que conecta con tu audiencia y genera engagement',
+                'sections.whatsIncluded': '¿Qué incluye?',
+                'features.monthlyPosts': '12 Posteos Mensuales',
+                'features.monthlyPostsDesc': '3 posts por semana en Instagram y Facebook',
+                'features.weeklyStories': '4 Stories Semanales',
+                'features.weeklyStoriesDesc': 'Contenido efímero para mantener presencia diaria',
+                'features.graphicDesign': 'Diseño Gráfico',
+                'features.graphicDesignDesc': 'Piezas visuales profesionales alineadas a tu marca',
+                'features.copywriting': 'Copywriting',
+                'features.copywritingDesc': 'Textos persuasivos con CTAs y hashtags estratégicos',
+                'features.contentCalendar': 'Calendario de Contenidos',
+                'features.contentCalendarDesc': 'Planificación mensual para tu aprobación',
+                'features.communityManagement': 'Community Management',
+                'features.communityManagementDesc': 'Respuesta a comentarios y mensajes directos',
+                'features.hashtagResearch': 'Hashtag Research',
+                'features.hashtagResearchDesc': 'Investigación de hashtags relevantes para tu nicho',
+                'features.monthlyReport': 'Reporte Mensual',
+                'features.monthlyReportDesc': 'Métricas de alcance, engagement y crecimiento',
+                'sections.monthlyProcess': 'Proceso Mensual',
+                'process.week1': 'Semana 1',
+                'process.week1Desc': 'Planificación: calendario de contenidos para tu aprobación',
+                'process.week1Duration': '2-3 días',
+                'process.week2to5': 'Semana 2-5',
+                'process.week2to5Desc': 'Producción: diseño de posts, copywriting y programación',
+                'process.week2to5Duration': 'continuo',
+                'process.daily1': 'Diario',
+                'process.daily1Desc': 'Publicación: posts programados y stories diarias',
+                'process.daily1Duration': 'automático',
+                'process.daily2': 'Diario',
+                'process.daily2Desc': 'Community: respuesta a comentarios y DMs',
+                'process.daily2Duration': 'L-V',
+                'process.endOfMonth': 'Fin de Mes',
+                'process.endOfMonthDesc': 'Reporte: análisis de métricas y próximos pasos',
+                'process.endOfMonthDuration': '1 día',
+                'sections.idealFor': 'Ideal Para',
+                'idealFor.localBusiness': 'Negocios Locales',
+                'idealFor.localBusinessDesc': 'Comercios que necesitan presencia constante en RRSS',
+                'idealFor.professionals': 'Profesionales',
+                'idealFor.professionalsDesc': 'Consultores, coaches que buscan posicionamiento',
+                'idealFor.startups': 'Emprendimientos',
+                'idealFor.startupsDesc': 'Marcas nuevas construyendo comunidad',
+                'cta.gestionRRSS.title': '¿Listo para activar tus redes sociales?',
+                'cta.gestionRRSS.text': 'Gestión profesional mensual de Instagram y Facebook',
+                'cta.hireService': 'Contratar Servicio',
+                'cta.consultWhatsApp': '💬 Consultar por WhatsApp',
+                'cta.monthlySubscription': '📅 Suscripción mensual',
+                'cta.cancelAnytime': '✓ Cancela cuando quieras'
+            },
+            en: {
+                'nav.backToStore': '← Back to Store',
+                'nav.home': 'Home',
+                'badge.marketing': 'Digital Marketing',
+                'plan.gestionRRSS.title': 'Social Media Management',
+                'plan.gestionRRSS.subtitle': 'Professional community management for Instagram and Facebook. Strategic monthly content.',
+                'pricing.subscriptionNote': 'Monthly subscription • Minimum 3-month commitment',
+                'plan.gestionRRSS.highlightTitle': 'Active and strategic social presence',
+                'plan.gestionRRSS.highlightDesc': 'Professional content that connects with your audience and generates engagement',
+                'sections.whatsIncluded': 'What\'s Included?',
+                'features.monthlyPosts': '12 Monthly Posts',
+                'features.monthlyPostsDesc': '3 posts per week on Instagram and Facebook',
+                'features.weeklyStories': '4 Weekly Stories',
+                'features.weeklyStoriesDesc': 'Ephemeral content to maintain daily presence',
+                'features.graphicDesign': 'Graphic Design',
+                'features.graphicDesignDesc': 'Professional visual pieces aligned with your brand',
+                'features.copywriting': 'Copywriting',
+                'features.copywritingDesc': 'Persuasive texts with strategic CTAs and hashtags',
+                'features.contentCalendar': 'Content Calendar',
+                'features.contentCalendarDesc': 'Monthly planning for your approval',
+                'features.communityManagement': 'Community Management',
+                'features.communityManagementDesc': 'Response to comments and direct messages',
+                'features.hashtagResearch': 'Hashtag Research',
+                'features.hashtagResearchDesc': 'Research of relevant hashtags for your niche',
+                'features.monthlyReport': 'Monthly Report',
+                'features.monthlyReportDesc': 'Metrics for reach, engagement and growth',
+                'sections.monthlyProcess': 'Monthly Process',
+                'process.week1': 'Week 1',
+                'process.week1Desc': 'Planning: content calendar for your approval',
+                'process.week1Duration': '2-3 days',
+                'process.week2to5': 'Week 2-5',
+                'process.week2to5Desc': 'Production: post design, copywriting and scheduling',
+                'process.week2to5Duration': 'ongoing',
+                'process.daily1': 'Daily',
+                'process.daily1Desc': 'Publishing: scheduled posts and daily stories',
+                'process.daily1Duration': 'automatic',
+                'process.daily2': 'Daily',
+                'process.daily2Desc': 'Community: response to comments and DMs',
+                'process.daily2Duration': 'M-F',
+                'process.endOfMonth': 'End of Month',
+                'process.endOfMonthDesc': 'Report: metrics analysis and next steps',
+                'process.endOfMonthDuration': '1 day',
+                'sections.idealFor': 'Ideal For',
+                'idealFor.localBusiness': 'Local Businesses',
+                'idealFor.localBusinessDesc': 'Stores that need constant social media presence',
+                'idealFor.professionals': 'Professionals',
+                'idealFor.professionalsDesc': 'Consultants, coaches seeking positioning',
+                'idealFor.startups': 'Startups',
+                'idealFor.startupsDesc': 'New brands building community',
+                'cta.gestionRRSS.title': 'Ready to activate your social media?',
+                'cta.gestionRRSS.text': 'Professional monthly management of Instagram and Facebook',
+                'cta.hireService': 'Hire Service',
+                'cta.consultWhatsApp': '💬 Consult via WhatsApp',
+                'cta.monthlySubscription': '📅 Monthly subscription',
+                'cta.cancelAnytime': '✓ Cancel anytime'
+            }
+        };
+
+        let currentLang = localStorage.getItem('language') || 'es';
+
+        function translatePage() {
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[currentLang][key]) {
+                    element.textContent = translations[currentLang][key];
+                }
+            });
+            document.getElementById('langText').textContent = currentLang.toUpperCase();
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('langToggle').addEventListener('click', () => {
+                const langs = ['es', 'en', 'pt'];
+                const currentIndex = langs.indexOf(currentLang);
+                currentLang = langs[(currentIndex + 1) % langs.length];
+                localStorage.setItem('language', currentLang);
+                translatePage();
+            });
+            translatePage();
+        });
+    </script>
 </body>
 </html>

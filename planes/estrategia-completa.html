@@ -11,116 +11,120 @@
 <body>
     <header class="header">
         <div class="header-content">
-            <a href="../tienda.html" class="back-link">← Volver a Tienda</a>
+            <a href="../tienda.html" class="back-link" data-i18n="nav.backToStore">← Volver a Tienda</a>
             <div style="display: flex; gap: 1.5rem; align-items: center;">
                 <select class="currency-selector" aria-label="Seleccionar moneda"></select>
-                <a href="../index.html" class="back-link">Inicio</a>
+                <button class="lang-toggle" id="langToggle">
+                    <span class="globe-icon">🌐</span>
+                    <span class="lang-text" id="langText">ES</span>
+                </button>
+                <a href="../index.html" class="back-link" data-i18n="nav.home">Inicio</a>
             </div>
         </div>
     </header>
 
     <div class="container">
         <div class="plan-header">
-            <span class="badge badge-marketing">Marketing Digital</span>
-            <h1 class="plan-title">Estrategia Digital Completa</h1>
-            <p class="plan-subtitle">Gestión integral de marketing digital. RRSS + Publicidad + Email + Analítica en un solo servicio.</p>
+            <span class="badge badge-marketing" data-i18n="badge.marketing">Marketing Digital</span>
+            <h1 class="plan-title" data-i18n="plan.estrategiaCompleta.title">Estrategia Digital Completa</h1>
+            <p class="plan-subtitle" data-i18n="plan.estrategiaCompleta.subtitle">Gestión integral de marketing digital. RRSS + Publicidad + Email + Analítica en un solo servicio.</p>
         </div>
 
         <div class="price-box">
             <div class="price price-marketing" data-plan="estrategia-completa">$800 <span>USD/mes</span></div>
-            <p class="price-note">Suscripción mensual • Servicio todo incluido</p>
+            <p class="price-note" data-i18n="pricing.monthlySubscription">Suscripción mensual • Servicio todo incluido</p>
         </div>
 
         <div class="highlight-banner banner-marketing">
             <div class="highlight-icon">🚀</div>
             <div>
-                <div class="highlight-title">Solución 360° de marketing digital</div>
-                <div class="highlight-desc">Tu departamento de marketing completo en un solo plan</div>
+                <div class="highlight-title" data-i18n="plan.estrategiaCompleta.highlightTitle">Solución 360° de marketing digital</div>
+                <div class="highlight-desc" data-i18n="plan.estrategiaCompleta.highlightDesc">Tu departamento de marketing completo en un solo plan</div>
             </div>
         </div>
 
         <div class="content-grid">
             <div class="section">
-                <h2 class="section-title">¿Qué incluye?</h2>
+                <h2 class="section-title" data-i18n="sections.whatsIncluded">¿Qué incluye?</h2>
                 <ul class="features-list">
-                    <li><div><span class="feature-name">Todo RRSS + Ads +</span><span class="feature-desc">Gestión de redes y campañas publicitarias incluidas</span></div></li>
-                    <li><div><span class="feature-name">Email Marketing</span><span class="feature-desc">4 newsletters mensuales + automatizaciones</span></div></li>
-                    <li><div><span class="feature-name">Blog/SEO</span><span class="feature-desc">4 artículos SEO-optimizados por mes</span></div></li>
-                    <li><div><span class="feature-name">Google Ads (opcional)</span><span class="feature-desc">Gestión de campañas en búsqueda y display</span></div></li>
-                    <li><div><span class="feature-name">Estrategia Mensual</span><span class="feature-desc">Plan completo alineado a objetivos de negocio</span></div></li>
-                    <li><div><span class="feature-name">Analítica Avanzada</span><span class="feature-desc">Dashboard personalizado con todas las métricas</span></div></li>
-                    <li><div><span class="feature-name">Reunión Semanal</span><span class="feature-desc">Call estratégico para revisar avances</span></div></li>
-                    <li><div><span class="feature-name">Contenido Premium</span><span class="feature-desc">Videos cortos, reels, infografías, ebooks</span></div></li>
-                    <li><div><span class="feature-name">Consultoría Prioritaria</span><span class="feature-desc">Respuesta en menos de 2hs hábiles</span></div></li>
+                    <li><div><span class="feature-name" data-i18n="plan.estrategiaCompleta.features.allInOne">Todo RRSS + Ads +</span><span class="feature-desc" data-i18n="plan.estrategiaCompleta.features.allInOneDesc">Gestión de redes y campañas publicitarias incluidas</span></div></li>
+                    <li><div><span class="feature-name" data-i18n="plan.estrategiaCompleta.features.emailMarketing">Email Marketing</span><span class="feature-desc" data-i18n="plan.estrategiaCompleta.features.emailMarketingDesc">4 newsletters mensuales + automatizaciones</span></div></li>
+                    <li><div><span class="feature-name" data-i18n="plan.estrategiaCompleta.features.blogSEO">Blog/SEO</span><span class="feature-desc" data-i18n="plan.estrategiaCompleta.features.blogSEODesc">4 artículos SEO-optimizados por mes</span></div></li>
+                    <li><div><span class="feature-name" data-i18n="plan.estrategiaCompleta.features.googleAds">Google Ads (opcional)</span><span class="feature-desc" data-i18n="plan.estrategiaCompleta.features.googleAdsDesc">Gestión de campañas en búsqueda y display</span></div></li>
+                    <li><div><span class="feature-name" data-i18n="plan.estrategiaCompleta.features.monthlyStrategy">Estrategia Mensual</span><span class="feature-desc" data-i18n="plan.estrategiaCompleta.features.monthlyStrategyDesc">Plan completo alineado a objetivos de negocio</span></div></li>
+                    <li><div><span class="feature-name" data-i18n="plan.estrategiaCompleta.features.advancedAnalytics">Analítica Avanzada</span><span class="feature-desc" data-i18n="plan.estrategiaCompleta.features.advancedAnalyticsDesc">Dashboard personalizado con todas las métricas</span></div></li>
+                    <li><div><span class="feature-name" data-i18n="plan.estrategiaCompleta.features.weeklyMeeting">Reunión Semanal</span><span class="feature-desc" data-i18n="plan.estrategiaCompleta.features.weeklyMeetingDesc">Call estratégico para revisar avances</span></div></li>
+                    <li><div><span class="feature-name" data-i18n="plan.estrategiaCompleta.features.premiumContent">Contenido Premium</span><span class="feature-desc" data-i18n="plan.estrategiaCompleta.features.premiumContentDesc">Videos cortos, reels, infografías, ebooks</span></div></li>
+                    <li><div><span class="feature-name" data-i18n="plan.estrategiaCompleta.features.priorityConsulting">Consultoría Prioritaria</span><span class="feature-desc" data-i18n="plan.estrategiaCompleta.features.priorityConsultingDesc">Respuesta en menos de 2hs hábiles</span></div></li>
                 </ul>
             </div>
 
             <div class="section">
-                <h2 class="section-title">Proceso Mensual</h2>
+                <h2 class="section-title" data-i18n="plan.estrategiaCompleta.processTitle">Proceso Mensual</h2>
                 <div class="process-timeline">
                     <div class="timeline-item">
-                        <div class="timeline-title">Inicio de Mes</div>
-                        <div class="timeline-desc">Estrategia: plan mensual y objetivos KPI</div>
-                        <span class="timeline-duration timeline-marketing">día 1-2</span>
+                        <div class="timeline-title" data-i18n="plan.estrategiaCompleta.process.step1">Inicio de Mes</div>
+                        <div class="timeline-desc" data-i18n="plan.estrategiaCompleta.process.step1Desc">Estrategia: plan mensual y objetivos KPI</div>
+                        <span class="timeline-duration timeline-marketing" data-i18n="plan.estrategiaCompleta.process.step1Duration">día 1-2</span>
                     </div>
                     <div class="timeline-item">
-                        <div class="timeline-title">Todo el Mes</div>
-                        <div class="timeline-desc">Ejecución: contenido, campañas, emails en marcha</div>
-                        <span class="timeline-duration timeline-marketing">continuo</span>
+                        <div class="timeline-title" data-i18n="plan.estrategiaCompleta.process.step2">Todo el Mes</div>
+                        <div class="timeline-desc" data-i18n="plan.estrategiaCompleta.process.step2Desc">Ejecución: contenido, campañas, emails en marcha</div>
+                        <span class="timeline-duration timeline-marketing" data-i18n="plan.estrategiaCompleta.process.step2Duration">continuo</span>
                     </div>
                     <div class="timeline-item">
-                        <div class="timeline-title">Semanal</div>
-                        <div class="timeline-desc">Call estratégico: revisión de métricas y ajustes</div>
-                        <span class="timeline-duration timeline-marketing">lunes 10am</span>
+                        <div class="timeline-title" data-i18n="plan.estrategiaCompleta.process.step3">Semanal</div>
+                        <div class="timeline-desc" data-i18n="plan.estrategiaCompleta.process.step3Desc">Call estratégico: revisión de métricas y ajustes</div>
+                        <span class="timeline-duration timeline-marketing" data-i18n="plan.estrategiaCompleta.process.step3Duration">lunes 10am</span>
                     </div>
                     <div class="timeline-item">
-                        <div class="timeline-title">Diario</div>
-                        <div class="timeline-desc">Optimización: monitoreo y mejora de rendimiento</div>
-                        <span class="timeline-duration timeline-marketing">L-V</span>
+                        <div class="timeline-title" data-i18n="plan.estrategiaCompleta.process.step4">Diario</div>
+                        <div class="timeline-desc" data-i18n="plan.estrategiaCompleta.process.step4Desc">Optimización: monitoreo y mejora de rendimiento</div>
+                        <span class="timeline-duration timeline-marketing" data-i18n="plan.estrategiaCompleta.process.step4Duration">L-V</span>
                     </div>
                     <div class="timeline-item">
-                        <div class="timeline-title">Fin de Mes</div>
-                        <div class="timeline-desc">Reporte completo: ROI, conversiones, crecimiento</div>
-                        <span class="timeline-duration timeline-marketing">último viernes</span>
+                        <div class="timeline-title" data-i18n="plan.estrategiaCompleta.process.step5">Fin de Mes</div>
+                        <div class="timeline-desc" data-i18n="plan.estrategiaCompleta.process.step5Desc">Reporte completo: ROI, conversiones, crecimiento</div>
+                        <span class="timeline-duration timeline-marketing" data-i18n="plan.estrategiaCompleta.process.step5Duration">último viernes</span>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="full-width-section">
-            <h2 class="section-title">Ideal Para</h2>
+            <h2 class="section-title" data-i18n="sections.idealFor">Ideal Para</h2>
             <div class="ideal-grid">
                 <div class="ideal-card card-marketing">
                     <div class="ideal-icon">🏢</div>
-                    <div class="ideal-title">Empresas en Crecimiento</div>
-                    <div class="ideal-desc">Negocios consolidados listos para escalar digitalmente</div>
+                    <div class="ideal-title" data-i18n="plan.estrategiaCompleta.idealFor.growingCompanies">Empresas en Crecimiento</div>
+                    <div class="ideal-desc" data-i18n="plan.estrategiaCompleta.idealFor.growingCompaniesDesc">Negocios consolidados listos para escalar digitalmente</div>
                 </div>
                 <div class="ideal-card card-marketing">
                     <div class="ideal-icon">🎯</div>
-                    <div class="ideal-title">Alto Rendimiento</div>
-                    <div class="ideal-desc">Marcas que necesitan resultados consistentes mes a mes</div>
+                    <div class="ideal-title" data-i18n="plan.estrategiaCompleta.idealFor.highPerformance">Alto Rendimiento</div>
+                    <div class="ideal-desc" data-i18n="plan.estrategiaCompleta.idealFor.highPerformanceDesc">Marcas que necesitan resultados consistentes mes a mes</div>
                 </div>
                 <div class="ideal-card card-marketing">
                     <div class="ideal-icon">💼</div>
-                    <div class="ideal-title">Sin Equipo Interno</div>
-                    <div class="ideal-desc">Empresas que buscan departamento completo outsourced</div>
+                    <div class="ideal-title" data-i18n="plan.estrategiaCompleta.idealFor.noInternalTeam">Sin Equipo Interno</div>
+                    <div class="ideal-desc" data-i18n="plan.estrategiaCompleta.idealFor.noInternalTeamDesc">Empresas que buscan departamento completo outsourced</div>
                 </div>
             </div>
         </div>
 
         <div class="cta-section cta-marketing">
-            <h2 class="cta-title">¿Listo para dominar el marketing digital?</h2>
-            <p class="cta-text">Estrategia 360° con RRSS, Ads, Email y más</p>
+            <h2 class="cta-title" data-i18n="plan.estrategiaCompleta.cta.title">¿Listo para dominar el marketing digital?</h2>
+            <p class="cta-text" data-i18n="plan.estrategiaCompleta.cta.text">Estrategia 360° con RRSS, Ads, Email y más</p>
             <div class="cta-buttons">
                 <button class="btn btn-primary btn-marketing" onclick="payWithPayPal('estrategia-completa', 800, true)">
                     <svg class="paypal-logo-btn" viewBox="0 0 100 32" fill="currentColor"><path d="M12 4.917h5.167c2.917 0 5.333 2.083 5.333 5s-2.416 5-5.333 5H12V4.917zm22.917 0h5.166c2.917 0 5.334 2.083 5.334 5s-2.417 5-5.334 5h-5.166V4.917zM12 19.917h5.167c2.917 0 5.333 2.083 5.333 5s-2.416 5-5.333 5H12v-10z"/></svg>
-                    Contratar Servicio
+                    <span data-i18n="plan.estrategiaCompleta.cta.hireService">Contratar Servicio</span>
                 </button>
-                <a href="https://wa.me/541163301998?text=Hola!%20Me%20interesa%20la%20Estrategia%20Digital%20Completa%20(USD%20800/mes)" target="_blank" class="btn btn-secondary">💬 Consultar por WhatsApp</a>
+                <a href="https://wa.me/541163301998?text=Hola!%20Me%20interesa%20la%20Estrategia%20Digital%20Completa%20(USD%20800/mes)" target="_blank" class="btn btn-secondary"><span data-i18n="cta.consultWhatsApp">💬 Consultar por WhatsApp</span></a>
             </div>
             <div class="payment-badges-cta">
-                <span class="payment-badge">🚀 Servicio premium</span>
-                <span class="payment-badge">💼 Departamento completo</span>
+                <span class="payment-badge" data-i18n="plan.estrategiaCompleta.cta.premiumService">🚀 Servicio premium</span>
+                <span class="payment-badge" data-i18n="plan.estrategiaCompleta.cta.completeDepartment">💼 Departamento completo</span>
             </div>
         </div>
     </div>
@@ -128,5 +132,149 @@
     <link rel="stylesheet" href="plan-styles.css">
     <script src="../js/currency-converter.js"></script>
     <script src="../js/paypal-integration.js"></script>
+    <script>
+        // Sistema de traducción
+        const translations = {
+            es: {
+                'nav.backToStore': '← Volver a Tienda',
+                'nav.home': 'Inicio',
+                'badge.marketing': 'Marketing Digital',
+                'plan.estrategiaCompleta.title': 'Estrategia Digital Completa',
+                'plan.estrategiaCompleta.subtitle': 'Gestión integral de marketing digital. RRSS + Publicidad + Email + Analítica en un solo servicio.',
+                'pricing.monthlySubscription': 'Suscripción mensual • Servicio todo incluido',
+                'plan.estrategiaCompleta.highlightTitle': 'Solución 360° de marketing digital',
+                'plan.estrategiaCompleta.highlightDesc': 'Tu departamento de marketing completo en un solo plan',
+                'sections.whatsIncluded': '¿Qué incluye?',
+                'plan.estrategiaCompleta.features.allInOne': 'Todo RRSS + Ads +',
+                'plan.estrategiaCompleta.features.allInOneDesc': 'Gestión de redes y campañas publicitarias incluidas',
+                'plan.estrategiaCompleta.features.emailMarketing': 'Email Marketing',
+                'plan.estrategiaCompleta.features.emailMarketingDesc': '4 newsletters mensuales + automatizaciones',
+                'plan.estrategiaCompleta.features.blogSEO': 'Blog/SEO',
+                'plan.estrategiaCompleta.features.blogSEODesc': '4 artículos SEO-optimizados por mes',
+                'plan.estrategiaCompleta.features.googleAds': 'Google Ads (opcional)',
+                'plan.estrategiaCompleta.features.googleAdsDesc': 'Gestión de campañas en búsqueda y display',
+                'plan.estrategiaCompleta.features.monthlyStrategy': 'Estrategia Mensual',
+                'plan.estrategiaCompleta.features.monthlyStrategyDesc': 'Plan completo alineado a objetivos de negocio',
+                'plan.estrategiaCompleta.features.advancedAnalytics': 'Analítica Avanzada',
+                'plan.estrategiaCompleta.features.advancedAnalyticsDesc': 'Dashboard personalizado con todas las métricas',
+                'plan.estrategiaCompleta.features.weeklyMeeting': 'Reunión Semanal',
+                'plan.estrategiaCompleta.features.weeklyMeetingDesc': 'Call estratégico para revisar avances',
+                'plan.estrategiaCompleta.features.premiumContent': 'Contenido Premium',
+                'plan.estrategiaCompleta.features.premiumContentDesc': 'Videos cortos, reels, infografías, ebooks',
+                'plan.estrategiaCompleta.features.priorityConsulting': 'Consultoría Prioritaria',
+                'plan.estrategiaCompleta.features.priorityConsultingDesc': 'Respuesta en menos de 2hs hábiles',
+                'plan.estrategiaCompleta.processTitle': 'Proceso Mensual',
+                'plan.estrategiaCompleta.process.step1': 'Inicio de Mes',
+                'plan.estrategiaCompleta.process.step1Desc': 'Estrategia: plan mensual y objetivos KPI',
+                'plan.estrategiaCompleta.process.step1Duration': 'día 1-2',
+                'plan.estrategiaCompleta.process.step2': 'Todo el Mes',
+                'plan.estrategiaCompleta.process.step2Desc': 'Ejecución: contenido, campañas, emails en marcha',
+                'plan.estrategiaCompleta.process.step2Duration': 'continuo',
+                'plan.estrategiaCompleta.process.step3': 'Semanal',
+                'plan.estrategiaCompleta.process.step3Desc': 'Call estratégico: revisión de métricas y ajustes',
+                'plan.estrategiaCompleta.process.step3Duration': 'lunes 10am',
+                'plan.estrategiaCompleta.process.step4': 'Diario',
+                'plan.estrategiaCompleta.process.step4Desc': 'Optimización: monitoreo y mejora de rendimiento',
+                'plan.estrategiaCompleta.process.step4Duration': 'L-V',
+                'plan.estrategiaCompleta.process.step5': 'Fin de Mes',
+                'plan.estrategiaCompleta.process.step5Desc': 'Reporte completo: ROI, conversiones, crecimiento',
+                'plan.estrategiaCompleta.process.step5Duration': 'último viernes',
+                'sections.idealFor': 'Ideal Para',
+                'plan.estrategiaCompleta.idealFor.growingCompanies': 'Empresas en Crecimiento',
+                'plan.estrategiaCompleta.idealFor.growingCompaniesDesc': 'Negocios consolidados listos para escalar digitalmente',
+                'plan.estrategiaCompleta.idealFor.highPerformance': 'Alto Rendimiento',
+                'plan.estrategiaCompleta.idealFor.highPerformanceDesc': 'Marcas que necesitan resultados consistentes mes a mes',
+                'plan.estrategiaCompleta.idealFor.noInternalTeam': 'Sin Equipo Interno',
+                'plan.estrategiaCompleta.idealFor.noInternalTeamDesc': 'Empresas que buscan departamento completo outsourced',
+                'plan.estrategiaCompleta.cta.title': '¿Listo para dominar el marketing digital?',
+                'plan.estrategiaCompleta.cta.text': 'Estrategia 360° con RRSS, Ads, Email y más',
+                'plan.estrategiaCompleta.cta.hireService': 'Contratar Servicio',
+                'cta.consultWhatsApp': '💬 Consultar por WhatsApp',
+                'plan.estrategiaCompleta.cta.premiumService': '🚀 Servicio premium',
+                'plan.estrategiaCompleta.cta.completeDepartment': '💼 Departamento completo'
+            },
+            en: {
+                'nav.backToStore': '← Back to Store',
+                'nav.home': 'Home',
+                'badge.marketing': 'Digital Marketing',
+                'plan.estrategiaCompleta.title': 'Complete Digital Strategy',
+                'plan.estrategiaCompleta.subtitle': 'Comprehensive digital marketing management. Social Media + Advertising + Email + Analytics in one service.',
+                'pricing.monthlySubscription': 'Monthly subscription • All-inclusive service',
+                'plan.estrategiaCompleta.highlightTitle': '360° digital marketing solution',
+                'plan.estrategiaCompleta.highlightDesc': 'Your complete marketing department in one plan',
+                'sections.whatsIncluded': 'What\'s Included?',
+                'plan.estrategiaCompleta.features.allInOne': 'All Social + Ads +',
+                'plan.estrategiaCompleta.features.allInOneDesc': 'Social media and advertising campaigns management included',
+                'plan.estrategiaCompleta.features.emailMarketing': 'Email Marketing',
+                'plan.estrategiaCompleta.features.emailMarketingDesc': '4 monthly newsletters + automations',
+                'plan.estrategiaCompleta.features.blogSEO': 'Blog/SEO',
+                'plan.estrategiaCompleta.features.blogSEODesc': '4 SEO-optimized articles per month',
+                'plan.estrategiaCompleta.features.googleAds': 'Google Ads (optional)',
+                'plan.estrategiaCompleta.features.googleAdsDesc': 'Search and display campaigns management',
+                'plan.estrategiaCompleta.features.monthlyStrategy': 'Monthly Strategy',
+                'plan.estrategiaCompleta.features.monthlyStrategyDesc': 'Complete plan aligned with business objectives',
+                'plan.estrategiaCompleta.features.advancedAnalytics': 'Advanced Analytics',
+                'plan.estrategiaCompleta.features.advancedAnalyticsDesc': 'Customized dashboard with all metrics',
+                'plan.estrategiaCompleta.features.weeklyMeeting': 'Weekly Meeting',
+                'plan.estrategiaCompleta.features.weeklyMeetingDesc': 'Strategic call to review progress',
+                'plan.estrategiaCompleta.features.premiumContent': 'Premium Content',
+                'plan.estrategiaCompleta.features.premiumContentDesc': 'Short videos, reels, infographics, ebooks',
+                'plan.estrategiaCompleta.features.priorityConsulting': 'Priority Consulting',
+                'plan.estrategiaCompleta.features.priorityConsultingDesc': 'Response in less than 2 business hours',
+                'plan.estrategiaCompleta.processTitle': 'Monthly Process',
+                'plan.estrategiaCompleta.process.step1': 'Month Start',
+                'plan.estrategiaCompleta.process.step1Desc': 'Strategy: monthly plan and KPI objectives',
+                'plan.estrategiaCompleta.process.step1Duration': 'day 1-2',
+                'plan.estrategiaCompleta.process.step2': 'All Month',
+                'plan.estrategiaCompleta.process.step2Desc': 'Execution: content, campaigns, emails in progress',
+                'plan.estrategiaCompleta.process.step2Duration': 'ongoing',
+                'plan.estrategiaCompleta.process.step3': 'Weekly',
+                'plan.estrategiaCompleta.process.step3Desc': 'Strategic call: metrics review and adjustments',
+                'plan.estrategiaCompleta.process.step3Duration': 'Monday 10am',
+                'plan.estrategiaCompleta.process.step4': 'Daily',
+                'plan.estrategiaCompleta.process.step4Desc': 'Optimization: monitoring and performance improvement',
+                'plan.estrategiaCompleta.process.step4Duration': 'M-F',
+                'plan.estrategiaCompleta.process.step5': 'Month End',
+                'plan.estrategiaCompleta.process.step5Desc': 'Complete report: ROI, conversions, growth',
+                'plan.estrategiaCompleta.process.step5Duration': 'last Friday',
+                'sections.idealFor': 'Ideal For',
+                'plan.estrategiaCompleta.idealFor.growingCompanies': 'Growing Companies',
+                'plan.estrategiaCompleta.idealFor.growingCompaniesDesc': 'Established businesses ready to scale digitally',
+                'plan.estrategiaCompleta.idealFor.highPerformance': 'High Performance',
+                'plan.estrategiaCompleta.idealFor.highPerformanceDesc': 'Brands that need consistent month-to-month results',
+                'plan.estrategiaCompleta.idealFor.noInternalTeam': 'No Internal Team',
+                'plan.estrategiaCompleta.idealFor.noInternalTeamDesc': 'Companies looking for complete outsourced department',
+                'plan.estrategiaCompleta.cta.title': 'Ready to master digital marketing?',
+                'plan.estrategiaCompleta.cta.text': '360° strategy with Social Media, Ads, Email and more',
+                'plan.estrategiaCompleta.cta.hireService': 'Hire Service',
+                'cta.consultWhatsApp': '💬 Consult via WhatsApp',
+                'plan.estrategiaCompleta.cta.premiumService': '🚀 Premium service',
+                'plan.estrategiaCompleta.cta.completeDepartment': '💼 Complete department'
+            }
+        };
+
+        let currentLang = localStorage.getItem('language') || 'es';
+
+        function translatePage() {
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[currentLang][key]) {
+                    element.textContent = translations[currentLang][key];
+                }
+            });
+            document.getElementById('langText').textContent = currentLang.toUpperCase();
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('langToggle').addEventListener('click', () => {
+                const langs = ['es', 'en', 'pt'];
+                const currentIndex = langs.indexOf(currentLang);
+                currentLang = langs[(currentIndex + 1) % langs.length];
+                localStorage.setItem('language', currentLang);
+                translatePage();
+            });
+            translatePage();
+        });
+    </script>
 </body>
 </html>

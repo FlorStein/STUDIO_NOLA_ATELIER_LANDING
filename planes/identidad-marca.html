@@ -11,117 +11,121 @@
 <body>
     <header class="header">
         <div class="header-content">
-            <a href="../tienda.html" class="back-link">← Volver a Tienda</a>
+            <a href="../tienda.html" class="back-link" data-i18n="nav.backToStore">← Volver a Tienda</a>
             <div style="display: flex; gap: 1.5rem; align-items: center;">
                 <select class="currency-selector" aria-label="Seleccionar moneda"></select>
-                <a href="../index.html" class="back-link">Inicio</a>
+                <button class="lang-toggle" id="langToggle">
+                    <span class="globe-icon">🌐</span>
+                    <span class="lang-text" id="langText">ES</span>
+                </button>
+                <a href="../index.html" class="back-link" data-i18n="nav.home">Inicio</a>
             </div>
         </div>
     </header>
 
     <div class="container">
         <div class="plan-header">
-            <span class="badge badge-branding">Branding</span>
-            <h1 class="plan-title">Identidad de Marca</h1>
-            <p class="plan-subtitle">Branding completo con estrategia y aplicaciones. Sistema de identidad visual integral para tu empresa.</p>
+            <span class="badge badge-branding" data-i18n="badge.branding">Branding</span>
+            <h1 class="plan-title" data-i18n="plan.identidadMarca.title">Identidad de Marca</h1>
+            <p class="plan-subtitle" data-i18n="plan.identidadMarca.subtitle">Branding completo con estrategia y aplicaciones. Sistema de identidad visual integral para tu empresa.</p>
         </div>
 
         <div class="price-box">
             <div class="price price-branding" data-plan="identidad-marca">$1,200 <span>USD</span></div>
-            <p class="price-note">Pago único • Entrega en 25-30 días hábiles</p>
+            <p class="price-note" data-i18n="pricing.paymentNote">Pago único • Entrega en 25-30 días hábiles</p>
         </div>
 
         <div class="highlight-banner banner-branding">
             <div class="highlight-icon">🎯</div>
             <div>
-                <div class="highlight-title">Sistema completo de identidad visual</div>
-                <div class="highlight-desc">Estrategia de marca + diseño + aplicaciones en múltiples formatos</div>
+                <div class="highlight-title" data-i18n="plan.identidadMarca.highlightTitle">Sistema completo de identidad visual</div>
+                <div class="highlight-desc" data-i18n="plan.identidadMarca.highlightDesc">Estrategia de marca + diseño + aplicaciones en múltiples formatos</div>
             </div>
         </div>
 
         <div class="content-grid">
             <div class="section">
-                <h2 class="section-title">¿Qué incluye?</h2>
+                <h2 class="section-title" data-i18n="sections.whatsIncluded">¿Qué incluye?</h2>
                 <ul class="features-list">
-                    <li><div><span class="feature-name">Todo del Plan Esencial +</span><span class="feature-desc">Logo, versiones, colores, tipografía</span></div></li>
-                    <li><div><span class="feature-name">Estrategia de Marca</span><span class="feature-desc">Análisis de mercado, positioning, arquetipos</span></div></li>
-                    <li><div><span class="feature-name">Brand Board Completo</span><span class="feature-desc">Moodboard, estilo fotográfico, tono de voz</span></div></li>
-                    <li><div><span class="feature-name">Papelería Corporativa</span><span class="feature-desc">Tarjetas, hojas membretadas, sobres, carpetas</span></div></li>
-                    <li><div><span class="feature-name">Plantillas Digitales</span><span class="feature-desc">Presentaciones, docs, email signature, social media</span></div></li>
-                    <li><div><span class="feature-name">Iconografía Custom</span><span class="feature-desc">Set de íconos personalizados para tu marca</span></div></li>
-                    <li><div><span class="feature-name">Patrones y Texturas</span><span class="feature-desc">Elementos gráficos para complementar tu identidad</span></div></li>
-                    <li><div><span class="feature-name">Manual de Marca Completo</span><span class="feature-desc">Brandbook profesional con todas las guías de uso</span></div></li>
-                    <li><div><span class="feature-name">Mockups Premium</span><span class="feature-desc">Visualización en +20 aplicaciones diferentes</span></div></li>
-                    <li><div><span class="feature-name">3 Rondas de Revisiones</span><span class="feature-desc">Ajustes en todas las etapas del proyecto</span></div></li>
+                    <li><div><span class="feature-name" data-i18n="features.identidadMarca.essentialPlusAll">Todo del Plan Esencial +</span><span class="feature-desc" data-i18n="features.identidadMarca.essentialPlusAllDesc">Logo, versiones, colores, tipografía</span></div></li>
+                    <li><div><span class="feature-name" data-i18n="features.identidadMarca.brandStrategy">Estrategia de Marca</span><span class="feature-desc" data-i18n="features.identidadMarca.brandStrategyDesc">Análisis de mercado, positioning, arquetipos</span></div></li>
+                    <li><div><span class="feature-name" data-i18n="features.identidadMarca.completeBrandBoard">Brand Board Completo</span><span class="feature-desc" data-i18n="features.identidadMarca.completeBrandBoardDesc">Moodboard, estilo fotográfico, tono de voz</span></div></li>
+                    <li><div><span class="feature-name" data-i18n="features.identidadMarca.corporateStationery">Papelería Corporativa</span><span class="feature-desc" data-i18n="features.identidadMarca.corporateStationeryDesc">Tarjetas, hojas membretadas, sobres, carpetas</span></div></li>
+                    <li><div><span class="feature-name" data-i18n="features.identidadMarca.digitalTemplates">Plantillas Digitales</span><span class="feature-desc" data-i18n="features.identidadMarca.digitalTemplatesDesc">Presentaciones, docs, email signature, social media</span></div></li>
+                    <li><div><span class="feature-name" data-i18n="features.identidadMarca.customIconography">Iconografía Custom</span><span class="feature-desc" data-i18n="features.identidadMarca.customIconographyDesc">Set de íconos personalizados para tu marca</span></div></li>
+                    <li><div><span class="feature-name" data-i18n="features.identidadMarca.patternsTextures">Patrones y Texturas</span><span class="feature-desc" data-i18n="features.identidadMarca.patternsTexturesDesc">Elementos gráficos para complementar tu identidad</span></div></li>
+                    <li><div><span class="feature-name" data-i18n="features.identidadMarca.completeBrandManual">Manual de Marca Completo</span><span class="feature-desc" data-i18n="features.identidadMarca.completeBrandManualDesc">Brandbook profesional con todas las guías de uso</span></div></li>
+                    <li><div><span class="feature-name" data-i18n="features.identidadMarca.premiumMockups">Mockups Premium</span><span class="feature-desc" data-i18n="features.identidadMarca.premiumMockupsDesc">Visualización en +20 aplicaciones diferentes</span></div></li>
+                    <li><div><span class="feature-name" data-i18n="features.identidadMarca.threeRevisions">3 Rondas de Revisiones</span><span class="feature-desc" data-i18n="features.identidadMarca.threeRevisionsDesc">Ajustes en todas las etapas del proyecto</span></div></li>
                 </ul>
             </div>
 
             <div class="section">
-                <h2 class="section-title">Proceso de Trabajo</h2>
+                <h2 class="section-title" data-i18n="sections.workProcess">Proceso de Trabajo</h2>
                 <div class="process-timeline">
                     <div class="timeline-item">
-                        <div class="timeline-title">1. Discovery & Research</div>
-                        <div class="timeline-desc">Análisis profundo de mercado, competencia y audiencia</div>
-                        <span class="timeline-duration timeline-branding">3-5 días</span>
+                        <div class="timeline-title" data-i18n="process.identidadMarca.step1">1. Discovery & Research</div>
+                        <div class="timeline-desc" data-i18n="process.identidadMarca.step1Desc">Análisis profundo de mercado, competencia y audiencia</div>
+                        <span class="timeline-duration timeline-branding" data-i18n="process.identidadMarca.step1Duration">3-5 días</span>
                     </div>
                     <div class="timeline-item">
-                        <div class="timeline-title">2. Estrategia de Marca</div>
-                        <div class="timeline-desc">Positioning, personalidad, arquetipos y valores</div>
-                        <span class="timeline-duration timeline-branding">3-4 días</span>
+                        <div class="timeline-title" data-i18n="process.identidadMarca.step2">2. Estrategia de Marca</div>
+                        <div class="timeline-desc" data-i18n="process.identidadMarca.step2Desc">Positioning, personalidad, arquetipos y valores</div>
+                        <span class="timeline-duration timeline-branding" data-i18n="process.identidadMarca.step2Duration">3-4 días</span>
                     </div>
                     <div class="timeline-item">
-                        <div class="timeline-title">3. Identidad Visual</div>
-                        <div class="timeline-desc">Logo, colores, tipografías y sistema gráfico</div>
-                        <span class="timeline-duration timeline-branding">7-10 días</span>
+                        <div class="timeline-title" data-i18n="process.identidadMarca.step3">3. Identidad Visual</div>
+                        <div class="timeline-desc" data-i18n="process.identidadMarca.step3Desc">Logo, colores, tipografías y sistema gráfico</div>
+                        <span class="timeline-duration timeline-branding" data-i18n="process.identidadMarca.step3Duration">7-10 días</span>
                     </div>
                     <div class="timeline-item">
-                        <div class="timeline-title">4. Aplicaciones</div>
-                        <div class="timeline-desc">Papelería, plantillas digitales, social media</div>
-                        <span class="timeline-duration timeline-branding">6-8 días</span>
+                        <div class="timeline-title" data-i18n="process.identidadMarca.step4">4. Aplicaciones</div>
+                        <div class="timeline-desc" data-i18n="process.identidadMarca.step4Desc">Papelería, plantillas digitales, social media</div>
+                        <span class="timeline-duration timeline-branding" data-i18n="process.identidadMarca.step4Duration">6-8 días</span>
                     </div>
                     <div class="timeline-item">
-                        <div class="timeline-title">5. Brandbook</div>
-                        <div class="timeline-desc">Manual de marca con todas las guías</div>
-                        <span class="timeline-duration timeline-branding">3-4 días</span>
+                        <div class="timeline-title" data-i18n="process.identidadMarca.step5">5. Brandbook</div>
+                        <div class="timeline-desc" data-i18n="process.identidadMarca.step5Desc">Manual de marca con todas las guías</div>
+                        <span class="timeline-duration timeline-branding" data-i18n="process.identidadMarca.step5Duration">3-4 días</span>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="full-width-section">
-            <h2 class="section-title">Ideal Para</h2>
+            <h2 class="section-title" data-i18n="sections.idealFor">Ideal Para</h2>
             <div class="ideal-grid">
                 <div class="ideal-card card-branding">
                     <div class="ideal-icon">🏢</div>
-                    <div class="ideal-title">Empresas Consolidadas</div>
-                    <div class="ideal-desc">Negocios establecidos que buscan profesionalizar su marca</div>
+                    <div class="ideal-title" data-i18n="idealFor.identidadMarca.consolidatedCompanies">Empresas Consolidadas</div>
+                    <div class="ideal-desc" data-i18n="idealFor.identidadMarca.consolidatedCompaniesDesc">Negocios establecidos que buscan profesionalizar su marca</div>
                 </div>
                 <div class="ideal-card card-branding">
                     <div class="ideal-icon">🚀</div>
-                    <div class="ideal-title">Startups en Crecimiento</div>
-                    <div class="ideal-desc">Proyectos escalables que necesitan identidad sólida</div>
+                    <div class="ideal-title" data-i18n="idealFor.identidadMarca.growingStartups">Startups en Crecimiento</div>
+                    <div class="ideal-desc" data-i18n="idealFor.identidadMarca.growingStartupsDesc">Proyectos escalables que necesitan identidad sólida</div>
                 </div>
                 <div class="ideal-card card-branding">
                     <div class="ideal-icon">🎯</div>
-                    <div class="ideal-title">Diferenciación de Marca</div>
-                    <div class="ideal-desc">Empresas que quieren destacar en mercados competitivos</div>
+                    <div class="ideal-title" data-i18n="idealFor.identidadMarca.brandDifferentiation">Diferenciación de Marca</div>
+                    <div class="ideal-desc" data-i18n="idealFor.identidadMarca.brandDifferentiationDesc">Empresas que quieren destacar en mercados competitivos</div>
                 </div>
             </div>
         </div>
 
         <div class="cta-section cta-branding">
-            <h2 class="cta-title">¿Listo para construir una marca sólida?</h2>
-            <p class="cta-text">Sistema completo de identidad visual y estrategia</p>
+            <h2 class="cta-title" data-i18n="cta.identidadMarca.title">¿Listo para construir una marca sólida?</h2>
+            <p class="cta-text" data-i18n="cta.identidadMarca.text">Sistema completo de identidad visual y estrategia</p>
             <div class="cta-buttons">
                 <button class="btn btn-primary btn-branding" onclick="payWithPayPal('identidad-marca', 1200)">
                     <svg class="paypal-logo-btn" viewBox="0 0 100 32" fill="currentColor"><path d="M12 4.917h5.167c2.917 0 5.333 2.083 5.333 5s-2.416 5-5.333 5H12V4.917zm22.917 0h5.166c2.917 0 5.334 2.083 5.334 5s-2.417 5-5.334 5h-5.166V4.917zM12 19.917h5.167c2.917 0 5.333 2.083 5.333 5s-2.416 5-5.333 5H12v-10z"/></svg>
-                    Pagar con PayPal
+                    <span data-i18n="cta.payWithPayPal">Pagar con PayPal</span>
                 </button>
-                <a href="https://wa.me/541163301998?text=Hola!%20Me%20interesa%20la%20Identidad%20de%20Marca%20(USD%201,200)" target="_blank" class="btn btn-secondary">💬 Consultar por WhatsApp</a>
+                <a href="https://wa.me/541163301998?text=Hola!%20Me%20interesa%20la%20Identidad%20de%20Marca%20(USD%201,200)" target="_blank" class="btn btn-secondary"><span data-i18n="cta.consultWhatsApp">💬 Consultar por WhatsApp</span></a>
             </div>
             <div class="payment-badges-cta">
-                <span class="payment-badge">🔒 Pago 100% seguro</span>
-                <span class="payment-badge">✓ Protección al comprador</span>
+                <span class="payment-badge" data-i18n="cta.securePayment">🔒 Pago 100% seguro</span>
+                <span class="payment-badge" data-i18n="cta.buyerProtection">✓ Protección al comprador</span>
             </div>
         </div>
     </div>
@@ -129,5 +133,153 @@
     <link rel="stylesheet" href="plan-styles.css">
     <script src="../js/currency-converter.js"></script>
     <script src="../js/paypal-integration.js"></script>
+    <script>
+        // Sistema de traducción
+        const translations = {
+            es: {
+                'nav.backToStore': '← Volver a Tienda',
+                'nav.home': 'Inicio',
+                'badge.branding': 'Branding',
+                'plan.identidadMarca.title': 'Identidad de Marca',
+                'plan.identidadMarca.subtitle': 'Branding completo con estrategia y aplicaciones. Sistema de identidad visual integral para tu empresa.',
+                'pricing.paymentNote': 'Pago único • Entrega en 25-30 días hábiles',
+                'plan.identidadMarca.highlightTitle': 'Sistema completo de identidad visual',
+                'plan.identidadMarca.highlightDesc': 'Estrategia de marca + diseño + aplicaciones en múltiples formatos',
+                'sections.whatsIncluded': '¿Qué incluye?',
+                'features.identidadMarca.essentialPlusAll': 'Todo del Plan Esencial +',
+                'features.identidadMarca.essentialPlusAllDesc': 'Logo, versiones, colores, tipografía',
+                'features.identidadMarca.brandStrategy': 'Estrategia de Marca',
+                'features.identidadMarca.brandStrategyDesc': 'Análisis de mercado, positioning, arquetipos',
+                'features.identidadMarca.completeBrandBoard': 'Brand Board Completo',
+                'features.identidadMarca.completeBrandBoardDesc': 'Moodboard, estilo fotográfico, tono de voz',
+                'features.identidadMarca.corporateStationery': 'Papelería Corporativa',
+                'features.identidadMarca.corporateStationeryDesc': 'Tarjetas, hojas membretadas, sobres, carpetas',
+                'features.identidadMarca.digitalTemplates': 'Plantillas Digitales',
+                'features.identidadMarca.digitalTemplatesDesc': 'Presentaciones, docs, email signature, social media',
+                'features.identidadMarca.customIconography': 'Iconografía Custom',
+                'features.identidadMarca.customIconographyDesc': 'Set de íconos personalizados para tu marca',
+                'features.identidadMarca.patternsTextures': 'Patrones y Texturas',
+                'features.identidadMarca.patternsTexturesDesc': 'Elementos gráficos para complementar tu identidad',
+                'features.identidadMarca.completeBrandManual': 'Manual de Marca Completo',
+                'features.identidadMarca.completeBrandManualDesc': 'Brandbook profesional con todas las guías de uso',
+                'features.identidadMarca.premiumMockups': 'Mockups Premium',
+                'features.identidadMarca.premiumMockupsDesc': 'Visualización en +20 aplicaciones diferentes',
+                'features.identidadMarca.threeRevisions': '3 Rondas de Revisiones',
+                'features.identidadMarca.threeRevisionsDesc': 'Ajustes en todas las etapas del proyecto',
+                'sections.workProcess': 'Proceso de Trabajo',
+                'process.identidadMarca.step1': '1. Discovery & Research',
+                'process.identidadMarca.step1Desc': 'Análisis profundo de mercado, competencia y audiencia',
+                'process.identidadMarca.step1Duration': '3-5 días',
+                'process.identidadMarca.step2': '2. Estrategia de Marca',
+                'process.identidadMarca.step2Desc': 'Positioning, personalidad, arquetipos y valores',
+                'process.identidadMarca.step2Duration': '3-4 días',
+                'process.identidadMarca.step3': '3. Identidad Visual',
+                'process.identidadMarca.step3Desc': 'Logo, colores, tipografías y sistema gráfico',
+                'process.identidadMarca.step3Duration': '7-10 días',
+                'process.identidadMarca.step4': '4. Aplicaciones',
+                'process.identidadMarca.step4Desc': 'Papelería, plantillas digitales, social media',
+                'process.identidadMarca.step4Duration': '6-8 días',
+                'process.identidadMarca.step5': '5. Brandbook',
+                'process.identidadMarca.step5Desc': 'Manual de marca con todas las guías',
+                'process.identidadMarca.step5Duration': '3-4 días',
+                'sections.idealFor': 'Ideal Para',
+                'idealFor.identidadMarca.consolidatedCompanies': 'Empresas Consolidadas',
+                'idealFor.identidadMarca.consolidatedCompaniesDesc': 'Negocios establecidos que buscan profesionalizar su marca',
+                'idealFor.identidadMarca.growingStartups': 'Startups en Crecimiento',
+                'idealFor.identidadMarca.growingStartupsDesc': 'Proyectos escalables que necesitan identidad sólida',
+                'idealFor.identidadMarca.brandDifferentiation': 'Diferenciación de Marca',
+                'idealFor.identidadMarca.brandDifferentiationDesc': 'Empresas que quieren destacar en mercados competitivos',
+                'cta.identidadMarca.title': '¿Listo para construir una marca sólida?',
+                'cta.identidadMarca.text': 'Sistema completo de identidad visual y estrategia',
+                'cta.payWithPayPal': 'Pagar con PayPal',
+                'cta.consultWhatsApp': '💬 Consultar por WhatsApp',
+                'cta.securePayment': '🔒 Pago 100% seguro',
+                'cta.buyerProtection': '✓ Protección al comprador'
+            },
+            en: {
+                'nav.backToStore': '← Back to Store',
+                'nav.home': 'Home',
+                'badge.branding': 'Branding',
+                'plan.identidadMarca.title': 'Brand Identity',
+                'plan.identidadMarca.subtitle': 'Complete branding with strategy and applications. Comprehensive visual identity system for your company.',
+                'pricing.paymentNote': 'One-time payment • Delivery in 25-30 business days',
+                'plan.identidadMarca.highlightTitle': 'Complete visual identity system',
+                'plan.identidadMarca.highlightDesc': 'Brand strategy + design + applications in multiple formats',
+                'sections.whatsIncluded': 'What\'s Included?',
+                'features.identidadMarca.essentialPlusAll': 'Everything from Essential Plan +',
+                'features.identidadMarca.essentialPlusAllDesc': 'Logo, versions, colors, typography',
+                'features.identidadMarca.brandStrategy': 'Brand Strategy',
+                'features.identidadMarca.brandStrategyDesc': 'Market analysis, positioning, archetypes',
+                'features.identidadMarca.completeBrandBoard': 'Complete Brand Board',
+                'features.identidadMarca.completeBrandBoardDesc': 'Moodboard, photographic style, tone of voice',
+                'features.identidadMarca.corporateStationery': 'Corporate Stationery',
+                'features.identidadMarca.corporateStationeryDesc': 'Business cards, letterheads, envelopes, folders',
+                'features.identidadMarca.digitalTemplates': 'Digital Templates',
+                'features.identidadMarca.digitalTemplatesDesc': 'Presentations, docs, email signature, social media',
+                'features.identidadMarca.customIconography': 'Custom Iconography',
+                'features.identidadMarca.customIconographyDesc': 'Set of custom icons for your brand',
+                'features.identidadMarca.patternsTextures': 'Patterns & Textures',
+                'features.identidadMarca.patternsTexturesDesc': 'Graphic elements to complement your identity',
+                'features.identidadMarca.completeBrandManual': 'Complete Brand Manual',
+                'features.identidadMarca.completeBrandManualDesc': 'Professional brandbook with all usage guidelines',
+                'features.identidadMarca.premiumMockups': 'Premium Mockups',
+                'features.identidadMarca.premiumMockupsDesc': 'Visualization in +20 different applications',
+                'features.identidadMarca.threeRevisions': '3 Revision Rounds',
+                'features.identidadMarca.threeRevisionsDesc': 'Adjustments at all stages of the project',
+                'sections.workProcess': 'Work Process',
+                'process.identidadMarca.step1': '1. Discovery & Research',
+                'process.identidadMarca.step1Desc': 'In-depth analysis of market, competition and audience',
+                'process.identidadMarca.step1Duration': '3-5 days',
+                'process.identidadMarca.step2': '2. Brand Strategy',
+                'process.identidadMarca.step2Desc': 'Positioning, personality, archetypes and values',
+                'process.identidadMarca.step2Duration': '3-4 days',
+                'process.identidadMarca.step3': '3. Visual Identity',
+                'process.identidadMarca.step3Desc': 'Logo, colors, typography and graphic system',
+                'process.identidadMarca.step3Duration': '7-10 days',
+                'process.identidadMarca.step4': '4. Applications',
+                'process.identidadMarca.step4Desc': 'Stationery, digital templates, social media',
+                'process.identidadMarca.step4Duration': '6-8 days',
+                'process.identidadMarca.step5': '5. Brandbook',
+                'process.identidadMarca.step5Desc': 'Brand manual with all guidelines',
+                'process.identidadMarca.step5Duration': '3-4 days',
+                'sections.idealFor': 'Ideal For',
+                'idealFor.identidadMarca.consolidatedCompanies': 'Consolidated Companies',
+                'idealFor.identidadMarca.consolidatedCompaniesDesc': 'Established businesses seeking to professionalize their brand',
+                'idealFor.identidadMarca.growingStartups': 'Growing Startups',
+                'idealFor.identidadMarca.growingStartupsDesc': 'Scalable projects that need solid identity',
+                'idealFor.identidadMarca.brandDifferentiation': 'Brand Differentiation',
+                'idealFor.identidadMarca.brandDifferentiationDesc': 'Companies that want to stand out in competitive markets',
+                'cta.identidadMarca.title': 'Ready to build a solid brand?',
+                'cta.identidadMarca.text': 'Complete visual identity and strategy system',
+                'cta.payWithPayPal': 'Pay with PayPal',
+                'cta.consultWhatsApp': '💬 Consult via WhatsApp',
+                'cta.securePayment': '🔒 100% secure payment',
+                'cta.buyerProtection': '✓ Buyer protection'
+            }
+        };
+
+        let currentLang = localStorage.getItem('language') || 'es';
+
+        function translatePage() {
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[currentLang][key]) {
+                    element.textContent = translations[currentLang][key];
+                }
+            });
+            document.getElementById('langText').textContent = currentLang.toUpperCase();
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('langToggle').addEventListener('click', () => {
+                const langs = ['es', 'en', 'pt'];
+                const currentIndex = langs.indexOf(currentLang);
+                currentLang = langs[(currentIndex + 1) % langs.length];
+                localStorage.setItem('language', currentLang);
+                translatePage();
+            });
+            translatePage();
+        });
+    </script>
 </body>
 </html>

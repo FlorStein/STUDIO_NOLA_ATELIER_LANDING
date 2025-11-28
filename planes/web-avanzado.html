@@ -11,123 +11,127 @@
 <body>
     <header class="header">
         <div class="header-content">
-            <a href="../tienda.html" class="back-link">← Volver a Tienda</a>
+            <a href="../tienda.html" class="back-link" data-i18n="nav.backToStore">← Volver a Tienda</a>
             <div style="display: flex; gap: 1.5rem; align-items: center;">
                 <select class="currency-selector" aria-label="Seleccionar moneda"></select>
-                <a href="../index.html" class="back-link">Inicio</a>
+                <button class="lang-toggle" id="langToggle">
+                    <span class="globe-icon">🌐</span>
+                    <span class="lang-text" id="langText">ES</span>
+                </button>
+                <a href="../index.html" class="back-link" data-i18n="nav.home">Inicio</a>
             </div>
         </div>
     </header>
 
     <div class="container">
         <div class="plan-header">
-            <span class="badge badge-web">Diseño Web</span>
-            <h1 class="plan-title">Diseño Web Avanzado</h1>
-            <p class="plan-subtitle">Plataforma web robusta con funcionalidades personalizadas. Ideal para empresas consolidadas y e-commerce.</p>
+            <span class="badge badge-web" data-i18n="badge.webDesign">Diseño Web</span>
+            <h1 class="plan-title" data-i18n="plan.webAvanzado.title">Diseño Web Avanzado</h1>
+            <p class="plan-subtitle" data-i18n="plan.webAvanzado.subtitle">Plataforma web robusta con funcionalidades personalizadas. Ideal para empresas consolidadas y e-commerce.</p>
         </div>
 
         <div class="price-box">
             <div class="price price-web" data-plan="web-avanzado">$1,250 <span>USD</span></div>
-            <p class="price-note">Pago único • Entrega en 35-45 días hábiles</p>
+            <p class="price-note" data-i18n="plan.webAvanzado.paymentNote">Pago único • Entrega en 35-45 días hábiles</p>
         </div>
 
         <div class="highlight-banner banner-web">
             <div class="highlight-icon">🚀</div>
             <div>
-                <div class="highlight-title">Solución web enterprise con desarrollo a medida</div>
-                <div class="highlight-desc">Sistema completo con funcionalidades avanzadas, integración con APIs y arquitectura escalable</div>
+                <div class="highlight-title" data-i18n="plan.webAvanzado.highlightTitle">Solución web enterprise con desarrollo a medida</div>
+                <div class="highlight-desc" data-i18n="plan.webAvanzado.highlightDesc">Sistema completo con funcionalidades avanzadas, integración con APIs y arquitectura escalable</div>
             </div>
         </div>
 
         <div class="content-grid">
             <div class="section">
-                <h2 class="section-title">¿Qué incluye?</h2>
+                <h2 class="section-title" data-i18n="sections.whatsIncluded">¿Qué incluye?</h2>
                 <ul class="features-list">
-                    <li><div><span class="feature-name">Todo del Plan Intermedio +</span><span class="feature-desc">Panel admin, blog, SEO avanzado, múltiples páginas</span></div></li>
-                    <li><div><span class="feature-name">Páginas Ilimitadas</span><span class="feature-desc">Estructura compleja con arquitectura escalable</span></div></li>
-                    <li><div><span class="feature-name">E-commerce Completo</span><span class="feature-desc">Carrito, pasarela de pago, gestión de inventario</span></div></li>
-                    <li><div><span class="feature-name">Sistema de Usuarios</span><span class="feature-desc">Registro, login, perfiles y área privada</span></div></li>
-                    <li><div><span class="feature-name">Integración con APIs</span><span class="feature-desc">Conexión con servicios externos (CRM, ERP, etc.)</span></div></li>
-                    <li><div><span class="feature-name">Dashboard Personalizado</span><span class="feature-desc">Panel con métricas, reportes y analytics</span></div></li>
-                    <li><div><span class="feature-name">Búsqueda Avanzada</span><span class="feature-desc">Sistema de filtros y búsqueda inteligente</span></div></li>
-                    <li><div><span class="feature-name">Multi-idioma (opcional)</span><span class="feature-desc">Versiones en diferentes idiomas</span></div></li>
-                    <li><div><span class="feature-name">Notificaciones Email</span><span class="feature-desc">Sistema automatizado de emails transaccionales</span></div></li>
-                    <li><div><span class="feature-name">Capacitación 3h + Manual</span><span class="feature-desc">Tutorial completo + documentación técnica</span></div></li>
-                    <li><div><span class="feature-name">Soporte 3 meses</span><span class="feature-desc">Asistencia técnica post-lanzamiento incluida</span></div></li>
+                    <li><div><span class="feature-name" data-i18n="features.allIntermediatePlus">Todo del Plan Intermedio +</span><span class="feature-desc" data-i18n="features.allIntermediatePlusDesc">Panel admin, blog, SEO avanzado, múltiples páginas</span></div></li>
+                    <li><div><span class="feature-name" data-i18n="features.unlimitedPages">Páginas Ilimitadas</span><span class="feature-desc" data-i18n="features.unlimitedPagesDesc">Estructura compleja con arquitectura escalable</span></div></li>
+                    <li><div><span class="feature-name" data-i18n="features.fullEcommerce">E-commerce Completo</span><span class="feature-desc" data-i18n="features.fullEcommerceDesc">Carrito, pasarela de pago, gestión de inventario</span></div></li>
+                    <li><div><span class="feature-name" data-i18n="features.userSystem">Sistema de Usuarios</span><span class="feature-desc" data-i18n="features.userSystemDesc">Registro, login, perfiles y área privada</span></div></li>
+                    <li><div><span class="feature-name" data-i18n="features.apiIntegration">Integración con APIs</span><span class="feature-desc" data-i18n="features.apiIntegrationDesc">Conexión con servicios externos (CRM, ERP, etc.)</span></div></li>
+                    <li><div><span class="feature-name" data-i18n="features.customDashboard">Dashboard Personalizado</span><span class="feature-desc" data-i18n="features.customDashboardDesc">Panel con métricas, reportes y analytics</span></div></li>
+                    <li><div><span class="feature-name" data-i18n="features.advancedSearch">Búsqueda Avanzada</span><span class="feature-desc" data-i18n="features.advancedSearchDesc">Sistema de filtros y búsqueda inteligente</span></div></li>
+                    <li><div><span class="feature-name" data-i18n="features.multiLanguage">Multi-idioma (opcional)</span><span class="feature-desc" data-i18n="features.multiLanguageDesc">Versiones en diferentes idiomas</span></div></li>
+                    <li><div><span class="feature-name" data-i18n="features.emailNotifications">Notificaciones Email</span><span class="feature-desc" data-i18n="features.emailNotificationsDesc">Sistema automatizado de emails transaccionales</span></div></li>
+                    <li><div><span class="feature-name" data-i18n="features.training3h">Capacitación 3h + Manual</span><span class="feature-desc" data-i18n="features.training3hDesc">Tutorial completo + documentación técnica</span></div></li>
+                    <li><div><span class="feature-name" data-i18n="features.support3months">Soporte 3 meses</span><span class="feature-desc" data-i18n="features.support3monthsDesc">Asistencia técnica post-lanzamiento incluida</span></div></li>
                 </ul>
             </div>
 
             <div class="section">
-                <h2 class="section-title">Proceso de Trabajo</h2>
+                <h2 class="section-title" data-i18n="sections.workProcess">Proceso de Trabajo</h2>
                 <div class="process-timeline">
                     <div class="timeline-item">
-                        <div class="timeline-title">1. Análisis y Arquitectura</div>
-                        <div class="timeline-desc">Definición de requerimientos y estructura técnica</div>
-                        <span class="timeline-duration timeline-web">4-5 días</span>
+                        <div class="timeline-title" data-i18n="process.webAvanzado.step1">1. Análisis y Arquitectura</div>
+                        <div class="timeline-desc" data-i18n="process.webAvanzado.step1Desc">Definición de requerimientos y estructura técnica</div>
+                        <span class="timeline-duration timeline-web" data-i18n="process.webAvanzado.step1Duration">4-5 días</span>
                     </div>
                     <div class="timeline-item">
-                        <div class="timeline-title">2. Wireframes y UX</div>
-                        <div class="timeline-desc">Flujos de usuario y experiencia completa</div>
-                        <span class="timeline-duration timeline-web">5-6 días</span>
+                        <div class="timeline-title" data-i18n="process.webAvanzado.step2">2. Wireframes y UX</div>
+                        <div class="timeline-desc" data-i18n="process.webAvanzado.step2Desc">Flujos de usuario y experiencia completa</div>
+                        <span class="timeline-duration timeline-web" data-i18n="process.webAvanzado.step2Duration">5-6 días</span>
                     </div>
                     <div class="timeline-item">
-                        <div class="timeline-title">3. Diseño UI Completo</div>
-                        <div class="timeline-desc">Sistema de diseño y todas las vistas</div>
-                        <span class="timeline-duration timeline-web">7-10 días</span>
+                        <div class="timeline-title" data-i18n="process.webAvanzado.step3">3. Diseño UI Completo</div>
+                        <div class="timeline-desc" data-i18n="process.webAvanzado.step3Desc">Sistema de diseño y todas las vistas</div>
+                        <span class="timeline-duration timeline-web" data-i18n="process.webAvanzado.step3Duration">7-10 días</span>
                     </div>
                     <div class="timeline-item">
-                        <div class="timeline-title">4. Desarrollo Back-End</div>
-                        <div class="timeline-desc">Base de datos, APIs y lógica del servidor</div>
-                        <span class="timeline-duration timeline-web">10-12 días</span>
+                        <div class="timeline-title" data-i18n="process.webAvanzado.step4">4. Desarrollo Back-End</div>
+                        <div class="timeline-desc" data-i18n="process.webAvanzado.step4Desc">Base de datos, APIs y lógica del servidor</div>
+                        <span class="timeline-duration timeline-web" data-i18n="process.webAvanzado.step4Duration">10-12 días</span>
                     </div>
                     <div class="timeline-item">
-                        <div class="timeline-title">5. Desarrollo Front-End</div>
-                        <div class="timeline-desc">Implementación visual responsive</div>
-                        <span class="timeline-duration timeline-web">8-10 días</span>
+                        <div class="timeline-title" data-i18n="process.webAvanzado.step5">5. Desarrollo Front-End</div>
+                        <div class="timeline-desc" data-i18n="process.webAvanzado.step5Desc">Implementación visual responsive</div>
+                        <span class="timeline-duration timeline-web" data-i18n="process.webAvanzado.step5Duration">8-10 días</span>
                     </div>
                     <div class="timeline-item">
-                        <div class="timeline-title">6. Testing Intensivo</div>
-                        <div class="timeline-desc">QA, seguridad, performance, compatibilidad</div>
-                        <span class="timeline-duration timeline-web">5-7 días</span>
+                        <div class="timeline-title" data-i18n="process.webAvanzado.step6">6. Testing Intensivo</div>
+                        <div class="timeline-desc" data-i18n="process.webAvanzado.step6Desc">QA, seguridad, performance, compatibilidad</div>
+                        <span class="timeline-duration timeline-web" data-i18n="process.webAvanzado.step6Duration">5-7 días</span>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="full-width-section">
-            <h2 class="section-title">Ideal Para</h2>
+            <h2 class="section-title" data-i18n="sections.idealFor">Ideal Para</h2>
             <div class="ideal-grid">
                 <div class="ideal-card">
                     <div class="ideal-icon">🏢</div>
-                    <div class="ideal-title">Empresas Consolidadas</div>
-                    <div class="ideal-desc">Corporaciones que necesitan plataformas robustas</div>
+                    <div class="ideal-title" data-i18n="idealFor.consolidatedCompanies">Empresas Consolidadas</div>
+                    <div class="ideal-desc" data-i18n="idealFor.consolidatedCompaniesDesc">Corporaciones que necesitan plataformas robustas</div>
                 </div>
                 <div class="ideal-card">
                     <div class="ideal-icon">🛒</div>
-                    <div class="ideal-title">E-commerce</div>
-                    <div class="ideal-desc">Tiendas online con gestión completa de inventario</div>
+                    <div class="ideal-title" data-i18n="idealFor.ecommerce">E-commerce</div>
+                    <div class="ideal-desc" data-i18n="idealFor.ecommerceDesc">Tiendas online con gestión completa de inventario</div>
                 </div>
                 <div class="ideal-card">
                     <div class="ideal-icon">🔧</div>
-                    <div class="ideal-title">Proyectos a Medida</div>
-                    <div class="ideal-desc">Soluciones personalizadas con funcionalidades específicas</div>
+                    <div class="ideal-title" data-i18n="idealFor.customProjects">Proyectos a Medida</div>
+                    <div class="ideal-desc" data-i18n="idealFor.customProjectsDesc">Soluciones personalizadas con funcionalidades específicas</div>
                 </div>
             </div>
         </div>
 
         <div class="cta-section cta-web">
-            <h2 class="cta-title">¿Listo para una solución enterprise?</h2>
-            <p class="cta-text">Plataforma web avanzada con desarrollo personalizado</p>
+            <h2 class="cta-title" data-i18n="cta.webAvanzado.title">¿Listo para una solución enterprise?</h2>
+            <p class="cta-text" data-i18n="cta.webAvanzado.text">Plataforma web avanzada con desarrollo personalizado</p>
             <div class="cta-buttons">
                 <button class="btn btn-primary btn-web" onclick="payWithPayPal('web-avanzado', 1250)">
                     <svg class="paypal-logo-btn" viewBox="0 0 100 32" fill="currentColor"><path d="M12 4.917h5.167c2.917 0 5.333 2.083 5.333 5s-2.416 5-5.333 5H12V4.917zm22.917 0h5.166c2.917 0 5.334 2.083 5.334 5s-2.417 5-5.334 5h-5.166V4.917zM12 19.917h5.167c2.917 0 5.333 2.083 5.333 5s-2.416 5-5.333 5H12v-10z"/></svg>
-                    Pagar con PayPal
+                    <span data-i18n="cta.payWithPayPal">Pagar con PayPal</span>
                 </button>
-                <a href="https://wa.me/541163301998?text=Hola!%20Me%20interesa%20el%20Diseño%20Web%20Avanzado%20(USD%201,250)" target="_blank" class="btn btn-secondary">💬 Consultar por WhatsApp</a>
+                <a href="https://wa.me/541163301998?text=Hola!%20Me%20interesa%20el%20Diseño%20Web%20Avanzado%20(USD%201,250)" target="_blank" class="btn btn-secondary"><span data-i18n="cta.consultWhatsApp">💬 Consultar por WhatsApp</span></a>
             </div>
             <div class="payment-badges-cta">
-                <span class="payment-badge">🔒 Pago 100% seguro</span>
-                <span class="payment-badge">✓ Protección al comprador</span>
+                <span class="payment-badge" data-i18n="cta.securePayment">🔒 Pago 100% seguro</span>
+                <span class="payment-badge" data-i18n="cta.buyerProtection">✓ Protección al comprador</span>
             </div>
         </div>
     </div>
@@ -135,5 +139,163 @@
     <link rel="stylesheet" href="plan-styles.css">
     <script src="../js/currency-converter.js"></script>
     <script src="../js/paypal-integration.js"></script>
+    <script>
+        // Sistema de traducción
+        const translations = {
+            es: {
+                'nav.backToStore': '← Volver a Tienda',
+                'nav.home': 'Inicio',
+                'badge.webDesign': 'Diseño Web',
+                'plan.webAvanzado.title': 'Diseño Web Avanzado',
+                'plan.webAvanzado.subtitle': 'Plataforma web robusta con funcionalidades personalizadas. Ideal para empresas consolidadas y e-commerce.',
+                'plan.webAvanzado.paymentNote': 'Pago único • Entrega en 35-45 días hábiles',
+                'plan.webAvanzado.highlightTitle': 'Solución web enterprise con desarrollo a medida',
+                'plan.webAvanzado.highlightDesc': 'Sistema completo con funcionalidades avanzadas, integración con APIs y arquitectura escalable',
+                'sections.whatsIncluded': '¿Qué incluye?',
+                'features.allIntermediatePlus': 'Todo del Plan Intermedio +',
+                'features.allIntermediatePlusDesc': 'Panel admin, blog, SEO avanzado, múltiples páginas',
+                'features.unlimitedPages': 'Páginas Ilimitadas',
+                'features.unlimitedPagesDesc': 'Estructura compleja con arquitectura escalable',
+                'features.fullEcommerce': 'E-commerce Completo',
+                'features.fullEcommerceDesc': 'Carrito, pasarela de pago, gestión de inventario',
+                'features.userSystem': 'Sistema de Usuarios',
+                'features.userSystemDesc': 'Registro, login, perfiles y área privada',
+                'features.apiIntegration': 'Integración con APIs',
+                'features.apiIntegrationDesc': 'Conexión con servicios externos (CRM, ERP, etc.)',
+                'features.customDashboard': 'Dashboard Personalizado',
+                'features.customDashboardDesc': 'Panel con métricas, reportes y analytics',
+                'features.advancedSearch': 'Búsqueda Avanzada',
+                'features.advancedSearchDesc': 'Sistema de filtros y búsqueda inteligente',
+                'features.multiLanguage': 'Multi-idioma (opcional)',
+                'features.multiLanguageDesc': 'Versiones en diferentes idiomas',
+                'features.emailNotifications': 'Notificaciones Email',
+                'features.emailNotificationsDesc': 'Sistema automatizado de emails transaccionales',
+                'features.training3h': 'Capacitación 3h + Manual',
+                'features.training3hDesc': 'Tutorial completo + documentación técnica',
+                'features.support3months': 'Soporte 3 meses',
+                'features.support3monthsDesc': 'Asistencia técnica post-lanzamiento incluida',
+                'sections.workProcess': 'Proceso de Trabajo',
+                'process.webAvanzado.step1': '1. Análisis y Arquitectura',
+                'process.webAvanzado.step1Desc': 'Definición de requerimientos y estructura técnica',
+                'process.webAvanzado.step1Duration': '4-5 días',
+                'process.webAvanzado.step2': '2. Wireframes y UX',
+                'process.webAvanzado.step2Desc': 'Flujos de usuario y experiencia completa',
+                'process.webAvanzado.step2Duration': '5-6 días',
+                'process.webAvanzado.step3': '3. Diseño UI Completo',
+                'process.webAvanzado.step3Desc': 'Sistema de diseño y todas las vistas',
+                'process.webAvanzado.step3Duration': '7-10 días',
+                'process.webAvanzado.step4': '4. Desarrollo Back-End',
+                'process.webAvanzado.step4Desc': 'Base de datos, APIs y lógica del servidor',
+                'process.webAvanzado.step4Duration': '10-12 días',
+                'process.webAvanzado.step5': '5. Desarrollo Front-End',
+                'process.webAvanzado.step5Desc': 'Implementación visual responsive',
+                'process.webAvanzado.step5Duration': '8-10 días',
+                'process.webAvanzado.step6': '6. Testing Intensivo',
+                'process.webAvanzado.step6Desc': 'QA, seguridad, performance, compatibilidad',
+                'process.webAvanzado.step6Duration': '5-7 días',
+                'sections.idealFor': 'Ideal Para',
+                'idealFor.consolidatedCompanies': 'Empresas Consolidadas',
+                'idealFor.consolidatedCompaniesDesc': 'Corporaciones que necesitan plataformas robustas',
+                'idealFor.ecommerce': 'E-commerce',
+                'idealFor.ecommerceDesc': 'Tiendas online con gestión completa de inventario',
+                'idealFor.customProjects': 'Proyectos a Medida',
+                'idealFor.customProjectsDesc': 'Soluciones personalizadas con funcionalidades específicas',
+                'cta.webAvanzado.title': '¿Listo para una solución enterprise?',
+                'cta.webAvanzado.text': 'Plataforma web avanzada con desarrollo personalizado',
+                'cta.payWithPayPal': 'Pagar con PayPal',
+                'cta.consultWhatsApp': '💬 Consultar por WhatsApp',
+                'cta.securePayment': '🔒 Pago 100% seguro',
+                'cta.buyerProtection': '✓ Protección al comprador'
+            },
+            en: {
+                'nav.backToStore': '← Back to Store',
+                'nav.home': 'Home',
+                'badge.webDesign': 'Web Design',
+                'plan.webAvanzado.title': 'Advanced Web Design',
+                'plan.webAvanzado.subtitle': 'Robust web platform with custom functionalities. Ideal for established companies and e-commerce.',
+                'plan.webAvanzado.paymentNote': 'One-time payment • Delivery in 35-45 business days',
+                'plan.webAvanzado.highlightTitle': 'Enterprise web solution with custom development',
+                'plan.webAvanzado.highlightDesc': 'Complete system with advanced features, API integration and scalable architecture',
+                'sections.whatsIncluded': 'What\'s Included?',
+                'features.allIntermediatePlus': 'All Intermediate Plan +',
+                'features.allIntermediatePlusDesc': 'Admin panel, blog, advanced SEO, multiple pages',
+                'features.unlimitedPages': 'Unlimited Pages',
+                'features.unlimitedPagesDesc': 'Complex structure with scalable architecture',
+                'features.fullEcommerce': 'Full E-commerce',
+                'features.fullEcommerceDesc': 'Shopping cart, payment gateway, inventory management',
+                'features.userSystem': 'User System',
+                'features.userSystemDesc': 'Registration, login, profiles and private area',
+                'features.apiIntegration': 'API Integration',
+                'features.apiIntegrationDesc': 'Connection with external services (CRM, ERP, etc.)',
+                'features.customDashboard': 'Custom Dashboard',
+                'features.customDashboardDesc': 'Panel with metrics, reports and analytics',
+                'features.advancedSearch': 'Advanced Search',
+                'features.advancedSearchDesc': 'Filter system and smart search',
+                'features.multiLanguage': 'Multi-language (optional)',
+                'features.multiLanguageDesc': 'Versions in different languages',
+                'features.emailNotifications': 'Email Notifications',
+                'features.emailNotificationsDesc': 'Automated transactional email system',
+                'features.training3h': '3h Training + Manual',
+                'features.training3hDesc': 'Complete tutorial + technical documentation',
+                'features.support3months': '3 Months Support',
+                'features.support3monthsDesc': 'Post-launch technical assistance included',
+                'sections.workProcess': 'Work Process',
+                'process.webAvanzado.step1': '1. Analysis & Architecture',
+                'process.webAvanzado.step1Desc': 'Requirements definition and technical structure',
+                'process.webAvanzado.step1Duration': '4-5 days',
+                'process.webAvanzado.step2': '2. Wireframes & UX',
+                'process.webAvanzado.step2Desc': 'User flows and complete experience',
+                'process.webAvanzado.step2Duration': '5-6 days',
+                'process.webAvanzado.step3': '3. Complete UI Design',
+                'process.webAvanzado.step3Desc': 'Design system and all views',
+                'process.webAvanzado.step3Duration': '7-10 days',
+                'process.webAvanzado.step4': '4. Back-End Development',
+                'process.webAvanzado.step4Desc': 'Database, APIs and server logic',
+                'process.webAvanzado.step4Duration': '10-12 days',
+                'process.webAvanzado.step5': '5. Front-End Development',
+                'process.webAvanzado.step5Desc': 'Responsive visual implementation',
+                'process.webAvanzado.step5Duration': '8-10 days',
+                'process.webAvanzado.step6': '6. Intensive Testing',
+                'process.webAvanzado.step6Desc': 'QA, security, performance, compatibility',
+                'process.webAvanzado.step6Duration': '5-7 days',
+                'sections.idealFor': 'Ideal For',
+                'idealFor.consolidatedCompanies': 'Established Companies',
+                'idealFor.consolidatedCompaniesDesc': 'Corporations that need robust platforms',
+                'idealFor.ecommerce': 'E-commerce',
+                'idealFor.ecommerceDesc': 'Online stores with complete inventory management',
+                'idealFor.customProjects': 'Custom Projects',
+                'idealFor.customProjectsDesc': 'Personalized solutions with specific features',
+                'cta.webAvanzado.title': 'Ready for an enterprise solution?',
+                'cta.webAvanzado.text': 'Advanced web platform with custom development',
+                'cta.payWithPayPal': 'Pay with PayPal',
+                'cta.consultWhatsApp': '💬 Consult via WhatsApp',
+                'cta.securePayment': '🔒 100% secure payment',
+                'cta.buyerProtection': '✓ Buyer protection'
+            }
+        };
+
+        let currentLang = localStorage.getItem('language') || 'es';
+
+        function translatePage() {
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[currentLang][key]) {
+                    element.textContent = translations[currentLang][key];
+                }
+            });
+            document.getElementById('langText').textContent = currentLang.toUpperCase();
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('langToggle').addEventListener('click', () => {
+                const langs = ['es', 'en', 'pt'];
+                const currentIndex = langs.indexOf(currentLang);
+                currentLang = langs[(currentIndex + 1) % langs.length];
+                localStorage.setItem('language', currentLang);
+                translatePage();
+            });
+            translatePage();
+        });
+    </script>
 </body>
 </html>

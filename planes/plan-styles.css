@@ -116,6 +116,36 @@ p, span, li, a, .plan-subtitle, .feature-desc, .timeline-desc, .ideal-desc {
     transform: translateY(-2px);
 }
 
+.lang-toggle {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    color: white;
+    cursor: pointer;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.lang-toggle:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.globe-icon {
+    font-size: 1.2rem;
+    filter: grayscale(100%);
+}
+
+.lang-text {
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
 .currency-selector {
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);

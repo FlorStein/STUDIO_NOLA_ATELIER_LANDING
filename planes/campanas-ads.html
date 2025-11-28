@@ -11,116 +11,120 @@
 <body>
     <header class="header">
         <div class="header-content">
-            <a href="../tienda.html" class="back-link">← Volver a Tienda</a>
+            <a href="../tienda.html" class="back-link" data-i18n="nav.backToStore">← Volver a Tienda</a>
             <div style="display: flex; gap: 1.5rem; align-items: center;">
                 <select class="currency-selector" aria-label="Seleccionar moneda"></select>
-                <a href="../index.html" class="back-link">Inicio</a>
+                <button class="lang-toggle" id="langToggle">
+                    <span class="globe-icon">🌐</span>
+                    <span class="lang-text" id="langText">ES</span>
+                </button>
+                <a href="../index.html" class="back-link" data-i18n="nav.home">Inicio</a>
             </div>
         </div>
     </header>
 
     <div class="container">
         <div class="plan-header">
-            <span class="badge badge-marketing">Marketing Digital</span>
-            <h1 class="plan-title">Campañas Ads</h1>
-            <p class="plan-subtitle">Publicidad estratégica en Meta Ads (Facebook e Instagram). Resultados medibles mes a mes.</p>
+            <span class="badge badge-marketing" data-i18n="badge.marketing">Marketing Digital</span>
+            <h1 class="plan-title" data-i18n="plan.campanasAds.title">Campañas Ads</h1>
+            <p class="plan-subtitle" data-i18n="plan.campanasAds.subtitle">Publicidad estratégica en Meta Ads (Facebook e Instagram). Resultados medibles mes a mes.</p>
         </div>
 
         <div class="price-box">
             <div class="price price-marketing" data-plan="campanas-ads">$500 <span>USD/mes</span></div>
-            <p class="price-note">Suscripción mensual • Presupuesto publicitario NO incluido</p>
+            <p class="price-note" data-i18n="plan.campanasAds.priceNote">Suscripción mensual • Presupuesto publicitario NO incluido</p>
         </div>
 
         <div class="highlight-banner banner-marketing">
             <div class="highlight-icon">🎯</div>
             <div>
-                <div class="highlight-title">Publicidad efectiva con ROI positivo</div>
-                <div class="highlight-desc">Campañas optimizadas para conversión, no solo para likes</div>
+                <div class="highlight-title" data-i18n="plan.campanasAds.highlightTitle">Publicidad efectiva con ROI positivo</div>
+                <div class="highlight-desc" data-i18n="plan.campanasAds.highlightDesc">Campañas optimizadas para conversión, no solo para likes</div>
             </div>
         </div>
 
         <div class="content-grid">
             <div class="section">
-                <h2 class="section-title">¿Qué incluye?</h2>
+                <h2 class="section-title" data-i18n="sections.whatsIncluded">¿Qué incluye?</h2>
                 <ul class="features-list">
-                    <li><div><span class="feature-name">Estrategia Publicitaria</span><span class="feature-desc">Objetivos, públicos y plan de campañas mensual</span></div></li>
-                    <li><div><span class="feature-name">Investigación de Audiencia</span><span class="feature-desc">Segmentación detallada según intereses y comportamiento</span></div></li>
-                    <li><div><span class="feature-name">Creación de Anuncios</span><span class="feature-desc">Diseño de hasta 8 creatividades publicitarias/mes</span></div></li>
-                    <li><div><span class="feature-name">Copywriting Publicitario</span><span class="feature-desc">Textos optimizados para conversión</span></div></li>
-                    <li><div><span class="feature-name">Configuración de Campañas</span><span class="feature-desc">Setup completo en Meta Business Suite</span></div></li>
-                    <li><div><span class="feature-name">A/B Testing</span><span class="feature-desc">Pruebas de múltiples variantes para optimizar</span></div></li>
-                    <li><div><span class="feature-name">Optimización Diaria</span><span class="feature-desc">Monitoreo y ajustes para maximizar resultados</span></div></li>
-                    <li><div><span class="feature-name">Pixel de Facebook</span><span class="feature-desc">Instalación y configuración de seguimiento</span></div></li>
-                    <li><div><span class="feature-name">Reporte Semanal</span><span class="feature-desc">Métricas de inversión, alcance, clics y conversiones</span></div></li>
+                    <li><div><span class="feature-name" data-i18n="plan.campanasAds.feature1">Estrategia Publicitaria</span><span class="feature-desc" data-i18n="plan.campanasAds.feature1Desc">Objetivos, públicos y plan de campañas mensual</span></div></li>
+                    <li><div><span class="feature-name" data-i18n="plan.campanasAds.feature2">Investigación de Audiencia</span><span class="feature-desc" data-i18n="plan.campanasAds.feature2Desc">Segmentación detallada según intereses y comportamiento</span></div></li>
+                    <li><div><span class="feature-name" data-i18n="plan.campanasAds.feature3">Creación de Anuncios</span><span class="feature-desc" data-i18n="plan.campanasAds.feature3Desc">Diseño de hasta 8 creatividades publicitarias/mes</span></div></li>
+                    <li><div><span class="feature-name" data-i18n="plan.campanasAds.feature4">Copywriting Publicitario</span><span class="feature-desc" data-i18n="plan.campanasAds.feature4Desc">Textos optimizados para conversión</span></div></li>
+                    <li><div><span class="feature-name" data-i18n="plan.campanasAds.feature5">Configuración de Campañas</span><span class="feature-desc" data-i18n="plan.campanasAds.feature5Desc">Setup completo en Meta Business Suite</span></div></li>
+                    <li><div><span class="feature-name" data-i18n="plan.campanasAds.feature6">A/B Testing</span><span class="feature-desc" data-i18n="plan.campanasAds.feature6Desc">Pruebas de múltiples variantes para optimizar</span></div></li>
+                    <li><div><span class="feature-name" data-i18n="plan.campanasAds.feature7">Optimización Diaria</span><span class="feature-desc" data-i18n="plan.campanasAds.feature7Desc">Monitoreo y ajustes para maximizar resultados</span></div></li>
+                    <li><div><span class="feature-name" data-i18n="plan.campanasAds.feature8">Pixel de Facebook</span><span class="feature-desc" data-i18n="plan.campanasAds.feature8Desc">Instalación y configuración de seguimiento</span></div></li>
+                    <li><div><span class="feature-name" data-i18n="plan.campanasAds.feature9">Reporte Semanal</span><span class="feature-desc" data-i18n="plan.campanasAds.feature9Desc">Métricas de inversión, alcance, clics y conversiones</span></div></li>
                 </ul>
             </div>
 
             <div class="section">
-                <h2 class="section-title">Proceso Mensual</h2>
+                <h2 class="section-title" data-i18n="plan.campanasAds.processTitle">Proceso Mensual</h2>
                 <div class="process-timeline">
                     <div class="timeline-item">
-                        <div class="timeline-title">Semana 1</div>
-                        <div class="timeline-desc">Estrategia: definición de objetivos y públicos</div>
-                        <span class="timeline-duration timeline-marketing">2-3 días</span>
+                        <div class="timeline-title" data-i18n="plan.campanasAds.process1">Semana 1</div>
+                        <div class="timeline-desc" data-i18n="plan.campanasAds.process1Desc">Estrategia: definición de objetivos y públicos</div>
+                        <span class="timeline-duration timeline-marketing" data-i18n="plan.campanasAds.process1Duration">2-3 días</span>
                     </div>
                     <div class="timeline-item">
-                        <div class="timeline-title">Semana 1-2</div>
-                        <div class="timeline-desc">Producción: creatividades y textos publicitarios</div>
-                        <span class="timeline-duration timeline-marketing">3-4 días</span>
+                        <div class="timeline-title" data-i18n="plan.campanasAds.process2">Semana 1-2</div>
+                        <div class="timeline-desc" data-i18n="plan.campanasAds.process2Desc">Producción: creatividades y textos publicitarios</div>
+                        <span class="timeline-duration timeline-marketing" data-i18n="plan.campanasAds.process2Duration">3-4 días</span>
                     </div>
                     <div class="timeline-item">
-                        <div class="timeline-title">Semana 2-5</div>
-                        <div class="timeline-desc">Campaña activa: anuncios en ejecución</div>
-                        <span class="timeline-duration timeline-marketing">continuo</span>
+                        <div class="timeline-title" data-i18n="plan.campanasAds.process3">Semana 2-5</div>
+                        <div class="timeline-desc" data-i18n="plan.campanasAds.process3Desc">Campaña activa: anuncios en ejecución</div>
+                        <span class="timeline-duration timeline-marketing" data-i18n="plan.campanasAds.process3Duration">continuo</span>
                     </div>
                     <div class="timeline-item">
-                        <div class="timeline-title">Diario</div>
-                        <div class="timeline-desc">Optimización: ajustes de pujas, audiencias, creatividades</div>
-                        <span class="timeline-duration timeline-marketing">L-V</span>
+                        <div class="timeline-title" data-i18n="plan.campanasAds.process4">Diario</div>
+                        <div class="timeline-desc" data-i18n="plan.campanasAds.process4Desc">Optimización: ajustes de pujas, audiencias, creatividades</div>
+                        <span class="timeline-duration timeline-marketing" data-i18n="plan.campanasAds.process4Duration">L-V</span>
                     </div>
                     <div class="timeline-item">
-                        <div class="timeline-title">Semanal</div>
-                        <div class="timeline-desc">Reporte: análisis de rendimiento y recomendaciones</div>
-                        <span class="timeline-duration timeline-marketing">viernes</span>
+                        <div class="timeline-title" data-i18n="plan.campanasAds.process5">Semanal</div>
+                        <div class="timeline-desc" data-i18n="plan.campanasAds.process5Desc">Reporte: análisis de rendimiento y recomendaciones</div>
+                        <span class="timeline-duration timeline-marketing" data-i18n="plan.campanasAds.process5Duration">viernes</span>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="full-width-section">
-            <h2 class="section-title">Ideal Para</h2>
+            <h2 class="section-title" data-i18n="sections.idealFor">Ideal Para</h2>
             <div class="ideal-grid">
                 <div class="ideal-card card-marketing">
                     <div class="ideal-icon">🛒</div>
-                    <div class="ideal-title">E-commerce</div>
-                    <div class="ideal-desc">Tiendas online que buscan ventas directas</div>
+                    <div class="ideal-title" data-i18n="plan.campanasAds.ideal1">E-commerce</div>
+                    <div class="ideal-desc" data-i18n="plan.campanasAds.ideal1Desc">Tiendas online que buscan ventas directas</div>
                 </div>
                 <div class="ideal-card card-marketing">
                     <div class="ideal-icon">📞</div>
-                    <div class="ideal-title">Generación de Leads</div>
-                    <div class="ideal-desc">Servicios B2B o B2C que necesitan prospectos calificados</div>
+                    <div class="ideal-title" data-i18n="plan.campanasAds.ideal2">Generación de Leads</div>
+                    <div class="ideal-desc" data-i18n="plan.campanasAds.ideal2Desc">Servicios B2B o B2C que necesitan prospectos calificados</div>
                 </div>
                 <div class="ideal-card card-marketing">
                     <div class="ideal-icon">📈</div>
-                    <div class="ideal-title">Escalar Rápido</div>
-                    <div class="ideal-desc">Negocios listos para invertir en publicidad con ROI</div>
+                    <div class="ideal-title" data-i18n="plan.campanasAds.ideal3">Escalar Rápido</div>
+                    <div class="ideal-desc" data-i18n="plan.campanasAds.ideal3Desc">Negocios listos para invertir en publicidad con ROI</div>
                 </div>
             </div>
         </div>
 
         <div class="cta-section cta-marketing">
-            <h2 class="cta-title">¿Listo para invertir en publicidad efectiva?</h2>
-            <p class="cta-text">Campañas optimizadas en Meta Ads con resultados medibles</p>
+            <h2 class="cta-title" data-i18n="plan.campanasAds.ctaTitle">¿Listo para invertir en publicidad efectiva?</h2>
+            <p class="cta-text" data-i18n="plan.campanasAds.ctaText">Campañas optimizadas en Meta Ads con resultados medibles</p>
             <div class="cta-buttons">
                 <button class="btn btn-primary btn-marketing" onclick="payWithPayPal('campanas-ads', 500, true)">
                     <svg class="paypal-logo-btn" viewBox="0 0 100 32" fill="currentColor"><path d="M12 4.917h5.167c2.917 0 5.333 2.083 5.333 5s-2.416 5-5.333 5H12V4.917zm22.917 0h5.166c2.917 0 5.334 2.083 5.334 5s-2.417 5-5.334 5h-5.166V4.917zM12 19.917h5.167c2.917 0 5.333 2.083 5.333 5s-2.416 5-5.333 5H12v-10z"/></svg>
-                    Contratar Servicio
+                    <span data-i18n="plan.campanasAds.ctaButton">Contratar Servicio</span>
                 </button>
-                <a href="https://wa.me/541163301998?text=Hola!%20Me%20interesa%20las%20Campañas%20Ads%20(USD%20500/mes)" target="_blank" class="btn btn-secondary">💬 Consultar por WhatsApp</a>
+                <a href="https://wa.me/541163301998?text=Hola!%20Me%20interesa%20las%20Campañas%20Ads%20(USD%20500/mes)" target="_blank" class="btn btn-secondary"><span data-i18n="cta.consultWhatsApp">💬 Consultar por WhatsApp</span></a>
             </div>
             <div class="payment-badges-cta">
-                <span class="payment-badge">📅 Suscripción mensual</span>
-                <span class="payment-badge">💰 Budget publicitario aparte</span>
+                <span class="payment-badge" data-i18n="plan.campanasAds.badge1">📅 Suscripción mensual</span>
+                <span class="payment-badge" data-i18n="plan.campanasAds.badge2">💰 Budget publicitario aparte</span>
             </div>
         </div>
     </div>
@@ -128,5 +132,149 @@
     <link rel="stylesheet" href="plan-styles.css">
     <script src="../js/currency-converter.js"></script>
     <script src="../js/paypal-integration.js"></script>
+    <script>
+        // Sistema de traducción
+        const translations = {
+            es: {
+                'nav.backToStore': '← Volver a Tienda',
+                'nav.home': 'Inicio',
+                'badge.marketing': 'Marketing Digital',
+                'plan.campanasAds.title': 'Campañas Ads',
+                'plan.campanasAds.subtitle': 'Publicidad estratégica en Meta Ads (Facebook e Instagram). Resultados medibles mes a mes.',
+                'plan.campanasAds.priceNote': 'Suscripción mensual • Presupuesto publicitario NO incluido',
+                'plan.campanasAds.highlightTitle': 'Publicidad efectiva con ROI positivo',
+                'plan.campanasAds.highlightDesc': 'Campañas optimizadas para conversión, no solo para likes',
+                'sections.whatsIncluded': '¿Qué incluye?',
+                'plan.campanasAds.feature1': 'Estrategia Publicitaria',
+                'plan.campanasAds.feature1Desc': 'Objetivos, públicos y plan de campañas mensual',
+                'plan.campanasAds.feature2': 'Investigación de Audiencia',
+                'plan.campanasAds.feature2Desc': 'Segmentación detallada según intereses y comportamiento',
+                'plan.campanasAds.feature3': 'Creación de Anuncios',
+                'plan.campanasAds.feature3Desc': 'Diseño de hasta 8 creatividades publicitarias/mes',
+                'plan.campanasAds.feature4': 'Copywriting Publicitario',
+                'plan.campanasAds.feature4Desc': 'Textos optimizados para conversión',
+                'plan.campanasAds.feature5': 'Configuración de Campañas',
+                'plan.campanasAds.feature5Desc': 'Setup completo en Meta Business Suite',
+                'plan.campanasAds.feature6': 'A/B Testing',
+                'plan.campanasAds.feature6Desc': 'Pruebas de múltiples variantes para optimizar',
+                'plan.campanasAds.feature7': 'Optimización Diaria',
+                'plan.campanasAds.feature7Desc': 'Monitoreo y ajustes para maximizar resultados',
+                'plan.campanasAds.feature8': 'Pixel de Facebook',
+                'plan.campanasAds.feature8Desc': 'Instalación y configuración de seguimiento',
+                'plan.campanasAds.feature9': 'Reporte Semanal',
+                'plan.campanasAds.feature9Desc': 'Métricas de inversión, alcance, clics y conversiones',
+                'plan.campanasAds.processTitle': 'Proceso Mensual',
+                'plan.campanasAds.process1': 'Semana 1',
+                'plan.campanasAds.process1Desc': 'Estrategia: definición de objetivos y públicos',
+                'plan.campanasAds.process1Duration': '2-3 días',
+                'plan.campanasAds.process2': 'Semana 1-2',
+                'plan.campanasAds.process2Desc': 'Producción: creatividades y textos publicitarios',
+                'plan.campanasAds.process2Duration': '3-4 días',
+                'plan.campanasAds.process3': 'Semana 2-5',
+                'plan.campanasAds.process3Desc': 'Campaña activa: anuncios en ejecución',
+                'plan.campanasAds.process3Duration': 'continuo',
+                'plan.campanasAds.process4': 'Diario',
+                'plan.campanasAds.process4Desc': 'Optimización: ajustes de pujas, audiencias, creatividades',
+                'plan.campanasAds.process4Duration': 'L-V',
+                'plan.campanasAds.process5': 'Semanal',
+                'plan.campanasAds.process5Desc': 'Reporte: análisis de rendimiento y recomendaciones',
+                'plan.campanasAds.process5Duration': 'viernes',
+                'sections.idealFor': 'Ideal Para',
+                'plan.campanasAds.ideal1': 'E-commerce',
+                'plan.campanasAds.ideal1Desc': 'Tiendas online que buscan ventas directas',
+                'plan.campanasAds.ideal2': 'Generación de Leads',
+                'plan.campanasAds.ideal2Desc': 'Servicios B2B o B2C que necesitan prospectos calificados',
+                'plan.campanasAds.ideal3': 'Escalar Rápido',
+                'plan.campanasAds.ideal3Desc': 'Negocios listos para invertir en publicidad con ROI',
+                'plan.campanasAds.ctaTitle': '¿Listo para invertir en publicidad efectiva?',
+                'plan.campanasAds.ctaText': 'Campañas optimizadas en Meta Ads con resultados medibles',
+                'plan.campanasAds.ctaButton': 'Contratar Servicio',
+                'cta.consultWhatsApp': '💬 Consultar por WhatsApp',
+                'plan.campanasAds.badge1': '📅 Suscripción mensual',
+                'plan.campanasAds.badge2': '💰 Budget publicitario aparte'
+            },
+            en: {
+                'nav.backToStore': '← Back to Store',
+                'nav.home': 'Home',
+                'badge.marketing': 'Digital Marketing',
+                'plan.campanasAds.title': 'Ads Campaigns',
+                'plan.campanasAds.subtitle': 'Strategic advertising on Meta Ads (Facebook and Instagram). Measurable results month by month.',
+                'plan.campanasAds.priceNote': 'Monthly subscription • Advertising budget NOT included',
+                'plan.campanasAds.highlightTitle': 'Effective advertising with positive ROI',
+                'plan.campanasAds.highlightDesc': 'Campaigns optimized for conversion, not just for likes',
+                'sections.whatsIncluded': 'What\'s Included?',
+                'plan.campanasAds.feature1': 'Advertising Strategy',
+                'plan.campanasAds.feature1Desc': 'Objectives, audiences and monthly campaign plan',
+                'plan.campanasAds.feature2': 'Audience Research',
+                'plan.campanasAds.feature2Desc': 'Detailed segmentation by interests and behavior',
+                'plan.campanasAds.feature3': 'Ad Creation',
+                'plan.campanasAds.feature3Desc': 'Design of up to 8 advertising creatives/month',
+                'plan.campanasAds.feature4': 'Advertising Copywriting',
+                'plan.campanasAds.feature4Desc': 'Conversion-optimized texts',
+                'plan.campanasAds.feature5': 'Campaign Setup',
+                'plan.campanasAds.feature5Desc': 'Complete setup in Meta Business Suite',
+                'plan.campanasAds.feature6': 'A/B Testing',
+                'plan.campanasAds.feature6Desc': 'Testing multiple variants to optimize',
+                'plan.campanasAds.feature7': 'Daily Optimization',
+                'plan.campanasAds.feature7Desc': 'Monitoring and adjustments to maximize results',
+                'plan.campanasAds.feature8': 'Facebook Pixel',
+                'plan.campanasAds.feature8Desc': 'Tracking installation and configuration',
+                'plan.campanasAds.feature9': 'Weekly Report',
+                'plan.campanasAds.feature9Desc': 'Investment, reach, clicks and conversion metrics',
+                'plan.campanasAds.processTitle': 'Monthly Process',
+                'plan.campanasAds.process1': 'Week 1',
+                'plan.campanasAds.process1Desc': 'Strategy: defining objectives and audiences',
+                'plan.campanasAds.process1Duration': '2-3 days',
+                'plan.campanasAds.process2': 'Week 1-2',
+                'plan.campanasAds.process2Desc': 'Production: creatives and advertising texts',
+                'plan.campanasAds.process2Duration': '3-4 days',
+                'plan.campanasAds.process3': 'Week 2-5',
+                'plan.campanasAds.process3Desc': 'Active campaign: ads running',
+                'plan.campanasAds.process3Duration': 'ongoing',
+                'plan.campanasAds.process4': 'Daily',
+                'plan.campanasAds.process4Desc': 'Optimization: bid adjustments, audiences, creatives',
+                'plan.campanasAds.process4Duration': 'M-F',
+                'plan.campanasAds.process5': 'Weekly',
+                'plan.campanasAds.process5Desc': 'Report: performance analysis and recommendations',
+                'plan.campanasAds.process5Duration': 'fridays',
+                'sections.idealFor': 'Ideal For',
+                'plan.campanasAds.ideal1': 'E-commerce',
+                'plan.campanasAds.ideal1Desc': 'Online stores seeking direct sales',
+                'plan.campanasAds.ideal2': 'Lead Generation',
+                'plan.campanasAds.ideal2Desc': 'B2B or B2C services needing qualified prospects',
+                'plan.campanasAds.ideal3': 'Scale Fast',
+                'plan.campanasAds.ideal3Desc': 'Businesses ready to invest in advertising with ROI',
+                'plan.campanasAds.ctaTitle': 'Ready to invest in effective advertising?',
+                'plan.campanasAds.ctaText': 'Optimized campaigns on Meta Ads with measurable results',
+                'plan.campanasAds.ctaButton': 'Hire Service',
+                'cta.consultWhatsApp': '💬 Consult via WhatsApp',
+                'plan.campanasAds.badge1': '📅 Monthly subscription',
+                'plan.campanasAds.badge2': '💰 Advertising budget separate'
+            }
+        };
+
+        let currentLang = localStorage.getItem('language') || 'es';
+
+        function translatePage() {
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[currentLang][key]) {
+                    element.textContent = translations[currentLang][key];
+                }
+            });
+            document.getElementById('langText').textContent = currentLang.toUpperCase();
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('langToggle').addEventListener('click', () => {
+                const langs = ['es', 'en', 'pt'];
+                const currentIndex = langs.indexOf(currentLang);
+                currentLang = langs[(currentIndex + 1) % langs.length];
+                localStorage.setItem('language', currentLang);
+                translatePage();
+            });
+            translatePage();
+        });
+    </script>
 </body>
 </html>

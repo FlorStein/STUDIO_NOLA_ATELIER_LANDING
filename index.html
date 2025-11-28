@@ -423,11 +423,12 @@
             <!-- <li class="nav-li"><a href="#pricing2">Nosotros</a></li> -->
             <li class="nav-li"><a href="./index/gallery.html" onclick="nav()" class="nav-link" target="_self">Gallery </a></li>
             <li class="nav-li"><a href="./index/blog.html" onclick="nav()" class="nav-link" target="_self">Blog</a></li>
-            <li class="nav-li"><a href="./tienda.html" onclick="nav()" class="nav-link" target="_self">Tienda</a></li>
+            <li class="nav-li"><a href="./tienda.html" onclick="nav()" class="nav-link" target="_self" data-i18n="nav.store">Tienda</a></li>
             <li class="nav-li"><a href="#mas-info" class="nav-link" data-i18n="nav.services">Servicios</a></li>
             <li class="nav-li"><a href="#contacto" class="nav-link" data-i18n="nav.contact">Contacto</a></li>
             <li class="nav-li">
                 <button id="langToggle" class="lang-toggle" aria-label="Cambiar idioma">
+                    <span class="globe-icon">🌐</span>
                     <span class="lang-current">ES</span>
                 </button>
             </li>   
@@ -451,12 +452,13 @@
         <li><a href="#divisor" class="mnav-link" data-i18n="nav.about">Qué hacemos?</a></li>
         <li><a href="./index/gallery.html" class="mnav-link" target="_self">Gallery</a></li>
         <li><a href="./index/blog.html" class="mnav-link" target="_self">Blog</a></li>
-        <li><a href="./tienda.html" class="mnav-link" target="_self">Tienda</a></li>
+        <li><a href="./tienda.html" class="mnav-link" target="_self" data-i18n="nav.store">Tienda</a></li>
         <li><a href="#mas-info" class="mnav-link" data-i18n="nav.services">Servicios</a></li>
         <li><a href="#contacto" class="mnav-link" data-i18n="nav.contact">Contacto</a></li>
         <li>
           <button id="langToggleMobile" class="lang-toggle mobile" aria-label="Cambiar idioma">
-            <span class="lang-current">ES</span> / <span class="lang-alt">EN</span>
+            <span class="globe-icon">🌐</span>
+            <span class="lang-current">ES</span>
           </button>
         </li>
       </ul>
@@ -933,6 +935,7 @@ section.section{ scroll-margin-top:84px }
         <ul>
           <li><a href="#body" data-i18n="footer.home">Inicio</a></li>
           <li><a href="#mas-info" data-i18n="footer.services">Servicios</a></li>
+          <li><a href="tienda.html" data-i18n="footer.store">Tienda</a></li>
           <li><a href="#mas-info" data-mi="web">Web design</a></li>
           <li><a href="#mas-info" data-mi="branding">Branding</a></li>
           <li><a href="#mas-info" data-mi="digital">Marketing Digital</a></li>
@@ -1447,13 +1450,14 @@ window.addEventListener('load', function() {
 </script>
 
 <script>
-// Sistema de traducción ES/EN
+// Sistema de traducción ES/EN/PT
 (function() {
   const translations = {
     es: {
       'nav.home': 'Home',
       'nav.about': 'Qué hacemos?',
       'nav.services': 'Servicios',
+      'nav.store': 'Tienda',
       'nav.contact': 'Contacto',
       'services.title': 'SERVICIOS',
       'services.subtitle': 'Elegí una categoría y mirá qué incluye cada nivel de complejidad.',
@@ -1475,6 +1479,7 @@ window.addEventListener('load', function() {
       'footer.navigation': 'Navegación',
       'footer.home': 'Inicio',
       'footer.services': 'Servicios',
+      'footer.store': 'Tienda',
       'footer.contact': 'Contacto',
       'footer.tagline': 'Dirección creativa, branding y contenido.',
       // Web Design Cards
@@ -1665,6 +1670,7 @@ window.addEventListener('load', function() {
       'nav.home': 'Home',
       'nav.about': 'What we do?',
       'nav.services': 'Services',
+      'nav.store': 'Store',
       'nav.contact': 'Contact',
       'services.title': 'SERVICES',
       'services.subtitle': 'Choose a category and see what each complexity level includes.',
@@ -1686,6 +1692,7 @@ window.addEventListener('load', function() {
       'footer.navigation': 'Navigation',
       'footer.home': 'Home',
       'footer.services': 'Services',
+      'footer.store': 'Store',
       'footer.contact': 'Contact',
       'footer.tagline': 'Creative direction, branding and content.',
       // Web Design Cards
@@ -1871,6 +1878,201 @@ window.addEventListener('load', function() {
       'contact.form.budget.option3': 'USD 500 – 1500',
       'contact.form.budget.option4': 'USD 1500 – 3000',
       'contact.form.budget.option5': '+ USD 3000'
+    },
+    pt: {
+      'nav.home': 'Home',
+      'nav.about': 'O que fazemos?',
+      'nav.services': 'Serviços',
+      'nav.store': 'Loja',
+      'nav.contact': 'Contato',
+      'services.title': 'SERVIÇOS',
+      'services.subtitle': 'Escolha uma categoria e veja o que cada nível de complexidade inclui.',
+      'services.tab.web': 'Design Web',
+      'services.tab.branding': 'Branding',
+      'services.tab.digital': 'Marketing Digital',
+      'contact.title': 'Vamos falar sobre seu projeto',
+      'contact.subtitle': 'Conte-nos o que você precisa e responderemos em breve.',
+      'contact.form.name': 'Nome',
+      'contact.form.email': 'Email',
+      'contact.form.service': 'Serviço',
+      'contact.form.budget': 'Orçamento estimado',
+      'contact.form.message': 'Mensagem',
+      'contact.placeholder.name': 'Seu nome',
+      'contact.placeholder.email': 'seuemail@exemplo.com',
+      'contact.placeholder.message': 'Conte-nos brevemente sua ideia, prazos e objetivos.',
+      'contact.button.send': 'Enviar',
+      'contact.button.whatsapp': 'Escrever pelo WhatsApp',
+      'footer.navigation': 'Navegação',
+      'footer.home': 'Início',
+      'footer.services': 'Serviços',
+      'footer.store': 'Loja',
+      'footer.contact': 'Contato',
+      'footer.tagline': 'Direção criativa, branding e conteúdo.',
+      'web.simple.badge': 'Simples',
+      'web.simple.title': 'Design Web Simples',
+      'web.simple.desc': 'Landing de 1–3 seções. Ideal para presença rápida e clara.',
+      'web.simple.button': 'Consultar',
+      'web.inter.badge': 'Recomendado',
+      'web.inter.title': 'Design Web Intermediário',
+      'web.inter.desc': 'Site de 4–6 seções, mais componentes e otimizações.',
+      'web.inter.button': 'Reservar',
+      'web.adv.badge': 'Avançado',
+      'web.adv.title': 'Design Web Avançado',
+      'web.adv.desc': 'Site com funcionalidades personalizadas e CMS.',
+      'web.adv.button': 'Agendar chamada',
+      'brand.basic.badge': 'Kit Inicial',
+      'brand.basic.title': 'Branding Essencial',
+      'brand.basic.desc': 'Logo + paleta + tipografias + guia breve.',
+      'brand.basic.button': 'Consultar',
+      'brand.pro.badge': 'Pro',
+      'brand.pro.title': 'Identidade de Marca',
+      'brand.pro.desc': 'Sistema completo: logo, usos, lockups, tom e aplicações.',
+      'brand.pro.button': 'Reservar',
+      'brand.adv.badge': 'Avançado',
+      'brand.adv.title': 'Rebranding Estratégico',
+      'brand.adv.desc': 'Pesquisa, auditoria e evolução de marca 360°.',
+      'brand.adv.button': 'Agendar chamada',
+      'digital.basic.badge': 'Starter',
+      'digital.basic.title': 'Gestão de Redes Sociais',
+      'digital.basic.desc': 'Calendário, redação e design de posts mensais.',
+      'digital.basic.button': 'Consultar',
+      'digital.ads.badge': 'Performance',
+      'digital.ads.title': 'Campanhas Ads',
+      'digital.ads.desc': 'Configuração, otimização e relatórios no Meta/Google.',
+      'digital.ads.button': 'Reservar',
+      'digital.pro.badge': 'Pro',
+      'digital.pro.title': 'Automações & Email',
+      'digital.pro.desc': 'Fluxos, segmentação e análise de conversões.',
+      'digital.pro.button': 'Agendar chamada',
+      'ladder.title': 'Evolução do Serviço',
+      'ladder.subtitle': 'Escale conforme sua necessidade: desde um site simples até um projeto avançado com integrações.',
+      'ladder.level1.title': 'Nível 1 · Design Web Simples',
+      'ladder.level1.desc': 'Landing 1–3 seções, SEO básico e contato.',
+      'ladder.level1.button': 'Escolher Nível 1',
+      'ladder.level2.title': 'Nível 2 · Intermediário (Recomendado)',
+      'ladder.level2.desc': 'Mais seções, blog básico e animações suaves.',
+      'ladder.level2.button': 'Escolher Nível 2',
+      'ladder.level3.title': 'Nível 3 · Avançado',
+      'ladder.level3.desc': 'CMS ou painel personalizado, integrações e seções dinâmicas.',
+      'ladder.level3.button': 'Escolher Nível 3',
+      'timeline.title': 'Como trabalhamos',
+      'timeline.subtitle': 'Um processo claro de ponta a ponta, com prazos estimados e entregáveis por fase.',
+      'web.simple.list1': 'Design responsivo',
+      'web.simple.list2': 'Até 3 seções (Hero, Serviços, Contato)',
+      'web.simple.list3': 'Otimização básica SEO (metatags, títulos)',
+      'web.simple.list4': 'Integração WhatsApp / Email',
+      'web.simple.details': 'Ver mais detalhes',
+      'web.simple.detail1': 'Entrega em 7–10 dias',
+      'web.simple.detail2': '1 rodada de ajustes incluída',
+      'web.simple.detail3': 'Hospedagem/Domínio não incluídos',
+      'web.inter.list1': 'Tudo do plano Simples',
+      'web.inter.list2': 'Até 6 seções + Blog básico',
+      'web.inter.list3': 'Animações suaves e microinterações',
+      'web.inter.list4': 'Otimização de performance (imagens, lazyload)',
+      'web.inter.details': 'Ver mais detalhes',
+      'web.inter.detail1': 'Entrega em 2–3 semanas',
+      'web.inter.detail2': '2 rodadas de ajustes incluídas',
+      'web.inter.detail3': 'Integração com Analytics e pixel',
+      'web.adv.list1': 'Tudo do plano Intermediário',
+      'web.adv.list2': 'CMS (WordPress/Headless) ou painel personalizado',
+      'web.adv.list3': 'Seções dinâmicas, formulários avançados',
+      'web.adv.list4': 'Integrações com terceiros (APIs, pagamentos, etc.)',
+      'web.adv.details': 'Ver mais detalhes',
+      'web.adv.detail1': 'Entrega a partir de 4 semanas',
+      'web.adv.detail2': '3 rodadas de ajustes incluídas',
+      'web.adv.detail3': 'Suporte e melhorias opcionais',
+      'brand.basic.list1': '2–3 propostas de logo',
+      'brand.basic.list2': 'Guia rápido de uso',
+      'brand.basic.list3': 'Aplicações básicas (redes sociais, favicon)',
+      'brand.basic.details': 'Ver mais detalhes',
+      'brand.basic.detail1': 'Entrega 2–3 semanas',
+      'brand.basic.detail2': '2 rodadas de ajustes',
+      'brand.pro.list1': 'Manual de marca',
+      'brand.pro.list2': 'Kit de templates (redes sociais, apresentações)',
+      'brand.pro.list3': 'Mockups e arquivos editáveis',
+      'brand.pro.details': 'Ver mais detalhes',
+      'brand.pro.detail1': 'Entrega 3–4 semanas',
+      'brand.pro.detail2': '3 rodadas de ajustes',
+      'brand.adv.list1': 'Pesquisa, benchmark e posicionamento',
+      'brand.adv.list2': 'Arquitetura de marca',
+      'brand.adv.list3': 'Implementação multicanal',
+      'brand.adv.details': 'Ver mais detalhes',
+      'brand.adv.detail1': 'Projeto 6–8 semanas',
+      'brand.adv.detail2': 'Workshops com stakeholders',
+      'digital.basic.list1': '8–12 peças/mês',
+      'digital.basic.list2': 'Copys e hashtags',
+      'digital.basic.list3': 'Métricas básicas',
+      'digital.basic.details': 'Ver mais detalhes',
+      'digital.basic.detail1': 'Reunião de kick-off',
+      'digital.basic.detail2': 'Painel compartilhado',
+      'digital.ads.list1': 'Estratégia de audiências',
+      'digital.ads.list2': 'Criativos A/B',
+      'digital.ads.list3': 'Relatórios de desempenho',
+      'digital.ads.details': 'Ver mais detalhes',
+      'digital.ads.detail1': 'Otimização semanal',
+      'digital.ads.detail2': 'Reunião mensal',
+      'digital.pro.list1': 'Fluxos automáticos (onboarding, carrinhos)',
+      'digital.pro.list2': 'Integração com CRM',
+      'digital.pro.list3': 'Dashboards KPI',
+      'digital.pro.details': 'Ver mais detalhes',
+      'digital.pro.detail1': 'Kick-off + roadmap',
+      'digital.pro.detail2': 'Suporte priorizado',
+      'ladder.level1.list1': 'Design responsivo',
+      'ladder.level1.list2': 'Até 3 seções',
+      'ladder.level1.list3': 'Integração WhatsApp / Email',
+      'ladder.level2.list1': 'Até 6 seções',
+      'ladder.level2.list2': 'Blog básico',
+      'ladder.level2.list3': 'Otimização de performance',
+      'ladder.level3.list1': 'CMS (WordPress/Headless)',
+      'ladder.level3.list2': 'Integrações (APIs, pagamentos)',
+      'ladder.level3.list3': 'Formulários avançados',
+      'timeline.phase1.title': 'Kick‑off & Descoberta',
+      'timeline.phase1.badge': 'Dia 1',
+      'timeline.phase1.desc': 'Reunião inicial, objetivos, escopo, levantamento de conteúdos e referências.',
+      'timeline.phase1.list1': 'Briefing de marca e público',
+      'timeline.phase1.list2': 'Mapa do site / escopo',
+      'timeline.phase1.list3': 'Checklist de assets',
+      'timeline.phase2.title': 'Wireframes & UX',
+      'timeline.phase2.badge': 'Dias 2–5',
+      'timeline.phase2.desc': 'Estrutura de páginas, hierarquia de informações e fluxos-chave.',
+      'timeline.phase2.list1': 'Wireframes mobile/desktop',
+      'timeline.phase2.list2': 'Feedback e ajuste',
+      'timeline.phase3.title': 'UI & Design Visual',
+      'timeline.phase3.badge': 'Dias 6–10',
+      'timeline.phase3.desc': 'Aplicação da estética da sua marca: tipografias, paleta, componentes e microinterações.',
+      'timeline.phase3.list1': 'Sistema de componentes',
+      'timeline.phase3.list2': 'Protótipo navegável',
+      'timeline.phase4.title': 'Desenvolvimento & Integrações',
+      'timeline.phase4.badge': 'Semanas 3–4',
+      'timeline.phase4.desc': 'Maquetação responsiva, performance, SEO técnico e integrações necessárias.',
+      'timeline.phase4.list1': 'Otimização de imagens',
+      'timeline.phase4.list2': 'Integração Analytics / Pixel',
+      'timeline.phase4.list3': 'Formulários e APIs',
+      'timeline.phase5.title': 'Release & Suporte',
+      'timeline.phase5.badge': 'Go‑live',
+      'timeline.phase5.desc': 'Publicação, monitoramento pós-lançamento e melhorias contínuas.',
+      'timeline.phase5.list1': 'Checklist de release',
+      'timeline.phase5.list2': '1–3 sprints de melhorias',
+      'footer.rights': 'Todos os direitos reservados.',
+      'common.from': '(desde)',
+      'service.visual.desc': 'Serviço fotográfico profissional adaptado à sua marca. Conteúdo visual coerente para redes, catálogos e campanhas.',
+      'service.creative.desc': 'Direção de arte e produção integral: conceito, styling, equipe e locações para material que potencialize sua marca.',
+      'service.coaching.desc': 'Acompanhamento e formação para que você mantenha uma comunicação visual profissional e consistente.',
+      'service.campaigns.desc': 'Campanhas criativas orientadas a conversão e posicionamento em mídias digitais e redes.',
+      'service.social.desc': 'Estratégia, calendário e design de conteúdos para crescer e medir resultados em redes sociais.',
+      'service.identity.desc': 'Design e desenvolvimento de identidade visual: sistema de marca, diretrizes e aplicações-chave.',
+      'service.digital.desc': 'Design web e de interfaces focado em usabilidade, estética e coerência com sua marca.',
+      'service.button.moreinfo': 'Mais info',
+      'contact.form.service.placeholder': 'Escolha uma opção',
+      'contact.form.service.option1': 'Branding',
+      'contact.form.service.option2': 'Web design',
+      'contact.form.service.option3': 'Brand content',
+      'contact.form.service.option4': 'Assessoria',
+      'contact.form.budget.option1': 'Prefiro não dizer',
+      'contact.form.budget.option2': 'Até USD 500',
+      'contact.form.budget.option3': 'USD 500 – 1500',
+      'contact.form.budget.option4': 'USD 1500 – 3000',
+      'contact.form.budget.option5': '+ USD 3000'
     }
   };
 
@@ -1908,16 +2110,12 @@ window.addEventListener('load', function() {
     document.querySelectorAll('.lang-current').forEach(el => {
       el.textContent = displayLang;
     });
-    
-    // Para el botón móvil que muestra ambos idiomas
-    const altLang = lang === 'es' ? 'EN' : 'ES';
-    document.querySelectorAll('.lang-alt').forEach(el => {
-      el.textContent = altLang;
-    });
   }
 
   function toggleLanguage() {
-    const newLang = currentLang === 'es' ? 'en' : 'es';
+    const langs = ['es', 'en', 'pt'];
+    const currentIndex = langs.indexOf(currentLang);
+    const newLang = langs[(currentIndex + 1) % langs.length];
     translatePage(newLang);
   }
 

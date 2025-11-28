@@ -139,6 +139,33 @@
             color: var(--color-white);
         }
 
+        .lang-toggle {
+            background: transparent;
+            border: 1.5px solid currentColor;
+            border-radius: 20px;
+            padding: 6px 14px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--color-white);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .lang-toggle:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .lang-current {
+            font-weight: 900;
+        }
+
+        .lang-alt {
+            opacity: 0.6;
+        }
+
         .rates-badge {
             display: inline-flex;
             align-items: center;
@@ -641,278 +668,282 @@
         <div class="header-content">
             <a href="index.html" class="logo">STUDIO NOLA</a>
             <nav class="nav-items">
-                <a href="index.html" class="nav-link">Inicio</a>
+                <a href="index.html" class="nav-link" data-i18n="store.nav.home">Inicio</a>
                 <select class="currency-selector" aria-label="Seleccionar moneda">
                     <!-- Opciones cargadas por JS -->
                 </select>
                 <span class="rates-badge" id="rates-status" style="display: none;">
                     <span class="rates-badge-icon">🟢</span>
-                    <span>Tasas actualizadas</span>
+                    <span data-i18n="store.rates.updated">Tasas actualizadas</span>
                 </span>
+                <button class="lang-toggle" id="langToggle" aria-label="Change language">
+                    <span class="globe-icon">🌐</span>
+                    <span class="lang-current" id="langText">ES</span>
+                </button>
             </nav>
         </div>
     </header>
 
     <!-- Hero Section -->
     <section class="hero-section">
-        <h1 class="hero-title">Planes y Servicios</h1>
-        <p class="hero-subtitle">Soluciones profesionales diseñadas para emprendedores y empresas que buscan destacar</p>
+        <h1 class="hero-title" data-i18n="store.hero.title">Planes y Servicios</h1>
+        <p class="hero-subtitle" data-i18n="store.hero.subtitle">Soluciones profesionales diseñadas para emprendedores y empresas que buscan destacar</p>
     </section>
 
     <!-- Plans Container -->
     <div class="plans-container">
         
         <!-- Sección Diseño Web -->
-        <h2 style="font-family: var(--font-title); font-size: clamp(32px, 5vw, 48px); text-align: center; margin-bottom: 2rem; color: #00d4ff; text-transform: uppercase; letter-spacing: 2px; font-weight: 300;">Diseño Web</h2>
+        <h2 style="font-family: var(--font-title); font-size: clamp(32px, 5vw, 48px); text-align: center; margin-bottom: 2rem; color: #00d4ff; text-transform: uppercase; letter-spacing: 2px; font-weight: 300;" data-i18n="store.section.web">Diseño Web</h2>
         
         <div class="plans-grid">
             
             <!-- Web 1: Simple -->
             <article class="plan-card">
-                <span class="plan-badge">Simple</span>
-                <h2 class="plan-name">Diseño Web Simple</h2>
-                <p class="plan-description">Landing de 1–3 secciones. Ideal para presencia rápida y clara.</p>
+                <span class="plan-badge" data-i18n="store.badge.simple">Simple</span>
+                <h2 class="plan-name" data-i18n="store.web.simple.name">Diseño Web Simple</h2>
+                <p class="plan-description" data-i18n="store.web.simple.desc">Landing de 1–3 secciones. Ideal para presencia rápida y clara.</p>
                 
                 <div class="plan-price"><span data-plan="web-simple">USD 280</span></div>
-                <p class="plan-period">Pago único • 7-10 días</p>
+                <p class="plan-period" data-i18n="store.web.simple.period">Pago único • 7-10 días</p>
                 
                 <ul class="plan-features">
-                    <li>Diseño responsive</li>
-                    <li>Hasta 3 secciones (Hero, Servicios, Contacto)</li>
-                    <li>Optimización básica SEO</li>
-                    <li>Integración WhatsApp / Email</li>
-                    <li>1 ronda de ajustes incluida</li>
+                    <li data-i18n="store.web.simple.f1">Diseño responsive</li>
+                    <li data-i18n="store.web.simple.f2">Hasta 3 secciones (Hero, Servicios, Contacto)</li>
+                    <li data-i18n="store.web.simple.f3">Optimización básica SEO</li>
+                    <li data-i18n="store.web.simple.f4">Integración WhatsApp / Email</li>
+                    <li data-i18n="store.web.simple.f5">1 ronda de ajustes incluida</li>
                 </ul>
 
-                <a href="planes/web-simple.html" class="plan-cta">Ver detalles del plan</a>
+                <a href="planes/web-simple.html" class="plan-cta" data-i18n="store.plan.cta">Ver detalles del plan</a>
             </article>
 
             <!-- Web 2: Intermedio -->
             <article class="plan-card">
-                <span class="plan-badge popular">Recomendado</span>
-                <h2 class="plan-name">Diseño Web Intermedio</h2>
-                <p class="plan-description">Site de 4–6 secciones, más componentes y optimizaciones.</p>
+                <span class="plan-badge popular" data-i18n="store.badge.recommended">Recomendado</span>
+                <h2 class="plan-name" data-i18n="store.web.inter.name">Diseño Web Intermedio</h2>
+                <p class="plan-description" data-i18n="store.web.inter.desc">Site de 4–6 secciones, más componentes y optimizaciones.</p>
                 
                 <div class="plan-price"><span data-plan="web-intermedio">USD 480</span></div>
-                <p class="plan-period">Pago único • 2-3 semanas</p>
+                <p class="plan-period" data-i18n="store.web.inter.period">Pago único • 2-3 semanas</p>
                 
                 <ul class="plan-features">
-                    <li>Todo lo del plan Simple</li>
-                    <li>Hasta 6 secciones + Blog básico</li>
-                    <li>Animaciones suaves y microinteracciones</li>
-                    <li>Optimización performance (imágenes, lazyload)</li>
-                    <li>2 rondas de ajustes incluidas</li>
+                    <li data-i18n="store.web.inter.f1">Todo lo del plan Simple</li>
+                    <li data-i18n="store.web.inter.f2">Hasta 6 secciones + Blog básico</li>
+                    <li data-i18n="store.web.inter.f3">Animaciones suaves y microinteracciones</li>
+                    <li data-i18n="store.web.inter.f4">Optimización performance (imágenes, lazyload)</li>
+                    <li data-i18n="store.web.inter.f5">2 rondas de ajustes incluidas</li>
                 </ul>
 
-                <a href="planes/web-intermedio.html" class="plan-cta">Ver detalles del plan</a>
+                <a href="planes/web-intermedio.html" class="plan-cta" data-i18n="store.plan.cta">Ver detalles del plan</a>
             </article>
 
             <!-- Web 3: Avanzado -->
             <article class="plan-card">
-                <span class="plan-badge">Avanzado</span>
-                <h2 class="plan-name">Diseño Web Avanzado</h2>
-                <p class="plan-description">Sitio con funcionalidades personalizadas y CMS.</p>
+                <span class="plan-badge" data-i18n="store.badge.advanced">Avanzado</span>
+                <h2 class="plan-name" data-i18n="store.web.adv.name">Diseño Web Avanzado</h2>
+                <p class="plan-description" data-i18n="store.web.adv.desc">Sitio con funcionalidades personalizadas y CMS.</p>
                 
                 <div class="plan-price"><span data-plan="web-avanzado">USD 1,250</span></div>
-                <p class="plan-period">Pago único • Desde 4 semanas</p>
+                <p class="plan-period" data-i18n="store.web.adv.period">Pago único • Desde 4 semanas</p>
                 
                 <ul class="plan-features">
-                    <li>Todo lo del plan Intermedio</li>
-                    <li>CMS (WordPress/Headless) o panel a medida</li>
-                    <li>Secciones dinámicas, formularios avanzados</li>
-                    <li>Integraciones a terceros (APIs, pagos, etc.)</li>
-                    <li>3 rondas de ajustes incluidas</li>
+                    <li data-i18n="store.web.adv.f1">Todo lo del plan Intermedio</li>
+                    <li data-i18n="store.web.adv.f2">CMS (WordPress/Headless) o panel a medida</li>
+                    <li data-i18n="store.web.adv.f3">Secciones dinámicas, formularios avanzados</li>
+                    <li data-i18n="store.web.adv.f4">Integraciones a terceros (APIs, pagos, etc.)</li>
+                    <li data-i18n="store.web.adv.f5">3 rondas de ajustes incluidas</li>
                 </ul>
 
-                <a href="planes/web-avanzado.html" class="plan-cta">Ver detalles del plan</a>
+                <a href="planes/web-avanzado.html" class="plan-cta" data-i18n="store.plan.cta">Ver detalles del plan</a>
             </article>
         </div>
 
         <!-- Sección Branding -->
-        <h2 style="font-family: var(--font-title); font-size: clamp(32px, 5vw, 48px); text-align: center; margin: 4rem 0 2rem; color: #7c3aed; text-transform: uppercase; letter-spacing: 2px; font-weight: 300;">Branding</h2>
+        <h2 style="font-family: var(--font-title); font-size: clamp(32px, 5vw, 48px); text-align: center; margin: 4rem 0 2rem; color: #7c3aed; text-transform: uppercase; letter-spacing: 2px; font-weight: 300;" data-i18n="store.section.branding">Branding</h2>
         
         <div class="plans-grid">
             
             <!-- Branding 1: Esencial -->
             <article class="plan-card">
-                <span class="plan-badge">Kit Inicial</span>
-                <h2 class="plan-name">Branding Esencial</h2>
-                <p class="plan-description">Logo + paleta + tipografías + guía breve.</p>
+                <span class="plan-badge" data-i18n="store.badge.kit">Kit Inicial</span>
+                <h2 class="plan-name" data-i18n="store.brand.esen.name">Branding Esencial</h2>
+                <p class="plan-description" data-i18n="store.brand.esen.desc">Logo + paleta + tipografías + guía breve.</p>
                 
                 <div class="plan-price"><span data-plan="branding-esencial">USD 600</span></div>
-                <p class="plan-period">Pago único • 2-3 semanas</p>
+                <p class="plan-period" data-i18n="store.brand.esen.period">Pago único • 2-3 semanas</p>
                 
                 <ul class="plan-features">
-                    <li>2–3 propuestas de logo</li>
-                    <li>Guía rápida de uso</li>
-                    <li>Aplicaciones básicas (RRSS, favicon)</li>
-                    <li>Archivos en todos los formatos</li>
-                    <li>2 rondas de ajustes</li>
+                    <li data-i18n="store.brand.esen.f1">2–3 propuestas de logo</li>
+                    <li data-i18n="store.brand.esen.f2">Guía rápida de uso</li>
+                    <li data-i18n="store.brand.esen.f3">Aplicaciones básicas (RRSS, favicon)</li>
+                    <li data-i18n="store.brand.esen.f4">Archivos en todos los formatos</li>
+                    <li data-i18n="store.brand.esen.f5">2 rondas de ajustes</li>
                 </ul>
 
-                <a href="planes/branding-esencial.html" class="plan-cta">Ver detalles del plan</a>
+                <a href="planes/branding-esencial.html" class="plan-cta" data-i18n="store.plan.cta">Ver detalles del plan</a>
             </article>
 
             <!-- Branding 2: Identidad de Marca -->
             <article class="plan-card">
-                <span class="plan-badge popular">Pro</span>
-                <h2 class="plan-name">Identidad de Marca</h2>
-                <p class="plan-description">Sistema completo: logo, usos, lockups, tono y aplicaciones.</p>
+                <span class="plan-badge popular" data-i18n="store.badge.pro">Pro</span>
+                <h2 class="plan-name" data-i18n="store.brand.id.name">Identidad de Marca</h2>
+                <p class="plan-description" data-i18n="store.brand.id.desc">Sistema completo: logo, usos, lockups, tono y aplicaciones.</p>
                 
                 <div class="plan-price"><span data-plan="identidad-marca">USD 1,200</span></div>
-                <p class="plan-period">Pago único • 3-4 semanas</p>
+                <p class="plan-period" data-i18n="store.brand.id.period">Pago único • 3-4 semanas</p>
                 
                 <ul class="plan-features">
-                    <li>Manual de marca completo</li>
-                    <li>Kit de plantillas (RRSS, presentaciones)</li>
-                    <li>Mockups y archivos editables</li>
-                    <li>Sistema de iconos y elementos gráficos</li>
-                    <li>3 rondas de ajustes</li>
+                    <li data-i18n="store.brand.id.f1">Manual de marca completo</li>
+                    <li data-i18n="store.brand.id.f2">Kit de plantillas (RRSS, presentaciones)</li>
+                    <li data-i18n="store.brand.id.f3">Mockups y archivos editables</li>
+                    <li data-i18n="store.brand.id.f4">Sistema de iconos y elementos gráficos</li>
+                    <li data-i18n="store.brand.id.f5">3 rondas de ajustes</li>
                 </ul>
 
-                <a href="planes/identidad-marca.html" class="plan-cta">Ver detalles del plan</a>
+                <a href="planes/identidad-marca.html" class="plan-cta" data-i18n="store.plan.cta">Ver detalles del plan</a>
             </article>
 
             <!-- Branding 3: Rebranding -->
             <article class="plan-card">
-                <span class="plan-badge">Avanzado</span>
-                <h2 class="plan-name">Rebranding Estratégico</h2>
-                <p class="plan-description">Investigación, auditoría y evolución de marca 360°.</p>
+                <span class="plan-badge" data-i18n="store.badge.advanced">Avanzado</span>
+                <h2 class="plan-name" data-i18n="store.brand.rebr.name">Rebranding Estratégico</h2>
+                <p class="plan-description" data-i18n="store.brand.rebr.desc">Investigación, auditoría y evolución de marca 360°.</p>
                 
                 <div class="plan-price"><span data-plan="rebranding">USD 2,400</span></div>
-                <p class="plan-period">Pago único • 6-8 semanas</p>
+                <p class="plan-period" data-i18n="store.brand.rebr.period">Pago único • 6-8 semanas</p>
                 
                 <ul class="plan-features">
-                    <li>Research, benchmark y posicionamiento</li>
-                    <li>Arquitectura de marca</li>
-                    <li>Implementación multicanal</li>
-                    <li>Workshops con stakeholders</li>
-                    <li>Seguimiento post-lanzamiento</li>
+                    <li data-i18n="store.brand.rebr.f1">Research, benchmark y posicionamiento</li>
+                    <li data-i18n="store.brand.rebr.f2">Arquitectura de marca</li>
+                    <li data-i18n="store.brand.rebr.f3">Implementación multicanal</li>
+                    <li data-i18n="store.brand.rebr.f4">Workshops con stakeholders</li>
+                    <li data-i18n="store.brand.rebr.f5">Seguimiento post-lanzamiento</li>
                 </ul>
 
-                <a href="planes/rebranding.html" class="plan-cta">Ver detalles del plan</a>
+                <a href="planes/rebranding.html" class="plan-cta" data-i18n="store.plan.cta">Ver detalles del plan</a>
             </article>
         </div>
 
         <!-- Sección Marketing Digital -->
-        <h2 style="font-family: var(--font-title); font-size: clamp(32px, 5vw, 48px); text-align: center; margin: 4rem 0 2rem; color: #10b981; text-transform: uppercase; letter-spacing: 2px; font-weight: 300;">Marketing Digital</h2>
+        <h2 style="font-family: var(--font-title); font-size: clamp(32px, 5vw, 48px); text-align: center; margin: 4rem 0 2rem; color: #10b981; text-transform: uppercase; letter-spacing: 2px; font-weight: 300;" data-i18n="store.section.marketing">Marketing Digital</h2>
         
         <div class="plans-grid">
             
             <!-- Marketing 1: Gestión RRSS -->
             <article class="plan-card">
-                <span class="plan-badge">Starter</span>
-                <h2 class="plan-name">Gestión de RRSS</h2>
-                <p class="plan-description">Calendario, redacción y diseño de posts mensuales.</p>
+                <span class="plan-badge" data-i18n="store.badge.starter">Starter</span>
+                <h2 class="plan-name" data-i18n="store.mkt.rrss.name">Gestión de RRSS</h2>
+                <p class="plan-description" data-i18n="store.mkt.rrss.desc">Calendario, redacción y diseño de posts mensuales.</p>
                 
                 <div class="plan-price"><span data-plan="gestion-rrss">USD 350</span></div>
-                <p class="plan-period">Por mes</p>
+                <p class="plan-period" data-i18n="store.mkt.rrss.period">Por mes</p>
                 
                 <ul class="plan-features">
-                    <li>8–12 piezas/mes</li>
-                    <li>Copys y hashtags</li>
-                    <li>Métricas básicas</li>
-                    <li>Reunión de kick-off</li>
-                    <li>Tablero compartido</li>
+                    <li data-i18n="store.mkt.rrss.f1">8–12 piezas/mes</li>
+                    <li data-i18n="store.mkt.rrss.f2">Copys y hashtags</li>
+                    <li data-i18n="store.mkt.rrss.f3">Métricas básicas</li>
+                    <li data-i18n="store.mkt.rrss.f4">Reunión de kick-off</li>
+                    <li data-i18n="store.mkt.rrss.f5">Tablero compartido</li>
                 </ul>
 
-                <a href="planes/gestion-rrss.html" class="plan-cta">Ver detalles del plan</a>
+                <a href="planes/gestion-rrss.html" class="plan-cta" data-i18n="store.plan.cta">Ver detalles del plan</a>
             </article>
 
             <!-- Marketing 2: Campañas Ads -->
             <article class="plan-card">
-                <span class="plan-badge popular">Performance</span>
-                <h2 class="plan-name">Campañas Ads</h2>
-                <p class="plan-description">Set up, optimización y reportes en Meta/Google.</p>
+                <span class="plan-badge popular" data-i18n="store.badge.performance">Performance</span>
+                <h2 class="plan-name" data-i18n="store.mkt.ads.name">Campañas Ads</h2>
+                <p class="plan-description" data-i18n="store.mkt.ads.desc">Set up, optimización y reportes en Meta/Google.</p>
                 
                 <div class="plan-price"><span data-plan="campanas-ads">USD 500</span></div>
-                <p class="plan-period">Por mes</p>
+                <p class="plan-period" data-i18n="store.mkt.ads.period">Por mes</p>
                 
                 <ul class="plan-features">
-                    <li>Configuración de campañas</li>
-                    <li>Segmentación de audiencias</li>
-                    <li>Optimización continua</li>
-                    <li>Reportes semanales</li>
-                    <li>Meta Ads + Google Ads</li>
+                    <li data-i18n="store.mkt.ads.f1">Configuración de campañas</li>
+                    <li data-i18n="store.mkt.ads.f2">Segmentación de audiencias</li>
+                    <li data-i18n="store.mkt.ads.f3">Optimización continua</li>
+                    <li data-i18n="store.mkt.ads.f4">Reportes semanales</li>
+                    <li data-i18n="store.mkt.ads.f5">Meta Ads + Google Ads</li>
                 </ul>
 
-                <a href="planes/campanas-ads.html" class="plan-cta">Ver detalles del plan</a>
+                <a href="planes/campanas-ads.html" class="plan-cta" data-i18n="store.plan.cta">Ver detalles del plan</a>
             </article>
 
             <!-- Marketing 3: Estrategia Completa -->
             <article class="plan-card">
-                <span class="plan-badge">Completo</span>
-                <h2 class="plan-name">Estrategia Digital Completa</h2>
-                <p class="plan-description">RRSS + Ads + contenido + análisis integral.</p>
+                <span class="plan-badge" data-i18n="store.badge.complete">Completo</span>
+                <h2 class="plan-name" data-i18n="store.mkt.full.name">Estrategia Digital Completa</h2>
+                <p class="plan-description" data-i18n="store.mkt.full.desc">RRSS + Ads + contenido + análisis integral.</p>
                 
                 <div class="plan-price"><span data-plan="estrategia-completa">USD 800</span></div>
-                <p class="plan-period">Por mes</p>
+                <p class="plan-period" data-i18n="store.mkt.full.period">Por mes</p>
                 
                 <ul class="plan-features">
-                    <li>Todo lo de Gestión RRSS + Ads</li>
-                    <li>Estrategia de contenido</li>
-                    <li>Email marketing</li>
-                    <li>Análisis de competencia</li>
-                    <li>Reuniones estratégicas quincenales</li>
+                    <li data-i18n="store.mkt.full.f1">Todo lo de Gestión RRSS + Ads</li>
+                    <li data-i18n="store.mkt.full.f2">Estrategia de contenido</li>
+                    <li data-i18n="store.mkt.full.f3">Email marketing</li>
+                    <li data-i18n="store.mkt.full.f4">Análisis de competencia</li>
+                    <li data-i18n="store.mkt.full.f5">Reuniones estratégicas quincenales</li>
                 </ul>
 
-                <a href="planes/estrategia-completa.html" class="plan-cta">Ver detalles del plan</a>
+                <a href="planes/estrategia-completa.html" class="plan-cta" data-i18n="store.plan.cta">Ver detalles del plan</a>
             </article>
 
         </div>
 
         <!-- Custom Plans Section -->
         <section class="custom-section">
-            <h2 class="custom-title">¿Necesitas algo diferente?</h2>
-            <p class="custom-description">
+            <h2 class="custom-title" data-i18n="store.custom.title">¿Necesitas algo diferente?</h2>
+            <p class="custom-description" data-i18n="store.custom.desc">
                 Cada proyecto es único. Si ninguno de estos planes se ajusta exactamente a lo que buscas, 
                 podemos crear una propuesta personalizada adaptada a tus necesidades específicas y presupuesto.
             </p>
-            <a href="https://wa.me/5491166882508?text=Hola!%20Necesito%20una%20cotización%20personalizada" target="_blank" rel="noopener noreferrer" class="custom-cta">
+            <a href="https://wa.me/5491166882508?text=Hola!%20Necesito%20una%20cotización%20personalizada" target="_blank" rel="noopener noreferrer" class="custom-cta" data-i18n="store.custom.cta">
                 Solicitar Cotización Personalizada
             </a>
         </section>
 
         <!-- FAQ Section -->
         <section class="faq-section">
-            <h2 class="faq-title">Preguntas Frecuentes</h2>
+            <h2 class="faq-title" data-i18n="store.faq.title">Preguntas Frecuentes</h2>
             
             <div class="faq-item">
-                <h3 class="faq-question">¿Cómo son los métodos de pago?</h3>
-                <p class="faq-answer">Aceptamos transferencia bancaria, MercadoPago y efectivo. Para proyectos grandes ofrecemos planes de pago: 50% al inicio, 50% a la entrega final.</p>
+                <h3 class="faq-question" data-i18n="store.faq.q1">¿Cómo son los métodos de pago?</h3>
+                <p class="faq-answer" data-i18n="store.faq.a1">Aceptamos transferencia bancaria, MercadoPago y efectivo. Para proyectos grandes ofrecemos planes de pago: 50% al inicio, 50% a la entrega final.</p>
             </div>
 
             <div class="faq-item">
-                <h3 class="faq-question">¿Cuánto tiempo toma cada proyecto?</h3>
-                <p class="faq-answer">Los tiempos varían según el plan elegido. Branding básico: 2 semanas. Web one page: 3 semanas. Proyectos completos: 8-12 semanas. Los plazos detallados están en cada plan.</p>
+                <h3 class="faq-question" data-i18n="store.faq.q2">¿Cuánto tiempo toma cada proyecto?</h3>
+                <p class="faq-answer" data-i18n="store.faq.a2">Los tiempos varían según el plan elegido. Branding básico: 2 semanas. Web one page: 3 semanas. Proyectos completos: 8-12 semanas. Los plazos detallados están en cada plan.</p>
             </div>
 
             <div class="faq-item">
-                <h3 class="faq-question">¿Qué pasa si necesito más revisiones?</h3>
-                <p class="faq-answer">Cada plan incluye un número específico de revisiones. Si necesitas más, tienen un costo adicional de $15.000-$25.000 por ronda, dependiendo de la complejidad.</p>
+                <h3 class="faq-question" data-i18n="store.faq.q3">¿Qué pasa si necesito más revisiones?</h3>
+                <p class="faq-answer" data-i18n="store.faq.a3">Cada plan incluye un número específico de revisiones. Si necesitas más, tienen un costo adicional de $15.000-$25.000 por ronda, dependiendo de la complejidad.</p>
             </div>
 
             <div class="faq-item">
-                <h3 class="faq-question">¿Ofrecen mantenimiento web después del lanzamiento?</h3>
-                <p class="faq-answer">Sí, ofrecemos planes de mantenimiento desde $30.000/mes que incluyen actualizaciones de contenido, backups, seguridad y soporte técnico.</p>
+                <h3 class="faq-question" data-i18n="store.faq.q4">¿Ofrecen mantenimiento web después del lanzamiento?</h3>
+                <p class="faq-answer" data-i18n="store.faq.a4">Sí, ofrecemos planes de mantenimiento desde $30.000/mes que incluyen actualizaciones de contenido, backups, seguridad y soporte técnico.</p>
             </div>
 
             <div class="faq-item">
-                <h3 class="faq-question">¿Los precios incluyen impuestos?</h3>
-                <p class="faq-answer">Los precios mostrados son finales para monotributistas y consumidores finales. Para empresas se aplican los impuestos correspondientes según facturación.</p>
+                <h3 class="faq-question" data-i18n="store.faq.q5">¿Los precios incluyen impuestos?</h3>
+                <p class="faq-answer" data-i18n="store.faq.a5">Los precios mostrados son finales para monotributistas y consumidores finales. Para empresas se aplican los impuestos correspondientes según facturación.</p>
             </div>
 
             <div class="faq-item">
-                <h3 class="faq-question">¿Puedo combinar servicios de diferentes planes?</h3>
-                <p class="faq-answer">¡Por supuesto! Podemos armar un paquete personalizado combinando servicios de diferentes planes según tus necesidades. Contáctanos para una cotización a medida.</p>
+                <h3 class="faq-question" data-i18n="store.faq.q6">¿Puedo combinar servicios de diferentes planes?</h3>
+                <p class="faq-answer" data-i18n="store.faq.a6">¡Por supuesto! Podemos armar un paquete personalizado combinando servicios de diferentes planes según tus necesidades. Contáctanos para una cotización a medida.</p>
             </div>
         </section>
     </div>
 
     <!-- Footer -->
     <footer class="footer">
-        <p>&copy; 2025 Studio Nola Atelier. Todos los derechos reservados.</p>
-        <p style="margin-top: 0.5rem; font-size: 12px;">Diseño web, branding y marketing digital en Argentina</p>
+        <p data-i18n="store.footer.rights">&copy; 2025 Studio Nola Atelier. Todos los derechos reservados.</p>
+        <p style="margin-top: 0.5rem; font-size: 12px;" data-i18n="store.footer.tagline">Diseño web, branding y marketing digital en Argentina</p>
     </footer>
 
     <script>
@@ -955,6 +986,388 @@
                 }
             }, 1000);
         });
+    </script>
+
+    <!-- Translation System -->
+    <script>
+    (function() {
+      const translations = {
+        es: {
+          'store.nav.home': 'Inicio',
+          'store.rates.updated': 'Tasas actualizadas',
+          'store.hero.title': 'Planes y Servicios',
+          'store.hero.subtitle': 'Soluciones profesionales diseñadas para emprendedores y empresas que buscan destacar',
+          'store.section.web': 'Diseño Web',
+          'store.section.branding': 'Branding',
+          'store.section.marketing': 'Marketing Digital',
+          // Badges
+          'store.badge.simple': 'Simple',
+          'store.badge.recommended': 'Recomendado',
+          'store.badge.advanced': 'Avanzado',
+          'store.badge.starter': 'Starter',
+          'store.badge.kit': 'Kit Inicial',
+          'store.badge.pro': 'Pro',
+          'store.badge.performance': 'Performance',
+          'store.badge.complete': 'Completo',
+          // Web Design Plans
+          'store.web.simple.name': 'Diseño Web Simple',
+          'store.web.simple.desc': 'Landing de 1–3 secciones. Ideal para presencia rápida y clara.',
+          'store.web.simple.period': 'Pago único • 7-10 días',
+          'store.web.simple.f1': 'Diseño responsive',
+          'store.web.simple.f2': 'Hasta 3 secciones (Hero, Servicios, Contacto)',
+          'store.web.simple.f3': 'Optimización básica SEO',
+          'store.web.simple.f4': 'Integración WhatsApp / Email',
+          'store.web.simple.f5': '1 ronda de ajustes incluida',
+          'store.web.inter.name': 'Diseño Web Intermedio',
+          'store.web.inter.desc': 'Site de 4–6 secciones, más componentes y optimizaciones.',
+          'store.web.inter.period': 'Pago único • 2-3 semanas',
+          'store.web.inter.f1': 'Todo lo del plan Simple',
+          'store.web.inter.f2': 'Hasta 6 secciones + Blog básico',
+          'store.web.inter.f3': 'Animaciones suaves y microinteracciones',
+          'store.web.inter.f4': 'Optimización performance (imágenes, lazyload)',
+          'store.web.inter.f5': '2 rondas de ajustes incluidas',
+          'store.web.adv.name': 'Diseño Web Avanzado',
+          'store.web.adv.desc': 'Sitio con funcionalidades personalizadas y CMS.',
+          'store.web.adv.period': 'Pago único • Desde 4 semanas',
+          'store.web.adv.f1': 'Todo lo del plan Intermedio',
+          'store.web.adv.f2': 'CMS (WordPress/Headless) o panel a medida',
+          'store.web.adv.f3': 'Secciones dinámicas, formularios avanzados',
+          'store.web.adv.f4': 'Integraciones a terceros (APIs, pagos, etc.)',
+          'store.web.adv.f5': '3 rondas de ajustes incluidas',
+          // Branding Plans
+          'store.brand.esen.name': 'Branding Esencial',
+          'store.brand.esen.desc': 'Logo + paleta + tipografías + guía breve.',
+          'store.brand.esen.period': 'Pago único • 2-3 semanas',
+          'store.brand.esen.f1': '2–3 propuestas de logo',
+          'store.brand.esen.f2': 'Guía rápida de uso',
+          'store.brand.esen.f3': 'Aplicaciones básicas (RRSS, favicon)',
+          'store.brand.esen.f4': 'Archivos en todos los formatos',
+          'store.brand.esen.f5': '2 rondas de ajustes',
+          'store.brand.id.name': 'Identidad de Marca',
+          'store.brand.id.desc': 'Sistema completo: logo, usos, lockups, tono y aplicaciones.',
+          'store.brand.id.period': 'Pago único • 3-4 semanas',
+          'store.brand.id.f1': 'Manual de marca completo',
+          'store.brand.id.f2': 'Kit de plantillas (RRSS, presentaciones)',
+          'store.brand.id.f3': 'Mockups y archivos editables',
+          'store.brand.id.f4': 'Sistema de iconos y elementos gráficos',
+          'store.brand.id.f5': '3 rondas de ajustes',
+          'store.brand.rebr.name': 'Rebranding Estratégico',
+          'store.brand.rebr.desc': 'Investigación, auditoría y evolución de marca 360°.',
+          'store.brand.rebr.period': 'Pago único • 6-8 semanas',
+          'store.brand.rebr.f1': 'Research, benchmark y posicionamiento',
+          'store.brand.rebr.f2': 'Arquitectura de marca',
+          'store.brand.rebr.f3': 'Implementación multicanal',
+          'store.brand.rebr.f4': 'Workshops con stakeholders',
+          'store.brand.rebr.f5': 'Seguimiento post-lanzamiento',
+          // Marketing Plans
+          'store.mkt.rrss.name': 'Gestión de RRSS',
+          'store.mkt.rrss.desc': 'Calendario, redacción y diseño de posts mensuales.',
+          'store.mkt.rrss.period': 'Por mes',
+          'store.mkt.rrss.f1': '8–12 piezas/mes',
+          'store.mkt.rrss.f2': 'Copys y hashtags',
+          'store.mkt.rrss.f3': 'Métricas básicas',
+          'store.mkt.rrss.f4': 'Reunión de kick-off',
+          'store.mkt.rrss.f5': 'Tablero compartido',
+          'store.mkt.ads.name': 'Campañas Ads',
+          'store.mkt.ads.desc': 'Set up, optimización y reportes en Meta/Google.',
+          'store.mkt.ads.period': 'Por mes',
+          'store.mkt.ads.f1': 'Configuración de campañas',
+          'store.mkt.ads.f2': 'Segmentación de audiencias',
+          'store.mkt.ads.f3': 'Optimización continua',
+          'store.mkt.ads.f4': 'Reportes semanales',
+          'store.mkt.ads.f5': 'Meta Ads + Google Ads',
+          'store.mkt.full.name': 'Estrategia Digital Completa',
+          'store.mkt.full.desc': 'RRSS + Ads + contenido + análisis integral.',
+          'store.mkt.full.period': 'Por mes',
+          'store.mkt.full.f1': 'Todo lo de Gestión RRSS + Ads',
+          'store.mkt.full.f2': 'Estrategia de contenido',
+          'store.mkt.full.f3': 'Email marketing',
+          'store.mkt.full.f4': 'Análisis de competencia',
+          'store.mkt.full.f5': 'Reuniones estratégicas quincenales',
+          // General
+          'store.plan.cta': 'Ver detalles del plan',
+          'store.custom.title': '¿Necesitas algo diferente?',
+          'store.custom.desc': 'Cada proyecto es único. Si ninguno de estos planes se ajusta exactamente a lo que buscas, podemos crear una propuesta personalizada adaptada a tus necesidades específicas y presupuesto.',
+          'store.custom.cta': 'Solicitar Cotización Personalizada',
+          'store.faq.title': 'Preguntas Frecuentes',
+          'store.faq.q1': '¿Cómo son los métodos de pago?',
+          'store.faq.a1': 'Aceptamos transferencia bancaria, MercadoPago y efectivo. Para proyectos grandes ofrecemos planes de pago: 50% al inicio, 50% a la entrega final.',
+          'store.faq.q2': '¿Cuánto tiempo toma cada proyecto?',
+          'store.faq.a2': 'Los tiempos varían según el plan elegido. Branding básico: 2 semanas. Web one page: 3 semanas. Proyectos completos: 8-12 semanas. Los plazos detallados están en cada plan.',
+          'store.faq.q3': '¿Qué pasa si necesito más revisiones?',
+          'store.faq.a3': 'Cada plan incluye un número específico de revisiones. Si necesitas más, tienen un costo adicional de $15.000-$25.000 por ronda, dependiendo de la complejidad.',
+          'store.faq.q4': '¿Ofrecen mantenimiento web después del lanzamiento?',
+          'store.faq.a4': 'Sí, ofrecemos planes de mantenimiento desde $30.000/mes que incluyen actualizaciones de contenido, backups, seguridad y soporte técnico.',
+          'store.faq.q5': '¿Los precios incluyen impuestos?',
+          'store.faq.a5': 'Los precios mostrados son finales para monotributistas y consumidores finales. Para empresas se aplican los impuestos correspondientes según facturación.',
+          'store.faq.q6': '¿Puedo combinar servicios de diferentes planes?',
+          'store.faq.a6': '¡Por supuesto! Podemos armar un paquete personalizado combinando servicios de diferentes planes según tus necesidades. Contáctanos para una cotización a medida.',
+          'store.footer.rights': '© 2025 Studio Nola Atelier. Todos los derechos reservados.',
+          'store.footer.tagline': 'Diseño web, branding y marketing digital en Argentina'
+        },
+        en: {
+          'store.nav.home': 'Home',
+          'store.rates.updated': 'Rates updated',
+          'store.hero.title': 'Plans & Services',
+          'store.hero.subtitle': 'Professional solutions designed for entrepreneurs and businesses looking to stand out',
+          'store.section.web': 'Web Design',
+          'store.section.branding': 'Branding',
+          'store.section.marketing': 'Digital Marketing',
+          // Badges
+          'store.badge.simple': 'Simple',
+          'store.badge.recommended': 'Recommended',
+          'store.badge.advanced': 'Advanced',
+          'store.badge.starter': 'Starter',
+          'store.badge.kit': 'Starter Kit',
+          'store.badge.pro': 'Pro',
+          'store.badge.performance': 'Performance',
+          'store.badge.complete': 'Complete',
+          // Web Design Plans
+          'store.web.simple.name': 'Simple Web Design',
+          'store.web.simple.desc': '1–3 section landing. Ideal for quick and clear presence.',
+          'store.web.simple.period': 'One-time payment • 7-10 days',
+          'store.web.simple.f1': 'Responsive design',
+          'store.web.simple.f2': 'Up to 3 sections (Hero, Services, Contact)',
+          'store.web.simple.f3': 'Basic SEO optimization',
+          'store.web.simple.f4': 'WhatsApp / Email integration',
+          'store.web.simple.f5': '1 round of adjustments included',
+          'store.web.inter.name': 'Intermediate Web Design',
+          'store.web.inter.desc': '4–6 section site, more components and optimizations.',
+          'store.web.inter.period': 'One-time payment • 2-3 weeks',
+          'store.web.inter.f1': 'Everything from Simple plan',
+          'store.web.inter.f2': 'Up to 6 sections + Basic blog',
+          'store.web.inter.f3': 'Smooth animations and micro-interactions',
+          'store.web.inter.f4': 'Performance optimization (images, lazyload)',
+          'store.web.inter.f5': '2 rounds of adjustments included',
+          'store.web.adv.name': 'Advanced Web Design',
+          'store.web.adv.desc': 'Website with custom features and CMS.',
+          'store.web.adv.period': 'One-time payment • From 4 weeks',
+          'store.web.adv.f1': 'Everything from Intermediate plan',
+          'store.web.adv.f2': 'CMS (WordPress/Headless) or custom panel',
+          'store.web.adv.f3': 'Dynamic sections, advanced forms',
+          'store.web.adv.f4': 'Third-party integrations (APIs, payments, etc.)',
+          'store.web.adv.f5': '3 rounds of adjustments included',
+          // Branding Plans
+          'store.brand.esen.name': 'Essential Branding',
+          'store.brand.esen.desc': 'Logo + palette + typography + brief guide.',
+          'store.brand.esen.period': 'One-time payment • 2-3 weeks',
+          'store.brand.esen.f1': '2–3 logo proposals',
+          'store.brand.esen.f2': 'Quick usage guide',
+          'store.brand.esen.f3': 'Basic applications (Social media, favicon)',
+          'store.brand.esen.f4': 'Files in all formats',
+          'store.brand.esen.f5': '2 rounds of adjustments',
+          'store.brand.id.name': 'Brand Identity',
+          'store.brand.id.desc': 'Complete system: logo, usage, lockups, tone and applications.',
+          'store.brand.id.period': 'One-time payment • 3-4 weeks',
+          'store.brand.id.f1': 'Complete brand manual',
+          'store.brand.id.f2': 'Template kit (Social media, presentations)',
+          'store.brand.id.f3': 'Mockups and editable files',
+          'store.brand.id.f4': 'Icon system and graphic elements',
+          'store.brand.id.f5': '3 rounds of adjustments',
+          'store.brand.rebr.name': 'Strategic Rebranding',
+          'store.brand.rebr.desc': 'Research, audit and 360° brand evolution.',
+          'store.brand.rebr.period': 'One-time payment • 6-8 weeks',
+          'store.brand.rebr.f1': 'Research, benchmark and positioning',
+          'store.brand.rebr.f2': 'Brand architecture',
+          'store.brand.rebr.f3': 'Multi-channel implementation',
+          'store.brand.rebr.f4': 'Workshops with stakeholders',
+          'store.brand.rebr.f5': 'Post-launch follow-up',
+          // Marketing Plans
+          'store.mkt.rrss.name': 'Social Media Management',
+          'store.mkt.rrss.desc': 'Calendar, writing and monthly post design.',
+          'store.mkt.rrss.period': 'Per month',
+          'store.mkt.rrss.f1': '8–12 pieces/month',
+          'store.mkt.rrss.f2': 'Copy and hashtags',
+          'store.mkt.rrss.f3': 'Basic metrics',
+          'store.mkt.rrss.f4': 'Kick-off meeting',
+          'store.mkt.rrss.f5': 'Shared board',
+          'store.mkt.ads.name': 'Ad Campaigns',
+          'store.mkt.ads.desc': 'Setup, optimization and reporting on Meta/Google.',
+          'store.mkt.ads.period': 'Per month',
+          'store.mkt.ads.f1': 'Campaign configuration',
+          'store.mkt.ads.f2': 'Audience targeting',
+          'store.mkt.ads.f3': 'Continuous optimization',
+          'store.mkt.ads.f4': 'Weekly reports',
+          'store.mkt.ads.f5': 'Meta Ads + Google Ads',
+          'store.mkt.full.name': 'Complete Digital Strategy',
+          'store.mkt.full.desc': 'Social Media + Ads + content + comprehensive analysis.',
+          'store.mkt.full.period': 'Per month',
+          'store.mkt.full.f1': 'Everything from Social Media + Ads',
+          'store.mkt.full.f2': 'Content strategy',
+          'store.mkt.full.f3': 'Email marketing',
+          'store.mkt.full.f4': 'Competitive analysis',
+          'store.mkt.full.f5': 'Biweekly strategic meetings',
+          // General
+          'store.plan.cta': 'View plan details',
+          'store.custom.title': 'Need something different?',
+          'store.custom.desc': 'Every project is unique. If none of these plans fit exactly what you are looking for, we can create a custom proposal tailored to your specific needs and budget.',
+          'store.custom.cta': 'Request Custom Quote',
+          'store.faq.title': 'Frequently Asked Questions',
+          'store.faq.q1': 'What are the payment methods?',
+          'store.faq.a1': 'We accept bank transfer, MercadoPago and cash. For large projects we offer payment plans: 50% at the start, 50% at final delivery.',
+          'store.faq.q2': 'How long does each project take?',
+          'store.faq.a2': 'Times vary depending on the chosen plan. Basic branding: 2 weeks. One page web: 3 weeks. Complete projects: 8-12 weeks. Detailed timelines are in each plan.',
+          'store.faq.q3': 'What if I need more revisions?',
+          'store.faq.a3': 'Each plan includes a specific number of revisions. If you need more, they have an additional cost of $15,000-$25,000 per round, depending on complexity.',
+          'store.faq.q4': 'Do you offer web maintenance after launch?',
+          'store.faq.a4': 'Yes, we offer maintenance plans from $30,000/month that include content updates, backups, security and technical support.',
+          'store.faq.q5': 'Do prices include taxes?',
+          'store.faq.a5': 'Displayed prices are final for sole proprietors and end consumers. For companies, corresponding taxes apply according to billing.',
+          'store.faq.q6': 'Can I combine services from different plans?',
+          'store.faq.a6': 'Of course! We can create a custom package combining services from different plans according to your needs. Contact us for a tailored quote.',
+          'store.footer.rights': '© 2025 Studio Nola Atelier. All rights reserved.',
+          'store.footer.tagline': 'Web design, branding and digital marketing in Argentina'
+        },
+        pt: {
+          'store.nav.home': 'Início',
+          'store.rates.updated': 'Taxas atualizadas',
+          'store.hero.title': 'Planos e Serviços',
+          'store.hero.subtitle': 'Soluções profissionais projetadas para empreendedores e empresas que buscam se destacar',
+          'store.section.web': 'Design Web',
+          'store.section.branding': 'Branding',
+          'store.section.marketing': 'Marketing Digital',
+          'store.badge.simple': 'Simples',
+          'store.badge.recommended': 'Recomendado',
+          'store.badge.advanced': 'Avançado',
+          'store.badge.starter': 'Starter',
+          'store.badge.kit': 'Kit Inicial',
+          'store.badge.pro': 'Pro',
+          'store.badge.performance': 'Performance',
+          'store.badge.complete': 'Completo',
+          'store.web.simple.name': 'Design Web Simples',
+          'store.web.simple.desc': 'Landing de 1–3 seções. Ideal para presença rápida e clara.',
+          'store.web.simple.period': 'Pagamento único • 7-10 dias',
+          'store.web.simple.f1': 'Design responsivo',
+          'store.web.simple.f2': 'Até 3 seções (Hero, Serviços, Contato)',
+          'store.web.simple.f3': 'Otimização básica SEO',
+          'store.web.simple.f4': 'Integração WhatsApp / Email',
+          'store.web.simple.f5': '1 rodada de ajustes incluída',
+          'store.web.inter.name': 'Design Web Intermediário',
+          'store.web.inter.desc': 'Site de 4–6 seções, mais componentes e otimizações.',
+          'store.web.inter.period': 'Pagamento único • 2-3 semanas',
+          'store.web.inter.f1': 'Tudo do plano Simples',
+          'store.web.inter.f2': 'Até 6 seções + Blog básico',
+          'store.web.inter.f3': 'Animações suaves e micro-interações',
+          'store.web.inter.f4': 'Otimização de performance (imagens, lazyload)',
+          'store.web.inter.f5': '2 rodadas de ajustes incluídas',
+          'store.web.adv.name': 'Design Web Avançado',
+          'store.web.adv.desc': 'Site com funcionalidades personalizadas e CMS.',
+          'store.web.adv.period': 'Pagamento único • A partir de 4 semanas',
+          'store.web.adv.f1': 'Tudo do plano Intermediário',
+          'store.web.adv.f2': 'CMS (WordPress/Headless) ou painel personalizado',
+          'store.web.adv.f3': 'Seções dinâmicas, formulários avançados',
+          'store.web.adv.f4': 'Integrações com terceiros (APIs, pagamentos, etc.)',
+          'store.web.adv.f5': '3 rodadas de ajustes incluídas',
+          'store.brand.esen.name': 'Branding Essencial',
+          'store.brand.esen.desc': 'Logo + paleta + tipografias + guia breve.',
+          'store.brand.esen.period': 'Pagamento único • 2-3 semanas',
+          'store.brand.esen.f1': '2–3 propostas de logo',
+          'store.brand.esen.f2': 'Guia rápido de uso',
+          'store.brand.esen.f3': 'Aplicações básicas (redes sociais, favicon)',
+          'store.brand.esen.f4': 'Arquivos em todos os formatos',
+          'store.brand.esen.f5': '2 rodadas de ajustes',
+          'store.brand.id.name': 'Identidade de Marca',
+          'store.brand.id.desc': 'Sistema completo: logo, usos, lockups, tom e aplicações.',
+          'store.brand.id.period': 'Pagamento único • 3-4 semanas',
+          'store.brand.id.f1': 'Manual de marca completo',
+          'store.brand.id.f2': 'Kit de templates (redes sociais, apresentações)',
+          'store.brand.id.f3': 'Mockups e arquivos editáveis',
+          'store.brand.id.f4': 'Sistema de ícones e elementos gráficos',
+          'store.brand.id.f5': '3 rodadas de ajustes',
+          'store.brand.rebr.name': 'Rebranding Estratégico',
+          'store.brand.rebr.desc': 'Pesquisa, auditoria e evolução de marca 360°.',
+          'store.brand.rebr.period': 'Pagamento único • 6-8 semanas',
+          'store.brand.rebr.f1': 'Pesquisa, benchmark e posicionamento',
+          'store.brand.rebr.f2': 'Arquitetura de marca',
+          'store.brand.rebr.f3': 'Implementação multicanal',
+          'store.brand.rebr.f4': 'Workshops com stakeholders',
+          'store.brand.rebr.f5': 'Acompanhamento pós-lançamento',
+          'store.mkt.rrss.name': 'Gestão de Redes Sociais',
+          'store.mkt.rrss.desc': 'Calendário, redação e design de posts mensais.',
+          'store.mkt.rrss.period': 'Por mês',
+          'store.mkt.rrss.f1': '8–12 peças/mês',
+          'store.mkt.rrss.f2': 'Copys e hashtags',
+          'store.mkt.rrss.f3': 'Métricas básicas',
+          'store.mkt.rrss.f4': 'Reunião de kick-off',
+          'store.mkt.rrss.f5': 'Painel compartilhado',
+          'store.mkt.ads.name': 'Campanhas Ads',
+          'store.mkt.ads.desc': 'Configuração, otimização e relatórios no Meta/Google.',
+          'store.mkt.ads.period': 'Por mês',
+          'store.mkt.ads.f1': 'Configuração de campanhas',
+          'store.mkt.ads.f2': 'Segmentação de audiência',
+          'store.mkt.ads.f3': 'Otimização contínua',
+          'store.mkt.ads.f4': 'Relatórios semanais',
+          'store.mkt.ads.f5': 'Meta Ads + Google Ads',
+          'store.mkt.full.name': 'Estratégia Digital Completa',
+          'store.mkt.full.desc': 'Redes Sociais + Ads + conteúdo + análise abrangente.',
+          'store.mkt.full.period': 'Por mês',
+          'store.mkt.full.f1': 'Tudo de Redes Sociais + Ads',
+          'store.mkt.full.f2': 'Estratégia de conteúdo',
+          'store.mkt.full.f3': 'Email marketing',
+          'store.mkt.full.f4': 'Análise competitiva',
+          'store.mkt.full.f5': 'Reuniões estratégicas quinzenais',
+          'store.plan.cta': 'Ver detalhes do plano',
+          'store.custom.title': 'Precisa de algo diferente?',
+          'store.custom.desc': 'Cada projeto é único. Se nenhum desses planos se encaixa exatamente no que você procura, podemos criar uma proposta personalizada adaptada às suas necessidades e orçamento específicos.',
+          'store.custom.cta': 'Solicitar Orçamento Personalizado',
+          'store.faq.title': 'Perguntas Frequentes',
+          'store.faq.q1': 'Quais são as formas de pagamento?',
+          'store.faq.a1': 'Aceitamos transferência bancária, MercadoPago e dinheiro. Para projetos grandes oferecemos planos de pagamento: 50% no início, 50% na entrega final.',
+          'store.faq.q2': 'Quanto tempo leva cada projeto?',
+          'store.faq.a2': 'Os tempos variam dependendo do plano escolhido. Branding básico: 2 semanas. Web de uma página: 3 semanas. Projetos completos: 8-12 semanas. Os prazos detalhados estão em cada plano.',
+          'store.faq.q3': 'E se eu precisar de mais revisões?',
+          'store.faq.a3': 'Cada plano inclui um número específico de revisões. Se você precisar de mais, elas têm um custo adicional de $15.000-$25.000 por rodada, dependendo da complexidade.',
+          'store.faq.q4': 'Vocês oferecem manutenção web após o lançamento?',
+          'store.faq.a4': 'Sim, oferecemos planos de manutenção a partir de $30.000/mês que incluem atualizações de conteúdo, backups, segurança e suporte técnico.',
+          'store.faq.q5': 'Fornecem o código-fonte e os arquivos editáveis?',
+          'store.faq.a5': 'Sim! Ao final de cada projeto, você recebe todos os arquivos: código-fonte do site, arquivos Figma/Adobe, fontes e recursos. Você terá propriedade total de seu projeto.',
+          'store.faq.q6': 'Posso combinar serviços de diferentes planos?',
+          'store.faq.a6': 'Claro! Podemos criar um pacote personalizado combinando serviços de diferentes planos de acordo com suas necessidades. Entre em contato para um orçamento sob medida.',
+          'store.footer.rights': '© 2025 Studio Nola Atelier. Todos os direitos reservados.',
+          'store.footer.tagline': 'Web design, branding e marketing digital na Argentina'
+        }
+      };
+
+      let currentLang = localStorage.getItem('language') || 'es';
+
+      function translatePage(lang) {
+        currentLang = lang;
+        localStorage.setItem('language', lang);
+        
+        document.querySelectorAll('[data-i18n]').forEach(element => {
+          const key = element.getAttribute('data-i18n');
+          if (translations[lang] && translations[lang][key]) {
+            element.textContent = translations[lang][key];
+          }
+        });
+
+        document.documentElement.lang = lang;
+        updateLanguageButtons(lang);
+      }
+
+      function updateLanguageButtons(lang) {
+        const displayLang = lang.toUpperCase();
+        document.querySelectorAll('.lang-current, #langText').forEach(el => {
+          el.textContent = displayLang;
+        });
+      }
+
+      function toggleLanguage() {
+        const langs = ['es', 'en', 'pt'];
+        const currentIndex = langs.indexOf(currentLang);
+        const newLang = langs[(currentIndex + 1) % langs.length];
+        translatePage(newLang);
+      }
+
+      document.addEventListener('DOMContentLoaded', function() {
+        translatePage(currentLang);
+
+        const langToggle = document.getElementById('langToggle');
+        if (langToggle) {
+          langToggle.addEventListener('click', toggleLanguage);
+        }
+      });
+    })();
     </script>
 </body>
 </html>

@@ -11,115 +11,119 @@
 <body>
     <header class="header">
         <div class="header-content">
-            <a href="../tienda.html" class="back-link">← Volver a Tienda</a>
+            <a href="../tienda.html" class="back-link" data-i18n="nav.backToStore">← Volver a Tienda</a>
             <div style="display: flex; gap: 1.5rem; align-items: center;">
                 <select class="currency-selector" aria-label="Seleccionar moneda"></select>
-                <a href="../index.html" class="back-link">Inicio</a>
+                <button class="lang-toggle" id="langToggle">
+                    <span class="globe-icon">🌐</span>
+                    <span class="lang-text" id="langText">ES</span>
+                </button>
+                <a href="../index.html" class="back-link" data-i18n="nav.home">Inicio</a>
             </div>
         </div>
     </header>
 
     <div class="container">
         <div class="plan-header">
-            <span class="badge badge-branding">Branding</span>
-            <h1 class="plan-title">Branding Esencial</h1>
-            <p class="plan-subtitle">Identidad visual básica para empezar con el pie derecho. Logo profesional y elementos gráficos esenciales.</p>
+            <span class="badge badge-branding" data-i18n="badge.branding">Branding</span>
+            <h1 class="plan-title" data-i18n="plan.brandingEsencial.title">Branding Esencial</h1>
+            <p class="plan-subtitle" data-i18n="plan.brandingEsencial.subtitle">Identidad visual básica para empezar con el pie derecho. Logo profesional y elementos gráficos esenciales.</p>
         </div>
 
         <div class="price-box">
             <div class="price price-branding" data-plan="branding-esencial">$600 <span>USD</span></div>
-            <p class="price-note">Pago único • Entrega en 15-20 días hábiles</p>
+            <p class="price-note" data-i18n="pricing.brandingEsencial.paymentNote">Pago único • Entrega en 15-20 días hábiles</p>
         </div>
 
         <div class="highlight-banner banner-branding">
             <div class="highlight-icon">🎨</div>
             <div>
-                <div class="highlight-title">Construye tu identidad visual desde cero</div>
-                <div class="highlight-desc">Logo profesional y elementos básicos para lanzar tu marca</div>
+                <div class="highlight-title" data-i18n="plan.brandingEsencial.highlightTitle">Construye tu identidad visual desde cero</div>
+                <div class="highlight-desc" data-i18n="plan.brandingEsencial.highlightDesc">Logo profesional y elementos básicos para lanzar tu marca</div>
             </div>
         </div>
 
         <div class="content-grid">
             <div class="section">
-                <h2 class="section-title">¿Qué incluye?</h2>
+                <h2 class="section-title" data-i18n="sections.whatsIncluded">¿Qué incluye?</h2>
                 <ul class="features-list">
-                    <li><div><span class="feature-name">Diseño de Logo</span><span class="feature-desc">3 propuestas conceptuales para elegir</span></div></li>
-                    <li><div><span class="feature-name">Versiones de Logo</span><span class="feature-desc">Horizontal, vertical, isotipo, color y B/N</span></div></li>
-                    <li><div><span class="feature-name">Paleta de Colores</span><span class="feature-desc">Colores principales y secundarios con códigos</span></div></li>
-                    <li><div><span class="feature-name">Tipografía</span><span class="feature-desc">Fuentes principales para títulos y textos</span></div></li>
-                    <li><div><span class="feature-name">Manual de Marca Básico</span><span class="feature-desc">Guía de uso del logo y colores (PDF)</span></div></li>
-                    <li><div><span class="feature-name">Archivos Editables</span><span class="feature-desc">AI, EPS, PNG, SVG en alta resolución</span></div></li>
-                    <li><div><span class="feature-name">Mockups de Presentación</span><span class="feature-desc">Visualización en tarjetas, papelería, digital</span></div></li>
-                    <li><div><span class="feature-name">2 Rondas de Revisiones</span><span class="feature-desc">Ajustes en el concepto elegido</span></div></li>
+                    <li><div><span class="feature-name" data-i18n="features.logoDesign">Diseño de Logo</span><span class="feature-desc" data-i18n="features.logoDesignDesc">3 propuestas conceptuales para elegir</span></div></li>
+                    <li><div><span class="feature-name" data-i18n="features.logoVersions">Versiones de Logo</span><span class="feature-desc" data-i18n="features.logoVersionsDesc">Horizontal, vertical, isotipo, color y B/N</span></div></li>
+                    <li><div><span class="feature-name" data-i18n="features.colorPalette">Paleta de Colores</span><span class="feature-desc" data-i18n="features.colorPaletteDesc">Colores principales y secundarios con códigos</span></div></li>
+                    <li><div><span class="feature-name" data-i18n="features.typography">Tipografía</span><span class="feature-desc" data-i18n="features.typographyDesc">Fuentes principales para títulos y textos</span></div></li>
+                    <li><div><span class="feature-name" data-i18n="features.basicBrandManual">Manual de Marca Básico</span><span class="feature-desc" data-i18n="features.basicBrandManualDesc">Guía de uso del logo y colores (PDF)</span></div></li>
+                    <li><div><span class="feature-name" data-i18n="features.editableFiles">Archivos Editables</span><span class="feature-desc" data-i18n="features.editableFilesDesc">AI, EPS, PNG, SVG en alta resolución</span></div></li>
+                    <li><div><span class="feature-name" data-i18n="features.presentationMockups">Mockups de Presentación</span><span class="feature-desc" data-i18n="features.presentationMockupsDesc">Visualización en tarjetas, papelería, digital</span></div></li>
+                    <li><div><span class="feature-name" data-i18n="features.twoRevisions">2 Rondas de Revisiones</span><span class="feature-desc" data-i18n="features.twoRevisionsDesc">Ajustes en el concepto elegido</span></div></li>
                 </ul>
             </div>
 
             <div class="section">
-                <h2 class="section-title">Proceso de Trabajo</h2>
+                <h2 class="section-title" data-i18n="sections.workProcess">Proceso de Trabajo</h2>
                 <div class="process-timeline">
                     <div class="timeline-item">
-                        <div class="timeline-title">1. Briefing Creativo</div>
-                        <div class="timeline-desc">Definimos valores, personalidad y estilo de tu marca</div>
-                        <span class="timeline-duration timeline-branding">1-2 días</span>
+                        <div class="timeline-title" data-i18n="process.brandingEsencial.step1">1. Briefing Creativo</div>
+                        <div class="timeline-desc" data-i18n="process.brandingEsencial.step1Desc">Definimos valores, personalidad y estilo de tu marca</div>
+                        <span class="timeline-duration timeline-branding" data-i18n="process.brandingEsencial.step1Duration">1-2 días</span>
                     </div>
                     <div class="timeline-item">
-                        <div class="timeline-title">2. Investigación</div>
-                        <div class="timeline-desc">Análisis de competencia y referencias visuales</div>
-                        <span class="timeline-duration timeline-branding">2-3 días</span>
+                        <div class="timeline-title" data-i18n="process.brandingEsencial.step2">2. Investigación</div>
+                        <div class="timeline-desc" data-i18n="process.brandingEsencial.step2Desc">Análisis de competencia y referencias visuales</div>
+                        <span class="timeline-duration timeline-branding" data-i18n="process.brandingEsencial.step2Duration">2-3 días</span>
                     </div>
                     <div class="timeline-item">
-                        <div class="timeline-title">3. Conceptualización</div>
-                        <div class="timeline-desc">Desarrollo de 3 propuestas de logo</div>
-                        <span class="timeline-duration timeline-branding">5-7 días</span>
+                        <div class="timeline-title" data-i18n="process.brandingEsencial.step3">3. Conceptualización</div>
+                        <div class="timeline-desc" data-i18n="process.brandingEsencial.step3Desc">Desarrollo de 3 propuestas de logo</div>
+                        <span class="timeline-duration timeline-branding" data-i18n="process.brandingEsencial.step3Duration">5-7 días</span>
                     </div>
                     <div class="timeline-item">
-                        <div class="timeline-title">4. Refinamiento</div>
-                        <div class="timeline-desc">Perfeccionamos el concepto elegido</div>
-                        <span class="timeline-duration timeline-branding">3-4 días</span>
+                        <div class="timeline-title" data-i18n="process.brandingEsencial.step4">4. Refinamiento</div>
+                        <div class="timeline-desc" data-i18n="process.brandingEsencial.step4Desc">Perfeccionamos el concepto elegido</div>
+                        <span class="timeline-duration timeline-branding" data-i18n="process.brandingEsencial.step4Duration">3-4 días</span>
                     </div>
                     <div class="timeline-item">
-                        <div class="timeline-title">5. Entrega Final</div>
-                        <div class="timeline-desc">Todos los archivos y manual de marca</div>
-                        <span class="timeline-duration timeline-branding">2-3 días</span>
+                        <div class="timeline-title" data-i18n="process.brandingEsencial.step5">5. Entrega Final</div>
+                        <div class="timeline-desc" data-i18n="process.brandingEsencial.step5Desc">Todos los archivos y manual de marca</div>
+                        <span class="timeline-duration timeline-branding" data-i18n="process.brandingEsencial.step5Duration">2-3 días</span>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="full-width-section">
-            <h2 class="section-title">Ideal Para</h2>
+            <h2 class="section-title" data-i18n="sections.idealFor">Ideal Para</h2>
             <div class="ideal-grid">
                 <div class="ideal-card card-branding">
                     <div class="ideal-icon">🚀</div>
-                    <div class="ideal-title">Nuevos Emprendimientos</div>
-                    <div class="ideal-desc">Que recién comienzan y necesitan identidad profesional</div>
+                    <div class="ideal-title" data-i18n="idealFor.brandingEsencial.newVentures">Nuevos Emprendimientos</div>
+                    <div class="ideal-desc" data-i18n="idealFor.brandingEsencial.newVenturesDesc">Que recién comienzan y necesitan identidad profesional</div>
                 </div>
                 <div class="ideal-card card-branding">
                     <div class="ideal-icon">💼</div>
-                    <div class="ideal-title">Profesionales Independientes</div>
-                    <div class="ideal-desc">Freelancers que quieren proyectar profesionalismo</div>
+                    <div class="ideal-title" data-i18n="idealFor.brandingEsencial.independentPros">Profesionales Independientes</div>
+                    <div class="ideal-desc" data-i18n="idealFor.brandingEsencial.independentProsDesc">Freelancers que quieren proyectar profesionalismo</div>
                 </div>
                 <div class="ideal-card card-branding">
                     <div class="ideal-icon">🎯</div>
-                    <div class="ideal-title">Presupuesto Ajustado</div>
-                    <div class="ideal-desc">Proyectos que buscan calidad sin inversión grande</div>
+                    <div class="ideal-title" data-i18n="idealFor.brandingEsencial.tightBudget">Presupuesto Ajustado</div>
+                    <div class="ideal-desc" data-i18n="idealFor.brandingEsencial.tightBudgetDesc">Proyectos que buscan calidad sin inversión grande</div>
                 </div>
             </div>
         </div>
 
         <div class="cta-section cta-branding">
-            <h2 class="cta-title">¿Listo para crear tu identidad visual?</h2>
-            <p class="cta-text">Logo profesional y elementos esenciales de marca</p>
+            <h2 class="cta-title" data-i18n="cta.brandingEsencial.title">¿Listo para crear tu identidad visual?</h2>
+            <p class="cta-text" data-i18n="cta.brandingEsencial.text">Logo profesional y elementos esenciales de marca</p>
             <div class="cta-buttons">
                 <button class="btn btn-primary btn-branding" onclick="payWithPayPal('branding-esencial', 600)">
                     <svg class="paypal-logo-btn" viewBox="0 0 100 32" fill="currentColor"><path d="M12 4.917h5.167c2.917 0 5.333 2.083 5.333 5s-2.416 5-5.333 5H12V4.917zm22.917 0h5.166c2.917 0 5.334 2.083 5.334 5s-2.417 5-5.334 5h-5.166V4.917zM12 19.917h5.167c2.917 0 5.333 2.083 5.333 5s-2.416 5-5.333 5H12v-10z"/></svg>
-                    Pagar con PayPal
+                    <span data-i18n="cta.payWithPayPal">Pagar con PayPal</span>
                 </button>
-                <a href="https://wa.me/541163301998?text=Hola!%20Me%20interesa%20el%20Branding%20Esencial%20(USD%20600)" target="_blank" class="btn btn-secondary">💬 Consultar por WhatsApp</a>
+                <a href="https://wa.me/541163301998?text=Hola!%20Me%20interesa%20el%20Branding%20Esencial%20(USD%20600)" target="_blank" class="btn btn-secondary"><span data-i18n="cta.consultWhatsApp">💬 Consultar por WhatsApp</span></a>
             </div>
             <div class="payment-badges-cta">
-                <span class="payment-badge">🔒 Pago 100% seguro</span>
-                <span class="payment-badge">✓ Protección al comprador</span>
+                <span class="payment-badge" data-i18n="cta.securePayment">🔒 Pago 100% seguro</span>
+                <span class="payment-badge" data-i18n="cta.buyerProtection">✓ Protección al comprador</span>
             </div>
         </div>
     </div>
@@ -127,5 +131,145 @@
     <link rel="stylesheet" href="plan-styles.css">
     <script src="../js/currency-converter.js"></script>
     <script src="../js/paypal-integration.js"></script>
+    <script>
+        // Sistema de traducción
+        const translations = {
+            es: {
+                'nav.backToStore': '← Volver a Tienda',
+                'nav.home': 'Inicio',
+                'badge.branding': 'Branding',
+                'plan.brandingEsencial.title': 'Branding Esencial',
+                'plan.brandingEsencial.subtitle': 'Identidad visual básica para empezar con el pie derecho. Logo profesional y elementos gráficos esenciales.',
+                'pricing.brandingEsencial.paymentNote': 'Pago único • Entrega en 15-20 días hábiles',
+                'plan.brandingEsencial.highlightTitle': 'Construye tu identidad visual desde cero',
+                'plan.brandingEsencial.highlightDesc': 'Logo profesional y elementos básicos para lanzar tu marca',
+                'sections.whatsIncluded': '¿Qué incluye?',
+                'features.logoDesign': 'Diseño de Logo',
+                'features.logoDesignDesc': '3 propuestas conceptuales para elegir',
+                'features.logoVersions': 'Versiones de Logo',
+                'features.logoVersionsDesc': 'Horizontal, vertical, isotipo, color y B/N',
+                'features.colorPalette': 'Paleta de Colores',
+                'features.colorPaletteDesc': 'Colores principales y secundarios con códigos',
+                'features.typography': 'Tipografía',
+                'features.typographyDesc': 'Fuentes principales para títulos y textos',
+                'features.basicBrandManual': 'Manual de Marca Básico',
+                'features.basicBrandManualDesc': 'Guía de uso del logo y colores (PDF)',
+                'features.editableFiles': 'Archivos Editables',
+                'features.editableFilesDesc': 'AI, EPS, PNG, SVG en alta resolución',
+                'features.presentationMockups': 'Mockups de Presentación',
+                'features.presentationMockupsDesc': 'Visualización en tarjetas, papelería, digital',
+                'features.twoRevisions': '2 Rondas de Revisiones',
+                'features.twoRevisionsDesc': 'Ajustes en el concepto elegido',
+                'sections.workProcess': 'Proceso de Trabajo',
+                'process.brandingEsencial.step1': '1. Briefing Creativo',
+                'process.brandingEsencial.step1Desc': 'Definimos valores, personalidad y estilo de tu marca',
+                'process.brandingEsencial.step1Duration': '1-2 días',
+                'process.brandingEsencial.step2': '2. Investigación',
+                'process.brandingEsencial.step2Desc': 'Análisis de competencia y referencias visuales',
+                'process.brandingEsencial.step2Duration': '2-3 días',
+                'process.brandingEsencial.step3': '3. Conceptualización',
+                'process.brandingEsencial.step3Desc': 'Desarrollo de 3 propuestas de logo',
+                'process.brandingEsencial.step3Duration': '5-7 días',
+                'process.brandingEsencial.step4': '4. Refinamiento',
+                'process.brandingEsencial.step4Desc': 'Perfeccionamos el concepto elegido',
+                'process.brandingEsencial.step4Duration': '3-4 días',
+                'process.brandingEsencial.step5': '5. Entrega Final',
+                'process.brandingEsencial.step5Desc': 'Todos los archivos y manual de marca',
+                'process.brandingEsencial.step5Duration': '2-3 días',
+                'sections.idealFor': 'Ideal Para',
+                'idealFor.brandingEsencial.newVentures': 'Nuevos Emprendimientos',
+                'idealFor.brandingEsencial.newVenturesDesc': 'Que recién comienzan y necesitan identidad profesional',
+                'idealFor.brandingEsencial.independentPros': 'Profesionales Independientes',
+                'idealFor.brandingEsencial.independentProsDesc': 'Freelancers que quieren proyectar profesionalismo',
+                'idealFor.brandingEsencial.tightBudget': 'Presupuesto Ajustado',
+                'idealFor.brandingEsencial.tightBudgetDesc': 'Proyectos que buscan calidad sin inversión grande',
+                'cta.brandingEsencial.title': '¿Listo para crear tu identidad visual?',
+                'cta.brandingEsencial.text': 'Logo profesional y elementos esenciales de marca',
+                'cta.payWithPayPal': 'Pagar con PayPal',
+                'cta.consultWhatsApp': '💬 Consultar por WhatsApp',
+                'cta.securePayment': '🔒 Pago 100% seguro',
+                'cta.buyerProtection': '✓ Protección al comprador'
+            },
+            en: {
+                'nav.backToStore': '← Back to Store',
+                'nav.home': 'Home',
+                'badge.branding': 'Branding',
+                'plan.brandingEsencial.title': 'Essential Branding',
+                'plan.brandingEsencial.subtitle': 'Basic visual identity to start on the right foot. Professional logo and essential graphic elements.',
+                'pricing.brandingEsencial.paymentNote': 'One-time payment • Delivery in 15-20 business days',
+                'plan.brandingEsencial.highlightTitle': 'Build your visual identity from scratch',
+                'plan.brandingEsencial.highlightDesc': 'Professional logo and basic elements to launch your brand',
+                'sections.whatsIncluded': 'What\'s Included?',
+                'features.logoDesign': 'Logo Design',
+                'features.logoDesignDesc': '3 conceptual proposals to choose from',
+                'features.logoVersions': 'Logo Versions',
+                'features.logoVersionsDesc': 'Horizontal, vertical, isotype, color and B/W',
+                'features.colorPalette': 'Color Palette',
+                'features.colorPaletteDesc': 'Primary and secondary colors with codes',
+                'features.typography': 'Typography',
+                'features.typographyDesc': 'Main fonts for titles and texts',
+                'features.basicBrandManual': 'Basic Brand Manual',
+                'features.basicBrandManualDesc': 'Logo and color usage guide (PDF)',
+                'features.editableFiles': 'Editable Files',
+                'features.editableFilesDesc': 'AI, EPS, PNG, SVG in high resolution',
+                'features.presentationMockups': 'Presentation Mockups',
+                'features.presentationMockupsDesc': 'Visualization on cards, stationery, digital',
+                'features.twoRevisions': '2 Revision Rounds',
+                'features.twoRevisionsDesc': 'Adjustments on the chosen concept',
+                'sections.workProcess': 'Work Process',
+                'process.brandingEsencial.step1': '1. Creative Briefing',
+                'process.brandingEsencial.step1Desc': 'We define values, personality and style of your brand',
+                'process.brandingEsencial.step1Duration': '1-2 days',
+                'process.brandingEsencial.step2': '2. Research',
+                'process.brandingEsencial.step2Desc': 'Competitive analysis and visual references',
+                'process.brandingEsencial.step2Duration': '2-3 days',
+                'process.brandingEsencial.step3': '3. Conceptualization',
+                'process.brandingEsencial.step3Desc': 'Development of 3 logo proposals',
+                'process.brandingEsencial.step3Duration': '5-7 days',
+                'process.brandingEsencial.step4': '4. Refinement',
+                'process.brandingEsencial.step4Desc': 'We perfect the chosen concept',
+                'process.brandingEsencial.step4Duration': '3-4 days',
+                'process.brandingEsencial.step5': '5. Final Delivery',
+                'process.brandingEsencial.step5Desc': 'All files and brand manual',
+                'process.brandingEsencial.step5Duration': '2-3 days',
+                'sections.idealFor': 'Ideal For',
+                'idealFor.brandingEsencial.newVentures': 'New Ventures',
+                'idealFor.brandingEsencial.newVenturesDesc': 'Just starting out and need professional identity',
+                'idealFor.brandingEsencial.independentPros': 'Independent Professionals',
+                'idealFor.brandingEsencial.independentProsDesc': 'Freelancers who want to project professionalism',
+                'idealFor.brandingEsencial.tightBudget': 'Tight Budget',
+                'idealFor.brandingEsencial.tightBudgetDesc': 'Projects seeking quality without large investment',
+                'cta.brandingEsencial.title': 'Ready to create your visual identity?',
+                'cta.brandingEsencial.text': 'Professional logo and essential brand elements',
+                'cta.payWithPayPal': 'Pay with PayPal',
+                'cta.consultWhatsApp': '💬 Consult via WhatsApp',
+                'cta.securePayment': '🔒 100% secure payment',
+                'cta.buyerProtection': '✓ Buyer protection'
+            }
+        };
+
+        let currentLang = localStorage.getItem('language') || 'es';
+
+        function translatePage() {
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[currentLang][key]) {
+                    element.textContent = translations[currentLang][key];
+                }
+            });
+            document.getElementById('langText').textContent = currentLang.toUpperCase();
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('langToggle').addEventListener('click', () => {
+                const langs = ['es', 'en', 'pt'];
+                const currentIndex = langs.indexOf(currentLang);
+                currentLang = langs[(currentIndex + 1) % langs.length];
+                localStorage.setItem('language', currentLang);
+                translatePage();
+            });
+            translatePage();
+        });
+    </script>
 </body>
 </html>
