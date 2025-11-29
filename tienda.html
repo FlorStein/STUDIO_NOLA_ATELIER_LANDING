@@ -139,6 +139,40 @@
             color: var(--color-white);
         }
 
+        .iris-btn {
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.2), rgba(0, 212, 255, 0.2));
+            border: 1.5px solid rgba(124, 58, 237, 0.5);
+            border-radius: 20px;
+            padding: 8px 16px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--color-white);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            letter-spacing: 1px;
+            font-family: 'Bebas Neue', sans-serif;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .iris-btn:hover {
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.4), rgba(0, 212, 255, 0.4));
+            border-color: rgba(124, 58, 237, 0.8);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
+        }
+
+        .iris-icon {
+            font-size: 1.2rem;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+
         .lang-toggle {
             background: transparent;
             border: 1.5px solid currentColor;
@@ -660,15 +694,132 @@
         .plan-card:nth-child(4) { animation-delay: 0.4s; }
         .plan-card:nth-child(5) { animation-delay: 0.5s; }
         .plan-card:nth-child(6) { animation-delay: 0.6s; }
+
+        /* Video Lightbox Intro */
+        .video-lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 1;
+            transition: opacity 0.5s ease;
+        }
+
+        .video-lightbox.fade-out {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .video-lightbox-content {
+            position: relative;
+            max-width: 90vw;
+            max-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .video-lightbox video {
+            max-width: 100%;
+            max-height: 90vh;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Ocultar controles por defecto, mostrar en hover */
+        .video-lightbox video::-webkit-media-controls {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .video-lightbox video:hover::-webkit-media-controls {
+            opacity: 1;
+        }
+
+        /* Estilizar controles nativos */
+        .video-lightbox video::-webkit-media-controls-panel {
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+        }
+
+        /* Para Firefox */
+        .video-lightbox video {
+            opacity: 1;
+        }
+
+        .video-lightbox-content:hover video {
+            opacity: 1;
+        }
+
+        .video-skip-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10000;
+        }
+
+        .video-skip-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .video-skip-btn:active {
+            transform: translateY(0);
+        }
+
+        /* Responsive video */
+        @media (max-width: 768px) {
+            .video-lightbox video {
+                max-width: 95vw;
+                max-height: 85vh;
+            }
+
+            .video-skip-btn {
+                top: 10px;
+                right: 10px;
+                padding: 10px 20px;
+                font-size: 13px;
+            }
+        }
     </style>
 </head>
 <body>
+    <!-- Video Lightbox Intro -->
+    <div class="video-lightbox" id="videoLightbox">
+        <div class="video-lightbox-content">
+            <video id="introVideo" autoplay playsinline crossorigin="anonymous" controls>
+                <!-- Source and track will be set by JS based on device -->
+            </video>
+            <button class="video-skip-btn" id="skipVideo" data-i18n="store.video.skip">Saltar</button>
+        </div>
+    </div>
+
     <!-- Header -->
     <header class="header">
         <div class="header-content">
             <a href="index.html" class="logo">STUDIO NOLA</a>
             <nav class="nav-items">
                 <a href="index.html" class="nav-link" data-i18n="store.nav.home">Inicio</a>
+                <button class="iris-btn" id="irisBtn" aria-label="Ver video de Iris">
+                    <span class="iris-icon">◉</span>
+                    <span>IRIS</span>
+                </button>
                 <select class="currency-selector" aria-label="Seleccionar moneda">
                     <!-- Opciones cargadas por JS -->
                 </select>
@@ -995,6 +1146,7 @@
         es: {
           'store.nav.home': 'Inicio',
           'store.rates.updated': 'Tasas actualizadas',
+          'store.video.skip': 'Saltar',
           'store.hero.title': 'Planes y Servicios',
           'store.hero.subtitle': 'Soluciones profesionales diseñadas para emprendedores y empresas que buscan destacar',
           'store.section.web': 'Diseño Web',
@@ -1108,6 +1260,7 @@
         en: {
           'store.nav.home': 'Home',
           'store.rates.updated': 'Rates updated',
+          'store.video.skip': 'Skip',
           'store.hero.title': 'Plans & Services',
           'store.hero.subtitle': 'Professional solutions designed for entrepreneurs and businesses looking to stand out',
           'store.section.web': 'Web Design',
@@ -1221,6 +1374,7 @@
         pt: {
           'store.nav.home': 'Início',
           'store.rates.updated': 'Taxas atualizadas',
+          'store.video.skip': 'Pular',
           'store.hero.title': 'Planos e Serviços',
           'store.hero.subtitle': 'Soluções profissionais projetadas para empreendedores e empresas que buscam se destacar',
           'store.section.web': 'Design Web',
@@ -1367,6 +1521,110 @@
           langToggle.addEventListener('click', toggleLanguage);
         }
       });
+    })();
+    </script>
+
+    <!-- Video Lightbox Control Script -->
+    <script>
+    (function() {
+      const lightbox = document.getElementById('videoLightbox');
+      const video = document.getElementById('introVideo');
+      const skipBtn = document.getElementById('skipVideo');
+      
+      // Detect device and set video source
+      function isMobileDevice() {
+        return window.innerWidth <= 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      }
+
+      function initVideo() {
+        const isMobile = isMobileDevice();
+        const videoSrc = isMobile 
+          ? 'assets/videos/iris-mobile.mp4' 
+          : 'assets/videos/iris-desktop.mp4';
+        
+        const subtitleSrc = isMobile
+          ? 'assets/videos/iris-mobile.vtt'
+          : 'assets/videos/iris-desktop.vtt';
+        
+        // Set video source
+        video.src = videoSrc;
+        
+        // Create and add subtitle track
+        const track = document.createElement('track');
+        track.kind = 'subtitles';
+        track.label = 'Español';
+        track.srclang = 'es';
+        track.src = subtitleSrc;
+        track.default = true;
+        
+        video.appendChild(track);
+        
+        // Load video
+        video.load();
+        
+        // Try to enable audio on first play (autoplay policies)
+        video.addEventListener('play', function() {
+          video.muted = false;
+        }, { once: true });
+        
+        // Ensure subtitles are available in controls
+        video.addEventListener('loadedmetadata', function() {
+          const textTracks = video.textTracks;
+          if (textTracks.length > 0) {
+            // Set to showing by default
+            textTracks[0].mode = 'showing';
+          }
+        }, { once: true });
+      }
+
+      function closeLightbox() {
+        lightbox.classList.add('fade-out');
+        video.pause();
+        
+        setTimeout(() => {
+          lightbox.style.display = 'none';
+        }, 500);
+      }
+
+            // Reopen and replay video from nav button
+            function reopenVideo() {
+                // Make lightbox visible
+                lightbox.style.display = 'flex';
+                lightbox.classList.remove('fade-out');
+
+                // Remove existing tracks to avoid duplicates
+                Array.from(video.querySelectorAll('track')).forEach(t => t.remove());
+
+                // Reset currentTime and source + captions
+                initVideo();
+                video.currentTime = 0;
+                video.play().catch(()=>{});
+            }
+
+      // Close on skip button
+      skipBtn.addEventListener('click', closeLightbox);
+
+      // Close when video ends
+      video.addEventListener('ended', closeLightbox);
+
+      // Close on ESC key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && lightbox.style.display !== 'none') {
+          closeLightbox();
+        }
+      });
+
+      // Initialize on load
+      window.addEventListener('load', initVideo);
+
+            // Hook Iris button
+            const irisBtn = document.getElementById('irisBtn');
+            if (irisBtn) {
+                irisBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    reopenVideo();
+                });
+            }
     })();
     </script>
 </body>
