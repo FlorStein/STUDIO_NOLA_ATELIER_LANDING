@@ -910,7 +910,7 @@
     <!-- Video Lightbox Intro -->
     <div class="video-lightbox" id="videoLightbox">
         <div class="video-lightbox-content">
-            <video id="introVideo" autoplay playsinline crossorigin="anonymous" controls>
+            <video id="introVideo" autoplay muted playsinline crossorigin="anonymous" controls>
                 <!-- Source and track will be set by JS based on device -->
             </video>
             <button class="video-skip-btn" id="skipVideo" data-i18n="store.video.skip">Saltar</button>
@@ -1667,22 +1667,26 @@
         
         video.appendChild(track);
         
-        // Load video
-        video.load();
-        
-        // Try to enable audio on first play (autoplay policies)
-        video.addEventListener('play', function() {
-          video.muted = false;
-        }, { once: true });
-        
         // Ensure subtitles are available in controls
         video.addEventListener('loadedmetadata', function() {
           const textTracks = video.textTracks;
           if (textTracks.length > 0) {
-            // Set to showing by default
             textTracks[0].mode = 'showing';
           }
         }, { once: true });
+
+        // Load and try to play
+        video.load();
+        
+        // Intentar reproducir inmediatamente
+        const playPromise = video.play();
+        
+        if (playPromise !== undefined) {
+          playPromise.catch(error => {
+            // Autoplay bloqueado, mantener muted
+            console.log('Autoplay bloqueado, video muted:', error);
+          });
+        }
       }
 
       function closeLightbox() {
