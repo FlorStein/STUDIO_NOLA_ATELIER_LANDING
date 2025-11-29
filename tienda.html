@@ -154,13 +154,65 @@
             display: inline-flex;
             align-items: center;
             gap: 6px;
+            position: relative;
+            overflow: hidden;
+            /* Brighter permanent glow */
+            box-shadow: 0 0 6px rgba(124, 58, 237, 0.45), 0 0 24px rgba(0, 212, 255, 0.35);
         }
+                /* Permanent iridescent glow (very subtle) */
+                .iris-btn::before {
+                        content: "";
+                        position: absolute;
+                        inset: -60% -60%;
+                        background: radial-gradient(60% 60% at 50% 50%,
+                            rgba(124, 58, 237, 0.35) 0%,
+                            rgba(0, 212, 255, 0.28) 40%,
+                            rgba(0, 255, 128, 0.22) 70%,
+                            rgba(255, 255, 0, 0.18) 100%);
+                        filter: blur(20px) saturate(1.15);
+                        opacity: 0.55;
+                        pointer-events: none;
+                        mix-blend-mode: screen;
+                        transition: opacity .25s ease;
+                }
+
+                .iris-btn:hover::before {
+                        opacity: 0.75;
+                }
 
         .iris-btn:hover {
             background: linear-gradient(135deg, rgba(124, 58, 237, 0.4), rgba(0, 212, 255, 0.4));
             border-color: rgba(124, 58, 237, 0.8);
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
+        }
+
+        /* Iridiscente flash on hover using animated gradient overlay */
+        .iris-btn::after {
+            content: "";
+            position: absolute;
+            inset: -200% -200%;
+            background: conic-gradient(from 180deg at 50% 50%,
+              rgba(255, 0, 153, 0.25),
+              rgba(0, 200, 255, 0.25),
+              rgba(0, 255, 128, 0.25),
+              rgba(255, 255, 0, 0.25),
+              rgba(255, 0, 153, 0.25));
+            filter: blur(12px) saturate(1.2);
+            opacity: 0;
+            transition: opacity .25s ease;
+            pointer-events: none;
+            mix-blend-mode: screen;
+            animation: iris-spin 2.5s linear infinite;
+        }
+
+        .iris-btn:hover::after {
+            opacity: 1;
+        }
+
+        @keyframes iris-spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
 
         .iris-icon {
@@ -172,6 +224,53 @@
             0%, 100% { opacity: 1; }
             50% { opacity: 0.6; }
         }
+
+        /* Mobile nav reorder: Iris first, then Home, then currency, rates, language */
+        @media (max-width: 768px) {
+            /* Header layout: logo centered on top */
+            .header-content {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: .6rem;
+            }
+            .logo { text-align: center; font-size: 1.2rem; }
+
+            /* Nav as grid: row1 (Inicio, IRIS), row2 (Moneda, Idioma), row3 (Tasas) */
+            .nav-items {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-auto-rows: minmax(36px, auto);
+                gap: .6rem;
+                width: 100%;
+                max-width: 520px;
+            }
+            /* Row 1 */
+            .nav-items > a.nav-link[data-i18n="store.nav.home"] { grid-column: 1 / 2; }
+            #irisBtn { grid-column: 2 / 3; }
+
+            /* Row 2 */
+            .currency-selector { grid-column: 1 / 2; }
+            #langToggle { grid-column: 2 / 3; }
+
+            /* Row 3 */
+            #rates-status { grid-column: 1 / -1; justify-self: center; display: none; }
+
+            .iris-btn, .lang-toggle, .currency-selector, .nav-link {
+                width: 100%;
+                justify-content: center;
+            }
+
+            /* Slightly softer glow on mobile to avoid visual noise */
+            .iris-btn {
+                box-shadow: 0 0 5px rgba(124, 58, 237, 0.40), 0 0 18px rgba(0, 212, 255, 0.30);
+            }
+            .iris-btn::before { opacity: 0.5; filter: blur(18px); }
+        }
+
+        /* Prevent header from overlapping hero titles */
+        .hero-section { padding-top: 180px; }
+        @media (max-width: 768px) { .hero-section { padding-top: 320px; } }
 
         .lang-toggle {
             background: transparent;
@@ -231,6 +330,8 @@
             text-align: center;
             max-width: 1400px;
             margin: 0 auto;
+            position: relative;
+            z-index: 1;
         }
 
         .hero-title {
@@ -245,6 +346,12 @@
             background-clip: text;
             letter-spacing: 2px;
             font-weight: 300;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                padding-top: 75px;
+            }
         }
 
         .hero-subtitle {
@@ -1125,13 +1232,14 @@
     <script src="./js/paypal-integration.js"></script>
     
     <script>
-        // Mostrar badge de tasas actualizadas
+        // Mostrar badge de tasas actualizadas solo en desktop
         window.addEventListener('load', () => {
             setTimeout(() => {
                 const lastUpdate = CurrencyConverter.getLastUpdate();
                 const badge = document.getElementById('rates-status');
                 
-                if (badge && lastUpdate.hoursAgo !== undefined) {
+                // Solo mostrar en desktop (> 768px)
+                if (badge && lastUpdate.hoursAgo !== undefined && window.innerWidth > 768) {
                     badge.style.display = 'inline-flex';
                     badge.title = lastUpdate.message;
                 }

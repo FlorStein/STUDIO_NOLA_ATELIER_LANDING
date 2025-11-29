@@ -274,7 +274,10 @@ const CurrencyConverter = (function() {
         const config = EXCHANGE_RATES[code];
         const option = document.createElement('option');
         option.value = code;
-        option.textContent = `${config.symbol} ${code}`;
+        // Mostrar solo el código para evitar duplicación visual (USD, ARS, EUR)
+        option.textContent = code;
+        // Guardar símbolo por si se requiere en UI futura
+        option.setAttribute('data-symbol', config.symbol);
         if (code === currentCurrency) option.selected = true;
         selector.appendChild(option);
       });
