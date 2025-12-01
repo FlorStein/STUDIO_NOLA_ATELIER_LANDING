@@ -195,7 +195,7 @@ and (max-device-width : 480px) {
     }
      .card{
         width: 22rem;
-        font-size: 2.5rem;
+        font-size: 1.5rem;
         margin: 0;
         padding: 0;
         height: 4rem;
@@ -474,7 +474,7 @@ and (max-device-width : 1024px) {
         padding: 0;
     }
     .nav-li{
-        font-size: 2.5rem;
+        font-size: 1.5rem;
     }
     #title2{
         font-size: 3.5rem;
@@ -515,7 +515,7 @@ and (max-device-width : 1024px) {
     }
      .card{
         width: 22rem;
-        font-size: 2.5rem;
+        font-size: 1.5rem;
         margin: 0;
         padding: 0;
         height: 4rem;
@@ -887,7 +887,7 @@ and (min-width : 1224px) {
         padding: 0;
     }
     .nav-li{
-        font-size: 2.5rem;
+        font-size: 1.5rem;
     }
     #title2{
         font-size: 3.5rem;
@@ -928,7 +928,7 @@ and (min-width : 1224px) {
     }
      .card{
         width: 22rem;
-        font-size: 2.5rem;
+        font-size: 1.5rem;
         margin: 0;
         padding: 0;
         height: 4rem;
