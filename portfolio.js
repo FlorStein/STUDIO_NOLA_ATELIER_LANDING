@@ -72,6 +72,15 @@ const WEB_PROJECTS = [
     repo: 'https://github.com/FlorStein/QUESITO'
   },
   {
+    title: 'LUPITA',
+    desc: 'Landing demo con identidad vibrante y foco en presentar una marca con personalidad, ritmo visual y una experiencia clara para navegar.',
+    type: 'Landing',
+    year: '2026',
+    category: 'landing',
+    url: 'https://florstein.github.io/LUPITA/',
+    repo: 'https://github.com/FlorStein/LUPITA'
+  },
+  {
     title: 'Tienda Studio Nola',
     desc: 'Experiencia de tienda con productos, pricing y flujo comercial.',
     type: 'Ecommerce',
