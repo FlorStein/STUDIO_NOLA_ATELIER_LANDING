@@ -228,7 +228,9 @@
 
 .portfolio-browser{
   grid-column: 2;
-  min-height: clamp(440px, 62vw, 720px);
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  min-height: 0;
   overflow: hidden;
   border: 1px solid rgba(255,255,255,.24);
   border-radius: 8px;
@@ -266,6 +268,7 @@
 
 .portfolio-browser.is-mobile{
   width: min(100%, 390px);
+  aspect-ratio: auto;
   justify-self: center;
   min-height: 740px;
   border-radius: 28px;
@@ -319,7 +322,8 @@
 
 .portfolio-browser iframe{
   width: 100%;
-  height: calc(clamp(440px, 62vw, 720px) - 38px);
+  height: calc(100% - 38px);
+  min-height: 0;
   display: block;
   border: 0;
   background: #fff;
@@ -368,7 +372,8 @@
   position: sticky;
   top: 24px;
   max-height: calc(100vh - 36px);
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
   padding-right: 6px;
 }
 
@@ -394,10 +399,11 @@
 }
 
 .portfolio-page .portfolio-card{
-  min-height: 76px;
-  grid-template-columns: 1fr auto;
+  min-height: 74px;
+  grid-template-columns: minmax(0, 1fr) auto;
   align-items: center;
   gap: 6px 12px;
+  padding: 12px 14px;
 }
 
 .portfolio-page .portfolio-card-top{
@@ -405,16 +411,30 @@
 }
 
 .portfolio-page .portfolio-card strong{
-  font-size: clamp(1.5rem, 2vw, 2.1rem);
+  min-width: 0;
+  overflow: hidden;
+  font-size: clamp(1.15rem, 1.45vw, 1.65rem);
+  line-height: 1;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .portfolio-page .portfolio-card small{
   justify-self: end;
+  max-width: 88px;
+  overflow: hidden;
+  font-size: .72rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .portfolio-page .portfolio-card em{
   grid-column: 1 / -1;
+  max-width: 100%;
   font-size: .76rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .portfolio-page .portfolio-grid{
