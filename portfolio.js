@@ -18,6 +18,15 @@ const WEB_PROJECTS = [
     repo: 'https://github.com/FlorStein/QUESITO'
   },
   {
+    title: 'JACINTO',
+    desc: 'Landing demo con una impronta visual marcada, pensada para presentar una marca con personalidad, recorrido claro y una primera impresion memorable.',
+    type: 'Landing',
+    year: '2026',
+    category: 'landing',
+    url: 'https://florstein.github.io/JACINTO/',
+    repo: 'https://github.com/FlorStein/JACINTO'
+  },
+  {
     title: 'Redes por Tefi',
     desc: 'Landing clara y directa para una propuesta de gestion de redes, pensada para convertir visitas en consultas.',
     type: 'Landing',
