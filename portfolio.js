@@ -63,13 +63,13 @@ const WEB_PROJECTS = [
     repo: 'https://github.com/FlorStein/carocruz'
   },
   {
-    title: 'Studio Nola Atelier',
-    desc: 'Landing principal de branding, servicios y contacto.',
+    title: 'QUESITO',
+    desc: 'Landing demo para una marca de quesos, conservas y picnics, con constructor interactivo de picadas, fotos de clientes y una identidad fresca para portfolio.',
     type: 'Landing',
     year: '2026',
     category: 'landing',
-    url: './index.html',
-    repo: 'https://github.com/FlorStein/STUDIO_NOLA_ATELIER_LANDING'
+    url: 'https://florstein.github.io/QUESITO/',
+    repo: 'https://github.com/FlorStein/QUESITO'
   },
   {
     title: 'Tienda Studio Nola',
