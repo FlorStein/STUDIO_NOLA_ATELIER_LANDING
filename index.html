@@ -63,6 +63,7 @@
 
 
   <link rel="stylesheet" href="./patches.css">
+  <link rel="stylesheet" href="./portfolio.css">
 
   <!-- Structured Data (Schema.org) -->
   <script type="application/ld+json">
@@ -424,6 +425,7 @@
             <li class="nav-li"><a href="./index/blog.html" onclick="nav()" class="nav-link" target="_self">Blog</a></li>
             <li class="nav-li"><a href="./tienda.html" onclick="nav()" class="nav-link" target="_self" data-i18n="nav.store">Tienda</a></li>
             <li class="nav-li"><a href="#mas-info" class="nav-link" data-i18n="nav.services">Servicios</a></li>
+            <li class="nav-li"><a href="./portfolio.html" class="nav-link" data-i18n="nav.portfolio">Portfolio</a></li>
             <li class="nav-li"><a href="#contacto" class="nav-link" data-i18n="nav.contact">Contacto</a></li>
             <li class="nav-li">
                 <button id="langToggle" class="lang-toggle" aria-label="Cambiar idioma">
@@ -452,6 +454,7 @@
         <li><a href="./index/blog.html" class="mnav-link" target="_self">Blog</a></li>
         <li><a href="./tienda.html" class="mnav-link" target="_self" data-i18n="nav.store">Tienda</a></li>
         <li><a href="#mas-info" class="mnav-link" data-i18n="nav.services">Servicios</a></li>
+        <li><a href="./portfolio.html" class="mnav-link" data-i18n="nav.portfolio">Portfolio</a></li>
         <li><a href="#contacto" class="mnav-link" data-i18n="nav.contact">Contacto</a></li>
         <li>
           <button id="langToggleMobile" class="lang-toggle mobile" aria-label="Cambiar idioma">
@@ -760,6 +763,45 @@
   </div>
 </section>
 
+<section id="portfolio-home" class="portfolio-home section nola-theme" aria-labelledby="portfolio-title">
+  <div class="portfolio-shell">
+    <header class="portfolio-header reveal-up">
+      <p class="portfolio-kicker" data-i18n="portfolio.kicker">Selected work</p>
+      <h2 id="portfolio-title" class="portfolio-title" data-i18n="portfolio.title">Portfolio vivo</h2>
+      <p class="portfolio-sub" data-i18n="portfolio.subtitle">Un adelanto interactivo de webs reales: navegá proyectos sin salir de Studio Nola.</p>
+    </header>
+
+    <div class="portfolio-stage" data-active-category="all">
+      <aside class="portfolio-panel reveal-up" aria-live="polite">
+        <span class="portfolio-count" id="portfolioCount">01 / 10</span>
+        <h3 id="portfolioActiveTitle">Redes por Tefi</h3>
+        <p id="portfolioActiveDesc">Landing clara y directa para una propuesta de gestion de redes, pensada para convertir visitas en consultas.</p>
+        <div class="portfolio-meta">
+          <span id="portfolioActiveType">Landing</span>
+          <span id="portfolioActiveYear">2026</span>
+        </div>
+        <a class="portfolio-cta" href="./portfolio.html" data-i18n="portfolio.cta">Ver portfolio completo</a>
+      </aside>
+
+      <div class="portfolio-browser reveal-up">
+        <div class="portfolio-browser-bar" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </div>
+        <iframe id="portfolioFrame" src="https://redesportefi.com/" title="Preview interactivo de Redes por Tefi" loading="lazy"></iframe>
+      </div>
+
+      <div class="portfolio-controls reveal-up" role="tablist" aria-label="Filtros de portfolio">
+        <button class="portfolio-filter is-active" type="button" data-filter="all" aria-selected="true" data-i18n="portfolio.filter.all">Todo</button>
+        <button class="portfolio-filter" type="button" data-filter="landing" aria-selected="false" data-i18n="portfolio.filter.landing">Landings</button>
+        <button class="portfolio-filter" type="button" data-filter="store" aria-selected="false" data-i18n="portfolio.filter.store">Tiendas</button>
+        <button class="portfolio-filter" type="button" data-filter="content" aria-selected="false" data-i18n="portfolio.filter.content">Contenido</button>
+      </div>
+
+      <div class="portfolio-grid" aria-label="Webs destacadas"></div>
+    </div>
+  </div>
+</section>
+
 <section id="mi-ladder" class="section nola-theme">
   <div class="mi-container">
     <header class="mi-header">
@@ -851,6 +893,7 @@ section.section{ scroll-margin-top:84px }
 -->
 
   <script src="./patches.js"></script>
+  <script src="./portfolio.js"></script>
 
     <!-- === Site Footer === -->
     
@@ -933,6 +976,7 @@ section.section{ scroll-margin-top:84px }
         <ul>
           <li><a href="#body" data-i18n="footer.home">Inicio</a></li>
           <li><a href="#mas-info" data-i18n="footer.services">Servicios</a></li>
+          <li><a href="portfolio.html" data-i18n="nav.portfolio">Portfolio</a></li>
           <li><a href="tienda.html" data-i18n="footer.store">Tienda</a></li>
           <li><a href="#mas-info" data-mi="web">Web design</a></li>
           <li><a href="#mas-info" data-mi="branding">Branding</a></li>
@@ -1456,7 +1500,16 @@ window.addEventListener('load', function() {
       'nav.about': 'Qué hacemos?',
       'nav.services': 'Servicios',
       'nav.store': 'Tienda',
+      'nav.portfolio': 'Portfolio',
       'nav.contact': 'Contacto',
+      'portfolio.kicker': 'Selected work',
+      'portfolio.title': 'Portfolio vivo',
+      'portfolio.subtitle': 'Un adelanto interactivo de webs reales: navegá proyectos sin salir de Studio Nola.',
+      'portfolio.cta': 'Ver portfolio completo',
+      'portfolio.filter.all': 'Todo',
+      'portfolio.filter.landing': 'Landings',
+      'portfolio.filter.store': 'Tiendas',
+      'portfolio.filter.content': 'Contenido',
       'services.title': 'SERVICIOS',
       'services.subtitle': 'Elegí una categoría y mirá qué incluye cada nivel de complejidad.',
       'services.tab.web': 'Diseño Web',
@@ -1669,7 +1722,16 @@ window.addEventListener('load', function() {
       'nav.about': 'What we do?',
       'nav.services': 'Services',
       'nav.store': 'Store',
+      'nav.portfolio': 'Portfolio',
       'nav.contact': 'Contact',
+      'portfolio.kicker': 'Selected work',
+      'portfolio.title': 'Living portfolio',
+      'portfolio.subtitle': 'An interactive preview of real websites: explore projects without leaving Studio Nola.',
+      'portfolio.cta': 'View full portfolio',
+      'portfolio.filter.all': 'All',
+      'portfolio.filter.landing': 'Landings',
+      'portfolio.filter.store': 'Stores',
+      'portfolio.filter.content': 'Content',
       'services.title': 'SERVICES',
       'services.subtitle': 'Choose a category and see what each complexity level includes.',
       'services.tab.web': 'Web Design',
@@ -1882,7 +1944,16 @@ window.addEventListener('load', function() {
       'nav.about': 'O que fazemos?',
       'nav.services': 'Serviços',
       'nav.store': 'Loja',
+      'nav.portfolio': 'Portfolio',
       'nav.contact': 'Contato',
+      'portfolio.kicker': 'Selected work',
+      'portfolio.title': 'Portfolio vivo',
+      'portfolio.subtitle': 'Uma previa interativa de sites reais: explore projetos sem sair do Studio Nola.',
+      'portfolio.cta': 'Ver portfolio completo',
+      'portfolio.filter.all': 'Tudo',
+      'portfolio.filter.landing': 'Landings',
+      'portfolio.filter.store': 'Lojas',
+      'portfolio.filter.content': 'Conteudo',
       'services.title': 'SERVIÇOS',
       'services.subtitle': 'Escolha uma categoria e veja o que cada nível de complexidade inclui.',
       'services.tab.web': 'Design Web',

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Portfolio interactivo de Studio Nola Atelier: webs, landings, tiendas y experiencias digitales embebidas.">
+  <meta name="keywords" content="portfolio web, studio nola atelier, diseno web, landing page, ecommerce, github pages">
+  <meta name="author" content="Studio Nola Atelier">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Portfolio | Studio Nola Atelier">
+  <meta property="og:description" content="Webs seleccionadas para explorar sin salir del sitio de Studio Nola Atelier.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://studionolaatelier.com/portfolio.html">
+  <link rel="canonical" href="https://studionolaatelier.com/portfolio.html">
+  <link rel="stylesheet" href="./index/css/index.css">
+  <link rel="stylesheet" href="./patches.css">
+  <link rel="stylesheet" href="./portfolio.css">
+  <title>Portfolio | Studio Nola Atelier</title>
+</head>
+<body class="body">
+  <main class="portfolio-page">
+    <div class="portfolio-shell">
+      <nav class="portfolio-nav" aria-label="Portfolio navigation">
+        <a href="./index.html" aria-label="Volver a Studio Nola Atelier">
+          <img src="./assets/logos/studio-nola-nav.svg" alt="Studio Nola Atelier" width="210" height="56">
+        </a>
+        <a class="portfolio-back" href="./index.html">Volver al inicio</a>
+      </nav>
+
+      <header class="portfolio-header">
+        <p class="portfolio-kicker">Web portfolio</p>
+        <h1 class="portfolio-title">Webs en vivo</h1>
+        <p class="portfolio-sub">Proyectos navegables dentro de Studio Nola. Elegi una web, probala en el preview y abri el sitio o el repositorio cuando quieras ver mas.</p>
+      </header>
+
+      <section class="portfolio-stage" aria-label="Portfolio completo">
+        <aside class="portfolio-panel" aria-live="polite">
+          <span class="portfolio-count" id="portfolioCount">01 / 10</span>
+          <h2 id="portfolioActiveTitle">Redes por Tefi</h2>
+          <p id="portfolioActiveDesc">Landing clara y directa para una propuesta de gestion de redes, pensada para convertir visitas en consultas.</p>
+          <div class="portfolio-meta">
+            <span id="portfolioActiveType">Landing</span>
+            <span id="portfolioActiveYear">2026</span>
+          </div>
+          <div class="portfolio-actions">
+            <a class="portfolio-cta" id="portfolioVisit" href="https://redesportefi.com/" target="_blank" rel="noopener">Abrir sitio</a>
+            <a class="portfolio-secondary" id="portfolioRepo" href="https://github.com/FlorStein/redesxtefi" target="_blank" rel="noopener">Ver repo</a>
+          </div>
+        </aside>
+
+        <div class="portfolio-browser">
+          <div class="portfolio-browser-bar" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </div>
+          <iframe id="portfolioFrame" src="https://redesportefi.com/" title="Preview interactivo de Redes por Tefi" loading="lazy"></iframe>
+        </div>
+
+        <div class="portfolio-controls" role="tablist" aria-label="Filtros de portfolio">
+          <button class="portfolio-filter is-active" type="button" data-filter="all" aria-selected="true">Todo</button>
+          <button class="portfolio-filter" type="button" data-filter="landing" aria-selected="false">Landings</button>
+          <button class="portfolio-filter" type="button" data-filter="store" aria-selected="false">Tiendas</button>
+          <button class="portfolio-filter" type="button" data-filter="content" aria-selected="false">Contenido</button>
+        </div>
+
+        <div class="portfolio-grid"></div>
+      </section>
+    </div>
+  </main>
+  <script src="./portfolio.js"></script>
+</body>
+</html>
