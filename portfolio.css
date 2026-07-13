@@ -229,7 +229,10 @@
 .portfolio-browser{
   grid-column: 2;
   width: 100%;
-  aspect-ratio: 16 / 10;
+  --desktop-preview-width: 1440px;
+  --desktop-preview-height: 900px;
+  --desktop-preview-scale: 1;
+  height: calc(38px + (var(--desktop-preview-height) * var(--desktop-preview-scale)));
   min-height: 0;
   overflow: hidden;
   border: 1px solid rgba(255,255,255,.24);
@@ -268,7 +271,8 @@
 
 .portfolio-browser.is-mobile{
   width: min(100%, 390px);
-  aspect-ratio: auto;
+  height: auto;
+  max-height: none;
   justify-self: center;
   min-height: 740px;
   border-radius: 28px;
@@ -321,12 +325,19 @@
 }
 
 .portfolio-browser iframe{
-  width: 100%;
-  height: calc(100% - 38px);
+  width: var(--desktop-preview-width);
+  height: var(--desktop-preview-height);
   min-height: 0;
   display: block;
   border: 0;
   background: #fff;
+  transform: scale(var(--desktop-preview-scale));
+  transform-origin: top left;
+}
+
+.portfolio-browser.is-mobile iframe{
+  width: 100%;
+  transform: none;
 }
 
 .portfolio-controls{

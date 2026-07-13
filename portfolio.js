@@ -118,6 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const visit = section.querySelector('#portfolioVisit');
     const browser = section.querySelector('.portfolio-browser');
     const viewportButtons = Array.from(section.querySelectorAll('.portfolio-viewport'));
+    setupPreviewScale(browser);
 
     const activateCard = (card) => {
       cards.forEach((item) => item.classList.toggle('is-active', item === card));
@@ -167,6 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (browser) {
           browser.classList.toggle('is-mobile', viewport === 'mobile');
           browser.classList.toggle('is-desktop', viewport !== 'mobile');
+          updatePreviewScale(browser);
         }
       });
     });
@@ -180,6 +182,27 @@ document.addEventListener('DOMContentLoaded', () => {
     if (initial) activateCard(initial);
   });
 });
+
+function updatePreviewScale(browser) {
+  if (!browser || browser.classList.contains('is-mobile')) return;
+  const desktopWidth = 1440;
+  const availableWidth = browser.clientWidth;
+  const scale = Math.min(1, Math.max(0.42, availableWidth / desktopWidth));
+  browser.style.setProperty('--desktop-preview-scale', scale.toFixed(4));
+}
+
+function setupPreviewScale(browser) {
+  if (!browser) return;
+  updatePreviewScale(browser);
+
+  if ('ResizeObserver' in window) {
+    const observer = new ResizeObserver(() => updatePreviewScale(browser));
+    observer.observe(browser);
+    return;
+  }
+
+  window.addEventListener('resize', () => updatePreviewScale(browser));
+}
 
 function initPortfolioPointer() {
   const portfolioArea = document.querySelector('#portfolio-home, .portfolio-page');
