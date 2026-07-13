@@ -210,21 +210,6 @@
   font-weight: 900;
 }
 
-.portfolio-secondary{
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 44px;
-  padding: 10px 14px;
-  border: 1px solid rgba(255,255,255,.34);
-  border-radius: 8px;
-  color: #fff;
-  background: rgba(255,255,255,.06);
-  text-decoration: none;
-  font-family: monospace;
-  font-weight: 900;
-}
-
 .portfolio-actions{
   display: grid;
   gap: 8px;

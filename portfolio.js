@@ -107,7 +107,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const count = section.querySelector('#portfolioCount');
     const frame = section.querySelector('#portfolioFrame');
     const visit = section.querySelector('#portfolioVisit');
-    const repo = section.querySelector('#portfolioRepo');
 
     const activateCard = (card) => {
       cards.forEach((item) => item.classList.toggle('is-active', item === card));
@@ -120,7 +119,6 @@ document.addEventListener('DOMContentLoaded', () => {
         frame.title = `Preview interactivo de ${card.dataset.title || 'proyecto web'}`;
       }
       if (visit) visit.href = card.dataset.url || '#';
-      if (repo) repo.href = card.dataset.repo || '#';
       if (count) {
         const visible = cards.filter((item) => !item.classList.contains('is-hidden'));
         const index = Math.max(visible.indexOf(card), 0) + 1;
