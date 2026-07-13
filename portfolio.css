@@ -62,6 +62,13 @@
   }
 }
 
+@media (prefers-reduced-motion: reduce){
+  .portfolio-title-broken::before,
+  .portfolio-title-broken::after{
+    animation: none;
+  }
+}
+
 .portfolio-shell{
   width: min(1180px, 92vw);
   margin-inline: auto;
@@ -119,6 +126,55 @@
   letter-spacing: 0;
   color: #fff;
   text-transform: uppercase;
+}
+
+.portfolio-title-broken{
+  position: relative;
+  width: fit-content;
+  max-width: 100%;
+  isolation: isolate;
+  text-shadow: 4px 0 0 rgba(234,220,255,.14), -3px 3px 0 rgba(255,255,255,.08);
+}
+
+.portfolio-title-broken::before,
+.portfolio-title-broken::after{
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  color: #fff;
+  opacity: .72;
+}
+
+.portfolio-title-broken::before{
+  clip-path: polygon(0 7%, 100% 0, 100% 21%, 0 27%, 0 36%, 100% 29%, 100% 43%, 0 50%);
+  transform: translate(-7px, -3px);
+  text-shadow: 5px 0 0 #eadcff;
+  animation: titleBrokenShift 3.8s steps(2, end) infinite;
+}
+
+.portfolio-title-broken::after{
+  clip-path: polygon(0 58%, 100% 51%, 100% 64%, 0 70%, 0 82%, 100% 77%, 100% 91%, 0 100%);
+  transform: translate(6px, 4px);
+  text-shadow: -5px 0 0 rgba(255,255,255,.42);
+  animation: titleBrokenShift 4.6s steps(2, end) infinite reverse;
+}
+
+@keyframes titleBrokenShift{
+  0%,
+  76%,
+  100%{
+    transform: translate(0, 0);
+  }
+
+  80%{
+    transform: translate(9px, -3px);
+  }
+
+  84%{
+    transform: translate(-6px, 4px);
+  }
 }
 
 .portfolio-page .portfolio-title{

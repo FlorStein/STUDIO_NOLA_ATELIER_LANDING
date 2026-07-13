@@ -1,5 +1,23 @@
 const WEB_PROJECTS = [
   {
+    title: 'LUPITA',
+    desc: 'Landing demo con identidad vibrante y foco en presentar una marca con personalidad, ritmo visual y una experiencia clara para navegar.',
+    type: 'Landing',
+    year: '2026',
+    category: 'landing',
+    url: 'https://florstein.github.io/LUPITA/',
+    repo: 'https://github.com/FlorStein/LUPITA'
+  },
+  {
+    title: 'QUESITO',
+    desc: 'Landing demo para una marca de quesos, conservas y picnics, con constructor interactivo de picadas, fotos de clientes y una identidad fresca para portfolio.',
+    type: 'Landing',
+    year: '2026',
+    category: 'landing',
+    url: 'https://florstein.github.io/QUESITO/',
+    repo: 'https://github.com/FlorStein/QUESITO'
+  },
+  {
     title: 'Redes por Tefi',
     desc: 'Landing clara y directa para una propuesta de gestion de redes, pensada para convertir visitas en consultas.',
     type: 'Landing',
@@ -61,42 +79,6 @@ const WEB_PROJECTS = [
     category: 'store',
     url: 'https://carocruzpapelera.com/',
     repo: 'https://github.com/FlorStein/carocruz'
-  },
-  {
-    title: 'QUESITO',
-    desc: 'Landing demo para una marca de quesos, conservas y picnics, con constructor interactivo de picadas, fotos de clientes y una identidad fresca para portfolio.',
-    type: 'Landing',
-    year: '2026',
-    category: 'landing',
-    url: 'https://florstein.github.io/QUESITO/',
-    repo: 'https://github.com/FlorStein/QUESITO'
-  },
-  {
-    title: 'LUPITA',
-    desc: 'Landing demo con identidad vibrante y foco en presentar una marca con personalidad, ritmo visual y una experiencia clara para navegar.',
-    type: 'Landing',
-    year: '2026',
-    category: 'landing',
-    url: 'https://florstein.github.io/LUPITA/',
-    repo: 'https://github.com/FlorStein/LUPITA'
-  },
-  {
-    title: 'Tienda Studio Nola',
-    desc: 'Experiencia de tienda con productos, pricing y flujo comercial.',
-    type: 'Ecommerce',
-    year: '2026',
-    category: 'store',
-    url: './tienda.html',
-    repo: 'https://github.com/FlorStein/STUDIO_NOLA_ATELIER_LANDING'
-  },
-  {
-    title: 'Blog Studio Nola',
-    desc: 'Sistema editorial con articulos SEO para atraer clientes.',
-    type: 'Blog',
-    year: '2026',
-    category: 'content',
-    url: './index/blog.html',
-    repo: 'https://github.com/FlorStein/STUDIO_NOLA_ATELIER_LANDING'
   }
 ];
 
