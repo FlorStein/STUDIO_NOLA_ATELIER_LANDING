@@ -65,6 +65,7 @@
 .portfolio-shell{
   width: min(1180px, 92vw);
   margin-inline: auto;
+  min-width: 0;
 }
 
 .portfolio-nav{
@@ -568,6 +569,11 @@
   #portfolio-home,
   .portfolio-page{
     padding-block: 38px;
+    overflow-x: clip;
+  }
+
+  .portfolio-shell{
+    width: min(100% - 28px, 1180px);
   }
 
   .portfolio-page .portfolio-stage{
@@ -581,18 +587,23 @@
 
   .portfolio-mobile-track{
     display: flex;
-    gap: 18px;
-    width: calc(100% + 8vw);
-    margin-left: -4vw;
-    padding: 6px 4vw 22px;
+    gap: 16px;
+    width: 100%;
+    margin-left: 0;
+    padding: 6px 0 22px;
     overflow-x: auto;
+    overflow-y: hidden;
+    overscroll-behavior-x: contain;
     scroll-snap-type: x mandatory;
+    scroll-padding-inline: 0;
     scrollbar-width: thin;
   }
 
   .portfolio-mobile-card{
-    flex: 0 0 min(84vw, 390px);
-    scroll-snap-align: center;
+    flex: 0 0 min(100%, 370px);
+    max-width: 100%;
+    min-width: 0;
+    scroll-snap-align: start;
     display: grid;
     gap: 14px;
   }
@@ -614,10 +625,11 @@
     margin: 0;
     color: #fff;
     font-family: var(--FONT-SOVIETIC), "Bebas Neue", system-ui, sans-serif;
-    font-size: clamp(2.3rem, 13vw, 4rem);
-    line-height: .86;
+    font-size: clamp(2.05rem, 10.5vw, 3.35rem);
+    line-height: .9;
     letter-spacing: 0;
     text-transform: uppercase;
+    overflow-wrap: anywhere;
   }
 
   .portfolio-mobile-info p{
@@ -628,11 +640,13 @@
   }
 
   .portfolio-mobile-phone{
-    height: min(72vh, 680px);
-    min-height: 560px;
+    --mobile-preview-width: 390px;
+    --mobile-preview-scale: 1;
+    height: min(68vh, 650px);
+    min-height: 510px;
     overflow: hidden;
-    border: 10px solid #53475f;
-    border-radius: 30px;
+    border: 8px solid #53475f;
+    border-radius: 28px;
     background: #120a1d;
     box-shadow: 0 24px 68px rgba(0,0,0,.46);
   }
@@ -646,12 +660,14 @@
   }
 
   .portfolio-mobile-phone iframe{
-    width: 100%;
-    height: calc(100% - 27px);
+    width: var(--mobile-preview-width);
+    height: calc((100% - 27px) / var(--mobile-preview-scale));
     display: block;
     border: 0;
     border-radius: 0 0 18px 18px;
     background: #fff;
+    transform: scale(var(--mobile-preview-scale));
+    transform-origin: top left;
   }
 
   .portfolio-mobile-link{
@@ -664,7 +680,15 @@
 
   .portfolio-title,
   .portfolio-page .portfolio-title{
-    font-size: clamp(3rem, 18vw, 5.4rem);
+    max-width: 100%;
+    font-size: clamp(2.8rem, 14.5vw, 4.45rem);
+    line-height: .88;
+    overflow-wrap: anywhere;
+  }
+
+  .portfolio-sub{
+    max-width: 100%;
+    font-size: .98rem;
   }
 
   .portfolio-nav{
@@ -701,5 +725,31 @@
   .portfolio-browser.is-mobile iframe{
     min-height: auto;
     height: 618px;
+  }
+}
+
+@media (max-width: 430px){
+  .portfolio-shell{
+    width: min(100% - 22px, 1180px);
+  }
+
+  .portfolio-title,
+  .portfolio-page .portfolio-title{
+    font-size: clamp(2.45rem, 13.2vw, 3.5rem);
+  }
+
+  .portfolio-live-title{
+    font-size: .92rem;
+  }
+
+  .portfolio-mobile-card{
+    flex-basis: 100%;
+  }
+
+  .portfolio-mobile-phone{
+    min-height: 470px;
+    height: min(66vh, 600px);
+    border-width: 7px;
+    border-radius: 24px;
   }
 }

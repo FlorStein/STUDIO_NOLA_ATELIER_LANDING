@@ -205,6 +205,32 @@ function setupPreviewScale(browser) {
   window.addEventListener('resize', () => updatePreviewScale(browser));
 }
 
+function updateMobileShowcaseScale(phone) {
+  if (!phone) return;
+  const mobileWidth = 390;
+  const scale = Math.min(1, Math.max(0.72, phone.clientWidth / mobileWidth));
+  phone.style.setProperty('--mobile-preview-scale', scale.toFixed(4));
+}
+
+function setupMobileShowcaseScales() {
+  const phones = Array.from(document.querySelectorAll('.portfolio-mobile-phone'));
+  if (!phones.length) return;
+
+  phones.forEach((phone) => updateMobileShowcaseScale(phone));
+
+  if ('ResizeObserver' in window) {
+    const observer = new ResizeObserver((entries) => {
+      entries.forEach((entry) => updateMobileShowcaseScale(entry.target));
+    });
+    phones.forEach((phone) => observer.observe(phone));
+    return;
+  }
+
+  window.addEventListener('resize', () => {
+    phones.forEach((phone) => updateMobileShowcaseScale(phone));
+  });
+}
+
 function buildMobileShowcase() {
   const track = document.querySelector('.portfolio-mobile-track');
   if (!track || track.dataset.generated === 'true') return;
@@ -225,6 +251,7 @@ function buildMobileShowcase() {
   `).join('');
 
   track.dataset.generated = 'true';
+  setupMobileShowcaseScales();
 }
 
 function initPortfolioPointer() {
