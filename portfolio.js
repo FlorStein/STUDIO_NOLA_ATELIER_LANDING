@@ -116,6 +116,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const count = section.querySelector('#portfolioCount');
     const frame = section.querySelector('#portfolioFrame');
     const visit = section.querySelector('#portfolioVisit');
+    const browser = section.querySelector('.portfolio-browser');
+    const viewportButtons = Array.from(section.querySelectorAll('.portfolio-viewport'));
 
     const activateCard = (card) => {
       cards.forEach((item) => item.classList.toggle('is-active', item === card));
@@ -151,6 +153,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const firstVisible = cards.find((card) => !card.classList.contains('is-hidden'));
         if (firstVisible) activateCard(firstVisible);
+      });
+    });
+
+    viewportButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const viewport = button.dataset.viewport || 'desktop';
+        viewportButtons.forEach((item) => {
+          const isActive = item === button;
+          item.classList.toggle('is-active', isActive);
+          item.setAttribute('aria-pressed', String(isActive));
+        });
+        if (browser) {
+          browser.classList.toggle('is-mobile', viewport === 'mobile');
+          browser.classList.toggle('is-desktop', viewport !== 'mobile');
+        }
       });
     });
 

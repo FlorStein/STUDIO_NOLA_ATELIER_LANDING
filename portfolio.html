@@ -36,34 +36,43 @@
       </header>
 
       <section class="portfolio-stage" aria-label="Portfolio completo">
-        <aside class="portfolio-panel" aria-live="polite">
-          <span class="portfolio-count" id="portfolioCount">01 / 11</span>
-          <h2 id="portfolioActiveTitle">Redes por Tefi</h2>
-          <p id="portfolioActiveDesc">Landing clara y directa para una propuesta de gestion de redes, pensada para convertir visitas en consultas.</p>
-          <div class="portfolio-meta">
-            <span id="portfolioActiveType">Landing</span>
-            <span id="portfolioActiveYear">2026</span>
+        <aside class="portfolio-sidebar" aria-label="Listado de webs">
+          <div class="portfolio-controls" role="tablist" aria-label="Filtros de portfolio">
+            <button class="portfolio-filter is-active" type="button" data-filter="all" aria-selected="true">Todo</button>
+            <button class="portfolio-filter" type="button" data-filter="landing" aria-selected="false">Landings</button>
+            <button class="portfolio-filter" type="button" data-filter="store" aria-selected="false">Tiendas</button>
+            <button class="portfolio-filter" type="button" data-filter="content" aria-selected="false">Contenido</button>
           </div>
-          <div class="portfolio-actions">
-            <a class="portfolio-cta" id="portfolioVisit" href="https://redesportefi.com/" target="_blank" rel="noopener">Abrir sitio</a>
+
+          <div class="portfolio-grid"></div>
+
+          <div class="portfolio-panel" aria-live="polite">
+            <span class="portfolio-count" id="portfolioCount">01 / 11</span>
+            <h2 id="portfolioActiveTitle">Redes por Tefi</h2>
+            <p id="portfolioActiveDesc">Landing clara y directa para una propuesta de gestion de redes, pensada para convertir visitas en consultas.</p>
+            <div class="portfolio-meta">
+              <span id="portfolioActiveType">Landing</span>
+              <span id="portfolioActiveYear">2026</span>
+            </div>
+            <div class="portfolio-actions">
+              <a class="portfolio-cta" id="portfolioVisit" href="https://redesportefi.com/" target="_blank" rel="noopener">Abrir sitio</a>
+            </div>
           </div>
         </aside>
 
-        <div class="portfolio-browser">
-          <div class="portfolio-browser-bar" aria-hidden="true">
-            <span></span><span></span><span></span>
+        <div class="portfolio-viewer">
+          <div class="portfolio-view-toggle" role="group" aria-label="Modo de vista del preview">
+            <button class="portfolio-viewport is-active" type="button" data-viewport="desktop" aria-pressed="true">Desktop</button>
+            <button class="portfolio-viewport" type="button" data-viewport="mobile" aria-pressed="false">Mobile</button>
           </div>
-          <iframe id="portfolioFrame" src="https://redesportefi.com/" title="Preview interactivo de Redes por Tefi" loading="lazy"></iframe>
-        </div>
 
-        <div class="portfolio-controls" role="tablist" aria-label="Filtros de portfolio">
-          <button class="portfolio-filter is-active" type="button" data-filter="all" aria-selected="true">Todo</button>
-          <button class="portfolio-filter" type="button" data-filter="landing" aria-selected="false">Landings</button>
-          <button class="portfolio-filter" type="button" data-filter="store" aria-selected="false">Tiendas</button>
-          <button class="portfolio-filter" type="button" data-filter="content" aria-selected="false">Contenido</button>
+          <div class="portfolio-browser is-desktop">
+            <div class="portfolio-browser-bar" aria-hidden="true">
+              <span></span><span></span><span></span>
+            </div>
+            <iframe id="portfolioFrame" src="https://redesportefi.com/" title="Preview interactivo de Redes por Tefi" loading="lazy"></iframe>
+          </div>
         </div>
-
-        <div class="portfolio-grid"></div>
       </section>
     </div>
   </main>
