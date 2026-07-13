@@ -14,6 +14,54 @@
   padding-top: clamp(26px, 4vw, 54px);
 }
 
+#portfolio-home,
+#portfolio-home *,
+.portfolio-page,
+.portfolio-page *{
+  cursor: auto;
+}
+
+.portfolio-page a,
+.portfolio-page button,
+#portfolio-home a,
+#portfolio-home button{
+  cursor: pointer;
+}
+
+.portfolio-pointer{
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 10000;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #eadcff;
+  border-radius: 50%;
+  background: rgba(234, 220, 255, .18);
+  pointer-events: none;
+  opacity: 0;
+  transform: translate3d(-50%, -50%, 0) scale(1);
+  transition: width .18s ease, height .18s ease, opacity .18s ease, background .18s ease, border-color .18s ease;
+  box-shadow: 0 0 0 1px rgba(18,10,29,.5), 0 0 24px rgba(234,220,255,.28);
+}
+
+.portfolio-pointer.is-visible{
+  opacity: 1;
+}
+
+.portfolio-pointer.is-active{
+  width: 34px;
+  height: 34px;
+  background: rgba(234, 220, 255, .08);
+  border-color: #fff;
+}
+
+@media (pointer: coarse), (max-width: 780px){
+  .portfolio-pointer{
+    display: none;
+  }
+}
+
 .portfolio-shell{
   width: min(1180px, 92vw);
   margin-inline: auto;

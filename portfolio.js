@@ -92,6 +92,8 @@ const WEB_PROJECTS = [
 ];
 
 document.addEventListener('DOMContentLoaded', () => {
+  initPortfolioPointer();
+
   const sections = document.querySelectorAll('#portfolio-home, .portfolio-page');
 
   sections.forEach((section) => {
@@ -154,6 +156,34 @@ document.addEventListener('DOMContentLoaded', () => {
     if (initial) activateCard(initial);
   });
 });
+
+function initPortfolioPointer() {
+  const portfolioArea = document.querySelector('#portfolio-home, .portfolio-page');
+  if (!portfolioArea || window.matchMedia('(pointer: coarse)').matches) return;
+
+  let pointer = document.querySelector('.portfolio-pointer');
+  if (!pointer) {
+    pointer = document.createElement('div');
+    pointer.className = 'portfolio-pointer';
+    document.body.appendChild(pointer);
+  }
+
+  const movePointer = (event) => {
+    pointer.style.left = `${event.clientX}px`;
+    pointer.style.top = `${event.clientY}px`;
+    pointer.classList.add('is-visible');
+  };
+
+  const setActive = (event) => {
+    const target = event.target.closest('a, button, .portfolio-card, iframe');
+    pointer.classList.toggle('is-active', Boolean(target));
+  };
+
+  document.addEventListener('mousemove', movePointer);
+  document.addEventListener('mouseover', setActive);
+  document.addEventListener('mouseout', setActive);
+  document.addEventListener('mouseleave', () => pointer.classList.remove('is-visible'));
+}
 
 function buildProjectCards(section) {
   const grid = section.querySelector('.portfolio-grid');
