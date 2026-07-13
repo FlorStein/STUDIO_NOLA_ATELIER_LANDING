@@ -124,6 +124,15 @@
   font-size: clamp(4.4rem, 13vw, 13rem);
 }
 
+.portfolio-live-title{
+  margin: 0;
+  color: #eadcff;
+  font-family: monospace;
+  font-size: clamp(1rem, 2.2vw, 1.6rem);
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
 .portfolio-sub{
   max-width: 720px;
   margin: 0;
