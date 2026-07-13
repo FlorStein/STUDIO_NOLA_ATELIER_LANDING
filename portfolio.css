@@ -376,7 +376,7 @@
 }
 
 .portfolio-page .portfolio-stage{
-  grid-template-columns: minmax(290px, 360px) minmax(0, 1fr);
+  grid-template-columns: minmax(360px, 430px) minmax(0, 1fr);
 }
 
 .portfolio-page .portfolio-sidebar{
@@ -407,14 +407,16 @@
 .portfolio-page .portfolio-grid{
   grid-template-columns: 1fr;
   grid-auto-rows: auto;
+  gap: 10px;
 }
 
 .portfolio-page .portfolio-card{
-  min-height: 74px;
+  min-height: auto;
   grid-template-columns: minmax(0, 1fr) auto;
-  align-items: center;
-  gap: 6px 12px;
-  padding: 12px 14px;
+  align-items: start;
+  gap: 7px 12px;
+  padding: 14px;
+  background: rgba(255,255,255,.055);
 }
 
 .portfolio-page .portfolio-card-top{
@@ -423,20 +425,37 @@
 
 .portfolio-page .portfolio-card strong{
   min-width: 0;
-  overflow: hidden;
-  font-size: clamp(1.15rem, 1.45vw, 1.65rem);
-  line-height: 1;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  overflow: visible;
+  font-size: clamp(1.25rem, 1.85vw, 2rem);
+  line-height: .95;
+  white-space: normal;
 }
 
 .portfolio-page .portfolio-card small{
   justify-self: end;
-  max-width: 88px;
-  overflow: hidden;
+  max-width: none;
   font-size: .72rem;
-  text-overflow: ellipsis;
   white-space: nowrap;
+  padding: 5px 8px;
+  border: 1px solid rgba(234,220,255,.26);
+  border-radius: 999px;
+}
+
+.portfolio-card-desc{
+  display: none;
+}
+
+.portfolio-page .portfolio-card-desc{
+  grid-column: 1 / -1;
+  display: -webkit-box;
+  margin: 0;
+  overflow: hidden;
+  color: rgba(255,255,255,.7);
+  font-family: Montserrat, sans-serif;
+  font-size: .86rem;
+  line-height: 1.35;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 
 .portfolio-page .portfolio-card em{
@@ -444,12 +463,13 @@
   max-width: 100%;
   font-size: .76rem;
   overflow: hidden;
+  color: rgba(234,220,255,.82);
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
 .portfolio-page .portfolio-grid{
-  grid-auto-rows: minmax(178px, auto);
+  grid-auto-rows: auto;
 }
 
 .portfolio-card{
@@ -508,6 +528,10 @@
 
 @media (max-width: 980px){
   .portfolio-stage{
+    grid-template-columns: 1fr;
+  }
+
+  .portfolio-page .portfolio-stage{
     grid-template-columns: 1fr;
   }
 

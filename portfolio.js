@@ -254,6 +254,7 @@ function buildProjectCards(section) {
       </span>
       <strong>${project.title}</strong>
       <small>${project.type}</small>
+      <span class="portfolio-card-desc">${project.desc}</span>
       <em>${project.url.replace(/^\.\/|^https?:\/\//, '')}</em>
     </button>
   `).join('');
