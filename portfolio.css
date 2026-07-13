@@ -605,6 +605,8 @@
     min-width: 0;
     scroll-snap-align: start;
     display: grid;
+    grid-template-rows: 214px auto auto;
+    align-items: start;
     gap: 14px;
   }
 
@@ -612,6 +614,7 @@
     display: grid;
     gap: 8px;
     padding: 0 4px;
+    align-content: start;
   }
 
   .portfolio-mobile-info span,
@@ -633,10 +636,14 @@
   }
 
   .portfolio-mobile-info p{
+    display: -webkit-box;
     margin: 0;
+    overflow: hidden;
     color: rgba(255,255,255,.74);
     font-family: Montserrat, sans-serif;
     line-height: 1.45;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
   }
 
   .portfolio-mobile-phone{
@@ -671,11 +678,25 @@
   }
 
   .portfolio-mobile-link{
-    width: fit-content;
-    padding: 10px 12px;
-    border: 1px solid rgba(234,220,255,.45);
-    border-radius: 999px;
+    width: 100%;
+    min-height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 16px;
+    border: 1px solid rgba(234,220,255,.72);
+    border-radius: 8px;
+    background: #eadcff;
+    color: #120a1d;
+    box-shadow: 0 14px 32px rgba(234,220,255,.16);
     text-decoration: none;
+    transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+  }
+
+  .portfolio-mobile-link:hover{
+    transform: translateY(-2px);
+    background: #fff;
+    box-shadow: 0 18px 38px rgba(234,220,255,.22);
   }
 
   .portfolio-title,
@@ -744,6 +765,7 @@
 
   .portfolio-mobile-card{
     flex-basis: 100%;
+    grid-template-rows: 224px auto auto;
   }
 
   .portfolio-mobile-phone{
