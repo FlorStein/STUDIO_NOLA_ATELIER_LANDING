@@ -102,6 +102,7 @@ const WEB_PROJECTS = [
 
 document.addEventListener('DOMContentLoaded', () => {
   initPortfolioPointer();
+  buildMobileShowcase();
 
   const sections = document.querySelectorAll('#portfolio-home, .portfolio-page');
 
@@ -202,6 +203,28 @@ function setupPreviewScale(browser) {
   }
 
   window.addEventListener('resize', () => updatePreviewScale(browser));
+}
+
+function buildMobileShowcase() {
+  const track = document.querySelector('.portfolio-mobile-track');
+  if (!track || track.dataset.generated === 'true') return;
+
+  track.innerHTML = WEB_PROJECTS.map((project, index) => `
+    <article class="portfolio-mobile-card">
+      <div class="portfolio-mobile-info">
+        <span>${String(index + 1).padStart(2, '0')} / ${String(WEB_PROJECTS.length).padStart(2, '0')}</span>
+        <h3>${project.title}</h3>
+        <p>${project.desc}</p>
+      </div>
+      <div class="portfolio-mobile-phone">
+        <div class="portfolio-mobile-speaker" aria-hidden="true"></div>
+        <iframe src="${project.url}" title="Preview mobile de ${project.title}" loading="lazy"></iframe>
+      </div>
+      <a class="portfolio-mobile-link" href="${project.url}" target="_blank" rel="noopener">Abrir sitio</a>
+    </article>
+  `).join('');
+
+  track.dataset.generated = 'true';
 }
 
 function initPortfolioPointer() {

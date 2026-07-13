@@ -526,6 +526,10 @@
   display: none;
 }
 
+.portfolio-mobile-showcase{
+  display: none;
+}
+
 @media (max-width: 980px){
   .portfolio-stage{
     grid-template-columns: 1fr;
@@ -564,6 +568,98 @@
   #portfolio-home,
   .portfolio-page{
     padding-block: 38px;
+  }
+
+  .portfolio-page .portfolio-stage{
+    display: none;
+  }
+
+  .portfolio-mobile-showcase{
+    display: block;
+    margin-top: 28px;
+  }
+
+  .portfolio-mobile-track{
+    display: flex;
+    gap: 18px;
+    width: calc(100% + 8vw);
+    margin-left: -4vw;
+    padding: 6px 4vw 22px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+  }
+
+  .portfolio-mobile-card{
+    flex: 0 0 min(84vw, 390px);
+    scroll-snap-align: center;
+    display: grid;
+    gap: 14px;
+  }
+
+  .portfolio-mobile-info{
+    display: grid;
+    gap: 8px;
+    padding: 0 4px;
+  }
+
+  .portfolio-mobile-info span,
+  .portfolio-mobile-link{
+    color: #eadcff;
+    font-family: monospace;
+    font-weight: 900;
+  }
+
+  .portfolio-mobile-info h3{
+    margin: 0;
+    color: #fff;
+    font-family: var(--FONT-SOVIETIC), "Bebas Neue", system-ui, sans-serif;
+    font-size: clamp(2.3rem, 13vw, 4rem);
+    line-height: .86;
+    letter-spacing: 0;
+    text-transform: uppercase;
+  }
+
+  .portfolio-mobile-info p{
+    margin: 0;
+    color: rgba(255,255,255,.74);
+    font-family: Montserrat, sans-serif;
+    line-height: 1.45;
+  }
+
+  .portfolio-mobile-phone{
+    height: min(72vh, 680px);
+    min-height: 560px;
+    overflow: hidden;
+    border: 10px solid #53475f;
+    border-radius: 30px;
+    background: #120a1d;
+    box-shadow: 0 24px 68px rgba(0,0,0,.46);
+  }
+
+  .portfolio-mobile-speaker{
+    width: 42px;
+    height: 5px;
+    margin: 12px auto 10px;
+    border-radius: 999px;
+    background: rgba(255,255,255,.72);
+  }
+
+  .portfolio-mobile-phone iframe{
+    width: 100%;
+    height: calc(100% - 27px);
+    display: block;
+    border: 0;
+    border-radius: 0 0 18px 18px;
+    background: #fff;
+  }
+
+  .portfolio-mobile-link{
+    width: fit-content;
+    padding: 10px 12px;
+    border: 1px solid rgba(234,220,255,.45);
+    border-radius: 999px;
+    text-decoration: none;
   }
 
   .portfolio-title,
