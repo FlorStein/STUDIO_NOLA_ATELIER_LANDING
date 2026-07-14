@@ -81,13 +81,13 @@ const WEB_PROJECTS = [
     repo: 'https://github.com/FlorStein/Leonardi_abogada_landingpage'
   },
   {
-    title: 'Design Studio Template',
-    desc: 'Template creativo para estudio de diseno, armado como base visual flexible para presentar servicios, estilo y llamada a la accion.',
-    type: 'Template',
+    title: 'Nutricion con Agos',
+    desc: 'Landing profesional para nutricion, con una experiencia cercana, clara y orientada a presentar servicios, enfoque de trabajo y canales de consulta.',
+    type: 'Landing',
     year: '2026',
     category: 'landing',
-    url: 'https://florstein.github.io/design-studio-template/',
-    repo: 'https://github.com/FlorStein/design-studio-template'
+    url: 'https://nutricionconagos.com/',
+    repo: 'https://github.com/FlorStein/nutri'
   },
   {
     title: 'Caro Cruz Papelera',
