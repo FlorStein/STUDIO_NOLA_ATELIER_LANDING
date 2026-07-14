@@ -36,6 +36,15 @@ const WEB_PROJECTS = [
     repo: 'https://github.com/FlorStein/MILO'
   },
   {
+    title: 'NIKOLA',
+    desc: 'Landing demo con una estetica fuerte y navegacion directa, pensada para mostrar una propuesta digital con identidad, ritmo y claridad.',
+    type: 'Landing',
+    year: '2026',
+    category: 'landing',
+    url: 'https://florstein.github.io/NIKOLA/',
+    repo: 'https://github.com/FlorStein/NIKOLA'
+  },
+  {
     title: 'Redes por Tefi',
     desc: 'Landing clara y directa para una propuesta de gestion de redes, pensada para convertir visitas en consultas.',
     type: 'Landing',
