@@ -301,6 +301,7 @@
   --desktop-preview-width: 1440px;
   --desktop-preview-height: 900px;
   --desktop-preview-scale: 1;
+  --preview-scrollbar-mask: 18px;
   height: calc(38px + (var(--desktop-preview-height) * var(--desktop-preview-scale)));
   min-height: 0;
   overflow: hidden;
@@ -394,7 +395,7 @@
 }
 
 .portfolio-browser iframe{
-  width: var(--desktop-preview-width);
+  width: calc(var(--desktop-preview-width) + var(--preview-scrollbar-mask));
   height: var(--desktop-preview-height);
   min-height: 0;
   display: block;
@@ -405,7 +406,7 @@
 }
 
 .portfolio-browser.is-mobile iframe{
-  width: 100%;
+  width: calc(100% + var(--preview-scrollbar-mask));
   transform: none;
 }
 
@@ -745,6 +746,7 @@
   .portfolio-mobile-phone{
     --mobile-preview-width: 390px;
     --mobile-preview-scale: 1;
+    --preview-scrollbar-mask: 18px;
     height: min(68vh, 650px);
     min-height: 510px;
     overflow: hidden;
@@ -763,7 +765,7 @@
   }
 
   .portfolio-mobile-phone iframe{
-    width: var(--mobile-preview-width);
+    width: calc(var(--mobile-preview-width) + var(--preview-scrollbar-mask));
     height: calc((100% - 27px) / var(--mobile-preview-scale));
     display: block;
     border: 0;
