@@ -54,6 +54,15 @@ const WEB_PROJECTS = [
     repo: 'https://github.com/FlorStein/espaciopuro'
   },
   {
+    title: 'Tennis Club',
+    desc: 'Landing demo para club deportivo, con una identidad dinamica, informacion clara y recorrido pensado para presentar actividades y comunidad.',
+    type: 'Landing',
+    year: '2026',
+    category: 'landing',
+    url: 'https://florstein.github.io/tennisclub/',
+    repo: 'https://github.com/FlorStein/tennisclub'
+  },
+  {
     title: 'Redes por Tefi',
     desc: 'Landing clara y directa para una propuesta de gestion de redes, pensada para convertir visitas en consultas.',
     type: 'Landing',
