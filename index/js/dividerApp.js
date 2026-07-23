@@ -317,7 +317,7 @@ function initMobileServiceDeck() {
     const mobileNav = document.getElementById('mobile-nav');
     const colorTargets = [divisor, divider, mobileNav].filter(Boolean);
     const services = [
-        { el: bgr0, className: 'bgr0', theme: '#54bf7d' },
+        { el: bgr0, className: 'bgr0', theme: '#927AB8' },
         { el: bgr1, className: 'bgr1', theme: '#CDEA79' },
         { el: bgr2, className: 'bgr2', theme: '#A7197D' },
         { el: bgr3, className: 'bgr3', theme: '#159FFF' },

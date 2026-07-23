@@ -582,15 +582,13 @@ body {
 @media (max-width: 768px) {
   html {
     min-height: 100%;
-    background: var(--BACKGROUND--1) center fixed no-repeat !important;
-    background-size: cover !important;
+    background: #927AB8 url("./index/backgrounds/backgroundoriginal.svg") center center / cover no-repeat fixed !important;
   }
 
   body {
     min-height: 100svh;
     padding-bottom: env(safe-area-inset-bottom, 0) !important;
-    background: var(--BACKGROUND--1) center fixed no-repeat !important;
-    background-size: cover !important;
+    background: #927AB8 url("./index/backgrounds/backgroundoriginal.svg") center center / cover no-repeat fixed !important;
   }
 
   .mobile-nav .mnav-panel {
@@ -600,7 +598,7 @@ body {
   }
 
   .mobile-nav.bgr0 .mnav-panel,
-  .mobile-nav.bgr0 .mnav-bar { background: var(--BACKGROUND-0) fixed !important; }
+  .mobile-nav.bgr0 .mnav-bar { background: #927AB8 url("./index/backgrounds/backgroundoriginal.svg") center center / cover no-repeat fixed !important; }
   .mobile-nav.bgr1 .mnav-panel,
   .mobile-nav.bgr1 .mnav-bar { background: var(--BACKGROUND-1) fixed !important; }
   .mobile-nav.bgr2 .mnav-panel,
@@ -711,7 +709,9 @@ body {
     overflow: hidden !important;
   }
 
-  #bgr0 { background: var(--BACKGROUND-0) fixed !important; }
+  #divisor.bgr0,
+  #divider.bgr0,
+  #bgr0 { background: #927AB8 url("./index/backgrounds/backgroundoriginal.svg") center center / cover no-repeat fixed !important; }
   #bgr1 { background: var(--BACKGROUND-1) fixed !important; }
   #bgr2 { background: var(--BACKGROUND-2) fixed !important; }
   #bgr3 { background: var(--BACKGROUND-3) fixed !important; }
