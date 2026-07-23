@@ -582,30 +582,16 @@ body {
 @media (max-width: 768px) {
   html {
     min-height: 100%;
-    background: #927AB8 !important;
+    background: var(--BACKGROUND--1) center fixed no-repeat !important;
+    background-size: cover !important;
   }
-
-  html.bgr0 { background: var(--BACKGROUND-0) fixed !important; }
-  html.bgr1 { background: var(--BACKGROUND-1) fixed !important; }
-  html.bgr2 { background: var(--BACKGROUND-2) fixed !important; }
-  html.bgr3 { background: var(--BACKGROUND-3) fixed !important; }
-  html.bgr4 { background: var(--BACKGROUND-4) fixed !important; }
-  html.bgr5 { background: var(--BACKGROUND-5) fixed !important; }
-  html.bgr6 { background: var(--BACKGROUND-6) fixed !important; }
 
   body {
     min-height: 100svh;
     padding-bottom: env(safe-area-inset-bottom, 0) !important;
-    background-color: #927AB8 !important;
+    background: var(--BACKGROUND--1) center fixed no-repeat !important;
+    background-size: cover !important;
   }
-
-  body.bgr0 { background: var(--BACKGROUND-0) fixed !important; }
-  body.bgr1 { background: var(--BACKGROUND-1) fixed !important; }
-  body.bgr2 { background: var(--BACKGROUND-2) fixed !important; }
-  body.bgr3 { background: var(--BACKGROUND-3) fixed !important; }
-  body.bgr4 { background: var(--BACKGROUND-4) fixed !important; }
-  body.bgr5 { background: var(--BACKGROUND-5) fixed !important; }
-  body.bgr6 { background: var(--BACKGROUND-6) fixed !important; }
 
   .mobile-nav .mnav-panel {
     background: rgba(146, 122, 184, .88) !important;

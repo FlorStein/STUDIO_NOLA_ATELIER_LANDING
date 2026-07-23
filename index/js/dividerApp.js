@@ -315,7 +315,7 @@ function initMobileServiceDeck() {
     const mq = window.matchMedia('(max-width: 768px)');
     const deck = document.getElementById('servicios-div');
     const mobileNav = document.getElementById('mobile-nav');
-    const colorTargets = [document.body, document.documentElement, divisor, divider, mobileNav].filter(Boolean);
+    const colorTargets = [divisor, divider, mobileNav].filter(Boolean);
     const services = [
         { el: bgr0, className: 'bgr0', theme: '#54bf7d' },
         { el: bgr1, className: 'bgr1', theme: '#CDEA79' },
@@ -348,6 +348,16 @@ function initMobileServiceDeck() {
                     .forEach(className => target.classList.remove(className));
             });
         });
+    }
+
+    function clearServiceChrome() {
+        colorTargets.forEach(target => {
+            colorClasses.forEach(className => target.classList.remove(className));
+        });
+        services.forEach(item => item.el.classList.remove('mobile-active'));
+        if (nav) nav.classList.remove('nav-on-servicios');
+        currentService = null;
+        updateThemeColor('#927AB8');
     }
 
     function updateThemeColor(color) {
@@ -421,6 +431,8 @@ function initMobileServiceDeck() {
                 deckInView = entry.isIntersecting && entry.intersectionRatio > 0.2;
                 if (deckInView && mq.matches) {
                     setActive(closestService(), true);
+                } else if (mq.matches) {
+                    clearServiceChrome();
                 }
             });
         }, { threshold: [0, .2, .45, .7] });
@@ -436,9 +448,7 @@ function initMobileServiceDeck() {
             });
             setActive(closestService(), deckInView);
         } else {
-            services.forEach(item => item.el.classList.remove('mobile-active'));
-            updateThemeColor('#927AB8');
-            currentService = null;
+            clearServiceChrome();
         }
     }
 
