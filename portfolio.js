@@ -1,5 +1,14 @@
 const WEB_PROJECTS = [
   {
+    title: 'BURGA',
+    desc: 'Landing demo con impronta gastronomica y visual potente, pensada para presentar una marca con sabor, caracter y una experiencia directa para convertir visitas en pedidos.',
+    type: 'Landing',
+    year: '2026',
+    category: 'landing',
+    url: 'https://florstein.github.io/BURGA/',
+    repo: 'https://github.com/FlorStein/BURGA'
+  },
+  {
     title: 'LUPITA',
     desc: 'Landing demo con identidad vibrante y foco en presentar una marca con personalidad, ritmo visual y una experiencia clara para navegar.',
     type: 'Landing',
