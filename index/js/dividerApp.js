@@ -311,5 +311,104 @@ const row6          =   document.getElementById('row6')
 
 
 
+function initMobileServiceDeck() {
+    const mq = window.matchMedia('(max-width: 768px)');
+    const deck = document.getElementById('servicios-div');
+    const colorTargets = [document.body, divisor, divider].filter(Boolean);
+    const services = [
+        { el: bgr0, className: 'bgr0' },
+        { el: bgr1, className: 'bgr1' },
+        { el: bgr2, className: 'bgr2' },
+        { el: bgr3, className: 'bgr3' },
+        { el: bgr4, className: 'bgr4' },
+        { el: bgr5, className: 'bgr5' },
+        { el: bgr6, className: 'bgr6' }
+    ].filter(item => item.el);
+
+    if (!deck || !services.length) return;
+
+    const colorClasses = services.map(item => item.className);
+
+    function setActive(service) {
+        services.forEach(item => item.el.classList.toggle('mobile-active', item === service));
+        colorTargets.forEach(target => {
+            target.classList.remove(...colorClasses);
+            target.classList.add(service.className);
+        });
+        if (nav) nav.classList.add('nav-on-servicios');
+    }
+
+    function closestService() {
+        const deckCenter = deck.getBoundingClientRect().left + (deck.clientWidth / 2);
+        return services.reduce((best, service) => {
+            const rect = service.el.getBoundingClientRect();
+            const distance = Math.abs((rect.left + rect.width / 2) - deckCenter);
+            return distance < best.distance ? { service, distance } : best;
+        }, { service: services[0], distance: Infinity }).service;
+    }
+
+    function updateFromScroll() {
+        if (!mq.matches) return;
+        setActive(closestService());
+    }
+
+    function goToInfo(mi) {
+        const target = document.getElementById('mas-info');
+        if (!target) return;
+
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        window.setTimeout(() => {
+            const tabId = mi === 'web' ? 'tab-web-btn' : mi === 'branding' ? 'tab-branding-btn' : 'tab-digital-btn';
+            const tabButton = document.getElementById(tabId);
+            if (tabButton) tabButton.click();
+        }, 360);
+    }
+
+    deck.addEventListener('scroll', () => {
+        window.clearTimeout(deck._mobileServiceTimer);
+        deck._mobileServiceTimer = window.setTimeout(updateFromScroll, 60);
+    }, { passive: true });
+
+    deck.addEventListener('click', (event) => {
+        if (!mq.matches) return;
+
+        const infoLink = event.target.closest('a[data-mi]');
+        if (infoLink) {
+            event.preventDefault();
+            event.stopPropagation();
+            goToInfo(infoLink.getAttribute('data-mi'));
+            return;
+        }
+
+        const serviceEl = event.target.closest('.services');
+        if (!serviceEl) return;
+
+        event.preventDefault();
+        event.stopPropagation();
+        const service = services.find(item => item.el === serviceEl);
+        if (!service) return;
+
+        setActive(service);
+        service.el.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+    }, true);
+
+    function syncMode() {
+        if (mq.matches) {
+            services.forEach(item => {
+                item.el.style.display = '';
+                item.el.classList.remove('active');
+            });
+            setActive(closestService());
+        } else {
+            services.forEach(item => item.el.classList.remove('mobile-active'));
+        }
+    }
+
+    mq.addEventListener('change', syncMode);
+    syncMode();
+}
+
+initMobileServiceDeck();
+
 
 

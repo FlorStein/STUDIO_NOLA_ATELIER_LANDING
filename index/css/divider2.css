@@ -411,3 +411,189 @@
 
 
 @media (max-width: 768px){ .logo, .logo-mali, .mali-logo, .logo-rotating, .rotate-logo { animation: none !important; transform: none !important; } }
+
+@media (max-width: 768px) {
+  #divisor {
+    width: 100vw;
+    height: auto;
+    min-height: 100svh;
+    padding: 82px 0 48px;
+    box-sizing: border-box;
+    overflow: hidden;
+    border-left: 0;
+    border-right: 0;
+  }
+
+  .divider1 {
+    display: none;
+  }
+
+  .vector-divider.divider2 {
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    display: block;
+    overflow: visible;
+  }
+
+  #div-title2 {
+    width: 100%;
+    display: grid;
+    gap: 18px;
+  }
+
+  #title2 {
+    width: min(100% - 28px, 430px);
+    margin: 0 auto;
+    padding: 0 0 10px;
+    justify-content: flex-start;
+    font-size: clamp(2.5rem, 13vw, 4.6rem);
+    line-height: .82;
+    border-bottom: 2px solid currentColor;
+  }
+
+  #title2.slidetitle {
+    width: min(100% - 28px, 430px);
+    height: auto;
+    letter-spacing: 0;
+    color: var(--sn-bg);
+  }
+
+  #servicios-div {
+    width: 100%;
+    display: flex !important;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 14px;
+    padding: 0 14px 18px;
+    box-sizing: border-box;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 14px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  #servicios-div::-webkit-scrollbar {
+    display: none;
+  }
+
+  .accordion-div {
+    flex: 0 0 min(82vw, 360px);
+    min-width: 0;
+    display: block !important;
+    scroll-snap-align: center;
+  }
+
+  #bgr0,
+  #bgr1,
+  #bgr2,
+  #bgr3,
+  #bgr4,
+  #bgr5,
+  #bgr6,
+  .services.active {
+    width: 100% !important;
+    height: min(66svh, 520px) !important;
+    min-height: 430px;
+    margin: 0 !important;
+    padding: 18px;
+    display: grid !important;
+    grid-template-rows: auto 1fr auto;
+    align-items: stretch;
+    border: 2px solid var(--sn-bg);
+    border-radius: 28px !important;
+    box-sizing: border-box;
+    box-shadow: 8px 8px 0 rgba(0,0,0,.72);
+    overflow: hidden;
+    transition: transform .25s ease, box-shadow .25s ease, background .45s ease;
+  }
+
+  #bgr0 { background: var(--BACKGROUND-0) fixed; }
+  #bgr1 { background: var(--BACKGROUND-1) fixed; }
+  #bgr2 { background: var(--BACKGROUND-2) fixed; }
+  #bgr3 { background: var(--BACKGROUND-3) fixed; }
+  #bgr4 { background: var(--BACKGROUND-4) fixed; }
+  #bgr5 { background: var(--BACKGROUND-5) fixed; }
+  #bgr6 { background: var(--BACKGROUND-6) fixed; }
+
+  .services.mobile-active {
+    transform: translateY(-8px) rotate(-1deg);
+    box-shadow: 12px 14px 0 rgba(0,0,0,.72);
+  }
+
+  .close-btn,
+  .hidden-cartel,
+  .cartel {
+    display: none !important;
+  }
+
+  .card {
+    width: auto !important;
+    height: auto !important;
+    order: 0;
+    writing-mode: horizontal-tb;
+    transform: none;
+    display: block !important;
+    color: var(--sn-bg);
+    font-size: clamp(2.1rem, 10.5vw, 3.2rem);
+    line-height: .86;
+    text-align: left;
+    text-transform: uppercase;
+  }
+
+  .info {
+    order: 1;
+    display: grid !important;
+    align-content: end;
+    gap: 14px;
+    padding: 0 !important;
+    margin: 0 !important;
+    height: auto;
+  }
+
+  .p-info {
+    width: auto !important;
+    margin: 0 !important;
+    padding: 16px !important;
+    border: 2px solid var(--sn-bg);
+    border-radius: 18px;
+    background: rgba(255,255,255,.74) !important;
+    color: #111 !important;
+    font-size: .98rem;
+    line-height: 1.45;
+  }
+
+  .btn-mas-info-service {
+    align-self: start;
+    min-height: 46px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 18px;
+    border: 2px solid var(--sn-bg);
+    border-radius: 999px;
+    color: var(--sn-bg) !important;
+    background: rgba(255,255,255,.78);
+    font: 900 .82rem/1 monospace;
+    text-decoration: none;
+    box-shadow: 4px 4px 0 rgba(0,0,0,.72);
+  }
+
+  .btn-mas-info-service::before,
+  .btn-mas-info-service::after {
+    content: none !important;
+  }
+
+  #servicios-div::after {
+    content: "desliza";
+    flex: 0 0 62px;
+    display: grid;
+    place-items: center;
+    color: rgba(255,255,255,.72);
+    font: 900 .72rem/1 monospace;
+    text-transform: uppercase;
+    writing-mode: vertical-rl;
+    letter-spacing: .08em;
+  }
+}

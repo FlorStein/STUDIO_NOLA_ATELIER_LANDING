@@ -578,6 +578,175 @@ body {
   --service-color: #FF857D;
 }
 
+/* === Mobile: "Que hacemos" as a tactile service deck === */
+@media (max-width: 768px) {
+  #divisor {
+    height: auto !important;
+    min-height: 100svh !important;
+    padding: 82px 0 48px !important;
+    overflow: hidden !important;
+  }
+
+  #divisor .divider1 {
+    display: none !important;
+  }
+
+  #divisor .vector-divider.divider2 {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    display: block !important;
+    overflow: visible !important;
+  }
+
+  #divisor #div-title2 {
+    width: 100% !important;
+    display: grid !important;
+    gap: 18px !important;
+  }
+
+  #divisor #title2 {
+    width: min(100% - 28px, 430px) !important;
+    height: auto !important;
+    margin: 0 auto !important;
+    padding: 0 0 10px !important;
+    justify-content: flex-start !important;
+    font-size: clamp(2.5rem, 13vw, 4.6rem) !important;
+    line-height: .82 !important;
+    letter-spacing: 0 !important;
+    color: var(--sn-bg) !important;
+    border-bottom: 2px solid currentColor !important;
+  }
+
+  #servicios-div {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: flex-start !important;
+    gap: 14px !important;
+    padding: 0 14px 18px !important;
+    box-sizing: border-box !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 14px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  #servicios-div::-webkit-scrollbar {
+    display: none;
+  }
+
+  #servicios-div .accordion-div {
+    flex: 0 0 min(82vw, 360px) !important;
+    min-width: 0 !important;
+    display: block !important;
+    scroll-snap-align: center;
+  }
+
+  #servicios-div .services,
+  #servicios-div .services.active {
+    width: 100% !important;
+    height: min(66svh, 520px) !important;
+    min-height: 430px !important;
+    margin: 0 !important;
+    padding: 18px !important;
+    display: grid !important;
+    grid-template-rows: auto 1fr auto !important;
+    align-items: stretch !important;
+    border: 2px solid var(--sn-bg) !important;
+    border-radius: 28px !important;
+    box-sizing: border-box !important;
+    box-shadow: 8px 8px 0 rgba(0,0,0,.72) !important;
+    overflow: hidden !important;
+  }
+
+  #bgr0 { background: var(--BACKGROUND-0) fixed !important; }
+  #bgr1 { background: var(--BACKGROUND-1) fixed !important; }
+  #bgr2 { background: var(--BACKGROUND-2) fixed !important; }
+  #bgr3 { background: var(--BACKGROUND-3) fixed !important; }
+  #bgr4 { background: var(--BACKGROUND-4) fixed !important; }
+  #bgr5 { background: var(--BACKGROUND-5) fixed !important; }
+  #bgr6 { background: var(--BACKGROUND-6) fixed !important; }
+
+  #servicios-div .services.mobile-active {
+    transform: translateY(-8px) rotate(-1deg);
+    box-shadow: 12px 14px 0 rgba(0,0,0,.72) !important;
+  }
+
+  #servicios-div .close-btn,
+  #servicios-div .hidden-cartel,
+  #servicios-div .cartel {
+    display: none !important;
+  }
+
+  #servicios-div .card {
+    width: auto !important;
+    height: auto !important;
+    writing-mode: horizontal-tb !important;
+    transform: none !important;
+    display: block !important;
+    color: var(--sn-bg) !important;
+    font-size: clamp(2.1rem, 10.5vw, 3.2rem) !important;
+    line-height: .86 !important;
+    text-align: left !important;
+  }
+
+  #servicios-div .info {
+    display: grid !important;
+    align-content: end !important;
+    gap: 14px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  #servicios-div .p-info {
+    width: auto !important;
+    margin: 0 !important;
+    padding: 16px !important;
+    border: 2px solid var(--sn-bg) !important;
+    border-radius: 18px !important;
+    background: rgba(255,255,255,.74) !important;
+    color: #111 !important;
+    font-size: .98rem !important;
+    line-height: 1.45 !important;
+  }
+
+  #servicios-div .btn-mas-info-service {
+    min-height: 46px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: fit-content !important;
+    margin: 0 !important;
+    padding: 0 18px !important;
+    border: 2px solid var(--sn-bg) !important;
+    border-radius: 999px !important;
+    color: var(--sn-bg) !important;
+    background: rgba(255,255,255,.78) !important;
+    font: 900 .82rem/1 monospace !important;
+    box-shadow: 4px 4px 0 rgba(0,0,0,.72) !important;
+    transform: none !important;
+  }
+
+  #servicios-div .btn-mas-info-service::before,
+  #servicios-div .btn-mas-info-service::after {
+    content: none !important;
+  }
+
+  #servicios-div::after {
+    content: "desliza";
+    flex: 0 0 62px;
+    display: grid;
+    place-items: center;
+    color: rgba(255,255,255,.72);
+    font: 900 .72rem/1 monospace;
+    text-transform: uppercase;
+    writing-mode: vertical-rl;
+    letter-spacing: .08em;
+  }
+}
+
 #info6 .btn-mas-info-service {
   --service-color: #070741;
 }
