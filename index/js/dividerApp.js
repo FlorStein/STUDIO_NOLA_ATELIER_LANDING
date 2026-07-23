@@ -314,10 +314,16 @@ const row6          =   document.getElementById('row6')
 function initMobileServiceDeck() {
     const mq = window.matchMedia('(max-width: 768px)');
     const deck = document.getElementById('servicios-div');
-    const mobileNav = document.getElementById('mobile-nav');
-    const colorTargets = [divisor, divider, mobileNav].filter(Boolean);
+    const colorTargets = [
+        divisor,
+        divider,
+        document.getElementById('mas-info'),
+        document.getElementById('mi-ladder'),
+        document.getElementById('mi-timeline'),
+        document.getElementById('contacto')
+    ].filter(Boolean);
     const services = [
-        { el: bgr0, className: 'bgr0', theme: '#927AB8' },
+        { el: bgr0, className: 'bgr0', theme: '#961D82' },
         { el: bgr1, className: 'bgr1', theme: '#CDEA79' },
         { el: bgr2, className: 'bgr2', theme: '#A7197D' },
         { el: bgr3, className: 'bgr3', theme: '#159FFF' },
@@ -332,6 +338,7 @@ function initMobileServiceDeck() {
     let currentService = null;
     let deckInView = false;
     let wasDeckInView = false;
+    let hasEnteredDeck = false;
 
     function paintService(service) {
         if (currentService === service) return;
@@ -385,8 +392,16 @@ function initMobileServiceDeck() {
         if (!mq.matches) return;
         if (deckInView) {
             setActive(closestService(), true);
-        } else {
+            return;
+        }
+
+        const rect = deck.getBoundingClientRect();
+        const isBeforeDeck = rect.top > window.innerHeight * 0.72;
+        if (isBeforeDeck) {
+            hasEnteredDeck = false;
             clearServiceChrome();
+        } else if (currentService) {
+            paintService(currentService);
         }
     }
 
@@ -435,14 +450,15 @@ function initMobileServiceDeck() {
             entries.forEach(entry => {
                 deckInView = entry.isIntersecting && entry.intersectionRatio > 0.2;
                 if (deckInView && mq.matches) {
-                    if (!wasDeckInView) {
+                    if (!wasDeckInView && !hasEnteredDeck) {
                         deck.scrollTo({ left: 0, behavior: 'auto' });
                         setActive(services[0], true);
+                        hasEnteredDeck = true;
                     } else {
                         setActive(closestService(), true);
                     }
                 } else if (mq.matches) {
-                    clearServiceChrome();
+                    updateFromScroll();
                 }
                 wasDeckInView = deckInView;
             });

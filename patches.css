@@ -597,21 +597,6 @@ body {
     border-color: var(--sn-bg) !important;
   }
 
-  .mobile-nav.bgr0 .mnav-panel,
-  .mobile-nav.bgr0 .mnav-bar { background: #927AB8 url("./index/backgrounds/backgroundoriginal.svg") center center / cover no-repeat fixed !important; }
-  .mobile-nav.bgr1 .mnav-panel,
-  .mobile-nav.bgr1 .mnav-bar { background: var(--BACKGROUND-1) fixed !important; }
-  .mobile-nav.bgr2 .mnav-panel,
-  .mobile-nav.bgr2 .mnav-bar { background: var(--BACKGROUND-2) fixed !important; }
-  .mobile-nav.bgr3 .mnav-panel,
-  .mobile-nav.bgr3 .mnav-bar { background: var(--BACKGROUND-3) fixed !important; }
-  .mobile-nav.bgr4 .mnav-panel,
-  .mobile-nav.bgr4 .mnav-bar { background: var(--BACKGROUND-4) fixed !important; }
-  .mobile-nav.bgr5 .mnav-panel,
-  .mobile-nav.bgr5 .mnav-bar { background: var(--BACKGROUND-5) fixed !important; }
-  .mobile-nav.bgr6 .mnav-panel,
-  .mobile-nav.bgr6 .mnav-bar { background: var(--BACKGROUND-6) fixed !important; }
-
   .mobile-nav.is-hero .mnav-bar,
   .mobile-nav.is-hero .mnav-panel {
     background: #927AB8 url("./index/backgrounds/backgroundoriginal.svg") center center / cover no-repeat fixed !important;
@@ -716,13 +701,70 @@ body {
 
   #divisor.bgr0,
   #divider.bgr0,
-  #bgr0 { background: #927AB8 url("./index/backgrounds/backgroundoriginal.svg") center center / cover no-repeat fixed !important; }
+  #mas-info.bgr0,
+  #mi-ladder.bgr0,
+  #mi-timeline.bgr0,
+  #contacto.bgr0 { background: var(--BACKGROUND-0) fixed !important; }
+
+  #divisor.bgr1,
+  #divider.bgr1,
+  #mas-info.bgr1,
+  #mi-ladder.bgr1,
+  #mi-timeline.bgr1,
+  #contacto.bgr1 { background: var(--BACKGROUND-1) fixed !important; }
+
+  #divisor.bgr2,
+  #divider.bgr2,
+  #mas-info.bgr2,
+  #mi-ladder.bgr2,
+  #mi-timeline.bgr2,
+  #contacto.bgr2 { background: var(--BACKGROUND-2) fixed !important; }
+
+  #divisor.bgr3,
+  #divider.bgr3,
+  #mas-info.bgr3,
+  #mi-ladder.bgr3,
+  #mi-timeline.bgr3,
+  #contacto.bgr3 { background: var(--BACKGROUND-3) fixed !important; }
+
+  #divisor.bgr4,
+  #divider.bgr4,
+  #mas-info.bgr4,
+  #mi-ladder.bgr4,
+  #mi-timeline.bgr4,
+  #contacto.bgr4 { background: var(--BACKGROUND-4) fixed !important; }
+
+  #divisor.bgr5,
+  #divider.bgr5,
+  #mas-info.bgr5,
+  #mi-ladder.bgr5,
+  #mi-timeline.bgr5,
+  #contacto.bgr5 { background: var(--BACKGROUND-5) fixed !important; }
+
+  #divisor.bgr6,
+  #divider.bgr6,
+  #mas-info.bgr6,
+  #mi-ladder.bgr6,
+  #mi-timeline.bgr6,
+  #contacto.bgr6 { background: var(--BACKGROUND-6) fixed !important; }
+
+  #bgr0 { background: var(--BACKGROUND-0) fixed !important; }
   #bgr1 { background: var(--BACKGROUND-1) fixed !important; }
   #bgr2 { background: var(--BACKGROUND-2) fixed !important; }
   #bgr3 { background: var(--BACKGROUND-3) fixed !important; }
   #bgr4 { background: var(--BACKGROUND-4) fixed !important; }
   #bgr5 { background: var(--BACKGROUND-5) fixed !important; }
   #bgr6 { background: var(--BACKGROUND-6) fixed !important; }
+
+  #servicios-div #bgr0,
+  #servicios-div #bgr1,
+  #servicios-div #bgr2,
+  #servicios-div #bgr3,
+  #servicios-div #bgr4,
+  #servicios-div #bgr5,
+  #servicios-div #bgr6 {
+    background: transparent !important;
+  }
 
   #servicios-div .services.mobile-active {
     transform: translateY(-8px) rotate(-1deg);
