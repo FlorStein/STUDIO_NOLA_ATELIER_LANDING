@@ -1,5 +1,14 @@
 const WEB_PROJECTS = [
   {
+    title: 'Espacio Nina',
+    desc: 'Landing demo para un espacio de bienestar, con una presencia visual sensible, recorrido sereno y foco en transmitir confianza desde el primer contacto.',
+    type: 'Landing',
+    year: '2026',
+    category: 'landing',
+    url: 'https://florstein.github.io/espacionina/',
+    repo: 'https://github.com/FlorStein/espacionina'
+  },
+  {
     title: 'BURGA',
     desc: 'Landing demo con impronta gastronomica y visual potente, pensada para presentar una marca con sabor, caracter y una experiencia directa para convertir visitas en pedidos.',
     type: 'Landing',
