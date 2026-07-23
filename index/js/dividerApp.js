@@ -314,7 +314,8 @@ const row6          =   document.getElementById('row6')
 function initMobileServiceDeck() {
     const mq = window.matchMedia('(max-width: 768px)');
     const deck = document.getElementById('servicios-div');
-    const colorTargets = [document.body, divisor, divider].filter(Boolean);
+    const mobileNav = document.getElementById('mobile-nav');
+    const colorTargets = [document.body, document.documentElement, divisor, divider, mobileNav].filter(Boolean);
     const services = [
         { el: bgr0, className: 'bgr0', theme: '#54bf7d' },
         { el: bgr1, className: 'bgr1', theme: '#CDEA79' },

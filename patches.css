@@ -585,6 +585,14 @@ body {
     background: #927AB8 !important;
   }
 
+  html.bgr0 { background: var(--BACKGROUND-0) fixed !important; }
+  html.bgr1 { background: var(--BACKGROUND-1) fixed !important; }
+  html.bgr2 { background: var(--BACKGROUND-2) fixed !important; }
+  html.bgr3 { background: var(--BACKGROUND-3) fixed !important; }
+  html.bgr4 { background: var(--BACKGROUND-4) fixed !important; }
+  html.bgr5 { background: var(--BACKGROUND-5) fixed !important; }
+  html.bgr6 { background: var(--BACKGROUND-6) fixed !important; }
+
   body {
     min-height: 100svh;
     padding-bottom: env(safe-area-inset-bottom, 0) !important;
@@ -605,20 +613,20 @@ body {
     border-color: var(--sn-bg) !important;
   }
 
-  body.bgr0 .mobile-nav .mnav-panel,
-  body.bgr0 .mobile-nav .mnav-bar { background: var(--BACKGROUND-0) fixed !important; }
-  body.bgr1 .mobile-nav .mnav-panel,
-  body.bgr1 .mobile-nav .mnav-bar { background: var(--BACKGROUND-1) fixed !important; }
-  body.bgr2 .mobile-nav .mnav-panel,
-  body.bgr2 .mobile-nav .mnav-bar { background: var(--BACKGROUND-2) fixed !important; }
-  body.bgr3 .mobile-nav .mnav-panel,
-  body.bgr3 .mobile-nav .mnav-bar { background: var(--BACKGROUND-3) fixed !important; }
-  body.bgr4 .mobile-nav .mnav-panel,
-  body.bgr4 .mobile-nav .mnav-bar { background: var(--BACKGROUND-4) fixed !important; }
-  body.bgr5 .mobile-nav .mnav-panel,
-  body.bgr5 .mobile-nav .mnav-bar { background: var(--BACKGROUND-5) fixed !important; }
-  body.bgr6 .mobile-nav .mnav-panel,
-  body.bgr6 .mobile-nav .mnav-bar { background: var(--BACKGROUND-6) fixed !important; }
+  .mobile-nav.bgr0 .mnav-panel,
+  .mobile-nav.bgr0 .mnav-bar { background: var(--BACKGROUND-0) fixed !important; }
+  .mobile-nav.bgr1 .mnav-panel,
+  .mobile-nav.bgr1 .mnav-bar { background: var(--BACKGROUND-1) fixed !important; }
+  .mobile-nav.bgr2 .mnav-panel,
+  .mobile-nav.bgr2 .mnav-bar { background: var(--BACKGROUND-2) fixed !important; }
+  .mobile-nav.bgr3 .mnav-panel,
+  .mobile-nav.bgr3 .mnav-bar { background: var(--BACKGROUND-3) fixed !important; }
+  .mobile-nav.bgr4 .mnav-panel,
+  .mobile-nav.bgr4 .mnav-bar { background: var(--BACKGROUND-4) fixed !important; }
+  .mobile-nav.bgr5 .mnav-panel,
+  .mobile-nav.bgr5 .mnav-bar { background: var(--BACKGROUND-5) fixed !important; }
+  .mobile-nav.bgr6 .mnav-panel,
+  .mobile-nav.bgr6 .mnav-bar { background: var(--BACKGROUND-6) fixed !important; }
 
   .mobile-nav .mnav-link,
   .mobile-nav .lang-toggle.mobile {
@@ -639,7 +647,7 @@ body {
   #divisor {
     height: auto !important;
     min-height: 100svh !important;
-    padding: 82px 0 48px !important;
+    padding: 96px 0 48px !important;
     overflow: hidden !important;
   }
 
@@ -658,7 +666,7 @@ body {
   #divisor #div-title2 {
     width: 100% !important;
     display: grid !important;
-    gap: 18px !important;
+    gap: 26px !important;
   }
 
   #divisor #title2 {
@@ -667,8 +675,8 @@ body {
     margin: 0 auto !important;
     padding: 0 0 10px !important;
     justify-content: flex-start !important;
-    font-size: clamp(2.5rem, 13vw, 4.6rem) !important;
-    line-height: .82 !important;
+    font-size: clamp(2rem, 10.5vw, 3.25rem) !important;
+    line-height: .9 !important;
     letter-spacing: 0 !important;
     color: var(--sn-bg) !important;
     border-bottom: 2px solid currentColor !important;
@@ -680,12 +688,12 @@ body {
     flex-direction: row !important;
     justify-content: flex-start !important;
     gap: 14px !important;
-    padding: 0 14px 18px !important;
+    padding: 0 18px 22px !important;
     box-sizing: border-box !important;
     overflow-x: auto !important;
     overflow-y: hidden !important;
     scroll-snap-type: x mandatory;
-    scroll-padding-inline: 14px;
+    scroll-padding-inline: 18px;
     -webkit-overflow-scrolling: touch;
   }
 
@@ -694,7 +702,7 @@ body {
   }
 
   #servicios-div .accordion-div {
-    flex: 0 0 min(82vw, 360px) !important;
+    flex: 0 0 min(calc(100vw - 54px), 390px) !important;
     min-width: 0 !important;
     display: block !important;
     scroll-snap-align: center;
@@ -703,8 +711,8 @@ body {
   #servicios-div .services,
   #servicios-div .services.active {
     width: 100% !important;
-    height: min(66svh, 520px) !important;
-    min-height: 430px !important;
+    height: min(58svh, 480px) !important;
+    min-height: 380px !important;
     margin: 0 !important;
     padding: 18px !important;
     display: grid !important;
@@ -743,7 +751,7 @@ body {
     transform: none !important;
     display: block !important;
     color: var(--sn-bg) !important;
-    font-size: clamp(2.1rem, 10.5vw, 3.2rem) !important;
+    font-size: clamp(1.85rem, 9vw, 2.65rem) !important;
     line-height: .86 !important;
     text-align: left !important;
   }
