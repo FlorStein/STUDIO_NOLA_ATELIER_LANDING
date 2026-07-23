@@ -1,5 +1,14 @@
 const WEB_PROJECTS = [
   {
+    title: 'Vinyl and Tonic',
+    desc: 'Landing demo con identidad nocturna y musical, pensada para presentar una experiencia de bar, vinilos y cocteleria con atmosfera propia.',
+    type: 'Landing',
+    year: '2026',
+    category: 'landing',
+    url: 'https://florstein.github.io/vinylandtonic/',
+    repo: 'https://github.com/FlorStein/vinylandtonic'
+  },
+  {
     title: 'Casa Oriente',
     desc: 'Landing demo con identidad calida y editorial, pensada para presentar una marca con atmosfera, productos seleccionados y una navegacion serena.',
     type: 'Landing',
