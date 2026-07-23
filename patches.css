@@ -612,6 +612,11 @@ body {
   .mobile-nav.bgr6 .mnav-panel,
   .mobile-nav.bgr6 .mnav-bar { background: var(--BACKGROUND-6) fixed !important; }
 
+  .mobile-nav.is-hero .mnav-bar,
+  .mobile-nav.is-hero .mnav-panel {
+    background: #927AB8 url("./index/backgrounds/backgroundoriginal.svg") center center / cover no-repeat fixed !important;
+  }
+
   .mobile-nav .mnav-link,
   .mobile-nav .lang-toggle.mobile {
     color: var(--sn-bg) !important;

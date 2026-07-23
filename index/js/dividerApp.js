@@ -331,6 +331,7 @@ function initMobileServiceDeck() {
     const colorClasses = services.map(item => item.className);
     let currentService = null;
     let deckInView = false;
+    let wasDeckInView = false;
 
     function paintService(service) {
         if (currentService === service) return;
@@ -382,7 +383,11 @@ function initMobileServiceDeck() {
 
     function updateFromScroll() {
         if (!mq.matches) return;
-        setActive(closestService(), deckInView);
+        if (deckInView) {
+            setActive(closestService(), true);
+        } else {
+            clearServiceChrome();
+        }
     }
 
     function goToInfo(mi) {
@@ -425,19 +430,25 @@ function initMobileServiceDeck() {
         service.el.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
     }, true);
 
-    if ('IntersectionObserver' in window && divisor) {
+    if ('IntersectionObserver' in window) {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 deckInView = entry.isIntersecting && entry.intersectionRatio > 0.2;
                 if (deckInView && mq.matches) {
-                    setActive(closestService(), true);
+                    if (!wasDeckInView) {
+                        deck.scrollTo({ left: 0, behavior: 'auto' });
+                        setActive(services[0], true);
+                    } else {
+                        setActive(closestService(), true);
+                    }
                 } else if (mq.matches) {
                     clearServiceChrome();
                 }
+                wasDeckInView = deckInView;
             });
         }, { threshold: [0, .2, .45, .7] });
 
-        observer.observe(divisor);
+        observer.observe(deck);
     }
 
     function syncMode() {
@@ -446,11 +457,18 @@ function initMobileServiceDeck() {
                 item.el.style.display = '';
                 item.el.classList.remove('active');
             });
-            setActive(closestService(), deckInView);
+            updateFromScroll();
         } else {
             clearServiceChrome();
         }
     }
+
+    ['scroll', 'resize'].forEach(eventName => {
+        window.addEventListener(eventName, () => {
+            window.clearTimeout(deck._mobileViewportTimer);
+            deck._mobileViewportTimer = window.setTimeout(updateFromScroll, 60);
+        }, { passive: true });
+    });
 
     mq.addEventListener('change', syncMode);
     syncMode();
