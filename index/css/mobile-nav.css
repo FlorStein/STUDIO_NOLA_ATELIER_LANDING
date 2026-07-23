@@ -203,14 +203,14 @@
   }
 
   #header {
-    width: min(100% - 36px, 430px) !important;
+    width: min(100% - 22px, 430px) !important;
     max-width: none !important;
     min-height: calc(100svh - 72px) !important;
     display: grid !important;
     align-content: center !important;
     gap: 1.15rem;
     margin: 0 auto !important;
-    padding: clamp(18px, 6vh, 42px) 0 34px !important;
+    padding: clamp(18px, 6vh, 42px) clamp(14px, 4vw, 22px) 34px !important;
     box-sizing: border-box;
     overflow: hidden;
   }
