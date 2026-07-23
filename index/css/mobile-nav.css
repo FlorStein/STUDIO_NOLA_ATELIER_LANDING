@@ -130,3 +130,217 @@
 /* Ensure panel opens reliably */
 .mnav-panel { pointer-events: auto; z-index: 120; }
 .mnav-panel.is-open { display: block !important; }
+
+.mobile-hero-orbit,
+.mobile-hero-actions,
+.mobile-scroll-cue {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-top: 72px;
+  }
+
+  .mnav-bar {
+    width: min(88vw, 390px);
+    min-height: 54px;
+    margin: 0.55rem auto;
+    padding: 0.45rem 0.75rem;
+    box-sizing: border-box;
+  }
+
+  .mnav-logo img {
+    height: 44px;
+    max-width: 150px;
+    object-fit: contain;
+  }
+
+  .mnav-toggle {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .mnav-panel {
+    position: fixed;
+    top: 74px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(88vw, 390px);
+    min-width: 0;
+    max-height: calc(100svh - 92px);
+    margin: 0;
+    overflow: auto;
+    border-radius: 28px;
+    background: rgba(255, 246, 231, 0.88);
+    -webkit-backdrop-filter: blur(18px);
+    backdrop-filter: blur(18px);
+    box-shadow: 0 22px 60px rgba(0, 0, 0, 0.22);
+    animation: mobilePanelIn 240ms ease both;
+  }
+
+  .mnav-list {
+    margin: 0;
+    padding: 0.75rem;
+  }
+
+  .mnav-link,
+  .lang-toggle.mobile {
+    border-radius: 18px;
+    font-weight: 800;
+  }
+
+  .mnav-link {
+    padding: 0.9rem 0.95rem;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    margin-bottom: 0.45rem;
+    background: rgba(255, 255, 255, 0.38);
+  }
+
+  #header {
+    width: min(100% - 28px, 520px);
+    max-width: none;
+    min-height: calc(100svh - 72px);
+    display: grid;
+    align-content: center;
+    gap: 1.15rem;
+    margin: 0 auto;
+    padding: clamp(22px, 8vh, 52px) 0 34px;
+    box-sizing: border-box;
+  }
+
+  #header > div:last-child {
+    display: grid;
+    justify-items: start;
+    gap: 0.95rem;
+  }
+
+  #hero {
+    width: 100%;
+    min-width: 0;
+    min-height: auto;
+    display: grid;
+    gap: 0.85rem;
+    justify-items: start;
+    align-items: start;
+    margin: 0;
+  }
+
+  #hero__p {
+    width: 100%;
+    margin: 0;
+    color: #fff;
+    font-size: clamp(3.25rem, 18vw, 5.4rem);
+    line-height: 0.82;
+    text-align: left;
+    letter-spacing: 0;
+    animation: mobileHeroReveal 680ms cubic-bezier(.2, .8, .2, 1) both;
+    text-shadow: 2px 2px 0 #000, -1px 1px 0 #927AB8;
+  }
+
+  #p {
+    max-width: 36ch;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    font-size: clamp(1rem, 4.4vw, 1.25rem);
+    line-height: 1.35;
+    letter-spacing: 0.01em;
+    animation: mobileHeroReveal 680ms cubic-bezier(.2, .8, .2, 1) 140ms both;
+  }
+
+  .mobile-hero-orbit {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    animation: mobileHeroReveal 680ms cubic-bezier(.2, .8, .2, 1) 80ms both;
+  }
+
+  .mobile-hero-orbit span {
+    padding: 0.45rem 0.65rem;
+    border: 1px solid rgba(255, 255, 255, 0.65);
+    border-radius: 999px;
+    color: #120a1d;
+    background: rgba(255, 255, 255, 0.78);
+    font: 800 0.72rem/1 monospace;
+    text-transform: uppercase;
+  }
+
+  .mobile-hero-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    gap: 0.65rem;
+    animation: mobileHeroReveal 680ms cubic-bezier(.2, .8, .2, 1) 220ms both;
+  }
+
+  .mobile-hero-actions a {
+    min-height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #000;
+    border-radius: 999px;
+    color: #120a1d;
+    background: #fff6e7;
+    font: 900 0.92rem/1 monospace;
+    text-decoration: none;
+    box-shadow: 4px 4px 0 #000;
+  }
+
+  .mobile-hero-actions a:first-child {
+    background: #927AB8;
+    color: #fff;
+  }
+
+  .mobile-scroll-cue {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    margin: 0.25rem 0 0;
+    color: rgba(255, 255, 255, 0.78);
+    font: 800 0.78rem/1 monospace;
+    text-transform: uppercase;
+    animation: mobileCuePulse 1.8s ease-in-out infinite;
+  }
+
+  .mobile-scroll-cue::after {
+    content: "";
+    width: 28px;
+    height: 1px;
+    background: currentColor;
+  }
+
+  @keyframes mobileHeroReveal {
+    from {
+      opacity: 0;
+      transform: translateY(18px) scale(.98);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  @keyframes mobilePanelIn {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -10px);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, 0);
+    }
+  }
+
+  @keyframes mobileCuePulse {
+    0%, 100% {
+      opacity: .55;
+      transform: translateY(0);
+    }
+    50% {
+      opacity: 1;
+      transform: translateY(5px);
+    }
+  }
+}

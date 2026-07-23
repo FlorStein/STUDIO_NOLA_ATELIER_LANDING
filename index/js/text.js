@@ -1,4 +1,5 @@
 function typeEffect(element, speed) {
+	if (!element) return;
 	var text = element.innerHTML;
 	element.innerHTML = "";
 	
@@ -18,14 +19,21 @@ function typeEffect(element, speed) {
 var speed = 75;
 var h1 = document.getElementById('h1');
 var p = document.getElementById('p');
-var delay = h1.innerHTML.length * speed + speed;
+var isMobileHero = window.matchMedia && window.matchMedia('(max-width: 768px)').matches;
 
-// type affect to header
-typeEffect(h1, speed);
+if (isMobileHero) {
+  document.body.classList.add('mobile-hero-ready');
+  if (p) p.style.display = "inline-block";
+} else {
+  var delay = h1.innerHTML.length * speed + speed;
+
+  // type affect to header
+  typeEffect(h1, speed);
 
 
-// type affect to body
-setTimeout(function(){
-  p.style.display = "inline-block";
-  typeEffect(p, speed);
-}, delay);
+  // type affect to body
+  setTimeout(function(){
+    p.style.display = "inline-block";
+    typeEffect(p, speed);
+  }, delay);
+}
