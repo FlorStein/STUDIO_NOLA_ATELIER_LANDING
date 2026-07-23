@@ -316,13 +316,13 @@ function initMobileServiceDeck() {
     const deck = document.getElementById('servicios-div');
     const colorTargets = [document.body, divisor, divider].filter(Boolean);
     const services = [
-        { el: bgr0, className: 'bgr0' },
-        { el: bgr1, className: 'bgr1' },
-        { el: bgr2, className: 'bgr2' },
-        { el: bgr3, className: 'bgr3' },
-        { el: bgr4, className: 'bgr4' },
-        { el: bgr5, className: 'bgr5' },
-        { el: bgr6, className: 'bgr6' }
+        { el: bgr0, className: 'bgr0', theme: '#54bf7d' },
+        { el: bgr1, className: 'bgr1', theme: '#CDEA79' },
+        { el: bgr2, className: 'bgr2', theme: '#A7197D' },
+        { el: bgr3, className: 'bgr3', theme: '#159FFF' },
+        { el: bgr4, className: 'bgr4', theme: '#FFE600' },
+        { el: bgr5, className: 'bgr5', theme: '#54bf7d' },
+        { el: bgr6, className: 'bgr6', theme: '#E3D5BE' }
     ].filter(item => item.el);
 
     if (!deck || !services.length) return;
@@ -334,6 +334,7 @@ function initMobileServiceDeck() {
     function paintService(service) {
         if (currentService === service) return;
         currentService = service;
+        updateThemeColor(service.theme);
 
         colorTargets.forEach(target => {
             target.classList.add(service.className);
@@ -346,6 +347,11 @@ function initMobileServiceDeck() {
                     .forEach(className => target.classList.remove(className));
             });
         });
+    }
+
+    function updateThemeColor(color) {
+        const meta = document.querySelector('meta[name="theme-color"]');
+        if (meta && color) meta.setAttribute('content', color);
     }
 
     function setActive(service, shouldPaint) {
@@ -430,6 +436,7 @@ function initMobileServiceDeck() {
             setActive(closestService(), deckInView);
         } else {
             services.forEach(item => item.el.classList.remove('mobile-active'));
+            updateThemeColor('#927AB8');
             currentService = null;
         }
     }

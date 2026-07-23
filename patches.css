@@ -580,6 +580,62 @@ body {
 
 /* === Mobile: "Que hacemos" as a tactile service deck === */
 @media (max-width: 768px) {
+  html {
+    min-height: 100%;
+    background: #927AB8 !important;
+  }
+
+  body {
+    min-height: 100svh;
+    padding-bottom: env(safe-area-inset-bottom, 0) !important;
+    background-color: #927AB8 !important;
+  }
+
+  body.bgr0 { background: var(--BACKGROUND-0) fixed !important; }
+  body.bgr1 { background: var(--BACKGROUND-1) fixed !important; }
+  body.bgr2 { background: var(--BACKGROUND-2) fixed !important; }
+  body.bgr3 { background: var(--BACKGROUND-3) fixed !important; }
+  body.bgr4 { background: var(--BACKGROUND-4) fixed !important; }
+  body.bgr5 { background: var(--BACKGROUND-5) fixed !important; }
+  body.bgr6 { background: var(--BACKGROUND-6) fixed !important; }
+
+  .mobile-nav .mnav-panel {
+    background: rgba(146, 122, 184, .88) !important;
+    color: var(--sn-bg) !important;
+    border-color: var(--sn-bg) !important;
+  }
+
+  body.bgr0 .mobile-nav .mnav-panel,
+  body.bgr0 .mobile-nav .mnav-bar { background: var(--BACKGROUND-0) fixed !important; }
+  body.bgr1 .mobile-nav .mnav-panel,
+  body.bgr1 .mobile-nav .mnav-bar { background: var(--BACKGROUND-1) fixed !important; }
+  body.bgr2 .mobile-nav .mnav-panel,
+  body.bgr2 .mobile-nav .mnav-bar { background: var(--BACKGROUND-2) fixed !important; }
+  body.bgr3 .mobile-nav .mnav-panel,
+  body.bgr3 .mobile-nav .mnav-bar { background: var(--BACKGROUND-3) fixed !important; }
+  body.bgr4 .mobile-nav .mnav-panel,
+  body.bgr4 .mobile-nav .mnav-bar { background: var(--BACKGROUND-4) fixed !important; }
+  body.bgr5 .mobile-nav .mnav-panel,
+  body.bgr5 .mobile-nav .mnav-bar { background: var(--BACKGROUND-5) fixed !important; }
+  body.bgr6 .mobile-nav .mnav-panel,
+  body.bgr6 .mobile-nav .mnav-bar { background: var(--BACKGROUND-6) fixed !important; }
+
+  .mobile-nav .mnav-link,
+  .mobile-nav .lang-toggle.mobile {
+    color: var(--sn-bg) !important;
+    border: 1px solid rgba(0,0,0,.22) !important;
+    background: rgba(255,255,255,.42) !important;
+  }
+
+  .mobile-nav .mnav-link:hover,
+  .mobile-nav .mnav-link:active {
+    background: rgba(255,255,255,.62) !important;
+  }
+
+  .mobile-nav .mnav-toggle span {
+    background: var(--sn-bg) !important;
+  }
+
   #divisor {
     height: auto !important;
     min-height: 100svh !important;
