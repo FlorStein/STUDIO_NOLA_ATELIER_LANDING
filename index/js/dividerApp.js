@@ -328,14 +328,30 @@ function initMobileServiceDeck() {
     if (!deck || !services.length) return;
 
     const colorClasses = services.map(item => item.className);
+    let currentService = null;
+    let deckInView = false;
 
-    function setActive(service) {
-        services.forEach(item => item.el.classList.toggle('mobile-active', item === service));
+    function paintService(service) {
+        if (currentService === service) return;
+        currentService = service;
+
         colorTargets.forEach(target => {
-            target.classList.remove(...colorClasses);
             target.classList.add(service.className);
         });
-        if (nav) nav.classList.add('nav-on-servicios');
+
+        window.requestAnimationFrame(() => {
+            colorTargets.forEach(target => {
+                colorClasses
+                    .filter(className => className !== service.className)
+                    .forEach(className => target.classList.remove(className));
+            });
+        });
+    }
+
+    function setActive(service, shouldPaint) {
+        services.forEach(item => item.el.classList.toggle('mobile-active', item === service));
+        if (shouldPaint) paintService(service);
+        if (shouldPaint && nav) nav.classList.add('nav-on-servicios');
     }
 
     function closestService() {
@@ -349,7 +365,7 @@ function initMobileServiceDeck() {
 
     function updateFromScroll() {
         if (!mq.matches) return;
-        setActive(closestService());
+        setActive(closestService(), deckInView);
     }
 
     function goToInfo(mi) {
@@ -388,9 +404,22 @@ function initMobileServiceDeck() {
         const service = services.find(item => item.el === serviceEl);
         if (!service) return;
 
-        setActive(service);
+        setActive(service, true);
         service.el.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
     }, true);
+
+    if ('IntersectionObserver' in window && divisor) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                deckInView = entry.isIntersecting && entry.intersectionRatio > 0.2;
+                if (deckInView && mq.matches) {
+                    setActive(closestService(), true);
+                }
+            });
+        }, { threshold: [0, .2, .45, .7] });
+
+        observer.observe(divisor);
+    }
 
     function syncMode() {
         if (mq.matches) {
@@ -398,9 +427,10 @@ function initMobileServiceDeck() {
                 item.el.style.display = '';
                 item.el.classList.remove('active');
             });
-            setActive(closestService());
+            setActive(closestService(), deckInView);
         } else {
             services.forEach(item => item.el.classList.remove('mobile-active'));
+            currentService = null;
         }
     }
 
