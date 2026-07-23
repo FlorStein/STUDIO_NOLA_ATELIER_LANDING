@@ -45,6 +45,15 @@ const WEB_PROJECTS = [
     repo: 'https://github.com/FlorStein/NIKOLA'
   },
   {
+    title: 'Espacio Puro',
+    desc: 'Landing demo para una propuesta de bienestar, con estetica limpia, ritmo pausado y una experiencia pensada para transmitir calma y confianza.',
+    type: 'Landing',
+    year: '2026',
+    category: 'landing',
+    url: 'https://florstein.github.io/espaciopuro/',
+    repo: 'https://github.com/FlorStein/espaciopuro'
+  },
+  {
     title: 'Redes por Tefi',
     desc: 'Landing clara y directa para una propuesta de gestion de redes, pensada para convertir visitas en consultas.',
     type: 'Landing',
