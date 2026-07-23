@@ -1,5 +1,14 @@
 const WEB_PROJECTS = [
   {
+    title: 'Casa Oriente',
+    desc: 'Landing demo con identidad calida y editorial, pensada para presentar una marca con atmosfera, productos seleccionados y una navegacion serena.',
+    type: 'Landing',
+    year: '2026',
+    category: 'landing',
+    url: 'https://florstein.github.io/casaoriente/',
+    repo: 'https://github.com/FlorStein/casaoriente'
+  },
+  {
     title: 'Espacio Nina',
     desc: 'Landing demo para un espacio de bienestar, con una presencia visual sensible, recorrido sereno y foco en transmitir confianza desde el primer contacto.',
     type: 'Landing',
